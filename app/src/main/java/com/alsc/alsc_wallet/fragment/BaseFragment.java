@@ -273,6 +273,9 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
             return;
         }
         super.onViewCreated(view, savedInstanceState);
+        if (isNeedSetTopStyle()) {
+            setTopStatusBarStyle(view);
+        }
         onViewCreated(view);
     }
 
@@ -337,6 +340,10 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
             return;
         }
         super.onDestroyView();
+    }
+
+    protected boolean isNeedSetTopStyle() {
+        return true;
     }
 
 

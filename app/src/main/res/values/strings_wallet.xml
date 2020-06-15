@@ -1,5 +1,29 @@
 <resources>
 
+    <string name="wallet_chat">消息</string>
+    <string name="wallet_msg">资讯</string>
+    <string name="wallet_trade">交易</string>
+    <string name="wallet_hq">行情</string>
+    <string name="wallet_zc">资产</string>
+
+    <string name="wallet_hot_msg">热门头条</string>
+    <string name="wallet_fast_msg">快讯</string>
+    <string name="wallet_quan">圈子</string>
+    <string name="wallet_hot">热门</string>
+    <string name="wallet_newest">最新</string>
+    <string name="wallet_attend">+ 关注</string>
+    <string name="wallet_my_dynamic">我的动态</string>
+    <string name="wallet_all_msg">全文</string>
+    <string name="wallet_look_all_comment">查看评论 ></string>
+    <string name="wallet_share">分享</string>
+
+    <string name="wallet_i_buy">我要买</string>
+    <string name="wallet_i_sell">我要卖</string>
+    <string name="wallet_one_price">单价</string>
+    <string name="wallet_sell">出售</string>
+    <string name="wallet_rest_xxx">剩余(%1$s)</string>
+    <string name="wallet_limit_num_xxx">限额(%1$s)</string>
+
     <string name="wallet_online">在线钱包</string>
     <string name="wallet_cold">多链钱包</string>
     <string name="wallet_cold_use_easy">多链钱包 轻松使用</string>

@@ -5,115 +5,39 @@
     android:background="@color/color_f7_f7_f7"
     android:orientation="vertical">
 
+
     <LinearLayout
-        android:id="@+id/llParent"
-        android:layout_width="match_parent"
-        android:layout_height="295dp"
-        android:background="@color/color_3a_54_ff"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvOnlineWallet"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:background="@drawable/bg_wallet_online_unselect"
-                android:gravity="center"
-                android:paddingLeft="17dp"
-                android:paddingRight="17dp"
-                android:text="@string/wallet_online"
-                android:textColor="@color/color_ff_ff_ff"
-                android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/tvColdWallet"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_marginLeft="-1.5dp"
-                android:background="@drawable/bg_wallet_cold_select"
-                android:gravity="center"
-                android:paddingLeft="17dp"
-                android:paddingRight="17dp"
-                android:text="@string/wallet_cold"
-                android:textColor="@color/color_3a_54_ff"
-                android:textSize="14dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="18dp"
-            android:paddingRight="6dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="@string/wallet_my_wallet"
-                android:textColor="@color/color_ff_ff_ff"
-                android:textSize="20dp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="14dp"
-                android:src="@drawable/wallet_add" />
-        </LinearLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvMoney"
+            android:id="@+id/tvOnlineWallet"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:text="6,297,5.12"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_wallet_online_unselect"
+            android:gravity="center"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            android:text="@string/wallet_online"
             android:textColor="@color/color_ff_ff_ff"
-            android:textSize="45dp"
-            android:textStyle="bold" />
+            android:textSize="14dp" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvColdWallet"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvTransferIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/wallet_transfer_in"
-                android:drawablePadding="6dp"
-                android:text="收款\n$ 6,297,502.12"
-                android:textColor="@color/color_ff_ff_ff"
-                android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/tvTransferOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="26dp"
-                android:drawableLeft="@drawable/wallet_transfer_out"
-                android:drawablePadding="6dp"
-                android:text="转出\n$ 22,300.0"
-                android:textColor="@color/color_ff_ff_ff"
-                android:textSize="14dp" />
-        </LinearLayout>
+            android:layout_height="28dp"
+            android:layout_marginLeft="-1.5dp"
+            android:background="@drawable/bg_wallet_cold_select"
+            android:gravity="center"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            android:text="@string/wallet_cold"
+            android:textColor="@color/color_3a_54_ff"
+            android:textSize="14dp" />
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="-15dp" />
 
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.alsc.alsc_wallet.fragment.wallet;
+package com.alsc.alsc_wallet.fragment;
 
 import android.view.View;
 
