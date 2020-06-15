@@ -1,0 +1,2 @@
+rootProject.name='ALSC_Wallet'
+include ':app'

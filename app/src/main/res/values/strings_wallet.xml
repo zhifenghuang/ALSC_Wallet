@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="wallet_online">在线钱包</string>
+    <string name="wallet_cold">多链钱包</string>
+    <string name="wallet_cold_use_easy">多链钱包 轻松使用</string>
+    <string name="wallet_manager_by_one">一个钱包，管理多个资产，安全又省心</string>
+    <string name="wallet_create_code">创建多链钱包</string>
+    <string name="wallet_had_cold_wallet">已有多链钱包？</string>
+    <string name="wallet_recover">恢复钱包</string>
+</resources>
+
