@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -318,9 +319,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     @Override
     public void onResume() {
         // TODO Auto-generated method stub
-        if (getView() == null) {
-            return;
-        }
         mIsToAnotherPage = false;
         super.onResume();
     }
@@ -328,17 +326,11 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     @Override
     public void onPause() {
         // TODO Auto-generated method stub
-        if (getView() == null) {
-            return;
-        }
         super.onPause();
     }
 
     @Override
     public void onDestroyView() {
-        if (getView() == null) {
-            return;
-        }
         super.onDestroyView();
     }
 

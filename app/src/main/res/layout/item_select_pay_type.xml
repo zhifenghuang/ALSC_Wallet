@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingRight="11dp">
+
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@drawable/bg_wallet_pay_type_unselect"
+        android:gravity="center"
+        android:text="全部类型"
+        android:textColor="@color/color_66_66_66"
+        android:textSize="12dp" />
+
+
+</LinearLayout>

@@ -22,13 +22,13 @@ import com.alsc.alsc_wallet.fragment.ZiChanFragment;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private ArrayList<BaseFragment> mBaseFragment;
     private Fragment mCurrentFragment;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initFragments();

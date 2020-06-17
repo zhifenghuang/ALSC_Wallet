@@ -39,17 +39,6 @@
         <activity
             android:name=".activity.EmptyActivity"
             android:screenOrientation="portrait">
-
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="empty"
-                    android:scheme="alsc" />
-            </intent-filter>
         </activity>
     </application>
 

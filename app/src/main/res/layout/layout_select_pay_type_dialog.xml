@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/paddingView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_wallet_select_pay_type"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="@string/wallet_please_select_pay_type"
+            android:textColor="@color/color_66_66_66"
+            android:textSize="12dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp" />
+
+        <LinearLayout
+            android:id="@+id/llAliPay"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/wallet_alipay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:minWidth="80dp"
+                android:paddingLeft="13dp"
+                android:text="@string/wallet_pay_type_2"
+                android:textColor="@color/color_66_66_66"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:background="@color/color_f8_f8_f8" />
+
+        <LinearLayout
+            android:id="@+id/llWePay"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/wallet_wepay" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:minWidth="80dp"
+                android:paddingLeft="13dp"
+                android:text="@string/wallet_pay_type_1"
+                android:textColor="@color/color_66_66_66"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:background="@color/color_f8_f8_f8" />
+
+        <LinearLayout
+            android:id="@+id/llBank"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/wallet_bank_card" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:minWidth="80dp"
+                android:paddingLeft="13dp"
+                android:text="@string/wallet_pay_type_3"
+                android:textColor="@color/color_66_66_66"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:background="@color/color_f8_f8_f8" />
+
+        <LinearLayout
+            android:id="@+id/llPayPal"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/wallet_paypal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:minWidth="80dp"
+                android:paddingLeft="13dp"
+                android:text="@string/wallet_pay_type_4"
+                android:textColor="@color/color_66_66_66"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/color_f8_f8_f8" />
+
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/wallet_cancel"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="18dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

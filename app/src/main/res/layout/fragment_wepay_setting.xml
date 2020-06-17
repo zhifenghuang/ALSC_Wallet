@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/color_ff_ff_ff"
+        android:orientation="horizontal"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/wallet_user_name"
+            android:textColor="@color/color_b2_b2_b2"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/etUserName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical|right"
+            android:hint="@string/wallet_please_input"
+            android:paddingLeft="10dp"
+            android:textColor="@color/color_00_00_00"
+            android:textColorHint="@color/color_b2_b2_b2"
+            android:textSize="14dp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e2_eb_f0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/color_ff_ff_ff"
+        android:orientation="horizontal"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/wallet_wechat_no"
+            android:textColor="@color/color_b2_b2_b2"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/etWepayAccount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:gravity="center_vertical|right"
+            android:hint="@string/wallet_please_input"
+            android:paddingLeft="10dp"
+            android:textColor="@color/color_00_00_00"
+            android:textColorHint="@color/color_b2_b2_b2"
+            android:textSize="14dp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e2_eb_f0" />
+
+    <LinearLayout
+        android:id="@+id/llUpload"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/color_ff_ff_ff"
+        android:orientation="horizontal"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/wallet_upload_wechat_code"
+            android:textColor="@color/color_b2_b2_b2"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text="@string/wallet_go_upload"
+            android:textColor="@color/color_b2_b2_b2"
+            android:textSize="14dp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSave"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/bg_wallet_save"
+        android:gravity="center"
+        android:text="@string/wallet_save"
+        android:textColor="@color/color_ff_ff_ff"
+        android:textSize="16dp" />
+
+
+</LinearLayout>

@@ -2,30 +2,28 @@ package com.alsc.alsc_wallet.adapter;
 
 import android.content.Context;
 import android.view.View;
-
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.activity.BaseActivity;
 import com.alsc.alsc_wallet.dialog.MyDialogFragment;
 import com.alsc.alsc_wallet.fragment.trade.MoneyAccountFragment;
-import com.alsc.alsc_wallet.fragment.trade.PaySettingFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 import org.jetbrains.annotations.NotNull;
 
-public class BuyCoinAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+public class SellCoinAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
     private Context mContext;
 
-    public BuyCoinAdapter(Context context) {
-        super(R.layout.item_buy_coin);
+    public SellCoinAdapter(Context context) {
+        super(R.layout.item_sell_coin);
         mContext = context;
     }
 
     @Override
     protected void convert(@NotNull BaseViewHolder helper, String s) {
         helper.setImageResource(R.id.ivAvatar, R.mipmap.ic_launcher_round);
-        helper.getView(R.id.tvBuy).setOnClickListener(new View.OnClickListener() {
+        helper.getView(R.id.tvSell).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showSellCoinDialog();
@@ -40,7 +38,7 @@ public class BuyCoinAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
     }
 
     private void showSellCoinDialog() {
-        final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_buy_coin_dialog);
+        final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_sell_coin_dialog);
         dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
             @Override
             public void initView(View view) {
@@ -49,33 +47,21 @@ public class BuyCoinAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
             @Override
             public void onViewClick(int viewId) {
-                switch (viewId) {
+                switch (viewId){
                     case R.id.tvOk:
-                        showSelectBuyTypeDialog();
-                        break;
-                }
-            }
-        });
-        dialogFragment.show(((BaseActivity) mContext).getSupportFragmentManager(), "MyDialogFragment");
-    }
+                        final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_sell_tip_dialog);
+                        dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
+                            @Override
+                            public void initView(View view) {
+                                dialogFragment.setDialogViewsOnClickListener(view, R.id.tv1, R.id.tv2);
+                            }
 
-    private void showSelectBuyTypeDialog() {
-        final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_select_pay_type_dialog);
-        dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
-            @Override
-            public void initView(View view) {
-                dialogFragment.setDialogViewsOnClickListener(view, R.id.paddingView, R.id.tvCancel,
-                        R.id.llAliPay, R.id.llWePay, R.id.llBank, R.id.llPayPal);
-            }
+                            @Override
+                            public void onViewClick(int viewId) {
 
-            @Override
-            public void onViewClick(int viewId) {
-                switch (viewId) {
-                    case R.id.llAliPay:
-                    case R.id.llWePay:
-                    case R.id.llBank:
-                    case R.id.llPayPal:
-                        ((BaseActivity) mContext).gotoPager(PaySettingFragment.class);
+                            }
+                        });
+                        dialogFragment.show(((BaseActivity) mContext).getSupportFragmentManager(), "MyDialogFragment");
                         break;
                 }
             }
