@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff_ff_ff"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_top_bar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:paddingLeft="20dp"
+        android:text="@string/wallet_open_identity_verify"
+        android:textColor="@color/color_00_00_00"
+        android:textSize="30dp" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:paddingLeft="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wallet_step_three"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/wallet_input_credentials_info"
+            android:textColor="@color/color_8c_8c_8c"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="26dp"
+        android:background="@null"
+        android:hint="@string/wallet_name"
+        android:paddingTop="10.5dp"
+        android:paddingBottom="10.5dp"
+        android:textColor="@color/color_00_00_00"
+        android:textColorHint="@color/color_8c_8c_8c"
+        android:textSize="14dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:background="@color/color_e2_eb_f0" />
+
+    <EditText
+        android:id="@+id/etNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="26dp"
+        android:background="@null"
+        android:hint="@string/wallet_credentials_number"
+        android:paddingTop="10.5dp"
+        android:paddingBottom="10.5dp"
+        android:textColor="@color/color_00_00_00"
+        android:textColorHint="@color/color_8c_8c_8c"
+        android:textSize="14dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:background="@color/color_e2_eb_f0" />
+
+
+    <TextView
+        android:id="@+id/tvNextStep"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/bg_wallet_save"
+        android:gravity="center"
+        android:text="@string/wallet_next_step"
+        android:textColor="@color/color_ff_ff_ff"
+        android:textSize="16dp" />
+
+
+</LinearLayout>

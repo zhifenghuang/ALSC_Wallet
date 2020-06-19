@@ -17,6 +17,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.dialog.CommonProgressDialog;
 import com.alsc.alsc_wallet.dialog.MyDialogFragment;
@@ -44,6 +46,7 @@ public abstract class BaseActivity extends AppCompatActivity implements OnHttpEr
     private MyDialogFragment mErrorDialog;
 
     private CommonProgressDialog mProgressDialog;
+    private boolean mIsActivityFinish;
 
     private static final ArrayList<BaseActivity> mActivityList = new ArrayList<>();
 
@@ -61,6 +64,7 @@ public abstract class BaseActivity extends AppCompatActivity implements OnHttpEr
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivityList.add(this);
+        mIsActivityFinish = false;
     }
 
     public void requestPermission(int permissionReqCode, String... permissions) {
@@ -81,13 +85,38 @@ public abstract class BaseActivity extends AppCompatActivity implements OnHttpEr
     }
 
 
-
     public DisplayMetrics getDisplaymetrics() {
         if (mDisplaymetrics == null) {
             mDisplaymetrics = new DisplayMetrics();
             ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(mDisplaymetrics);
         }
         return mDisplaymetrics;
+    }
+
+    public void showKeyBoard(View view) {
+        if (!mIsActivityFinish) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(view, 0);
+        }
+    }
+
+    public void hideKeyBoard(View view) {
+        if (!mIsActivityFinish) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            if (view == null) {
+                if (getCurrentFocus() != null) {
+                    imm.hideSoftInputFromWindow(
+                            getCurrentFocus().getWindowToken(),
+                            InputMethodManager.HIDE_NOT_ALWAYS
+                    );
+                }
+            } else {
+                imm.hideSoftInputFromWindow(
+                        view.getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS
+                );
+            }
+        }
     }
 
     @Override
@@ -265,6 +294,7 @@ public abstract class BaseActivity extends AppCompatActivity implements OnHttpEr
             mProgressDialog.dismiss();
         }
         mProgressDialog = null;
+        mIsActivityFinish = true;
     }
 
     public void finishAllOtherActivity() {

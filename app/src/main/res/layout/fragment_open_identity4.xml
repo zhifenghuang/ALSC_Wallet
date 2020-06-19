@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff_ff_ff"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_top_bar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:paddingLeft="21dp"
+        android:text="@string/wallet_open_identity_verify"
+        android:textColor="@color/color_00_00_00"
+        android:textSize="30dp" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:paddingLeft="26dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wallet_step_four"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/wallet_upload_credentials_photo"
+            android:textColor="@color/color_8c_8c_8c"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.1"
+            android:background="@color/color_ed_37_35" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="26dp"
+            android:text="@string/wallet_upload_credentials_photo_tip"
+            android:textColor="@color/color_ed_37_35"
+            android:textSize="10dp" />
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/bg_wallet_credentials_unselect"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="29dp"
+            android:src="@drawable/wallet_passport_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/wallet_upload_photo_1"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/bg_wallet_credentials_unselect"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="29dp"
+            android:src="@drawable/wallet_identify_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/wallet_upload_photo_2"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/bg_wallet_credentials_unselect"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="29dp"
+            android:src="@drawable/wallet_identify_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/wallet_upload_photo_3"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll4"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/bg_wallet_credentials_unselect"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="29dp"
+            android:src="@drawable/wallet_identify2_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/wallet_upload_photo_4"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll5"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/bg_wallet_credentials_unselect"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="29dp"
+            android:src="@drawable/wallet_identify_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/wallet_upload_photo_5"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="14dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll6"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/bg_wallet_credentials_unselect"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="29dp"
+            android:src="@drawable/wallet_hand_identify_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/wallet_upload_photo_6"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="23dp"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:text="@string/wallet_upload_photo_tip_1"
+        android:textColor="@color/color_b2_b2_b2"
+        android:textSize="10dp" />
+
+
+    <TextView
+        android:id="@+id/tvSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/bg_wallet_buy"
+        android:gravity="center"
+        android:text="@string/wallet_submit"
+        android:textColor="@color/color_ff_ff_ff"
+        android:textSize="16dp" />
+
+
+</LinearLayout>

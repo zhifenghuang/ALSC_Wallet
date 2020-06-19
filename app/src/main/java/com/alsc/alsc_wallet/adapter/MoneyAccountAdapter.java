@@ -8,6 +8,9 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
 import com.alsc.alsc_wallet.R;
+import com.alsc.alsc_wallet.activity.BaseActivity;
+import com.alsc.alsc_wallet.fragment.identity.GoogleIdentityFragment;
+import com.alsc.alsc_wallet.fragment.identity.OpenIdentity1Fragment;
 import com.alsc.alsc_wallet.fragment.trade.MoneyAccountFragment;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
@@ -33,11 +36,36 @@ public class MoneyAccountAdapter extends BaseMultiItemQuickAdapter<MoneyAccountF
     protected void convert(@NotNull BaseViewHolder helper, MoneyAccountFragment.AccountItem accountItem) {
         switch (helper.getItemViewType()) {
             case 0:
+                helper.getView(R.id.llIdentity).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ((BaseActivity) mContext).gotoPager(OpenIdentity1Fragment.class);
+                    }
+                });
+                helper.getView(R.id.llPhoneIdentity).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+                helper.getView(R.id.llGooIdentity).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ((BaseActivity) mContext).gotoPager(GoogleIdentityFragment.class);
+                    }
+                });
+                helper.getView(R.id.llMailIdentity).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+
                 helper.getView(R.id.llBuy).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         resetBtns(helper.getView(R.id.llSell), (LinearLayout) v);
-                        List<MoneyAccountFragment.AccountItem> list=getData();
+                        List<MoneyAccountFragment.AccountItem> list = getData();
                         list.clear();
                         list.add(new MoneyAccountFragment.AccountItem(0));
                         list.add(new MoneyAccountFragment.AccountItem(1));
@@ -48,7 +76,7 @@ public class MoneyAccountAdapter extends BaseMultiItemQuickAdapter<MoneyAccountF
                     @Override
                     public void onClick(View v) {
                         resetBtns(helper.getView(R.id.llBuy), (LinearLayout) v);
-                        List<MoneyAccountFragment.AccountItem> list=getData();
+                        List<MoneyAccountFragment.AccountItem> list = getData();
                         list.clear();
                         list.add(new MoneyAccountFragment.AccountItem(0));
                         list.add(new MoneyAccountFragment.AccountItem(2));

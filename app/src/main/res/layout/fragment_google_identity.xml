@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff_ff_ff"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_top_bar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:paddingLeft="20dp"
+        android:text="@string/wallet_bind_google_identity"
+        android:textColor="@color/color_00_00_00"
+        android:textSize="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="45dp"
+        android:text="@string/wallet_please_backup_key"
+        android:textColor="@color/color_00_00_00"
+        android:textSize="15dp" />
+
+    <ImageView
+        android:id="@+id/ivQrCode"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="8B6QEDG100TREUNM"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tvCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/wallet_copy"
+            android:textColor="@color/color_07_bb_99"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="60dp"
+        android:layout_weight="1"
+        android:paddingLeft="26dp"
+        android:paddingRight="39dp"
+        android:text="@string/wallet_risk_tip"
+        android:textColor="@color/color_b2_b2_b2"
+        android:textSize="10dp" />
+
+
+    <TextView
+        android:id="@+id/tvNextStep"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/bg_wallet_buy"
+        android:gravity="center"
+        android:text="@string/wallet_next_step"
+        android:textColor="@color/color_ff_ff_ff"
+        android:textSize="16dp" />
+
+
+</LinearLayout>

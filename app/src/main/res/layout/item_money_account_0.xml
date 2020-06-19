@@ -138,6 +138,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/llIdentity"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -161,6 +162,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/llPhoneIdentity"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -184,6 +186,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/llGooIdentity"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -207,6 +210,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/llMailIdentity"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
