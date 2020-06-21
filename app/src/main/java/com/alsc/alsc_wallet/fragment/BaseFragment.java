@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -529,6 +528,5 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         DatabaseOperate.getInstance().insert(groupMessageBean);
         EventBus.getDefault().post(groupMessageBean);
     }
-
 
 }

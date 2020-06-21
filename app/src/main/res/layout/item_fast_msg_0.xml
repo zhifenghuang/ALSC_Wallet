@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="14dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:text="TRONZ匿名智能合约将于7月7日发布在波场TRON TRC20网络上"
+        android:textColor="@color/color_00_00_00"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:text="06-18  11：25"
+        android:textColor="@color/color_8c_8c_8c"
+        android:textSize="11dp" />
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="14dp"
+        android:paddingTop="23dp"
+        android:paddingRight="14dp"
+        android:text="官网公告，MXC抹茶6月4日14：00上线，并开放
+AR/USDT交易对，现已开放AR充值功能。公开资
+料显示，Arweave是一个新型区块链存储平台，
+旨在克服区块链数据存储中存在的可扩展性。
+数据可用性和成本问题。致力于“互联网的可浏览
+的家庭网络”。
+使其是一个新型区块链存储平台。旨在克服区块链
+数据存储中存在的可扩展性、数据可用性和成本问
+题。是一个新型区块链存储平台，旨在克服区块链
+数据存储中存在的可扩展性、数据可用性和成本问
+题。
+                            "
+        android:textColor="@color/color_00_00_00"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:text="@string/wallet_fast_msg_tip"
+        android:textColor="@color/color_8c_8c_8c"
+        android:textSize="10dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/llGood"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/wallet_msg_good" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="利好999"
+                android:textColor="@color/color_ed_37_35"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llBad"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/wallet_msg_bad" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="利空101"
+                android:textColor="@color/color_66_66_66"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llComment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/wallet_comment" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="@string/wallet_comment"
+                android:textColor="@color/color_66_66_66"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llShare"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/wallet_share" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="@string/wallet_share"
+                android:textColor="@color/color_66_66_66"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/color_f8_f8_f8"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/color_07_bb_99" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="8.5dp"
+            android:text="@string/wallet_comment"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableTop="@drawable/wallet_empty"
+        android:drawablePadding="17dp"
+        android:paddingTop="35dp"
+        android:paddingBottom="35dp"
+        android:gravity="center"
+        android:text="@string/wallet_no_comment"
+        android:textColor="@color/color_8c_8c_8c"
+        android:textSize="12dp" />
+
+
+</LinearLayout>

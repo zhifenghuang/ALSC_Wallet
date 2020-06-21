@@ -1,17 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/color_ff_ff_ff"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@color/color_07_bb_99"
+        android:paddingLeft="13dp"
+        android:paddingRight="5dp">
+
+        <ImageView
+            android:id="@+id/ivMyAvatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33dp"
+            android:text="@string/wallet_hot_msg"
+            android:textColor="@color/color_ff_ff_ff"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="24dp"
+            android:paddingRight="25dp"
+            android:src="@drawable/wallet_search" />
+    </RelativeLayout>
+
 
     <LinearLayout
+        android:id="@+id/rl2"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="56dp"
+        android:layout_below="@id/rl1"
+        android:background="@color/color_ff_ff_ff"
         android:orientation="horizontal"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:paddingBottom="9.5dp">
+        android:paddingBottom="5.5dp">
 
         <LinearLayout
             android:id="@+id/llHotMsg"
@@ -28,8 +66,7 @@
                 android:paddingRight="10.5dp"
                 android:text="@string/wallet_hot_msg"
                 android:textColor="@color/color_07_bb_99"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="18dp" />
 
             <View
                 android:layout_width="35dp"
@@ -93,24 +130,13 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
-        <ImageView
-            android:id="@+id/ivSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingLeft="15dp"
-            android:paddingRight="25dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/wallet_search" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_below="@id/rl2"
         android:background="@color/color_f8_f8_f8"
         android:orientation="horizontal">
 
@@ -137,13 +163,13 @@
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/tvAttend"
+            android:id="@+id/tvFollow"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
-            android:text="@string/wallet_attend"
+            android:text="@string/wallet_follow_2"
             android:textColor="@color/color_00_00_00"
             android:textSize="15dp" />
 
@@ -164,7 +190,18 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/ll1"
         android:background="@color/color_ff_ff_ff" />
 
+    <ImageView
+        android:id="@+id/ivPublish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="2.5dp"
+        android:layout_marginBottom="18dp"
+        android:src="@drawable/wallet_publish" />
 
-</LinearLayout>
+
+</RelativeLayout>

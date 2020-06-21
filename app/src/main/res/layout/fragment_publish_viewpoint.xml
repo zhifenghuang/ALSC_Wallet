@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff_ff_ff"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_top_bar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e2_eb_f0" />
+
+    <EditText
+        android:id="@+id/etViewPoint"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="left|top"
+        android:layout_marginTop="25dp"
+        android:background="@null"
+        android:hint="@string/wallet_input_your_viewpoint"
+        android:paddingLeft="12.5dp"
+        android:paddingBottom="20dp"
+        android:textColor="@color/color_00_00_00"
+        android:textColorHint="@color/color_b2_b2_b2"
+        android:textSize="12dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingRight="7dp" />
+
+
+</LinearLayout>

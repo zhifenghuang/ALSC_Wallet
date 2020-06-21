@@ -1,9 +1,6 @@
 package com.alsc.alsc_wallet.adapter;
 
 import android.content.Context;
-import android.text.Html;
-import android.widget.TextView;
-
 import com.alsc.alsc_wallet.R;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;

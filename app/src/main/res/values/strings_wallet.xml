@@ -11,11 +11,47 @@
     <string name="wallet_quan">圈子</string>
     <string name="wallet_hot">热门</string>
     <string name="wallet_newest">最新</string>
-    <string name="wallet_attend">+ 关注</string>
+    <string name="wallet_follow">+ 关注</string>
+    <string name="wallet_followed">已关注</string>
     <string name="wallet_my_dynamic">我的动态</string>
     <string name="wallet_all_msg">全文</string>
+    <string name="wallet_publish_viewpoint">发布观点</string>
+    <string name="wallet_publish">发布</string>
+    <string name="wallet_input_your_viewpoint">输入你的观点...</string>
+    <string name="wallet_max_three_photo">（最多三张图片）</string>
+    <string name="wallet_exit_publish">您将退出本次编辑，是否要保留草稿？</string>
+    <string name="wallet_ta_fans">TA的粉丝(%1$s)</string>
+    <string name="wallet_dynamic">动态</string>
+    <string name="wallet_fans">粉丝</string>
+    <string name="wallet_follow_2">关注</string>
     <string name="wallet_look_all_comment">查看评论 ></string>
     <string name="wallet_share">分享</string>
+    <string name="wallet_viewpoint_detail">观点详情</string>
+    <string name="wallet_comment_num_xxx">评论(%1$s)</string>
+    <string name="wallet_publish_comment">发表评论...</string>
+    <string name="wallet_article">文章</string>
+    <string name="wallet_i_say_some">我来说两句...</string>
+    <string name="wallet_comment">评论</string>
+    <string name="wallet_no_comment">暂无评论</string>
+    <string name="wallet_share_to">分享至：</string>
+    <string name="wallet_msg_good_xxx">利好%1$s</string>
+    <string name="wallet_msg_bad_xxx">利空%1$s</string>
+    <string name="wallet_relate_read">相关阅读</string>
+    <string name="wallet_fast_msg_tip">投资有风险，入市需谨慎。本资讯不作为投资理财建议</string>
+    <string name="wallet_report">举报</string>
+    <string name="wallet_report_reseaon">举报理由</string>
+    <string name="wallet_report_reseaon_0">色情</string>
+    <string name="wallet_report_reseaon_1">广告</string>
+    <string name="wallet_report_reseaon_2">政治</string>
+    <string name="wallet_report_reseaon_3">其他</string>
+    <string name="wallet_share_platform_0">微信好友</string>
+    <string name="wallet_share_platform_1">朋友圈</string>
+    <string name="wallet_share_platform_2">新浪微博</string>
+    <string name="wallet_share_platform_3">Telegram</string>
+    <string name="wallet_share_platform_4">QQ空间</string>
+    <string name="wallet_share_platform_5">QQ好友</string>
+    <string name="wallet_share_platform_6">Instagram</string>
+    <string name="wallet_share_platform_7">Line</string>
 
     <string name="wallet_i_buy">我要买</string>
     <string name="wallet_i_sell">我要卖</string>
@@ -151,6 +187,7 @@
     <string name="wallet_upload_photo_tip_2">手持身份证照要求：\n请您上传一张手持身份证个人信息页证明照和个人签字的照片，个人签名的内容包含XXXX 网站，真实姓名和当前日期。请确保照片和个人签字的内容清晰可见。</string>
     <string name="wallet_take_photo">拍照</string>
     <string name="wallet_select_from_album">从手机相册选择</string>
+
 
     <string name="wallet_online">在线钱包</string>
     <string name="wallet_cold">多链钱包</string>

@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -524,5 +525,56 @@ public abstract class BaseActivity extends AppCompatActivity implements OnHttpEr
 //                    }
 //                }));
 //    }
+
+    public void showReportDialog(final View locationView) {
+        final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_report_dialog);
+        dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
+            @Override
+            public void initView(View view) {
+                dialogFragment.setDialogViewsOnClickListener(view, R.id.llReport, R.id.ll, R.id.paddingView);
+                View llReport = view.findViewById(R.id.llReport);
+                LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) llReport.getLayoutParams();
+                int[] location = new int[2];
+                locationView.getLocationOnScreen(location);
+                lp.topMargin = location[1] + view.getHeight() + Utils.dip2px(BaseActivity.this, 20);
+                llReport.setLayoutParams(lp);
+            }
+
+            @Override
+            public void onViewClick(int viewId) {
+                switch (viewId) {
+                    case R.id.llReport:
+                        showSelectReportReseaonDialog();
+                        break;
+                }
+            }
+        });
+        dialogFragment.show(getSupportFragmentManager(), "MyDialogFragment");
+    }
+
+    private void showSelectReportReseaonDialog() {
+        final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_select_report_reseaon_dialog);
+        dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
+            @Override
+            public void initView(View view) {
+                dialogFragment.setDialogViewsOnClickListener(view, R.id.paddingView,
+                        R.id.tvCancel,
+                        R.id.tv1, R.id.tv2, R.id.tv3, R.id.tv4);
+            }
+
+            @Override
+            public void onViewClick(int viewId) {
+                switch (viewId) {
+                    case R.id.tv1:
+                    case R.id.tv2:
+                    case R.id.tv3:
+                    case R.id.tv4:
+                        break;
+                }
+            }
+        });
+        dialogFragment.show(getSupportFragmentManager(), "MyDialogFragment");
+    }
+
 
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff_ff_ff"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_top_bar2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e2_eb_f0" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e2_eb_f0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:paddingRight="4.5dp">
+
+        <EditText
+            android:id="@+id/etComment"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/wallet_publish_comment"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/color_00_00_00"
+            android:textColorHint="@color/color_66_66_66"
+            android:textSize="12dp" />
+
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/wallet_share" />
+
+        <ImageView
+            android:id="@+id/ivLike"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/wallet_like" />
+
+        <TextView
+            android:id="@+id/tvLikeNum"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="2dp"
+            android:paddingTop="10dp"
+            android:text="999"
+            android:textColor="@color/color_ed_37_35"
+            android:textSize="11dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

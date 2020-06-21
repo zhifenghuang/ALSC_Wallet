@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="@color/color_f8_f8_f8"
+    android:orientation="horizontal">
+
+    <View
+        android:layout_width="5dp"
+        android:layout_height="23dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/color_07_bb_99" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="8.5dp"
+        android:text="@string/wallet_comment"
+        android:textColor="@color/color_00_00_00"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

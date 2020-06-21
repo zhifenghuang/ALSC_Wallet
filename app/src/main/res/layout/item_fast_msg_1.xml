@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="13dp"
+    android:paddingTop="14dp"
+    android:paddingBottom="10dp">
+
+
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="8.5dp"
+        android:paddingRight="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="席幕枫"
+                android:textColor="@color/color_00_00_00"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/tvPraiseNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:singleLine="true"
+                android:text="10"
+                android:textColor="@color/color_66_66_66"
+                android:textSize="11dp" />
+
+            <ImageView
+                android:id="@+id/ivPraise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="3dp"
+                android:src="@drawable/wallet_praise_select" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="感谢支持"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="今天12:22"
+            android:textColor="@color/color_66_66_66"
+            android:textSize="11dp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

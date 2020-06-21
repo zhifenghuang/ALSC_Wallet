@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ff_ff_ff"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_top_bar2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e2_eb_f0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_e2_eb_f0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:orientation="horizontal"
+        android:paddingLeft="13dp"
+        android:paddingRight="10dp">
+
+        <EditText
+            android:id="@+id/etComment"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/color_f8_f8_f8"
+            android:gravity="center_vertical"
+            android:hint="@string/wallet_i_say_some"
+            android:paddingLeft="10.5dp"
+            android:textColor="@color/color_00_00_00"
+            android:textColorHint="@color/color_66_66_66"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/tvShare"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="14dp"
+            android:drawableLeft="@drawable/wallet_share"
+            android:drawablePadding="7dp"
+            android:gravity="center"
+            android:text="@string/wallet_share"
+            android:textColor="@color/color_00_00_00"
+            android:textSize="15dp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

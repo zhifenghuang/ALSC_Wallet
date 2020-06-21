@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingRight="5dp">
+
+    <com.alsc.alsc_wallet.view.RatioImageView
+        android:id="@+id/ivPic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/wallet_delete" />
+
+    <com.alsc.alsc_wallet.view.ScaleLayout
+        android:id="@+id/sl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f8_f8_f8"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:background="@color/color_b2_b2_b2" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:background="@color/color_b2_b2_b2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            android:paddingBottom="8dp"
+            android:text="@string/wallet_max_three_photo"
+            android:textColor="@color/color_b2_b2_b2"
+            android:textSize="10.5dp" />
+
+    </com.alsc.alsc_wallet.view.ScaleLayout>
+
+
+</RelativeLayout>

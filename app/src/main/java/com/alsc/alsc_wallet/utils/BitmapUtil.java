@@ -69,6 +69,9 @@ public class BitmapUtil {
         return bmp;
     }
 
+    public static Bitmap getBitmapFromFile(String imageFile) {
+        return BitmapFactory.decodeFile(imageFile);
+    }
     /**
      * 根据给定的宽高取图片
      *
