@@ -6,5 +6,18 @@
     android:orientation="vertical">
 
 
+    <TextView
+        android:id="@+id/tvBtcWallet"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:background="@color/color_e2_eb_f0"
+        android:gravity="center"
+        android:text="@string/wallet_btc_wallet"
+        android:textColor="@color/color_07_bb_99"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
 
 </LinearLayout>

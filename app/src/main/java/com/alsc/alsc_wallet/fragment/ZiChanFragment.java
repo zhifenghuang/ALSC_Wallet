@@ -1,8 +1,8 @@
 package com.alsc.alsc_wallet.fragment;
 
 import android.view.View;
-
 import com.alsc.alsc_wallet.R;
+import com.alsc.alsc_wallet.fragment.cold.BtcWalletFragment;
 
 public class ZiChanFragment extends BaseFragment {
     @Override
@@ -12,7 +12,7 @@ public class ZiChanFragment extends BaseFragment {
 
     @Override
     protected void onViewCreated(View view) {
-
+        setViewsOnClickListener(R.id.tvBtcWallet);
     }
 
     @Override
@@ -22,6 +22,11 @@ public class ZiChanFragment extends BaseFragment {
 
     @Override
     public void onClick(View v) {
-
+        int id = v.getId();
+        switch (id) {
+            case R.id.tvBtcWallet:
+                gotoPager(BtcWalletFragment.class);
+                break;
+        }
     }
 }

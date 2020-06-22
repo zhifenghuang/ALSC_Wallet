@@ -188,6 +188,45 @@
     <string name="wallet_take_photo">拍照</string>
     <string name="wallet_select_from_album">从手机相册选择</string>
 
+    <string name="wallet_record">记录</string>
+    <string name="wallet_charge_coin">充币</string>
+    <string name="wallet_state">状态</string>
+    <string name="wallet_charge_success">充币成功</string>
+    <string name="wallet_time">时间</string>
+    <string name="wallet_fee">矿工费</string>
+    <string name="wallet_txld">Txld</string>
+
+    <string name="wallet_btc_wallet">BTC钱包</string>
+    <string name="wallet_bitcoin">Bitcoin</string>
+    <string name="wallet_get_money">收款</string>
+    <string name="wallet_trade_record">交易记录</string>
+    <string name="wallet_transfer_in">转入</string>
+    <string name="wallet_transfer_out">转出</string>
+    <string name="wallet_failed">失败</string>
+    <string name="wallet_operating">进行中</string>
+    <string name="wallet_complete">完成</string>
+
+    <string name="wallet_btc_transfer">BTC转账</string>
+    <string name="wallet_receive_address">接收地址</string>
+    <string name="wallet_please_input_receive_address">请填写接收地址</string>
+    <string name="wallet_transfer_tip">输入金额≥0.0002</string>
+    <string name="wallet_transfer_value">转账金额</string>
+    <string name="wallet_rest_btc">BTC余额：%1$s</string>
+    <string name="wallet_all">全部</string>
+    <string name="wallet_to_account_value">到账金额</string>
+    <string name="wallet_transfer">转账</string>
+    <string name="wallet_slow">慢</string>
+    <string name="wallet_fast">快</string>
+    <string name="wallet_suggest">建议：%1$s</string>
+    <string name="wallet_xxx_btc">%$s BTC</string>
+
+    <string name="wallet_please_wallet_password">请输入 钱包密码</string>
+    <string name="wallet_transfer_password_tip">正在进行资产转账，请确认转账地址无误</string>
+    <string name="wallet_please_input_wallet_password">输入钱包密码</string>
+
+    <string name="wallet_bitcoin_address">Bitcoin 收款地址</string>
+    <string name="wallet_copy_address">复制地址</string>
+
 
     <string name="wallet_online">在线钱包</string>
     <string name="wallet_cold">多链钱包</string>

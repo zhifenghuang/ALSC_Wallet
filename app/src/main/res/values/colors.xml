@@ -86,5 +86,7 @@
     <color name="color_07_bb_99">#07BB99</color>
     <color name="color_f5_f5_f5">#F5F5F5</color>
     <color name="color_f9_fa_fd">#F9FAFD</color>
-
+    <color name="color_9b_9b_9b">#9B9B9B</color>
+    <color name="color_d2_d2_d2">#D2D2D2</color>
+    <color name="color_22_22_22">#222222</color>
 </resources>
