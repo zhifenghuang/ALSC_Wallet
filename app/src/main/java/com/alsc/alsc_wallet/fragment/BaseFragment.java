@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.InputFilter;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -18,34 +17,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.activity.BaseActivity;
-import com.alsc.alsc_wallet.bean.chat.EnvelopeBean;
-import com.alsc.alsc_wallet.bean.chat.GroupBean;
-import com.alsc.alsc_wallet.bean.chat.GroupMessageBean;
-import com.alsc.alsc_wallet.bean.chat.MessageType;
-import com.alsc.alsc_wallet.bean.chat.UserBean;
-import com.alsc.alsc_wallet.db.DatabaseOperate;
-import com.alsc.alsc_wallet.dialog.InputPasswordDialog;
-import com.alsc.alsc_wallet.dialog.MyDialogFragment;
-import com.alsc.alsc_wallet.http.ChatHttpMethods;
-import com.alsc.alsc_wallet.http.HttpObserver;
-import com.alsc.alsc_wallet.http.SubscriberOnNextListener;
-import com.alsc.alsc_wallet.manager.DataManager;
-import com.alsc.alsc_wallet.utils.Constants;
 import com.alsc.alsc_wallet.utils.StatusBarUtil;
-import com.google.gson.Gson;
-import com.zhangke.websocket.WebSocketHandler;
-
-import org.greenrobot.eventbus.EventBus;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * Fragment基类提供公共的页面跳转方面，公共弹窗等方法
@@ -379,154 +354,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     public void showToast(int textId) {
         Toast.makeText(getActivity(), getString(textId), Toast.LENGTH_LONG).show();
-    }
-
-    protected void showPayInGroupDialog(final GroupBean group, final UserBean inviteUser) {
-        final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_two_btn_dialog);
-        dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
-            @Override
-            public void initView(View view) {
-                ((TextView) view.findViewById(R.id.tv1)).setText(getString(R.string.chat_tip));
-                ((TextView) view.findViewById(R.id.tv2)).setText(getString(R.string.chat_the_group_need_pay_xxx_alsc, String.valueOf(group.getPayAmount())));
-                ((TextView) view.findViewById(R.id.btn1)).setText(getString(R.string.chat_i_think));
-                ((TextView) view.findViewById(R.id.btn2)).setText(getString(R.string.chat_pay_enter_group_1));
-                dialogFragment.setDialogViewsOnClickListener(view, R.id.btn1, R.id.btn2);
-            }
-
-            @Override
-            public void onViewClick(int viewId) {
-                if (viewId == R.id.btn2) {
-                    showInputPayPasswordDialog(group, inviteUser);
-                }
-            }
-        });
-        dialogFragment.show(getChildFragmentManager(), "MyDialogFragment");
-    }
-
-    private void showInputPayPasswordDialog(final GroupBean group, final UserBean inviteUser) {
-        InputPasswordDialog dialog = new InputPasswordDialog(mContext, -1, null, null);
-        dialog.setOnInputPasswordListener(new InputPasswordDialog.OnInputPasswordListener() {
-            @Override
-            public void afterCheckPassword() {
-                if (getView() == null) {
-                    return;
-                }
-                payEnterGroup(group, inviteUser);
-            }
-        });
-        dialog.show();
-    }
-
-    private void payEnterGroup(final GroupBean group, final UserBean inviteUser) {
-        ChatHttpMethods.getInstance().envelopeSend(group.getPayAmount(), 1, "", 6, -1, group.getGroupId(),
-                new HttpObserver(new SubscriberOnNextListener<EnvelopeBean>() {
-                    @Override
-                    public void onNext(EnvelopeBean bean, String msg) {
-                        ArrayList<UserBean> list = new ArrayList<>();
-                        list.add(DataManager.getInstance().getUser());
-                        sendInviteToGroupMsg(group, inviteUser, list);
-                        if (bean == null) {
-                            return;
-                        }
-                        showToast(R.string.chat_pay_enter_group_success);
-                        addGroupInList(group);
-                        Bundle bundle = new Bundle();
-                        bundle.putSerializable(Constants.BUNDLE_EXTRA, group);
-//                        gotoPager(GroupChatFragment.class, bundle);
-//                        ((ChatBaseActivity) getActivity()).finishAllOtherActivity();
-                    }
-                }, getActivity(), (BaseActivity) getActivity()));
-    }
-
-    protected void removeFromGroupInList(GroupBean group) {
-        ArrayList<GroupBean> groups = DataManager.getInstance().getGroups();
-        for (GroupBean bean : groups) {
-            if (bean.getGroupId() == group.getGroupId()) {
-                groups.remove(bean);
-                DataManager.getInstance().saveGroups(groups);
-                break;
-            }
-        }
-    }
-
-
-    protected void addGroupInList(GroupBean group) {
-        ArrayList<GroupBean> groups = DataManager.getInstance().getGroups();
-        boolean isHad = false;
-        for (GroupBean bean : groups) {
-            if (bean.getGroupId() == group.getGroupId()) {
-                isHad = true;
-                break;
-            }
-        }
-        if (!isHad) {
-            groups.add(group);
-            DataManager.getInstance().saveGroups(groups);
-        }
-    }
-
-    protected void updateGroup(GroupBean group) {
-        ArrayList<GroupBean> groups = DataManager.getInstance().getGroups();
-        for (GroupBean bean : groups) {
-            if (bean.getGroupId() == group.getGroupId()) {
-                groups.remove(bean);
-                groups.add(group);
-                DataManager.getInstance().saveGroups(groups);
-                break;
-            }
-        }
-    }
-
-    protected boolean isInGroup(long groupId) {
-        ArrayList<GroupBean> groups = DataManager.getInstance().getGroups();
-        for (GroupBean bean : groups) {
-            if (bean.getGroupId() == groupId) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public void sendInviteToGroupMsg(GroupBean group, UserBean inviteUser, List<UserBean> list) {
-        GroupMessageBean groupMessageBean = new GroupMessageBean();
-        groupMessageBean.setCmd(2100);
-        groupMessageBean.setMsgType(inviteUser == null ? MessageType.TYPE_IN_GROUP_BY_QRCODE.ordinal() : MessageType.TYPE_INVITE_TO_GROUP.ordinal());
-        groupMessageBean.setGroupId(group.getGroupId());
-        if (inviteUser != null) {
-            groupMessageBean.setContent(new Gson().toJson(inviteUser.toMap()));
-        }
-        groupMessageBean.setFromId(DataManager.getInstance().getUserId());
-        ArrayList<HashMap<String, Object>> userList = new ArrayList<>();
-        for (UserBean bean : list) {
-            if (bean != null) {
-                userList.add(bean.toMap());
-            }
-        }
-        groupMessageBean.setExtra(new Gson().toJson(userList));
-        if (TextUtils.isEmpty(groupMessageBean.getExtra())) {
-            return;
-        }
-        WebSocketHandler.getDefault().send(groupMessageBean.toJson());
-        groupMessageBean.setSendStatus(1);
-        DatabaseOperate.getInstance().insert(groupMessageBean);
-        EventBus.getDefault().post(groupMessageBean);
-    }
-
-
-    public void sendUpdateGroupMsg(GroupBean group, int msgType, String text) {
-        GroupMessageBean groupMessageBean = new GroupMessageBean();
-        groupMessageBean.setCmd(2100);
-        groupMessageBean.setMsgType(msgType);
-        groupMessageBean.setGroupId(group.getGroupId());
-        groupMessageBean.setContent(text);
-        groupMessageBean.setFromId(DataManager.getInstance().getUserId());
-        ArrayList<HashMap<String, Object>> userList = new ArrayList<>();
-        userList.add(DataManager.getInstance().getUser().toMap());
-        groupMessageBean.setExtra(new Gson().toJson(userList));
-        WebSocketHandler.getDefault().send(groupMessageBean.toJson());
-        groupMessageBean.setSendStatus(1);
-        DatabaseOperate.getInstance().insert(groupMessageBean);
-        EventBus.getDefault().post(groupMessageBean);
     }
 
 }

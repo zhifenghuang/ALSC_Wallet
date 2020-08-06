@@ -31,16 +31,13 @@ import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.dialog.CommonProgressDialog;
 import com.alsc.alsc_wallet.dialog.MyDialogFragment;
 import com.alsc.alsc_wallet.fragment.BaseFragment;
-import com.alsc.alsc_wallet.http.OnHttpErrorListener;
-import com.alsc.alsc_wallet.manager.ConfigManager;
-import com.alsc.alsc_wallet.manager.DataManager;
 import com.alsc.alsc_wallet.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class BaseActivity extends AppCompatActivity implements OnHttpErrorListener {
+public abstract class BaseActivity extends AppCompatActivity {
 
     private DisplayMetrics mDisplaymetrics;
 
@@ -312,25 +309,6 @@ public abstract class BaseActivity extends AppCompatActivity implements OnHttpEr
         }
     }
 
-
-    @Override
-    public void onConnectError(Throwable e) {
-//        if (!NetUtil.isConnected(this)) {
-//
-//        } else if (e instanceof UnknownHostException
-//                || e instanceof JSONException
-//                || e instanceof retrofit2.HttpException) {
-//
-//        } else if (e instanceof SocketTimeoutException
-//                || e instanceof ConnectException
-//                || e instanceof TimeoutException) {
-//
-//        } else {
-//
-//        }
-        showToast(R.string.chat_net_work_error);
-    }
-
     /**
      * 适配api19及以上,根据uri获取图片的绝对路径
      *
@@ -411,17 +389,6 @@ public abstract class BaseActivity extends AppCompatActivity implements OnHttpEr
      */
     private boolean isDownloadsDocument(Uri uri) {
         return "com.android.providers.downloads.documents".equals(uri.getAuthority());
-    }
-
-
-    @Override
-    public synchronized void onServerError(int errorCode, String errorMsg) {
-        //   stopHttpLoad();
-        if (errorCode == 401) {
-            ConfigManager.getInstance().showLoginOutDialog();
-            return;
-        }
-        errorCodeDo(errorCode, errorMsg);
     }
 
     public void onBackClick(View view) {

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="196dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingRight="14dp"
+    android:paddingBottom="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wallet_special_subject"
+        android:textColor="@color/color_07_bb_99"
+        android:textSize="18dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingRight="15dp"
+        android:text="08:00"
+        android:textColor="@color/color_66_66_66"
+        android:textSize="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTime"
+        android:layout_alignParentRight="true"
+        android:paddingTop="13dp"
+        android:paddingRight="15dp"
+        android:text="区块早报 | 昨晚BTC跌破\n9400日本将设数字货币..."
+        android:textColor="@color/color_00_00_00"
+        android:textSize="15dp" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0.5dp"
+        android:layout_height="67dp"
+        android:layout_alignParentRight="true"
+        android:background="@color/color_c5_c5_c5" />
+
+
+</RelativeLayout>

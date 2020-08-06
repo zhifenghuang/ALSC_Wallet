@@ -7,11 +7,6 @@ import android.app.Application;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import com.alsc.alsc_wallet.http.ChatHttpMethods;
-import com.alsc.alsc_wallet.http.HttpMethods;
-import com.alsc.alsc_wallet.manager.ConfigManager;
-
 import java.util.List;
 
 /**
@@ -48,14 +43,9 @@ public class BaseApp extends Application {
             return;
         }
         mInstance = this;
-        HttpMethods.getInstance().setContent(this);
-        ChatHttpMethods.getInstance().setContent(this);
- //       Utils.init(this);
-        ConfigManager.getInstance().setContext(this);
 
  //       CrashReport.initCrashReport(getApplicationContext(), "02cfa38619", false);
         mActivityRecord = 0;
-        ConfigManager.getInstance().setAppRunning(false);
         registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
@@ -65,8 +55,6 @@ public class BaseApp extends Application {
             @Override
             public void onActivityStarted(@NonNull Activity activity) {
                 ++mActivityRecord;
-                ConfigManager.getInstance().setAppRunning(true);
-                ConfigManager.getInstance().setCurrentActivity(activity);
             }
 
             @Override
@@ -82,7 +70,6 @@ public class BaseApp extends Application {
             @Override
             public void onActivityStopped(@NonNull Activity activity) {
                 --mActivityRecord;
-                ConfigManager.getInstance().setAppRunning(mActivityRecord != 0);
             }
 
             @Override
@@ -92,14 +79,9 @@ public class BaseApp extends Application {
 
             @Override
             public void onActivityDestroyed(@NonNull Activity activity) {
-                ConfigManager.getInstance().setCurrentActivityNull(activity);
             }
         });
 
-    }
-
-    public void initWebSocket(String token) {
-        ConfigManager.getInstance().initWebSocket(token);
     }
 
 }

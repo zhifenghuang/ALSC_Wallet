@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/ivCover"
         android:layout_width="123dp"
-        android:layout_height="78dp"
+        android:layout_height="80dp"
         android:layout_alignParentRight="true"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_launcher" />
@@ -19,7 +19,7 @@
     <LinearLayout
         android:id="@+id/ll"
         android:layout_width="match_parent"
-        android:layout_height="78dp"
+        android:layout_height="80dp"
         android:layout_gravity="center_vertical"
         android:layout_toLeftOf="@id/ivCover"
         android:orientation="vertical"

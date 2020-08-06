@@ -13,6 +13,7 @@
     <string name="wallet_newest">最新</string>
     <string name="wallet_follow">+ 关注</string>
     <string name="wallet_followed">已关注</string>
+    <string name="wallet_special_subject">专题</string>
     <string name="wallet_my_dynamic">我的动态</string>
     <string name="wallet_all_msg">全文</string>
     <string name="wallet_publish_viewpoint">发布观点</string>
@@ -227,7 +228,6 @@
     <string name="wallet_bitcoin_address">Bitcoin 收款地址</string>
     <string name="wallet_copy_address">复制地址</string>
 
-
     <string name="wallet_online">在线钱包</string>
     <string name="wallet_cold">多链钱包</string>
     <string name="wallet_cold_use_easy">多链钱包 轻松使用</string>
@@ -235,5 +235,9 @@
     <string name="wallet_create_code">创建多链钱包</string>
     <string name="wallet_had_cold_wallet">已有多链钱包？</string>
     <string name="wallet_recover">恢复钱包</string>
+
+    <string name="wallet_total_zichan">总资产</string>
+    <string name="wallet_zichan_detail">资产详情</string>
+
 </resources>
 
