@@ -43,7 +43,7 @@ public class QuanziFragment extends BaseFragment {
         getAdapter().addData(list);
 
         setViewsOnClickListener(R.id.ivPublish, R.id.tvHot,
-                R.id.tvNewest, R.id.tvFollow, R.id.tvMyDynamic);
+                R.id.tvNewest, R.id.tvFollow, R.id.tvAtMe, R.id.tvMyDynamic);
 //        initFragments();
 //        switchFragment(mBaseFragment.get(0));
     }
@@ -81,25 +81,28 @@ public class QuanziFragment extends BaseFragment {
                 gotoPager(PublishViewPointFragment.class);
                 break;
             case R.id.tvHot:
-                resetBtns((TextView) v, fv(R.id.tvNewest), fv(R.id.tvFollow), fv(R.id.tvMyDynamic));
+                resetBtns((TextView) v, fv(R.id.tvNewest), fv(R.id.tvFollow), fv(R.id.tvAtMe), fv(R.id.tvMyDynamic));
                 break;
             case R.id.tvNewest:
-                resetBtns((TextView) v, fv(R.id.tvHot), fv(R.id.tvFollow), fv(R.id.tvMyDynamic));
+                resetBtns((TextView) v, fv(R.id.tvHot), fv(R.id.tvFollow), fv(R.id.tvAtMe), fv(R.id.tvMyDynamic));
                 break;
             case R.id.tvFollow:
-                resetBtns((TextView) v, fv(R.id.tvHot), fv(R.id.tvNewest), fv(R.id.tvMyDynamic));
+                resetBtns((TextView) v, fv(R.id.tvHot), fv(R.id.tvNewest), fv(R.id.tvAtMe), fv(R.id.tvMyDynamic));
+                break;
+            case R.id.tvAtMe:
+                resetBtns((TextView) v, fv(R.id.tvHot), fv(R.id.tvNewest), fv(R.id.tvFollow), fv(R.id.tvMyDynamic));
                 break;
             case R.id.tvMyDynamic:
-                resetBtns((TextView) v, fv(R.id.tvHot), fv(R.id.tvNewest), fv(R.id.tvFollow));
+                resetBtns((TextView) v, fv(R.id.tvHot), fv(R.id.tvNewest), fv(R.id.tvAtMe), fv(R.id.tvFollow));
                 break;
         }
     }
 
-    private void resetBtns(TextView tv1, TextView tv2, TextView tv3, TextView tv4) {
-        tv1.setTextColor(ContextCompat.getColor(mContext, R.color.color_07_bb_99));
-        tv2.setTextColor(ContextCompat.getColor(mContext, R.color.color_00_00_00));
-        tv3.setTextColor(ContextCompat.getColor(mContext, R.color.color_00_00_00));
-        tv4.setTextColor(ContextCompat.getColor(mContext, R.color.color_00_00_00));
+    private void resetBtns(TextView... tvs) {
+        tvs[0].setTextColor(ContextCompat.getColor(mContext, R.color.color_07_bb_99));
+        for (int i = 1; i < tvs.length; ++i) {
+            tvs[i].setTextColor(ContextCompat.getColor(mContext, R.color.color_00_00_00));
+        }
     }
 
 //    /**

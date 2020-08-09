@@ -6,6 +6,14 @@
     <string name="wallet_hq">行情</string>
     <string name="wallet_zc">资产</string>
 
+    <string name="wallet_contact">通讯录</string>
+    <string name="wallet_chat_friend">联系人</string>
+    <string name="wallet_new_friend">新的朋友</string>
+    <string name="wallet_my_group">我的群聊</string>
+    <string name="wallet_star_friend">星标好友</string>
+    <string name="wallet_label_list">标签列表</string>
+    <string name="wallet_delete">删除</string>
+
     <string name="wallet_hot_msg">热门头条</string>
     <string name="wallet_fast_msg">快讯</string>
     <string name="wallet_quan">圈子</string>
@@ -15,6 +23,7 @@
     <string name="wallet_followed">已关注</string>
     <string name="wallet_special_subject">专题</string>
     <string name="wallet_my_dynamic">我的动态</string>
+    <string name="wallet_at_me">\@我的</string>
     <string name="wallet_all_msg">全文</string>
     <string name="wallet_publish_viewpoint">发布观点</string>
     <string name="wallet_publish">发布</string>
@@ -238,6 +247,29 @@
 
     <string name="wallet_total_zichan">总资产</string>
     <string name="wallet_zichan_detail">资产详情</string>
+
+    <string name="wallet_search">搜索</string>
+    <string name="wallet_select_publish_type">选择分享范围</string>
+    <string name="wallet_publish_type_0">公开</string>
+    <string name="wallet_publish_type_content_0">所有人可见</string>
+    <string name="wallet_publish_type_1">好友圈</string>
+    <string name="wallet_publish_type_content_1">相互关注好友可见</string>
+    <string name="wallet_publish_type_2">仅自己可见</string>
+    <string name="wallet_publish_type_content_2"></string>
+    <string name="wallet_publish_type_3">粉丝</string>
+    <string name="wallet_publish_type_content_3">关注你的人可见</string>
+    <string name="wallet_latest_at">最近@的人</string>
+    <string name="wallet_my_follow">我的关注</string>
+
+    <string name="wallet_hq_type_0">自选</string>
+    <string name="wallet_hq_type_1">市值排行</string>
+    <string name="wallet_hq_type_2">合约</string>
+    <string name="wallet_hq_type_3">热搜榜</string>
+    <string name="wallet_hq_type_4">外盘</string>
+    <string name="wallet_hq_type_5">2020减半</string>
+    <string name="wallet_coin_total_value">币种/流通市值($)</string>
+    <string name="wallet_data_global">全球指数($)</string>
+    <string name="wallet_24_h_rose">24H涨幅</string>
 
 </resources>
 

@@ -5,6 +5,115 @@
     android:background="@color/color_ff_ff_ff"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="@color/color_07_bb_99"
+        android:paddingLeft="13dp"
+        android:paddingRight="5dp">
+
+        <ImageView
+            android:id="@+id/ivMyAvatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33dp"
+            android:text="@string/wallet_contact"
+            android:textColor="@color/color_ff_ff_ff"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="37dp"
+            android:paddingRight="25dp"
+            android:src="@drawable/wallet_add" />
+
+
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="37dp"
+            android:layout_toLeftOf="@id/ivAdd"
+            android:paddingRight="20dp"
+            android:src="@drawable/wallet_search_white" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:orientation="horizontal"
+        android:paddingLeft="11dp"
+        android:paddingBottom="11dp">
+
+        <LinearLayout
+            android:id="@+id/llChatMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="27dp"
+                android:paddingRight="27dp"
+                android:text="@string/wallet_chat"
+                android:textColor="@color/color_07_bb_99"
+                android:textSize="18dp" />
+
+            <View
+                android:layout_width="35dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/color_07_bb_99" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llContact"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="27dp"
+                android:paddingRight="27dp"
+                android:text="@string/wallet_chat_friend"
+                android:textColor="@color/color_00_00_00"
+                android:textSize="18dp" />
+
+            <View
+                android:layout_width="35dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/color_07_bb_99"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

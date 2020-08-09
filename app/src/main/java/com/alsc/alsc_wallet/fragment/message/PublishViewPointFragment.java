@@ -2,13 +2,16 @@ package com.alsc.alsc_wallet.fragment.message;
 
 import android.view.View;
 import android.widget.TextView;
+
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.adapter.PublishPicAdapter;
 import com.alsc.alsc_wallet.dialog.MyDialogFragment;
 import com.alsc.alsc_wallet.fragment.BaseFragment;
+
 import java.util.ArrayList;
 
 public class PublishViewPointFragment extends BaseFragment {
@@ -39,7 +42,7 @@ public class PublishViewPointFragment extends BaseFragment {
         list.add("1");
         list.add(null);
         getAdapter().setNewInstance(list);
-        setViewsOnClickListener(R.id.ivLeft, R.id.btnRight);
+        setViewsOnClickListener(R.id.ivLeft, R.id.btnRight, R.id.ivPhoto, R.id.ivAt);
     }
 
     private PublishPicAdapter getAdapter() {
@@ -64,6 +67,12 @@ public class PublishViewPointFragment extends BaseFragment {
                 break;
             case R.id.btnRight:
                 goBack();
+                break;
+            case R.id.ivPhoto:
+                gotoPager(SelectPublishTypeFragment.class);
+                break;
+            case R.id.ivAt:
+                gotoPager(SelectAtPeopleFragment.class);
                 break;
         }
     }
