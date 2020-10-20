@@ -4,9 +4,9 @@ import android.content.Context;
 
 import androidx.core.content.ContextCompat;
 
-import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.bean.CoinHangQingBean;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.common.bean.CoinHangQingBean;
+import com.alsc.alsc_wallet.R;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 import org.jetbrains.annotations.NotNull;

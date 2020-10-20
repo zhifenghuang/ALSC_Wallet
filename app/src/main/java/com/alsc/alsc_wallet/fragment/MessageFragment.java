@@ -1,19 +1,14 @@
 package com.alsc.alsc_wallet.fragment;
 
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.fragment.message.FastMsgFragment;
 import com.alsc.alsc_wallet.fragment.message.FollowedFragment;
 import com.alsc.alsc_wallet.fragment.message.HotArticleFragment;
-import com.alsc.alsc_wallet.fragment.message.QuanziFragment;
 import com.alsc.alsc_wallet.fragment.message.UserInfoFragment;
+import com.common.fragment.BaseFragment;
 
 import java.util.ArrayList;
 
@@ -29,7 +24,7 @@ public class MessageFragment extends BaseFragment {
 
     @Override
     protected void onViewCreated(View view) {
-        setViewsOnClickListener(R.id.ivMyAvatar, R.id.ivSearch, R.id.llHotMsg, R.id.llFastMsg, R.id.llQuanMsg);
+        setViewsOnClickListener(R.id.ivMyAvatar, R.id.ivSearch);
         initFragments();
         switchFragment(mBaseFragment.get(0));
     }
@@ -37,8 +32,6 @@ public class MessageFragment extends BaseFragment {
     private void initFragments() {
         mBaseFragment = new ArrayList<>();
         mBaseFragment.add(new HotArticleFragment());
-        mBaseFragment.add(new FastMsgFragment());
-        mBaseFragment.add(new QuanziFragment());
     }
 
     @Override
@@ -56,28 +49,7 @@ public class MessageFragment extends BaseFragment {
             case R.id.ivSearch:
                 gotoPager(FollowedFragment.class);
                 break;
-            case R.id.llHotMsg:
-                switchFragment(mBaseFragment.get(0));
-                resetBtns((LinearLayout) v, fv(R.id.llFastMsg), fv(R.id.llQuanMsg));
-                break;
-            case R.id.llFastMsg:
-                switchFragment(mBaseFragment.get(1));
-                resetBtns((LinearLayout) v, fv(R.id.llHotMsg), fv(R.id.llQuanMsg));
-                break;
-            case R.id.llQuanMsg:
-                switchFragment(mBaseFragment.get(2));
-                resetBtns((LinearLayout) v, fv(R.id.llHotMsg), fv(R.id.llFastMsg));
-                break;
         }
-    }
-
-    private void resetBtns(LinearLayout ll1, LinearLayout ll2, LinearLayout ll3) {
-        ((TextView) ll1.getChildAt(0)).setTextColor(ContextCompat.getColor(mContext, R.color.color_07_bb_99));
-        ll1.getChildAt(1).setVisibility(View.VISIBLE);
-        ((TextView) ll2.getChildAt(0)).setTextColor(ContextCompat.getColor(mContext, R.color.color_00_00_00));
-        ll2.getChildAt(1).setVisibility(View.INVISIBLE);
-        ((TextView) ll3.getChildAt(0)).setTextColor(ContextCompat.getColor(mContext, R.color.color_00_00_00));
-        ll3.getChildAt(1).setVisibility(View.INVISIBLE);
     }
 
     /**

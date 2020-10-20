@@ -3,7 +3,7 @@ package com.alsc.alsc_wallet.fragment.identity;
 import android.view.View;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
+import com.common.fragment.BaseFragment;
 
 public class OpenIdentity1Fragment extends BaseFragment {
 

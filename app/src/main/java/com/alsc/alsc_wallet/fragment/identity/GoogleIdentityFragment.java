@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
-import com.alsc.alsc_wallet.utils.QRCodeUtil;
+import com.common.fragment.BaseFragment;
+import com.common.utils.QRCodeUtil;
 
 public class GoogleIdentityFragment extends BaseFragment {
 

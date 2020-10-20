@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.activity.BaseActivity;
+import com.common.activity.BaseActivity;
 
 public class PasswordDialog extends Dialog implements View.OnClickListener {
     private Context mContext;

@@ -6,8 +6,8 @@ import android.widget.LinearLayout;
 
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.fragment.message.SelectAtPeopleFragment;
-import com.alsc.alsc_wallet.utils.Utils;
-import com.alsc.alsc_wallet.view.FlowLayout;
+import com.common.utils.Utils;
+import com.common.view.FlowLayout;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 

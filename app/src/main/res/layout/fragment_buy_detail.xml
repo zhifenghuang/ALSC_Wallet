@@ -370,7 +370,7 @@
                     android:layout_width="4dp"
                     android:layout_height="4dp"
                     android:layout_marginTop="6dp"
-                    android:background="@drawable/bg_black_dot" />
+                    android:background="@drawable/shape_666666_oval" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -394,7 +394,7 @@
                     android:layout_width="4dp"
                     android:layout_height="4dp"
                     android:layout_marginTop="6dp"
-                    android:background="@drawable/bg_black_dot" />
+                    android:background="@drawable/shape_666666_oval" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -418,7 +418,7 @@
                     android:layout_width="4dp"
                     android:layout_height="4dp"
                     android:layout_marginTop="6dp"
-                    android:background="@drawable/bg_red_dot" />
+                    android:background="@drawable/shape_ed3735_oval" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -496,7 +496,7 @@
             android:layout_width="0dp"
             android:layout_height="35dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_wallet_cancel"
+            android:background="@drawable/shape_stroke_b2b2b2_2"
             android:gravity="center"
             android:text="@string/wallet_cancel_order"
             android:textColor="@color/color_00_00_00"
@@ -511,7 +511,7 @@
             android:layout_width="0dp"
             android:layout_height="35dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_wallet_buy"
+            android:background="@drawable/shape_07bb99_2"
             android:gravity="center"
             android:text="@string/wallet_mark_payed"
             android:textColor="@color/color_ff_ff_ff"

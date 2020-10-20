@@ -9,13 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.activity.BaseActivity;
 import com.alsc.alsc_wallet.adapter.FollowedAdapter;
 import com.alsc.alsc_wallet.adapter.SharePlatfomAdapter;
-import com.alsc.alsc_wallet.dialog.MyDialogFragment;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
-import com.alsc.alsc_wallet.utils.BitmapUtil;
-import com.alsc.alsc_wallet.utils.ScreenShot;
+import com.common.dialog.MyDialogFragment;
+import com.common.fragment.BaseFragment;
+import com.common.utils.BitmapUtil;
+import com.common.utils.ScreenShot;
 
 import java.util.ArrayList;
 
@@ -34,7 +33,6 @@ public class FollowedFragment extends BaseFragment {
         ScreenShot.getInstance().register(getActivity(), new ScreenShot.CallbackListener() {
             @Override
             public void onShot(String path) {
-                Log.e("aaaaaaaaaa", "path: " + path);
                 Bitmap bmp = BitmapUtil.getBitmapFromFile(path);
                 showShareDialog(bmp);
             }

@@ -7,18 +7,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
+import com.common.activity.BaseActivity;
+import com.common.fragment.BaseFragment;
 import com.alsc.alsc_wallet.fragment.ChatMsgFragment;
-import com.alsc.alsc_wallet.fragment.HangQingFragment;
+import com.alsc.alsc_wallet.fragment.ColdWalletFragment;
+import com.alsc.alsc_wallet.fragment.QuotationFragment;
 import com.alsc.alsc_wallet.fragment.MessageFragment;
 import com.alsc.alsc_wallet.fragment.TradeFragment;
-import com.alsc.alsc_wallet.fragment.ZiChanFragment;
+import com.alsc.alsc_wallet.fragment.OnlineWalletFragment;
 
 import java.util.ArrayList;
 
@@ -26,6 +27,8 @@ public class MainActivity extends BaseActivity {
 
     private ArrayList<BaseFragment> mBaseFragment;
     private Fragment mCurrentFragment;
+
+    private int mCurrentWalletType = 0;//0表示热钱包，1表示冷钱包
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,9 +42,14 @@ public class MainActivity extends BaseActivity {
         mBaseFragment = new ArrayList<>();
         mBaseFragment.add(new ChatMsgFragment());
         mBaseFragment.add(new MessageFragment());
-        mBaseFragment.add(new TradeFragment());
-        mBaseFragment.add(new HangQingFragment());
-        mBaseFragment.add(new ZiChanFragment());
+        mBaseFragment.add(new QuotationFragment());
+        mBaseFragment.add(new OnlineWalletFragment());
+        mBaseFragment.add(new ColdWalletFragment());
+    }
+
+    public void setWalletType(int walletType) {
+        mCurrentWalletType = walletType;
+        switchFragment(mBaseFragment.get(walletType == 0 ? 3 : 4));
     }
 
     private void initViews() {
@@ -57,7 +65,15 @@ public class MainActivity extends BaseActivity {
                 @Override
                 public void onClick(View view) {
                     int tag = (int) view.getTag();
-                    switchFragment(mBaseFragment.get(tag));
+                    if (tag == 4) {
+                        if (mCurrentWalletType == 0) {
+                            switchFragment(mBaseFragment.get(4));
+                        } else {
+                            switchFragment(mBaseFragment.get(5));
+                        }
+                    } else {
+                        switchFragment(mBaseFragment.get(tag));
+                    }
                     resetBottomBar(tag);
                 }
             });

@@ -1,20 +1,14 @@
 package com.alsc.alsc_wallet.fragment.message;
 
 import android.view.View;
-import android.widget.TextView;
 
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.adapter.PublishPicAdapter;
 import com.alsc.alsc_wallet.adapter.SelectAtPeopleAdapter;
-import com.alsc.alsc_wallet.dialog.MyDialogFragment;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
+import com.common.fragment.BaseFragment;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
-
-import java.util.ArrayList;
 
 public class SelectAtPeopleFragment extends BaseFragment {
 

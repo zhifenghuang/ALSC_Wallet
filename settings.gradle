@@ -1,2 +1,4 @@
+include ':common'
+include ':coldwallet'
 rootProject.name='ALSC_Wallet'
 include ':app'

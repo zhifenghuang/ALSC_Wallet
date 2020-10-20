@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.adapter.CoinSymbolAdapter;
 import com.alsc.alsc_wallet.adapter.TradeOrderAdapter;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
+import com.common.fragment.BaseFragment;
 
 import java.util.ArrayList;
 

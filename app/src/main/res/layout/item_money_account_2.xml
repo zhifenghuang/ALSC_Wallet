@@ -166,7 +166,7 @@
             android:id="@+id/tvSell"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
-            android:background="@drawable/bg_wallet_sell"
+            android:background="@drawable/shape_ed3735_2"
             android:gravity="center"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"

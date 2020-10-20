@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.alsc.alsc_wallet.view.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.common.view.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/flowLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,4 +8,4 @@
     android:layout_marginTop="15dp">
 
 
-</com.alsc.alsc_wallet.view.FlowLayout>
+</com.common.view.FlowLayout>

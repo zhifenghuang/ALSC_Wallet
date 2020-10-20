@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.bean.KeyValueBean;
+import com.common.bean.KeyValueBean;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 

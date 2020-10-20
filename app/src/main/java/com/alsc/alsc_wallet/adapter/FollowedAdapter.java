@@ -1,7 +1,6 @@
 package com.alsc.alsc_wallet.adapter;
 
 import android.content.Context;
-import android.text.TextUtils;
 
 import androidx.core.content.ContextCompat;
 
@@ -24,11 +23,11 @@ public class FollowedAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
     protected void convert(@NotNull BaseViewHolder helper, String s) {
         helper.setText(R.id.tvName, s);
         if (helper.getAdapterPosition() % 2 == 1) {
-            helper.setBackgroundResource(R.id.tvFollow, R.drawable.bg_wallet_follow)
+            helper.setBackgroundResource(R.id.tvFollow, R.drawable.shape_stroke_07bb99)
                     .setText(R.id.tvFollow, mContext.getString(R.string.wallet_follow))
                     .setTextColor(R.id.tvFollow, ContextCompat.getColor(mContext, R.color.color_07_bb_99));
         } else {
-            helper.setBackgroundResource(R.id.tvFollow, R.drawable.bg_wallet_followed)
+            helper.setBackgroundResource(R.id.tvFollow, R.drawable.shape_stroke_666666)
                     .setText(R.id.tvFollow, mContext.getString(R.string.wallet_followed))
                     .setTextColor(R.id.tvFollow, ContextCompat.getColor(mContext, R.color.color_66_66_66));
         }

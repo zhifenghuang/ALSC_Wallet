@@ -23,7 +23,7 @@
         <LinearLayout
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_wallet_filter_record"
+            android:background="@drawable/shape_ffffff_stroke_b2b2b2_4"
             android:orientation="vertical">
 
             <TextView

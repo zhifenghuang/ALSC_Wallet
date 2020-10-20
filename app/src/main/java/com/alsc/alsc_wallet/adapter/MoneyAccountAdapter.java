@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.activity.BaseActivity;
+import com.common.activity.BaseActivity;
 import com.alsc.alsc_wallet.fragment.identity.GoogleIdentityFragment;
 import com.alsc.alsc_wallet.fragment.identity.OpenIdentity1Fragment;
 import com.alsc.alsc_wallet.fragment.trade.MoneyAccountFragment;

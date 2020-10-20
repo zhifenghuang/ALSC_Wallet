@@ -3,8 +3,8 @@ package com.alsc.alsc_wallet.fragment.identity;
 import android.view.View;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
-import com.alsc.alsc_wallet.view.VerifyCodeView;
+import com.common.fragment.BaseFragment;
+import com.common.view.VerifyCodeView;
 
 public class GoogleVerifyCodeFragment extends BaseFragment {
 

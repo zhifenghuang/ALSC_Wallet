@@ -10,7 +10,7 @@
         android:id="@+id/tvType"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:background="@drawable/bg_wallet_pay_type_unselect"
+        android:background="@drawable/shape_f9fafd_stroke_f2f2f2_2"
         android:gravity="center"
         android:text="全部类型"
         android:textColor="@color/color_66_66_66"

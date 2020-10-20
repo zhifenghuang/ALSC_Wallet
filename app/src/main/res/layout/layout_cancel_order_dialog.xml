@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_wallet_dialog"
+        android:background="@drawable/shape_f4f6f9_5"
         android:orientation="vertical"
         android:paddingLeft="17dp"
         android:paddingTop="10dp"

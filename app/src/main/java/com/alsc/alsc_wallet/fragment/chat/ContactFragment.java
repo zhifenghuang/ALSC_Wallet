@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.adapter.ContactAdapter;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
+import com.common.fragment.BaseFragment;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 public class ContactFragment extends BaseFragment {

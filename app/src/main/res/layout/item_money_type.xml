@@ -4,7 +4,7 @@
     android:layout_height="35dp"
     android:layout_marginTop="10dp"
     android:layout_marginRight="11dp"
-    android:background="@drawable/bg_wallet_pay_type_unselect"
+    android:background="@drawable/shape_f9fafd_stroke_f2f2f2_2"
     android:gravity="center"
     android:orientation="horizontal">
 

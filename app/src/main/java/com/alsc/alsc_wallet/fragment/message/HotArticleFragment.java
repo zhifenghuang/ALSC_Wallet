@@ -10,7 +10,7 @@ import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.adapter.HotArticle0Adapter;
 import com.alsc.alsc_wallet.adapter.HotArticle1Adapter;
 import com.alsc.alsc_wallet.adapter.HotArticle2Adapter;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
+import com.common.fragment.BaseFragment;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 

@@ -36,11 +36,12 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="37dp"
             android:paddingRight="25dp"
+            android:visibility="gone"
             android:src="@drawable/wallet_search_white" />
     </RelativeLayout>
 
 
-    <LinearLayout
+  <!--  <LinearLayout
         android:id="@+id/rl2"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -130,13 +131,13 @@
 
         </LinearLayout>
 
-    </LinearLayout>
+    </LinearLayout>-->
 
     <FrameLayout
         android:id="@+id/fl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/rl2" />
+        android:layout_below="@id/rl1" />
 
 
 </RelativeLayout>

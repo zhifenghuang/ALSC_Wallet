@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/bg_wallet_share"
+        android:background="@drawable/shape_f9fafd_8_top"
         android:orientation="vertical"
         android:paddingTop="28dp">
 

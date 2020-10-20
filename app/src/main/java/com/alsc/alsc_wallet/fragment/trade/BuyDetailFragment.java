@@ -3,9 +3,9 @@ package com.alsc.alsc_wallet.fragment.trade;
 import android.view.View;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.activity.BaseActivity;
-import com.alsc.alsc_wallet.dialog.MyDialogFragment;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
+import com.common.activity.BaseActivity;
+import com.common.dialog.MyDialogFragment;
+import com.common.fragment.BaseFragment;
 
 public class BuyDetailFragment extends BaseFragment {
 

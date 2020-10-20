@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.adapter.PublishPicAdapter;
-import com.alsc.alsc_wallet.dialog.MyDialogFragment;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
+import com.common.dialog.MyDialogFragment;
+import com.common.fragment.BaseFragment;
 
 import java.util.ArrayList;
 
@@ -29,7 +29,7 @@ public class PublishViewPointFragment extends BaseFragment {
         setText(R.id.tvTitle, R.string.wallet_publish_viewpoint);
         TextView btnRight = view.findViewById(R.id.btnRight);
         btnRight.setVisibility(View.VISIBLE);
-        btnRight.setBackgroundResource(R.drawable.bg_wallet_publish_disable);
+        btnRight.setBackgroundResource(R.drawable.shape_b2b2b2_2);
         btnRight.setText(getString(R.string.wallet_publish));
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 3);

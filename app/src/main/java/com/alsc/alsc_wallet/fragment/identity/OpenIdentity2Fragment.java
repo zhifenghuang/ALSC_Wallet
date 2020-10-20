@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
-import com.alsc.alsc_wallet.utils.Constants;
+import com.common.fragment.BaseFragment;
+import com.common.utils.Constants;
 
 public class OpenIdentity2Fragment extends BaseFragment {
 
@@ -51,9 +51,9 @@ public class OpenIdentity2Fragment extends BaseFragment {
     }
 
     private void resetBtns(LinearLayout ll1, LinearLayout ll2) {
-        ll1.setBackgroundResource(R.drawable.bg_wallet_credentials_select);
-        ll2.setBackgroundResource(R.drawable.bg_wallet_credentials_unselect);
-        fv(R.id.tvNextStep).setBackgroundResource(R.drawable.bg_wallet_buy);
+        ll1.setBackgroundResource(R.drawable.shape_1a07bb99_stroke_07bb99);
+        ll2.setBackgroundResource(R.drawable.shape_stroke_e2ebf0);
+        fv(R.id.tvNextStep).setBackgroundResource(R.drawable.shape_07bb99_2);
     }
 
 }

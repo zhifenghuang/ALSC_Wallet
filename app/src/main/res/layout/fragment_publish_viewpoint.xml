@@ -44,7 +44,7 @@
         android:layout_height="24dp"
         android:layout_gravity="right"
         android:layout_marginRight="12dp"
-        android:background="@drawable/bg_shape_b2b2b2_12"
+        android:background="@drawable/shape_b2b2b2_12"
         android:paddingLeft="13dp"
         android:paddingRight="13dp"
         android:text="@string/wallet_publish_type_0"

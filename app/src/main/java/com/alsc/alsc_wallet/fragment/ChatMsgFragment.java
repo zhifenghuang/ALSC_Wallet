@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.fragment.chat.ChatListFragment;
 import com.alsc.alsc_wallet.fragment.chat.ContactFragment;
+import com.common.fragment.BaseFragment;
 
 import java.util.ArrayList;
 

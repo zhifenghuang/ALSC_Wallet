@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.activity.BaseActivity;
+import com.common.activity.BaseActivity;
 import com.alsc.alsc_wallet.fragment.message.ArticleDetailFragment;
 import com.alsc.alsc_wallet.fragment.message.FollowedFragment;
 import com.alsc.alsc_wallet.fragment.message.UserInfoFragment;
@@ -34,32 +34,8 @@ public class UserInfoAdapter extends BaseMultiItemQuickAdapter<UserInfoFragment.
     protected void convert(@NotNull BaseViewHolder helper, UserInfoFragment.UserInfoItem item) {
         switch (helper.getItemViewType()) {
             case 0:
-                helper.getView(R.id.ll2).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ((BaseActivity) mContext).gotoPager(FollowedFragment.class);
-                    }
-                });
-                helper.getView(R.id.ll3).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ((BaseActivity) mContext).gotoPager(FollowedFragment.class);
-                    }
-                });
                 break;
             case 1:
-                helper.getView(R.id.tvAllMsg).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ((BaseActivity) mContext).gotoPager(ArticleDetailFragment.class);
-                    }
-                });
-                helper.getView(R.id.ivMore).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ((BaseActivity) mContext).showReportDialog(v);
-                    }
-                });
                 helper.setImageResource(R.id.ivAvatar, R.mipmap.ic_launcher_round);
                 RecyclerView recyclerView = helper.getView(R.id.picRecyclerView);
                 MsgPicAdapter picAdapter;

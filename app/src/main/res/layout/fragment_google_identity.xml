@@ -77,7 +77,7 @@
         android:layout_marginLeft="26dp"
         android:layout_marginRight="26dp"
         android:layout_marginBottom="44dp"
-        android:background="@drawable/bg_wallet_buy"
+        android:background="@drawable/shape_07bb99_2"
         android:gravity="center"
         android:text="@string/wallet_next_step"
         android:textColor="@color/color_ff_ff_ff"

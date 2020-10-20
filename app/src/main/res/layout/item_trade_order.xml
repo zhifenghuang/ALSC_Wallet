@@ -190,7 +190,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="9dp"
         android:layout_marginRight="11dp"
-        android:background="@drawable/bg_wallet_buy"
+        android:background="@drawable/shape_07bb99_2"
         android:gravity="center"
         android:text="@string/wallet_look"
         android:textColor="@color/color_ff_ff_ff"

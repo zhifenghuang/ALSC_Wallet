@@ -6,12 +6,11 @@ import android.view.ViewGroup;
 
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.adapter.ChatUserAdapter;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
-import com.alsc.alsc_wallet.utils.Utils;
+import com.common.fragment.BaseFragment;
+import com.common.utils.Utils;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenu;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuBridge;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuCreator;

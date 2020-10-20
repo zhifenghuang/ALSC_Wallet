@@ -6,11 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.adapter.SelectAtPeopleAdapter;
 import com.alsc.alsc_wallet.adapter.SelectPublishTypeAdapter;
-import com.alsc.alsc_wallet.bean.KeyValueBean;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
-import com.chad.library.adapter.base.entity.MultiItemEntity;
+import com.common.bean.KeyValueBean;
+import com.common.fragment.BaseFragment;
 
 public class SelectPublishTypeFragment extends BaseFragment {
 

@@ -7,9 +7,9 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.dialog.MyDialogFragment;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
-import com.alsc.alsc_wallet.utils.Constants;
+import com.common.dialog.MyDialogFragment;
+import com.common.fragment.BaseFragment;
+import com.common.utils.Constants;
 
 public class OpenIdentity4Fragment extends BaseFragment {
 
@@ -70,7 +70,7 @@ public class OpenIdentity4Fragment extends BaseFragment {
     }
 
     private void resetLL(LinearLayout ll, int newTextId) {
-        ll.setBackgroundResource(R.drawable.bg_wallet_credentials_select);
+        ll.setBackgroundResource(R.drawable.shape_1a07bb99_stroke_07bb99);
         ll.getChildAt(0).setVisibility(View.GONE);
         ((TextView) ll.getChildAt(1)).setText(getString(newTextId));
         ((TextView) ll.getChildAt(1)).setTextColor(

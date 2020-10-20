@@ -141,7 +141,7 @@
             android:id="@+id/tvBuy"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
-            android:background="@drawable/bg_wallet_buy"
+            android:background="@drawable/shape_07bb99_2"
             android:gravity="center"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"

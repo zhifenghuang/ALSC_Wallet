@@ -25,7 +25,7 @@
         android:textColor="@color/color_00_00_00"
         android:textSize="12dp" />
 
-    <com.alsc.alsc_wallet.view.VerifyCodeView
+    <com.common.view.VerifyCodeView
         android:id="@+id/verifyCodeView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

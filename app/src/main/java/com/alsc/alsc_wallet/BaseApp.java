@@ -44,7 +44,6 @@ public class BaseApp extends Application {
         }
         mInstance = this;
 
- //       CrashReport.initCrashReport(getApplicationContext(), "02cfa38619", false);
         mActivityRecord = 0;
         registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
             @Override

@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
-import com.alsc.alsc_wallet.utils.Constants;
+import com.common.fragment.BaseFragment;
+import com.common.utils.Constants;
 
 public class OpenIdentity3Fragment extends BaseFragment {
 

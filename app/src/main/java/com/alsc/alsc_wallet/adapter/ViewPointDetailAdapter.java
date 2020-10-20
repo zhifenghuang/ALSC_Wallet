@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.activity.BaseActivity;
-import com.alsc.alsc_wallet.fragment.message.UserInfoFragment;
+import com.common.activity.BaseActivity;
 import com.alsc.alsc_wallet.fragment.message.ViewpointDetailFragment;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
@@ -33,12 +32,12 @@ public class ViewPointDetailAdapter extends BaseMultiItemQuickAdapter<ViewpointD
     protected void convert(@NotNull BaseViewHolder helper, ViewpointDetailFragment.ViewPointItem item) {
         switch (helper.getItemViewType()) {
             case 0:
-                helper.getView(R.id.ivMore).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ((BaseActivity) mContext).showReportDialog(v);
-                    }
-                });
+//                helper.getView(R.id.ivMore).setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        ((BaseActivity) mContext).showReportDialog(v);
+//                    }
+//                });
                 helper.setImageResource(R.id.ivAvatar, R.mipmap.ic_launcher_round);
                 RecyclerView recyclerView = helper.getView(R.id.picRecyclerView);
                 MsgPicAdapter picAdapter;

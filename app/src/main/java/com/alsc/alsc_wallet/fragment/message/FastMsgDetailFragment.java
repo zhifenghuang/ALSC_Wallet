@@ -2,17 +2,13 @@ package com.alsc.alsc_wallet.fragment.message;
 
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.adapter.ArticleDetailAdapter;
 import com.alsc.alsc_wallet.adapter.FastMsgDetailAdapter;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
-import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.common.fragment.BaseFragment;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.ArrayList;
 

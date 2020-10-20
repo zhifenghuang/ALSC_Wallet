@@ -1,12 +1,9 @@
 package com.alsc.alsc_wallet.fragment.trade;
 
 import android.view.View;
-import android.widget.TextView;
-
-import androidx.core.content.ContextCompat;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.fragment.BaseFragment;
+import com.common.fragment.BaseFragment;
 
 public class AliPaySettingFragment extends BaseFragment {
 

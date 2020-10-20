@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="15dp"
-        android:background="@drawable/bg_wallet_publish_disable"
+        android:background="@drawable/shape_b2b2b2_2"
         android:gravity="center"
         android:paddingLeft="9dp"
         android:paddingTop="5dp"

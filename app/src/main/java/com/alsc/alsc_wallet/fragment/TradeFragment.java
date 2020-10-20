@@ -1,6 +1,5 @@
 package com.alsc.alsc_wallet.fragment;
 
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -13,14 +12,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.activity.BaseActivity;
+import com.common.activity.BaseActivity;
 import com.alsc.alsc_wallet.adapter.CoinSymbolAdapter;
 import com.alsc.alsc_wallet.adapter.SelectMoneyTypeAdapter;
 import com.alsc.alsc_wallet.adapter.SelectPayTypeAdapter;
-import com.alsc.alsc_wallet.dialog.MyDialogFragment;
+import com.common.dialog.MyDialogFragment;
 import com.alsc.alsc_wallet.fragment.trade.BuyCoinFragment;
 import com.alsc.alsc_wallet.fragment.trade.SellCoinFragment;
 import com.alsc.alsc_wallet.fragment.trade.TradeOrderFragment;
+import com.common.fragment.BaseFragment;
 
 import java.util.ArrayList;
 
