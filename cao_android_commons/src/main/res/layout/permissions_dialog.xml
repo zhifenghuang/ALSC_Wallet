@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="292dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/dialog_alert">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:text="提示"
+            android:textColor="#323232"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            android:layout_marginTop="28dp"
+            android:gravity="center_horizontal"
+            android:text="您未开启某权限是否去开启"
+            android:textColor="#5E6573"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/msg"
+            android:id="@+id/twoButLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="30dip"
+            android:layout_marginBottom="28dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/cancleBut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="@string/permissions_cancel"
+                android:textColor="@color/color_262626"
+                android:textSize="14dp" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/determineBut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="@string/permissions_determine"
+                android:textColor="#1F5DA1"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

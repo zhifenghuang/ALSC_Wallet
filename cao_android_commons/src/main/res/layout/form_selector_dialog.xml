@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/dimen_5"
+        android:background="@drawable/dialog_alert"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:text="常用栏位"
+            android:textColor="@color/color_333333"
+            android:textSize="14dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_15" />
+
+
+        <Button
+            android:id="@+id/back_home"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dimen_20"
+            android:background="@drawable/shape_circle_text_red"
+            android:text="取消"
+            android:textColor="@color/color_black"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

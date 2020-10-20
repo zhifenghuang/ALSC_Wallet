@@ -11,8 +11,13 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/cao_android_commons" />
             <option value="$PROJECT_DIR$/coldwallet" />
             <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/lib-chat" />
+            <option value="$PROJECT_DIR$/lib-coldWallet" />
+            <option value="$PROJECT_DIR$/lib-filepick" />
+            <option value="$PROJECT_DIR$/lib-tool" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

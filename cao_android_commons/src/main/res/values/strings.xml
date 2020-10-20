@@ -1,0 +1,188 @@
+<resources>
+    <string name="app_name">小区活动</string>
+
+    <string name="mcam_defaultDuration">00:00</string>
+    <string name="prompt">提示</string>
+    <string name="ok">确认</string>
+    <string name="camera_reset">重录</string>
+    <string name="camera_save">保存</string>
+    <string name="camera_user">使用</string>
+
+    <string name="camera_photo_path">dalong/photo/</string>
+    <string name="network_loading">加载中！</string>
+
+    <!-- Exception msg -->
+    <string name="network_excption">网络异常，请稍后重试！</string>
+    <string name="unknown_excption">未知异常，请稍后重试！</string>
+    <!-- default -->
+    <string name="default_internet">未发出请求</string>
+    <string name="default_explain">你的隐私设置检查已完成。</string>
+    <string name="default_details">要检查更多 微脸 隐私，请访问你的设置。</string>
+
+    <!-- permissions -->
+    <string name="permissions_toast">提示</string>
+    <string name="permissions_cancel">取消</string>
+    <string name="permissions_determine">确定</string>
+    <string name="Loading">无</string>
+
+    <string name="frv_def_load_more_view_status_normal">松开加载更多</string>
+    <string name="frv_def_load_more_view_status_loading">加载数据中，请稍等...</string>
+    <string name="frv_def_load_more_view_status_error">加载失败，请重试</string>
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_seconds">秒</string>
+    <!--首页tab-->
+
+    <string name="select_area">请选择类型</string>
+    <string name="no_select">----未选择----</string>
+
+    <string name="message_permission_rationale">授予以下权限以继续该程序:\n\n%1$s</string>
+    <string name="message_permission_always_failed">请在设置中给我们权限:\n\n%1$s</string>
+    <string name="title_dialog">提示</string>
+    <string name="resume">恢复</string>
+    <string name="cancel">取消</string>
+    <string name="setting">设置</string>
+    <string name="edit">编辑</string>
+    <string name="successfully">成功</string>
+    <string name="failure">获取失败</string>
+    <string name="all_rights_reserved">版权所有:</string>
+    <string name="company">南京熊猫信息产业有限公司</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="send_code">获取验证码</string>
+    <string name="after_120s">请60s之后再重新获取</string>
+    <string name="complete">完成</string>
+    <string name="retrieve_password">找回密码</string>
+    <string name="change_password">修改密码</string>
+    <string name="no_register_hint">还没有账户,立即</string>
+    <string name="phone_quickly_login">手机号快速登录</string>
+    <string name="forget_password">忘记密码</string>
+
+    <string name="my_ticket">我的票券</string>
+    <string name="my_ticket_all">全部</string>
+    <string name="my_wallet">我的钱包</string>
+    <string name="my_community">我的小区</string>
+    <string name="my_release">发布活动</string>
+    <string name="my_attention">关注的主办方</string>
+    <string name="my_collection">我的收藏</string>
+    <string name="my_evaluation">我的评价</string>
+    <string name="feedback">意见反馈</string>
+    <string name="about">关于我们</string>
+    <string name="participate">待参加</string>
+    <string name="pay">待支付</string>
+    <string name="refund">退票</string>
+    <string name="evaluation">待评价</string>
+    <string name="wonderful_upload">精彩上传</string>
+    <string name="recharge_amount">充值金额</string>
+    <string name="recharge_amount_other">输入其他金额:</string>
+    <string name="select_payment">选择支付方式:</string>
+    <string name="recharge_protocol">点击立即充值表示您已经同意《软件充值协议》</string>
+
+    <string name="install_wechat">请先安装微信</string>
+    <string name="pay_success">付款成功！</string>
+    <string name="pay_fail">付款失败！</string>
+    <string name="pay_confirming">付款确认中...</string>
+    <string name="pay_back">支付返回</string>
+    <string name="pay_cancel">支付取消</string>
+    <string name="recharge_success">恭喜您 本次支付成功</string>
+    <string name="back_home">返回首页</string>
+
+    <string name="payment_instructions_flag">付款说明</string>
+    <string name="refund_instructions_flag">退款说明</string>
+    <string name="payment_instructions">尊敬的用户欢迎阅读小区活动的付款说明\n
+        1.付款完成后您将收到[小区活动]的电子票号以及二维码链接,参加活动时请出示二维码凭证(手机开启或打印)或者短信.\n
+        2.如果您需要支付电子票的发票,请于参加活动时向活动主办人索取.\n
+        3.付款完成后如果没有收到电子票短信,请联系活动行客服(******)</string>
+    <string name="refund_instructions">尊敬的用户欢迎阅读社区活动的退款说明\n
+        <font color="#fa2b2b">不接受退款</font>,由于本活动各项资源需提前采购,一经售出不接受退款,请确认后购买活动主办方说明:无法退款</string>
+
+    <string name="search_hint">请输入搜索内容</string>
+
+    <string name="time_yesterday">昨天</string>
+    <string name="time_day">日</string>
+    <string name="time_month">月</string>
+    <string name="time_year">年</string>
+    <string name="time_more">99+</string>
+
+    <!--zxing-->
+    <string name="zxing_create">生成</string>
+    <string name="zxing_bottom_hint">建议与镜头保持10CM距离，尽量避免逆光和阴影</string>
+    <string name="zxing_top_hint">将条形码或二维码置于取景框内系统会自动扫描</string>
+    <string name="zxing_msg_camera_framework_bug">抱歉，Android相机出现问题。你可能需要重启设备。</string>
+    <string name="zxing_button_ok">确定</string>
+    <string name="confirm_toast_success">助记词顺序正确</string>
+    <string name="confirm_toast_failure">助记词顺序不正确，\n请校对</string>
+    <string name="no_more_data">----暂时没有记录-----</string>
+
+
+    <string name="error_code_4000">参数错误</string>
+    <string name="error_code_5001">失败</string>
+    <string name="error_code_4004">没有数据</string>
+    <string name="error_code_4100">钱包地址错误</string>
+    <string name="error_code_4101">交易已导入</string>
+    <string name="error_code_4821">邮箱配置错误，请联系管理员更新配置</string>
+    <string name="error_code_4822">每天最多只能发送15封邮件</string>
+    <string name="error_code_4200">token验证失败</string>
+    <string name="error_code_4091">用户不合法</string>
+    <string name="error_code_4911">系统结算中,请稍后操作</string>
+    <string name="error_code_4809">您已经是超级节点用户</string>
+    <string name="error_code_4302">余额不足</string>
+    <string name="error_code_4713">请勿频繁操作</string>
+    <string name="error_code_4136">接收地址错误，请重新填写</string>
+    <string name="error_code_4307">转账金额必须是整数或者金额必须大于100</string>
+    <string name="error_code_4309">转账金额必须大于0</string>
+    <string name="error_code_4149">转账金额必须大于10</string>
+    <string name="error_code_4317">账户异常，暂停关闭转账功能</string>
+    <string name="error_code_4318">发送地址错误</string>
+    <string name="error_code_4319">发送地址不能和接收地址一样</string>
+    <string name="error_code_4305">转账金额必须大于矿工费</string>
+    <string name="error_code_4733">贡献额必须大于100U</string>
+    <string name="error_code_4239">金额必须大于等于0.01</string>
+    <string name="error_code_4260">请求不合法（游戏聊天）</string>
+    <string name="error_code_4161">币已锁定(属于游戏聊天)</string>
+    <string name="error_code_4259">timestamp错误（游戏聊天）</string>
+    <string name="error_code_4139">该轮游戏或红包不存在（游戏聊天）</string>
+    <string name="error_code_4102">手续费格式错误（游戏聊天）</string>
+    <string name="error_code_4103">冻结币格式错误（游戏聊天）</string>
+    <string name="error_code_4140">总加币金额不合法（游戏聊天）</string>
+    <string name="error_code_4141">币已退或红包已领取（游戏聊天）</string>
+    <string name="error_code_4008">图片验证码错误</string>
+    <string name="error_code_4007">登录密码为6-12位之间的字母加数字的组合</string>
+    <string name="error_code_4092">账号或密码错误</string>
+    <string name="error_code_4050">用户名、邀请码或图片验证码格式错误或不能为空</string>
+    <string name="error_code_4005">用户名为6-12位之间的字母加数字的组合</string>
+    <string name="error_code_4010">用户名已经被注册</string>
+    <string name="error_code_4009">推荐人不存在</string>
+    <string name="error_code_4110">用户不存在</string>
+    <string name="error_code_4051">验证码或手机及邮箱格式错误或不能为空</string>
+    <string name="error_code_4014">手机格式错误</string>
+    <string name="error_code_4023">手机号已经被注册</string>
+    <string name="error_code_4022">手机验证码错误</string>
+    <string name="error_code_4003">邮箱格式错误</string>
+    <string name="error_code_4024">邮箱已经被注册</string>
+    <string name="error_code_4012">邮箱验证码错误或已失效</string>
+    <string name="error_code_4052">支付密码或登录密码错误</string>
+    <string name="error_code_4001">两次输入的登录密码不一致</string>
+    <string name="error_code_4002">两次输入的支付密码不一致</string>
+    <string name="error_code_4011">支付密码不能和登录密码相同</string>
+    <string name="error_code_4006">支付密码为6-12位之间的字母加数字的组合</string>
+    <string name="error_code_4013">以太坊钱包地址已分配完</string>
+    <string name="error_code_4015">比特币钱包地址已分配完</string>
+    <string name="error_code_4016">omni钱包地址已分配完</string>
+    <string name="error_code_4356">用户已创建，未同步</string>
+    <string name="error_code_4323">没有绑定该手机号</string>
+    <string name="error_code_4324">没有绑定该邮箱</string>
+    <string name="error_code_4210">手机号不能为空</string>
+    <string name="error_code_4290">网络异常，请稍后重试</string>
+    <string name="error_code_5100">失败，请检查手机号或者区号！</string>
+    <string name="error_code_4094">旧密码错误</string>
+    <string name="error_code_4093">新密码与旧密码不能相同</string>
+    <string name="error_code_4115">支付密码错误</string>
+    <string name="error_code_4039">请输入账号</string>
+    <string name="error_code_4364">单日提币限制3000ALSC</string>
+</resources>

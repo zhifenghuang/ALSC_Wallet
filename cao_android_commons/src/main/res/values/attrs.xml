@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="interval" format="integer"/>
+    <attr name="showIndicator" format="boolean"/>
+    <attr name="orientation" format="enum">
+        <enum name="horizontal" value="0"/>
+        <enum name="vertical" value="1"/>
+    </attr>
+    <attr name="autoPlaying" format="boolean"/>
+    <declare-styleable name="RecyclerViewBannerBase">
+        <attr name="interval"/>
+        <attr name="showIndicator" />
+        <attr name="orientation" />
+        <attr name="autoPlaying"/>
+        <attr name="indicatorSelectedSrc" format="color|reference"/>
+        <attr name="indicatorUnselectedSrc" format="color|reference"/>
+        <attr name="indicatorSpace" format="dimension|reference"/>
+        <attr name="indicatorMarginLeft" format="dimension|reference"/>
+        <attr name="indicatorMarginRight" format="dimension|reference"/>
+        <attr name="indicatorMarginBottom" format="dimension|reference"/>
+        <attr name="indicatorGravity" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="BannerLayout">
+        <attr name="interval" />
+        <attr name="showIndicator" />
+        <attr name="orientation" />
+        <attr name="autoPlaying"/>
+        <attr name="itemSpace" format="integer"/>
+        <attr name="centerScale" format="float"/>
+        <attr name="moveSpeed" format="float"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="RecordStartView">
+        <attr name="mRingColor" format="color"/>
+        <attr name="mCenterColor" format="color"/>
+        <attr name="mRingProgressColor" format="color"/>
+        <attr name="mRingWidth" format="dimension"/>
+        <attr name="mRingMax" format="integer"/>
+    </declare-styleable>
+
+
+    <!-- SetItemView -->
+    <declare-styleable name="TitleView">
+        <attr name="titleName" format="string" />
+        <attr name="showType" format="integer" />
+        <attr name="rightType" format="integer" />
+        <attr name="rightTextName" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="kswThumbDrawable" format="reference"/>
+        <attr name="kswThumbColor" format="color|reference"/>
+        <attr name="kswThumbMargin" format="dimension|reference"/>
+        <attr name="kswThumbMarginTop" format="dimension|reference"/>
+        <attr name="kswThumbMarginBottom" format="dimension|reference"/>
+        <attr name="kswThumbMarginLeft" format="dimension|reference"/>
+        <attr name="kswThumbMarginRight" format="dimension|reference"/>
+        <attr name="kswThumbWidth" format="dimension|reference"/>
+        <attr name="kswThumbHeight" format="dimension|reference"/>
+        <attr name="kswThumbRadius" format="dimension|reference"/>
+        <attr name="kswBackRadius" format="dimension|reference"/>
+        <attr name="kswBackDrawable" format="reference"/>
+        <attr name="kswBackColor" format="color|reference"/>
+        <attr name="kswFadeBack" format="boolean"/>
+        <attr name="kswThumbRangeRatio" format="float"/>
+        <attr name="kswAnimationDuration" format="integer"/>
+        <attr name="kswTintColor" format="color|reference"/>
+        <attr name="kswTextOn" format="string"/>
+        <attr name="kswTextOff" format="string"/>
+        <attr name="kswTextThumbInset" format="dimension"/>
+        <attr name="kswTextExtra" format="dimension"/>
+        <attr name="kswTextAdjust" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="StickyScrollView">
+        <attr name="stuckShadowHeight" format="dimension" />
+        <attr name="stuckShadowDrawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="PileLayout">
+        <attr name="PileLayout_vertivalSpace" format="dimension"/>
+        <attr name="PileLayout_pileWidth" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="timerbutton">
+        <attr name="afterText" format="string" />
+        <attr name="ms" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="ClearEditText">
+        <!-- 清除按钮的图标 -->
+        <attr name="iconClear" format="reference"/>
+
+    </declare-styleable>
+    <declare-styleable name="PullZoomLayout">
+        <attr name="damp" format="float" />
+        <attr name="image_res" format="reference" />
+        <attr name="image_height" format="dimension" />
+        <attr name="refresh_enable" format="boolean" />
+        <attr name="scale_type" format="enum">
+            <enum name="center_crop" value="1" />
+            <enum name="fit_center" value="3" />
+            <enum name="fit_XY" value="6" />
+        </attr>
+    </declare-styleable>
+
+        <declare-styleable name="countdown">
+            <attr name="color_bg" format="color" />
+            <attr name="color_text" format="color" />
+            <attr name="text_size" format="integer" />
+            <attr name="setDrawable" format="reference" />
+            <attr name="setDrawable_sub" format="reference" />
+        </declare-styleable>
+    <declare-styleable name="star">
+        <attr name="margin" format="dimension|reference"/>
+        <attr name="isEdit" format="boolean"/>
+        <attr name="score" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="StarBar">
+        <!--星星间距-->
+        <attr name="starDistance" format="dimension" />
+        <!--星星大小-->
+        <attr name="starSize" format="dimension" />
+        <!--星星个数-->
+        <attr name="starCount" format="integer" />
+        <!--星星空图-->
+        <attr name="starEmpty" format="reference" />
+        <!--星星满图-->
+        <attr name="starFill" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="Lock9View">
+        <attr name="lock9_nodeSrc" format="color|reference" />
+        <attr name="lock9_nodeOnSrc" format="color|reference" />
+        <attr name="lock9_node_error_OnSrc" format="color|reference" />
+        <attr name="lock9_nodeSize" format="dimension" />
+        <attr name="lock9_nodeAreaExpand" format="dimension" />
+        <attr name="lock9_nodeOnAnim" format="reference" />
+        <attr name="lock9_lineColor" format="color" />
+        <attr name="lock9_error_lineColor" format="color" />
+        <attr name="lock9_lineWidth" format="dimension" />
+        <attr name="lock9_padding" format="dimension" />
+        <attr name="lock9_spacing" format="dimension" />
+        <attr name="lock9_autoLink" format="boolean" />
+        <attr name="lock9_linkage" format="boolean" />
+        <attr name="lock9_enableVibrate" format="boolean" />
+        <attr name="lock9_vibrateTime" format="integer" />
+        <attr name="lock9_settingMode" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightScrollView">
+        <!--最大高度-->
+        <attr name="max_height" format="dimension" />
+
+    </declare-styleable>
+</resources>

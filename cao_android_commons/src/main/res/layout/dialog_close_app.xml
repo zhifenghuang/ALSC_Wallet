@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:background="@drawable/corner_1d2627_4"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@mipmap/icon_notification" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            tools:text="关于ALSC主网上线公告" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="180dp"
+        android:paddingLeft="34dp"
+        android:paddingTop="20dp"
+        android:textColor="@color/white"
+        android:textSize="13dp"
+        tools:text="关于ALSC主网上线公告关于ALSC主网上线公告关于ALSC主网上线公告关于ALSC主网上线公告关于ALSC主网上线公告关于ALSC主网上线公告关于ALSC主网上线公告关于ALSC主网上线公告关于ALSC主网上线公告关于ALSC主网上线公告关于ALSC主网上线公告关于ALSC主网上线公告" />
+
+
+</LinearLayout>
