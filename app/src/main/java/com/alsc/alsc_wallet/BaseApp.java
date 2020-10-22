@@ -7,13 +7,16 @@ import android.app.Application;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.cao.commons.base.PoliceApplication;
+
 import java.util.List;
 
 /**
  * @author rainking
  */
 @SuppressLint("Registered")
-public class BaseApp extends Application {
+public class BaseApp extends PoliceApplication {
 
     private static BaseApp mInstance;
 
@@ -33,7 +36,7 @@ public class BaseApp extends Application {
         List<ActivityManager.RunningAppProcessInfo> list = activityManager.getRunningAppProcesses();
         for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : list) {
             if (runningAppProcessInfo.pid == pid) {
-                if (runningAppProcessInfo.processName.equals("com.jnsh.alsc:pushcore")) {
+                if (runningAppProcessInfo.processName.equals("com.wallet:pushcore")) {
                     return;
                 }
                 ++count;

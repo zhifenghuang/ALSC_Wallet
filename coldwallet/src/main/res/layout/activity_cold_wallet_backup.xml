@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_bg"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fl_back"
+            android:layout_width="@dimen/space_size_50"
+            android:onClick="@{clickListener}"
+            android:layout_height="@dimen/space_size_50">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/icon_back" />
+        </FrameLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/WalletCodeTitleTextStyle"
+                android:text="@string/wc_backup"
+                android:textColor="@color/blue" />
+
+            <TextView
+                style="@style/WalletCodeTextStyle"
+                android:text="@string/wc_backup_single" />
+
+            <TextView
+                style="@style/WalletCodeTextStyle"
+                android:text="@string/wc_backup_double" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="18dp"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/wc_backup_good"
+                android:background="@drawable/corner_hollow_51628c_5"
+                android:textColor="@color/text_color"
+                android:textSize="14dp"
+                />
+
+            <ImageView
+                android:id="@+id/iv_cover"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:onClick="@{clickListener}"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@mipmap/bg_cold_text_cover"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom">
+            <Button
+                android:id="@+id/btn_next"
+                style="@style/WalletColdBtnStyle"
+                android:layout_marginBottom="40dp"
+                android:onClick="@{clickListener}"
+                android:text="@string/wt_type_next" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

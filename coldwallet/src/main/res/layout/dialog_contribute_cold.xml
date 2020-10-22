@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_f2f2f4_5"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fl_close"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:padding="12dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@mipmap/icon_del"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/st_input"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/wc_code_wallet_pwd"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:hint="@string/input_your_wallet_password"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:layout_marginLeft="13.5dp"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:inputType="textPassword"
+            android:layout_marginBottom="12dp"
+            android:layout_marginRight="13.5dp"
+            android:background="@drawable/corner_white_5"
+            android:textColorHint="@color/color_7c8498_50"
+            android:textColor="@color/color_25_2e_3f"
+            android:textSize="15dp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_commit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/wh_ok"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/corner_f2f2f4_5"
+        android:textColor="@color/blue"
+        android:layout_marginBottom="25dp"
+        android:textSize="18dp"
+        />
+</LinearLayout>

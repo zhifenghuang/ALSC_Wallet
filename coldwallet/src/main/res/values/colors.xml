@@ -3,4 +3,62 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+
+    <color name="color_theme_bg">#e7eaf1</color>
+    <color name="color_theme_cold">#f2f2f4</color>
+    <color name="transparent">#00000000</color>
+    <color name="blue">#1F8BF9</color>
+    <color name="blue50">#601F8BF9</color>
+    <color name="yellow">#feab07</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="white_deep">#80FFFFFF</color>
+    <color name="yellow_deep">#e3b200</color>
+    <color name="color_2e374c">#2e374c</color>
+    <color name="color_51628c">#51628c</color>
+    <color name="color_394356">#394356</color>
+    <color name="color_208cf9">#208cf9</color>
+    <color name="color_0b101d">#0b101d</color>
+    <color name="color_ff5442">#ff5442</color>
+    <color name="color_1cd693">#1cd693</color>
+    <color name="color_22dc9a">#22DC9A</color>
+    <color name="color_f1eef6">#f1eef6</color>
+    <color name="color_fefeff">#fefeff</color>
+    <color name="color_af89d1">#af89d1</color>
+    <color name="color_afb9d1">#afb9d1</color>
+    <color name="color_eba61d">#eba61d</color>
+    <color name="color_606d7e">#606d7e</color>
+    <color name="color_1a2135">#1a2135</color>
+    <color name="color_929497">#929497</color>
+    <color name="color_fdab0a">#fdab0a</color>
+    <color name="color_c0c0c0">#c0c0c0</color>
+    <color name="color_171b24">#171b24</color>
+    <color name="color_c0c0c0_50">#80c0c0c0</color>
+    <color name="color_272d42">#272d42</color>
+    <color name="color_1d2637_50">#801d2637</color>
+    <color name="color_1a2135_50">#801a2135</color>
+    <color name="color_0b101d_20">#330b101d</color>
+    <color name="transparent_background">#00000000</color>
+    <color name="color_7c8498_20">#337c8498</color>
+    <color name="color_7c8498">#7c8498</color>
+    <color name="main_cold_bg">#EFEEF4</color>
+
+
+    <!--    背景色 -->
+    <color name="main_bg">#e7eaf1</color>
+    <color name="main_bg_else">#ffffff</color>
+    <color name="main_color_tone">#2f406b</color>
+    <color name="main_color_tone_else">#feab07</color>
+    <color name="button_color">#2f406b</color>
+    <color name="button_color_else">#feab07</color>
+    <color name="text_color">#2f406b</color>
+    <color name="text_color_small">#798aa6</color>
+    <color name="line_color">#ccc7cacf</color>
+    <color name="chat_line_color">#7B8397</color>
+    <color name="chat_text_color">#2F3F6B</color>
+
+    <color name="main_bg_else50">#80ffffff</color>
+    <color name="text_color_cold_small">#2a2f4e</color>
+    <color name="text_color_small50">#80798aa6</color>
 </resources>

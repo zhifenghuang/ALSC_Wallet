@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/main_bg"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fl_back"
+            android:layout_width="@dimen/space_size_50"
+            android:onClick="@{clickListener}"
+            android:layout_height="@dimen/space_size_50">
+
+            <ImageView
+                android:layout_width="9dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/icon_back" />
+        </FrameLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/WalletCodeTitleTextStyle"
+                android:text="@string/wc_code" />
+
+            <TextView
+                style="@style/WalletCodeTextStyle"
+                android:text="@string/wc_code_important" />
+
+            <TextView
+                style="@style/WalletCodeTextStyle"
+                android:text="@string/wc_code_warn" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="38dp"
+            android:layout_marginRight="20dp">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="15dp"
+                android:background="@color/blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:text="@string/wc_code_account"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_12" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_user_name"
+            style="@style/WalletOnlineCodeEditStyle"
+            android:layout_marginTop="10dp"
+            android:hint="@string/wc_code_input_account"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color_small" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="15dp"
+                android:background="@color/blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/wc_code_wallet_pwd"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_12" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_password"
+            style="@style/WalletOnlineCodeEditStyle"
+            android:layout_marginTop="10dp"
+            android:hint="@string/wc_code_input_wallet_pwd"
+            android:inputType="textPassword"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color_small" />
+
+        <EditText
+            android:id="@+id/et_password_retry"
+            style="@style/WalletOnlineCodeEditStyle"
+            android:layout_marginTop="10dp"
+            android:hint="@string/wc_code_input_wallet_pwd_again"
+            android:inputType="textPassword"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color_small" />
+        <TextView
+            style="@style/WalletCodeTextStyle"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/wh_phone_valite_number_hint" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom">
+            <Button
+                android:id="@+id/btn_next"
+                style="@style/WalletColdBtnStyle"
+                android:layout_marginBottom="40dp"
+                android:onClick="@{clickListener}"
+                android:text="@string/wt_type_next" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

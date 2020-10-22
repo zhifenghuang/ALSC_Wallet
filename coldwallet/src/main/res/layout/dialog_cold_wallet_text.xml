@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/corner_2e374c_10"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/wv_tip"
+        android:textColor="@color/text_color"
+        android:textSize="17dp" />
+
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:gravity="center"
+        android:text="@string/wv_content"
+        android:textColor="@color/text_color"
+        android:textSize="16dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_c1d1ff" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/id_textview_popup_ok"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/wh_ok"
+            android:textColor="#208cf9"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="26dp"
+            android:background="@color/color_c1d1ff" />
+
+        <TextView
+            android:id="@+id/id_textview_popup_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/btn_cancle"
+            android:textColor="@color/text_color"
+            android:textSize="16dp" />
+    </LinearLayout>
+</LinearLayout>

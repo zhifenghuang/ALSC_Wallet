@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/color_theme_cold"
+        android:orientation="vertical"
+        tools:context=".activity.my.AssetsQCodeActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_height="@dimen/toolbar_height">
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="@dimen/toolbar_height"
+                android:onClick="@{clickListener}"
+                android:layout_height="@dimen/toolbar_height">
+
+                <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/icon_back" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="A13收款"
+                android:layout_gravity="center"
+                android:textColor="@color/text_color"
+                android:textSize="18dp" />
+        </FrameLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/corner_white_5"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@mipmap/alsc_desk_logo" />
+
+
+            <ImageView
+                android:id="@+id/iv_qcode"
+                android:layout_width="190dp"
+                android:layout_height="190dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/color_7c8498_20" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="57dp">
+
+                <TextView
+                    android:id="@+id/tv_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    tools:text="yuhhwyihuihuyu...iooijkijiosasdasdasdasdasdas sdas"
+                    android:textColor="@color/text_color"
+                    android:maxWidth="250dp"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/iv_copy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:onClick="@{clickListener}"
+                    android:src="@mipmap/icon_copy_black2" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"
+            android:text="@string/c_wallet_qcode_tips"
+            android:textColor="#ff929497"
+            android:textSize="12dp"
+            />
+
+    </LinearLayout>
+</layout>

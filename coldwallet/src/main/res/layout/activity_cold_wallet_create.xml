@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_theme_cold"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".activity.my.AssetsTransferActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height">
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="@dimen/toolbar_height"
+                android:layout_height="@dimen/toolbar_height"
+                android:onClick="@{clickListener}">
+
+                <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/icon_back" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/text_color"
+                android:textSize="18dp"
+                tools:text="@string/c_create_wallet" />
+
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical">
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="15dp"
+                    android:background="@color/blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="9dp"
+                    android:text="@string/create_wallet_name_input_tips"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_12" />
+
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_wallet_name"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:hint="@string/security_name_update_hine"
+                style="@style/ColdAssetCodeEditStyle" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical">
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="15dp"
+                    android:background="@color/blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="9dp"
+                    android:text="@string/wc_code_input_wallet_pwd"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_12" />
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/ColdAssetCodeEditStyle"
+                android:layout_marginTop="10dp"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:hint="@string/input_your_wallet_password" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical">
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="15dp"
+                    android:background="@color/blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="9dp"
+                    android:text="@string/wc_code_input_wallet_pwd_again"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_12" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_password_retry"
+                style="@style/ColdAssetCodeEditStyle"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:inputType="textPassword"
+                android:hint="@string/input_your_wallet_password_again" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical">
+
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="15dp"
+                    android:background="@color/blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="9dp"
+                    android:text="@string/your_wallet_password_tips"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_12" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_remark"
+                style="@style/ColdAssetCodeEditStyle"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:hint="@string/input_your_wallet_password_tips" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="bottom">
+                <Button
+                    android:id="@+id/btn_next"
+                    style="@style/WalletColdBtn2Style"
+                    android:layout_marginBottom="40dp"
+                    android:onClick="@{clickListener}"
+                    android:text="@string/c_sure_create" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

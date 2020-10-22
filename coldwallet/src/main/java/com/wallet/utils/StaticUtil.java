@@ -1,4 +1,4 @@
-package com.jnsh.tool.util;
+package com.wallet.utils;
 
 public class StaticUtil {
 

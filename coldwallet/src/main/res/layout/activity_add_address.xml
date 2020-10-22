@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_theme_cold"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".activity.discover.DiscoverInformationActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height">
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="@dimen/toolbar_height"
+                android:layout_height="@dimen/toolbar_height"
+                android:onClick="@{clickListener}">
+
+                <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/icon_back" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/add_contacts"
+                android:textColor="@color/text_color"
+                android:textSize="18dp" />
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="38dp"
+            android:layout_marginRight="20dp">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="15dp"
+                android:background="@color/blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:text="@string/add_contacts_name"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_12" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_user_name"
+            style="@style/WalletColdCodeEditStyle"
+            android:layout_marginTop="10dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:hint="@string/add_contacts_name_hint" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp">
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="15dp"
+                android:background="@color/blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:text="@string/add_contacts_note"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_12" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_user_remark"
+            style="@style/WalletColdCodeEditStyle"
+            android:layout_marginTop="10dp"
+            android:hint="@string/add_contacts_note_some"
+            android:singleLine="true"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp">
+
+            <LinearLayout
+                android:id="@+id/ll_title"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{clickListener}"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_change"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/icon_address_add" />
+
+                <TextView
+                    android:id="@+id/tv_change_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="@string/address_add_account"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_12" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/iv_scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:paddingLeft="10dp"
+                android:onClick="@{clickListener}"
+                android:src="@mipmap/icon_scan_blue"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_address"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_user_account"
+                style="@style/WalletColdCodeEditStyle"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:singleLine="true"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:textColorHint="@color/text_color_small" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_contacts_save_local"
+                android:textColor="@color/color_929497"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="23dp"
+                android:textSize="12dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom">
+            <Button
+                android:id="@+id/btn_next"
+                style="@style/WalletColdBtn2Style"
+                android:layout_marginBottom="40dp"
+                android:onClick="@{clickListener}"
+                android:text="@string/wt_btn_sure_add" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

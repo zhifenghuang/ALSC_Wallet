@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/corner_f2f2f4_5"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:gravity="center"
+        android:text="@string/c_change_wallet_name"
+        android:textColor="@color/text_color"
+        android:textSize="12dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_dfdfdf"/>
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        tools:text="A13-Wallet"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="20dp"
+        android:singleLine="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/corner_white_5"
+        android:textColor="#2a2f4e"
+        android:textSize="12dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/color_dfdfdf"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/id_textview_popup_cancel"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="@string/btn_cancle"
+            android:gravity="center"
+            android:textColor="#ff1d2637"
+            android:textSize="12dp"
+            />
+
+        <TextView
+            android:id="@+id/id_textview_popup_ok"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="@string/btn_sure"
+            android:gravity="center"
+            android:textColor="#ff1d2637"
+            android:textSize="12dp"
+            />
+
+    </LinearLayout>
+</LinearLayout>

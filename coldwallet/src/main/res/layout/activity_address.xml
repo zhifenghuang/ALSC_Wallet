@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_theme_cold"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context=".activity.discover.DiscoverInformationActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height">
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="@dimen/toolbar_height"
+                android:layout_height="@dimen/toolbar_height"
+                android:onClick="@{clickListener}">
+
+                <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/icon_back" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/c_address_title"
+                android:textColor="@color/text_color"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tv_add"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/c_add"
+                android:layout_gravity="right"
+                android:onClick="@{clickListener}"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.jude.easyrecyclerview.EasyRecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/fl_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_theme_cold">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/bg_address_empty" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/c_add_first_person"
+                        android:textColor="@color/color_929497"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_next"
+                    style="@style/WalletColdBtn2Style"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="40dp"
+                    android:onClick="@{clickListener}"
+                    android:text="@string/c_add" />
+            </FrameLayout>
+
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+</layout>

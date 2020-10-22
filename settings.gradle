@@ -1,2 +1,2 @@
-include ':app', ':lib-chat', ':lib-tool', ':lib-coldWallet', ":cao_android_commons",':lib-filepick',':coldwallet',':common'
+include ':app', ':lib-chat', ':lib-tool', ":cao_android_commons",':lib-filepick',':coldwallet',':common'
 rootProject.name='ALSC_Wallet'
