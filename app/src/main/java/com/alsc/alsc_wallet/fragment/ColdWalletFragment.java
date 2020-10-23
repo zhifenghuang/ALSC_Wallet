@@ -28,7 +28,7 @@ public class ColdWalletFragment extends BaseFragment {
 
     @Override
     protected void onViewCreated(View view) {
-        setViewsOnClickListener(R.id.tvOnlineWallet);
+        setViewsOnClickListener(R.id.tvOnlineWallet,R.id.tvColdWallet);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -62,6 +62,9 @@ public class ColdWalletFragment extends BaseFragment {
         int id = v.getId();
         switch (id) {
             case R.id.tvOnlineWallet:
+                ((MainActivity) getActivity()).setWalletType(0);
+                break;
+                case R.id.tvColdWallet:
                 ((MainActivity) getActivity()).setWalletType(0);
                 break;
         }

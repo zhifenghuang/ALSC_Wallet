@@ -23,13 +23,25 @@ android {
         sourceCompatibility 1.8
         targetCompatibility 1.8
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     api project(':common')
+    api project(':cao_android_commons')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    implementation 'org.web3j:core:4.2.0-android'
+    api 'org.bitcoinj:bitcoinj-core:0.15.2'
+    implementation 'com.github.briandilley.jsonrpc4j:jsonrpc4j:1.5.3'
+    implementation 'wf.bitcoin:JavaBitcoindRpcClient:1.0.0'
+    implementation 'com.google.guava:guava:28.2-android'
+    implementation 'com.alibaba:fastjson:1.2.62'
+    implementation 'com.blankj:utilcodex:1.26.0'
 }

@@ -6,6 +6,7 @@ import android.os.StrictMode;
 
 import androidx.multidex.MultiDex;
 
+import com.cao.commons.bean.cold.ColdHqBean;
 import com.cao.commons.util.ResolutionUtil;
 
 //import com.baidu.mapapi.CoordType;
@@ -23,6 +24,9 @@ public class PoliceApplication extends Application {
     public static PoliceApplication instance = null;
 
     public static PoliceApplication newInstance() {
+        return instance;
+    }
+    public static PoliceApplication getInstance() {
         return instance;
     }
 
@@ -61,5 +65,16 @@ public class PoliceApplication extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
+    }
+
+
+    private static ColdHqBean coldHqBean;
+
+    public static ColdHqBean getColdHqBean() {
+        return coldHqBean;
+    }
+
+    public static void setColdHqBean(ColdHqBean coldHqBean) {
+        PoliceApplication.coldHqBean = coldHqBean;
     }
 }

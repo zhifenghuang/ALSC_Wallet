@@ -2,4 +2,79 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cold.wallet">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application>
+        <activity
+            android:name="com.wallet.activity.MainColdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.wallet.ColdWalletVerifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.wallet.ColdWalletBackupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.wallet.CodeWalletMakeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.wallet.CodeWalletTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.wallet.RestoreWalletActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.wallet.activity.cold.AddAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.AddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdAssetsDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdAssetsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdAssetsQCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdAssetsSetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdAssetsTransferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdBackupMnemonicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdConfirmMnemonicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdImportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdPasswordInformationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdWalletAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ColdWalletCreateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ExportKeystoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wallet.activity.cold.ExportPrivateActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.wallet.activity.my.CaptureActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+
 </manifest>

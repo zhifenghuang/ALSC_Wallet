@@ -7,13 +7,13 @@ public class ColdHqBean {
      * BTC : 9966.71
      * ETH : 276.2
      * USDT : 1.00
-     * ALSC : 0.0294
+     * A13 : 0.0294
      */
 
     private String BTC;
     private String ETH;
     private String USDT;
-    private String ALSC;
+    private String A13;
 
     public String getBTC() {
         return BTC;
@@ -39,11 +39,11 @@ public class ColdHqBean {
         this.USDT = USDT;
     }
 
-    public String getALSC() {
-        return ALSC;
+    public String getA13() {
+        return A13;
     }
 
-    public void setALSC(String ALSC) {
-        this.ALSC = ALSC;
+    public void setA13(String a13) {
+        A13 = a13;
     }
 }

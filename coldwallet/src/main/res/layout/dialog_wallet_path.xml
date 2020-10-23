@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_white_5"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_item1"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="45dp"
+            android:text="@string/c_wallet_password_1"
+            android:textColor="#ff1f8dfc"
+            android:textSize="15dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/color_7c_84_98"/>
+
+
+        <TextView
+            android:id="@+id/tv_item2"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="45dp"
+            android:text="@string/c_wallet_password_2"
+            android:textColor="#ff1f8dfc"
+            android:textSize="15dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/color_7c_84_98"/>
+
+        <TextView
+            android:id="@+id/tv_item3"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="45dp"
+            android:text="@string/c_wallet_password_3"
+            android:textColor="#ff1f8dfc"
+            android:textSize="15dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/corner_white_5"
+        android:text="@string/btn_cancle"
+        android:textColor="@color/text_color"
+        android:textSize="15dp"
+        />
+
+</LinearLayout>
