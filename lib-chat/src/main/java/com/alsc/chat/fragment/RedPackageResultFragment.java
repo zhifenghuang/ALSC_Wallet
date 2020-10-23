@@ -15,7 +15,7 @@ import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 import java.util.ArrayList;
 
-public class RedPackageResultFragment extends BaseFragment {
+public class RedPackageResultFragment extends ChatBaseFragment {
 
     private RedPackageResultAdapter mAdapter;
 

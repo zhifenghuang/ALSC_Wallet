@@ -6,18 +6,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.adapter.PayInGroupAdapter;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.EnvelopeBean;
 import com.cao.commons.bean.chat.GroupBean;
 
 import java.util.ArrayList;
 
-public class PayEnterGroupDetailFragment extends BaseFragment {
+public class PayEnterGroupDetailFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
 
@@ -70,7 +70,7 @@ public class PayEnterGroupDetailFragment extends BaseFragment {
                         }
                         getAdapter().setNewData(list);
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
     }
 
 }

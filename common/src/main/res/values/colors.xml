@@ -96,4 +96,13 @@
     <color name="color_19_b0_84">#19B084</color>
     <color name="color_1a_07_bb_99">#1A07BB99</color>
     <color name="color_b0_b6_cc">#B0B6CC</color>
+
+    <color name="color_27_77_ff">#2777FF</color>
+    <color name="color_28_78_ff">#2878FF</color>
+    <color name="color_00_cf_7c">#00CF7C</color>
+    <color name="color_00_d0_7c">#00D07C</color>
+    <color name="color_0e_16_2d">#0E162D</color>
+    <color name="color_ff_5e_5a">#FF5E5A</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_e7_e7_e9">#E7E7E9</color>
 </resources>

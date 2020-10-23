@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
 import com.alsc.chat.fragment.GroupInfoFragment;
 import com.alsc.chat.fragment.MyInfoFragment;
 import com.alsc.chat.fragment.UpdateGroupInfoFragment;
@@ -59,7 +59,7 @@ public class GroupUserAdapter extends BaseMultiItemQuickAdapter<GroupInfoFragmen
                         Bundle bundle = new Bundle();
                         bundle.putSerializable(Constants.BUNDLE_EXTRA, mGroup);
                         bundle.putInt(Constants.BUNDLE_EXTRA_2, UpdateGroupInfoFragment.UPDATE_GROUP_NAME);
-                        ((ChatBaseActivity) mContext).gotoPager(UpdateGroupInfoFragment.class, bundle);
+                        ((BaseActivity) mContext).gotoPager(UpdateGroupInfoFragment.class, bundle);
                     }
                 });
                 helper.getView(R.id.tvGroupCover).setOnClickListener(new View.OnClickListener() {
@@ -85,7 +85,7 @@ public class GroupUserAdapter extends BaseMultiItemQuickAdapter<GroupInfoFragmen
                     @Override
                     public void onClick(View v) {
                         if (mGroup.getDisableFriend() == 1) {
-                            ((ChatBaseActivity) mContext).showToast(R.string.chat_group_forbid_add_friend);
+                            ((BaseActivity) mContext).showToast(R.string.chat_group_forbid_add_friend);
                             return;
                         }
                         Bundle bundle = new Bundle();
@@ -113,12 +113,12 @@ public class GroupUserAdapter extends BaseMultiItemQuickAdapter<GroupInfoFragmen
 //                    @Override
 //                    public void onClick(View v) {
 //                        if (mGroup.getDisableFriend() == 1) {
-//                            ((ChatBaseActivity) mContext).showToast(R.string.chat_group_forbid_add_friend);
+//                            ((BaseActivity) mContext).showToast(R.string.chat_group_forbid_add_friend);
 //                            return;
 //                        }
 //                        Bundle bundle = new Bundle();
 //                        bundle.putSerializable(Constants.BUNDLE_EXTRA, item);
-//                        ((ChatBaseActivity) mContext).gotoPager(item.getUserId() == DataManager.getInstance().getUserId() ? MyInfoFragment.class : UserInfoFragment.class, bundle);
+//                        ((BaseActivity) mContext).gotoPager(item.getUserId() == DataManager.getInstance().getUserId() ? MyInfoFragment.class : UserInfoFragment.class, bundle);
 //                    }
 //                });
 //            } else {
@@ -189,7 +189,7 @@ public class GroupUserAdapter extends BaseMultiItemQuickAdapter<GroupInfoFragmen
 //
 //                        sendRemoveGroupMsg(mGroup, userBean);
 //                    }
-//                }, mContext, (ChatBaseActivity) mContext));
+//                }, mContext, (BaseActivity) mContext));
 //    }
 //
 //    private void sendRemoveGroupMsg(GroupBean group, UserBean userBean) {

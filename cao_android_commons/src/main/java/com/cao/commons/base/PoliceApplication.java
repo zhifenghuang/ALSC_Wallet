@@ -9,9 +9,6 @@ import androidx.multidex.MultiDex;
 import com.cao.commons.bean.cold.ColdHqBean;
 import com.cao.commons.util.ResolutionUtil;
 
-//import com.baidu.mapapi.CoordType;
-//import com.baidu.mapapi.SDKInitializer;
-
 /**
  * Application,根据内存大小生命周期，后面会把登陆user相关方法写在此类
  *
@@ -34,29 +31,11 @@ public class PoliceApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-//        Snake.init(this);
-        //百度地图初始化
-//        SDKInitializer.initialize(PoliceApplication.newInstance());
-//        SDKInitializer.setCoordType(CoordType.BD09LL);
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
         builder.detectFileUriExposure();
         ResolutionUtil.getInstance().init(this);
     }
-
-    /**
-     * 视频缓存
-     */
-//    private HttpProxyCacheServer proxy;
-//
-//    public static HttpProxyCacheServer getProxy(Context context) {
-//        PoliceApplication app = (PoliceApplication) context.getApplicationContext();
-//        return app.proxy == null ? (app.proxy = app.newProxy()) : app.proxy;
-//    }
-//
-//    private HttpProxyCacheServer newProxy() {
-//        return new HttpProxyCacheServer(this);
-//    }
 
     /**
      * 三方sdk初始化尽量放在sdk管理里面，避免进app卡顿很久

@@ -7,25 +7,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.adapter.GroupAdapter;
 import com.cao.commons.bean.chat.GroupBean;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
-
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class GroupListFragment extends BaseFragment {
+public class GroupListFragment extends ChatBaseFragment {
 
     public static final int FROM_TRANSFER_MSG = 1;
 
@@ -72,7 +69,7 @@ public class GroupListFragment extends BaseFragment {
                         Bundle bundle = new Bundle();
                         bundle.putSerializable(Constants.BUNDLE_EXTRA, mAdapter.getItem(position));
                         gotoPager(GroupChatFragment.class, bundle);
-                        ((ChatBaseActivity) getActivity()).finishAllOtherActivity();
+                        ((BaseActivity) getActivity()).finishAllOtherActivity();
                     } else {
                         HashMap<String, GroupBean> map = new HashMap<>();
                         map.put(Constants.SELECT_A_GROUP, mAdapter.getItem(position));
@@ -104,6 +101,6 @@ public class GroupListFragment extends BaseFragment {
                 getAdapter().setNewData(list);
                 DataManager.getInstance().saveGroups(list);
             }
-        }, getActivity(), false, (ChatBaseActivity) getActivity()));
+        }, getActivity(), false, (BaseActivity) getActivity()));
     }
 }

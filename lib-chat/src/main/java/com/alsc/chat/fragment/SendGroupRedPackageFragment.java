@@ -12,11 +12,11 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.dialog.InputPasswordDialog;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.EnvelopeBean;
 import com.cao.commons.bean.chat.GroupBean;
@@ -26,7 +26,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.HashMap;
 
-public class SendGroupRedPackageFragment extends BaseFragment {
+public class SendGroupRedPackageFragment extends ChatBaseFragment {
 
     private int mType;  //1群普通红包群 2手气红包 3私人转转 4私人红包
     private GroupBean mGroup;
@@ -226,7 +226,7 @@ public class SendGroupRedPackageFragment extends BaseFragment {
                         EventBus.getDefault().post(map);
                         goBack();
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
     }
 
 }

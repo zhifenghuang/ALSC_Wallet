@@ -1,30 +1,21 @@
 package com.alsc.chat.fragment;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.adapter.NewMemberRedPackageAdapter;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
-import com.alsc.chat.manager.ConfigManager;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
-import com.alsc.chat.utils.Utils;
 import com.cao.commons.bean.chat.EnvelopeBean;
 import com.cao.commons.bean.chat.GroupBean;
-import com.cao.commons.bean.chat.UserBean;
-import com.cao.commons.manager.DataManager;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.google.gson.Gson;
@@ -36,7 +27,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class NewMemberRedPackageSettingFragment extends BaseFragment {
+public class NewMemberRedPackageSettingFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
     private NewMemberRedPackageAdapter mAdapter;
@@ -102,7 +93,7 @@ public class NewMemberRedPackageSettingFragment extends BaseFragment {
                             bean.setStatus(3);
                             getAdapter().notifyDataSetChanged();
                         }
-                    }, getActivity(), (ChatBaseActivity) getActivity()));
+                    }, getActivity(), (BaseActivity) getActivity()));
                 }
             }
         });
@@ -153,7 +144,7 @@ public class NewMemberRedPackageSettingFragment extends BaseFragment {
                             setViewVisible(R.id.llEmpty);
                         }
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
     }
 
     public void onDestroyView() {

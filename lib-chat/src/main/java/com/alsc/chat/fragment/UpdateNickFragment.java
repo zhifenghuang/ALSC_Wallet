@@ -8,11 +8,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.cao.commons.bean.chat.UserBean;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 
@@ -20,7 +20,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.HashMap;
 
-public class UpdateNickFragment extends BaseFragment {
+public class UpdateNickFragment extends ChatBaseFragment {
 
     private UserBean mUserInfo;
     private boolean isMySelf;
@@ -82,7 +82,7 @@ public class UpdateNickFragment extends BaseFragment {
                         EventBus.getDefault().post(map);
                         goBack();
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
             } else {
                 ChatHttpMethods.getInstance().updateUserProfile(text, "", -1, "", new HttpObserver(new SubscriberOnNextListener() {
                     @Override
@@ -95,7 +95,7 @@ public class UpdateNickFragment extends BaseFragment {
                         EventBus.getDefault().post(map);
                         goBack();
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
             }
         } else if (id == R.id.ivClear) {
             setText(R.id.etName, "");

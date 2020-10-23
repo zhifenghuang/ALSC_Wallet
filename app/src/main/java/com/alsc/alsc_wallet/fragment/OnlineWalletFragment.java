@@ -8,9 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.activity.MainActivity;
 import com.alsc.alsc_wallet.adapter.HotWalletAdapter;
+import com.common.activity.BaseActivity;
 import com.common.bean.CoinSymbolBean;
 import com.alsc.alsc_wallet.fragment.online.WalletDetailFragment;
 import com.common.fragment.BaseFragment;
+import com.common.http.HttpMethods;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
+
+import java.util.HashMap;
 
 public class OnlineWalletFragment extends BaseFragment {
 
@@ -37,6 +43,8 @@ public class OnlineWalletFragment extends BaseFragment {
         getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_ltc, "LTC", "1FyMFyFyFy......h4FyAVz"));
         getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_dash, "DASH", "1FyMFyFyFy......h4FyAVz"));
         getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_zec, "ZEC", "1FyMFyFyFy......h4FyAVz"));
+
+        getAssets();
     }
 
     @Override
@@ -67,5 +75,16 @@ public class OnlineWalletFragment extends BaseFragment {
     @Override
     public boolean isNeedSetTopStyle() {
         return false;
+    }
+
+    private void getAssets() {
+        HttpMethods.getInstance().assets(new HttpObserver(new SubscriberOnNextListener<HashMap<String, String>>() {
+            @Override
+            public void onNext(HashMap<String, String> map, String msg) {
+                if (getActivity() == null || getView() == null) {
+                    return;
+                }
+            }
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 }

@@ -5,13 +5,11 @@ import android.content.Context;
 import androidx.core.content.ContextCompat;
 
 import com.alsc.chat.R;
-import com.alsc.chat.manager.ConfigManager;
+import com.alsc.chat.manager.ChatManager;
 import com.cao.commons.bean.chat.ChatBean;
-import com.cao.commons.bean.chat.GroupBean;
 import com.cao.commons.bean.chat.MessageType;
 import com.alsc.chat.utils.Utils;
 import com.cao.commons.bean.chat.UserBean;
-import com.cao.commons.util.log.Log;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
@@ -60,7 +58,7 @@ public class ChatUserAdapter extends BaseQuickAdapter<ChatBean, BaseViewHolder> 
         if (msgType == MessageType.TYPE_INVITE_PAY_IN_GROUP.ordinal()) {
             helper.setText(R.id.tvMessage, mContext.getString(R.string.chat_invite_you_pay_in_group));
         } else {
-            helper.setText(R.id.tvMessage, ConfigManager.getInstance().getContentByType(chatBean.lastMsg, mContext));
+            helper.setText(R.id.tvMessage, ChatManager.getInstance().getContentByType(chatBean.lastMsg, mContext));
         }
         if (msgType == MessageType.TYPE_RECEIVE_RED_PACKAGE.ordinal()
                 || msgType == MessageType.TYPE_REMOVE_FROM_GROUP.ordinal()

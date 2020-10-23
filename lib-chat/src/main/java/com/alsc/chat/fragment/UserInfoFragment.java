@@ -5,11 +5,11 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.cao.commons.bean.chat.UserBean;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
@@ -19,7 +19,7 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class UserInfoFragment extends BaseFragment {
+public class UserInfoFragment extends ChatBaseFragment {
 
     private UserBean mUserInfo;
 
@@ -97,7 +97,7 @@ public class UserInfoFragment extends BaseFragment {
             bundle.putSerializable(Constants.BUNDLE_EXTRA, mUserInfo);
             if (DataManager.getInstance().getUser().isService() || mIsFriend) {
                 gotoPager(ChatFragment.class, bundle);
-                ((ChatBaseActivity) getActivity()).finishAllOtherActivity();
+                ((BaseActivity) getActivity()).finishAllOtherActivity();
             } else {
                 bundle.putInt(Constants.BUNDLE_EXTRA_2, VerifyApplyFragment.ADD_BY_QRCODE);
                 gotoPager(VerifyApplyFragment.class, bundle);
@@ -122,7 +122,7 @@ public class UserInfoFragment extends BaseFragment {
                 setViewGone(R.id.llBottom);
                 EventBus.getDefault().post(map);
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
 
@@ -139,7 +139,7 @@ public class UserInfoFragment extends BaseFragment {
                 map.put(Constants.EDIT_FRIEND, mUserInfo);
                 EventBus.getDefault().post(map);
             }
-        }, getActivity(), false, (ChatBaseActivity) getActivity()));
+        }, getActivity(), false, (BaseActivity) getActivity()));
     }
 
 }

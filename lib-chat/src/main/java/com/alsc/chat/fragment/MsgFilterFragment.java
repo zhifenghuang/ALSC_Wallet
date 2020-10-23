@@ -10,13 +10,12 @@ import android.widget.ImageView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.adapter.MsgFilterAdapter;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.FilterMsgBean;
 import com.cao.commons.bean.chat.GroupBean;
@@ -26,7 +25,7 @@ import com.zhangke.websocket.WebSocketHandler;
 
 import java.util.ArrayList;
 
-public class MsgFilterFragment extends BaseFragment {
+public class MsgFilterFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
     private MsgFilterAdapter mAdapter;
@@ -120,7 +119,7 @@ public class MsgFilterFragment extends BaseFragment {
                                     Constants.REFRESH_FORBID_LETTER, mGroup.getGroupId());
                             WebSocketHandler.getDefault().send(messageBean.toJson());
                         }
-                    }, getActivity(), (ChatBaseActivity) getActivity()));
+                    }, getActivity(), (BaseActivity) getActivity()));
         }
     }
 
@@ -135,6 +134,6 @@ public class MsgFilterFragment extends BaseFragment {
                         getAdapter().setNewData(list);
                         DataManager.getInstance().setGroupFilterMsg(mGroup.getGroupId(), list);
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
     }
 }

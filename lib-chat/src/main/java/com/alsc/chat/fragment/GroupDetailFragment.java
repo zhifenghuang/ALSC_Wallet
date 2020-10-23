@@ -6,15 +6,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.bean.chat.ChatSubBean;
 import com.cao.commons.bean.chat.GroupBean;
 import com.cao.commons.bean.chat.UploadAvatarEvent;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.manager.UPYFileUploadManger;
 import com.alsc.chat.utils.Constants;
@@ -28,7 +28,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class GroupDetailFragment extends BaseFragment {
+public class GroupDetailFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
     private ArrayList<UserBean> mGroupUsers;
@@ -129,7 +129,7 @@ public class GroupDetailFragment extends BaseFragment {
             gotoPager(QrcodeFragment.class, bundle);
         } else if (id == R.id.tvGroupNotice) {
             if (mGroup.getGroupRole() != 3) {
-                ((ChatBaseActivity) getActivity()).showOneBtnDialog("",
+                ((BaseActivity) getActivity()).showOneBtnDialog("",
                         getString(R.string.chat_only_ower_can_update_notice),
                         getString(R.string.chat_ok));
                 return;
@@ -241,7 +241,7 @@ public class GroupDetailFragment extends BaseFragment {
                 public void onNext(Object o, String msg) {
 
                 }
-            }, getActivity(), (ChatBaseActivity) getActivity()));
+            }, getActivity(), (BaseActivity) getActivity()));
         }
     }
 
@@ -304,7 +304,7 @@ public class GroupDetailFragment extends BaseFragment {
                 EventBus.getDefault().post(map);
                 goBack();
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
     private void removeGroup() {
@@ -333,6 +333,6 @@ public class GroupDetailFragment extends BaseFragment {
                 setText(R.id.tvGroupMemberNum, getString(R.string.chat_member_num_xxx, String.valueOf(mGroupUsers.size())));
                 DataManager.getInstance().saveGroupUsers(mGroup.getGroupId(), list);
             }
-        }, getActivity(), false, (ChatBaseActivity) getActivity()));
+        }, getActivity(), false, (BaseActivity) getActivity()));
     }
 }

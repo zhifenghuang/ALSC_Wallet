@@ -13,7 +13,7 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
 import com.bumptech.glide.load.resource.gif.GifDrawable;
 
 /**
@@ -77,7 +77,7 @@ public class ShowPicView extends ImageView {
     public void setImageBitmap(Bitmap bitmap, boolean isCutBmp) {
         mIsCutBmp = isCutBmp;
         if (isCutBmp) {
-            DisplayMetrics dis = ((ChatBaseActivity) getContext()).getDisplaymetrics();
+            DisplayMetrics dis = ((BaseActivity) getContext()).getDisplaymetrics();
             mCutLeft = 0;
             mCutTop = dis.heightPixels / 10;
             mCutRight = dis.widthPixels;
@@ -114,7 +114,7 @@ public class ShowPicView extends ImageView {
             float py = mBitmap.getHeight();
             mPoints = new float[10];
             if (getWidth() == 0 || getHeight() == 0) {
-                DisplayMetrics dis = ((ChatBaseActivity) getContext()).getDisplaymetrics();
+                DisplayMetrics dis = ((BaseActivity) getContext()).getDisplaymetrics();
                 if (mIsCutBmp) {
                     mFirstScaleSize = mScaleSize = Math.max(dis.widthPixels / px, dis.widthPixels / py);
                     mPoints[8] = dis.widthPixels * 0.5f;

@@ -6,7 +6,7 @@ import com.alsc.chat.R;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.UserBean;
 
-public class MoreFragment extends BaseFragment {
+public class MoreFragment extends ChatBaseFragment {
 
     @Override
     protected int getLayoutId() {

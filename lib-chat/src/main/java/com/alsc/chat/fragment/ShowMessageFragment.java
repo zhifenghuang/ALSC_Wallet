@@ -49,7 +49,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ShowMessageFragment extends BaseFragment {
+public class ShowMessageFragment extends ChatBaseFragment {
 
     public static final int TYPE_SHOW_CHAT_MESSAGE = 0;
     public static final int TYPE_SHOW_IMAGE_URL = 1;

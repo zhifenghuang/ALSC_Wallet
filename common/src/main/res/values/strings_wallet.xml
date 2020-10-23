@@ -276,5 +276,7 @@
     <string name="wallet_please_input_effective_address">请输入有效的地址</string>
     <string name="wallet_name_or_describe">名称或描述</string>
 
+    <string name="wallet_net_work_error">您的网络异常，请稍后再试！</string>
+
 </resources>
 

@@ -13,6 +13,7 @@ import com.cao.commons.bean.user.MyUserInfoBean;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,6 +51,29 @@ public class DataManager {
         return mGson;
     }
 
+    public String getToken() {
+        return Preferences.getInstacne().getValues("token", "");
+    }
+
+    public void saveToken(String token) {
+        Preferences.getInstacne().setValues("token", token == null ? "" : token);
+    }
+
+
+
+
+    public Object getObjectByKey(String key, Type tClass) {
+        String str = Preferences.getInstacne().getValues(key, "");
+        if (TextUtils.isEmpty(str)) {
+            return null;
+        }
+        return getGson().fromJson(str, tClass);
+    }
+
+    public void saveObjectByKey(String key, Object object) {
+        Preferences.getInstacne().setValues(key, getGson().toJson(object));
+    }
+
     public void saveUser(UserBean userBean) {
         mMyInfo = userBean;
         Preferences.getInstacne().setValues("user", getGson().toJson(userBean));
@@ -74,10 +98,6 @@ public class DataManager {
             mMyInfo = getGson().fromJson(str, UserBean.class);
         }
         return mMyInfo;
-    }
-
-    public String getToken() {
-        return getUser() == null ? null : getUser().getToken();
     }
 
     public long getUserId() {
@@ -267,6 +287,7 @@ public class DataManager {
 
     public void loginOut() {
         mMyInfo = null;
+        saveToken(null);
         Preferences.getInstacne().setValues("user", "");
         Preferences.getInstacne().setValues("myUserInfoBean", "");
         Preferences.getInstacne().setValues("friends", "");

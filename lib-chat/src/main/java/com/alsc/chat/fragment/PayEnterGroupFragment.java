@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.GroupBean;
 import com.cao.commons.bean.chat.GroupMessageBean;
@@ -18,7 +18,7 @@ import com.zhangke.websocket.WebSocketHandler;
 
 import org.greenrobot.eventbus.EventBus;
 
-public class PayEnterGroupFragment extends BaseFragment {
+public class PayEnterGroupFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
 
@@ -114,7 +114,7 @@ public class PayEnterGroupFragment extends BaseFragment {
                             EventBus.getDefault().post(mGroup);
                             goBack();
                         }
-                    }, getActivity(), (ChatBaseActivity) getActivity()));
+                    }, getActivity(), (BaseActivity) getActivity()));
         }
     }
 

@@ -7,16 +7,16 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.dialog.InputPasswordDialog;
-import com.alsc.chat.http.OnHttpErrorListener;
 import com.cao.commons.bean.chat.EnvelopeBean;
 import com.cao.commons.bean.chat.TransferFeeBean;
 import com.cao.commons.bean.chat.UserBean;
 import com.alsc.chat.http.ChatHttpMethods;
 import com.alsc.chat.http.HttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.OnHttpErrorListener;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
@@ -26,7 +26,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.HashMap;
 
-public class TransferFragment extends BaseFragment {
+public class TransferFragment extends ChatBaseFragment {
 
     private UserBean mUserInfo;
     private float mFee;
@@ -146,7 +146,7 @@ public class TransferFragment extends BaseFragment {
                         EventBus.getDefault().post(map);
                         goBack();
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
     }
 
     private void getBalance() {
@@ -188,6 +188,6 @@ public class TransferFragment extends BaseFragment {
                     setText(R.id.tvFee, getString(R.string.chat_transfer_fee, String.valueOf(fee)));
                 }
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 }

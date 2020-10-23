@@ -9,20 +9,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
 import com.alsc.chat.adapter.LabelUserAdapter;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.GroupBean;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.manager.DataManager;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddGroupFragment extends BaseFragment {
+public class AddGroupFragment extends ChatBaseFragment {
 
     private LabelUserAdapter mAdapter;
 
@@ -102,9 +102,9 @@ public class AddGroupFragment extends BaseFragment {
                     Bundle bundle = new Bundle();
                     bundle.putSerializable(Constants.BUNDLE_EXTRA, group);
                     gotoPager(GroupChatFragment.class, bundle);
-                    ((ChatBaseActivity) getActivity()).finishAllOtherActivity();
+                    ((BaseActivity) getActivity()).finishAllOtherActivity();
                 }
-            }, getActivity(), (ChatBaseActivity) getActivity()));
+            }, getActivity(), (BaseActivity) getActivity()));
         }
     }
 }

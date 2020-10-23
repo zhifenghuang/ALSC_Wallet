@@ -5,10 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
-
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.cao.commons.bean.chat.BasicMessage;
 import com.cao.commons.bean.chat.ChatSettingBean;
 import com.cao.commons.bean.chat.ChatSubBean;
@@ -17,8 +14,9 @@ import com.cao.commons.bean.chat.MessageType;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
@@ -31,7 +29,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.HashMap;
 
-public class ChatDetailFragment extends BaseFragment {
+public class ChatDetailFragment extends ChatBaseFragment {
 
     private UserBean mUserInfo;
 
@@ -178,7 +176,7 @@ public class ChatDetailFragment extends BaseFragment {
                 EventBus.getDefault().post(map);
                 goBack();
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
     private void blockUser(final int block) {
@@ -198,7 +196,7 @@ public class ChatDetailFragment extends BaseFragment {
                 setImage(R.id.ivBlackSwitch, mUserInfo.getBlock() == 1 ? R.drawable.icon_switch_on : R.drawable.icon_switch_off);
                 EventBus.getDefault().post(map);
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
     private void operatorStar(final int star) {
@@ -214,7 +212,7 @@ public class ChatDetailFragment extends BaseFragment {
                 map.put(Constants.EDIT_FRIEND, mUserInfo);
                 EventBus.getDefault().post(map);
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
     private void refreshUserInfo() {
@@ -230,7 +228,7 @@ public class ChatDetailFragment extends BaseFragment {
                 map.put(Constants.EDIT_FRIEND, mUserInfo);
                 EventBus.getDefault().post(map);
             }
-        }, getActivity(), false, (ChatBaseActivity) getActivity()));
+        }, getActivity(), false, (BaseActivity) getActivity()));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

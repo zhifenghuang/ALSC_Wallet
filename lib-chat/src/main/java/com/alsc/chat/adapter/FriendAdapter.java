@@ -2,11 +2,9 @@ package com.alsc.chat.adapter;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.fragment.ApplyListFragment;
 import com.alsc.chat.fragment.GroupListFragment;
 import com.alsc.chat.fragment.LabelFragment;
@@ -16,6 +14,7 @@ import com.alsc.chat.utils.Utils;
 import com.cao.commons.manager.DataManager;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.common.activity.BaseActivity;
 
 import java.util.ArrayList;
 
@@ -49,25 +48,25 @@ public class FriendAdapter extends BaseMultiItemQuickAdapter<FriendItem, BaseVie
                     public void onClick(View v) {
                         DataManager.getInstance().setNoNew();
                         setNew(false);
-                        ((ChatBaseActivity) mContext).gotoPager(ApplyListFragment.class);
+                        ((BaseActivity) mContext).gotoPager(ApplyListFragment.class);
                     }
                 });
                 helper.getView(R.id.tvMyGroup).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ((ChatBaseActivity) mContext).gotoPager(GroupListFragment.class);
+                        ((BaseActivity) mContext).gotoPager(GroupListFragment.class);
                     }
                 });
                 helper.getView(R.id.tvStarFriend).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ((ChatBaseActivity) mContext).gotoPager(StarFriendFragment.class);
+                        ((BaseActivity) mContext).gotoPager(StarFriendFragment.class);
                     }
                 });
                 helper.getView(R.id.tvLabel).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ((ChatBaseActivity) mContext).gotoPager(LabelFragment.class);
+                        ((BaseActivity) mContext).gotoPager(LabelFragment.class);
                     }
                 });
                 break;

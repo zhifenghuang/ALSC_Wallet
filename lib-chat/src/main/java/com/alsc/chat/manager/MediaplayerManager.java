@@ -8,10 +8,7 @@ import android.net.Uri;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import com.alsc.chat.R;
-
 import java.io.File;
-import java.io.IOException;
 
 public class MediaplayerManager {
 
@@ -44,7 +41,7 @@ public class MediaplayerManager {
             }
             mPlayer.reset();
             try {
-                mPlayer.setDataSource(ConfigManager.getInstance().getContext(), Uri.fromFile(file));
+                mPlayer.setDataSource(ChatManager.getInstance().getContext(), Uri.fromFile(file));
                 mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                 mPlayer.prepare();
                 mPlayer.start();
@@ -83,7 +80,7 @@ public class MediaplayerManager {
                             mPlayer = new MediaPlayer();
                         }
                         mPlayer.reset();
-                        mPlayer.setDataSource(ConfigManager.getInstance().getContext(), Uri.fromFile(file));
+                        mPlayer.setDataSource(ChatManager.getInstance().getContext(), Uri.fromFile(file));
                         mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                         holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
                         mPlayer.setDisplay(holder);

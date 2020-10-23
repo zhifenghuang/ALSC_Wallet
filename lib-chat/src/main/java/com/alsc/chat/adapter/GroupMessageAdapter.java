@@ -5,10 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.fragment.MyInfoFragment;
 import com.cao.commons.bean.chat.BasicMessage;
 import com.cao.commons.bean.chat.GroupBean;
@@ -17,6 +14,7 @@ import com.alsc.chat.fragment.UserInfoFragment;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.common.activity.BaseActivity;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
@@ -53,7 +51,7 @@ public class GroupMessageAdapter extends MessageAdapter {
             helper.getView(R.id.ivRight).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ((ChatBaseActivity) mContext).gotoPager(MyInfoFragment.class);
+                    ((BaseActivity) mContext).gotoPager(MyInfoFragment.class);
                 }
             });
         } else {
@@ -84,14 +82,14 @@ public class GroupMessageAdapter extends MessageAdapter {
                 @Override
                 public void onClick(View v) {
                     if (mGroup.getDisableFriend() == 1) {
-                        ((ChatBaseActivity) mContext).showToast(R.string.chat_group_forbid_add_friend);
+                        ((BaseActivity) mContext).showToast(R.string.chat_group_forbid_add_friend);
                         return;
                     }
                     UserBean bean = (UserBean) v.getTag(R.id.chat_id);
                     if (bean != null) {
                         Bundle bundle = new Bundle();
                         bundle.putSerializable(Constants.BUNDLE_EXTRA, bean);
-                        ((ChatBaseActivity) mContext).gotoPager(UserInfoFragment.class, bundle);
+                        ((BaseActivity) mContext).gotoPager(UserInfoFragment.class, bundle);
                     }
                 }
             });

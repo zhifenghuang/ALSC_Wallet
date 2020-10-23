@@ -6,8 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
-import com.alsc.chat.activity.EmptyActivity;
+import com.common.activity.BaseActivity;
 import com.alsc.chat.fragment.MyInfoFragment;
 import com.alsc.chat.fragment.UserInfoFragment;
 import com.cao.commons.bean.chat.UserBean;
@@ -54,7 +53,7 @@ public class LabelUserAdapter extends BaseQuickAdapter<UserBean, BaseViewHolder>
                     public void onClick(View v) {
                         Bundle bundle = new Bundle();
                         bundle.putSerializable(Constants.BUNDLE_EXTRA, item);
-                        ((ChatBaseActivity) mContext).gotoPager(item.getUserId() == DataManager.getInstance().getUserId() ? MyInfoFragment.class : UserInfoFragment.class, bundle);
+                        ((BaseActivity) mContext).gotoPager(item.getUserId() == DataManager.getInstance().getUserId() ? MyInfoFragment.class : UserInfoFragment.class, bundle);
                     }
                 });
             } else {
@@ -74,7 +73,6 @@ public class LabelUserAdapter extends BaseQuickAdapter<UserBean, BaseViewHolder>
             ivAvatar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    EmptyActivity activity = (EmptyActivity) mContext;
                     Bundle bundle = new Bundle();
                     bundle.putSerializable(Constants.BUNDLE_EXTRA, SelectFriendFragment.FROM_ADD_LABEL_OR_GROUP_USER);
                     ArrayList<UserBean> list = (ArrayList<UserBean>) getData();
@@ -82,7 +80,7 @@ public class LabelUserAdapter extends BaseQuickAdapter<UserBean, BaseViewHolder>
                     list.remove(size - 1);
                     list.remove(size - 2);
                     bundle.putSerializable(Constants.BUNDLE_EXTRA_2, list);
-                    activity.gotoPager(SelectFriendFragment.class, bundle);
+                    ((BaseActivity) mContext).gotoPager(SelectFriendFragment.class, bundle);
                 }
             });
         } else {

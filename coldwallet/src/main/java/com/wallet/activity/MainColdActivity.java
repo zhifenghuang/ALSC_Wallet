@@ -31,7 +31,7 @@ import com.cao.commons.manager.DataManager;
 import com.cold.wallet.R;
 import com.cold.wallet.databinding.ActivityMainColdBinding;
 import com.google.gson.Gson;
-import com.gyf.barlibrary.ImmersionBar;
+import com.gyf.immersionbar.ImmersionBar;
 import com.wallet.activity.adapter.MainColdAdapter;
 import com.wallet.activity.cold.AddressActivity;
 import com.wallet.activity.cold.ColdAssetsListActivity;

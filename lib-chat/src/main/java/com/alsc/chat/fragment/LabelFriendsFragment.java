@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.adapter.LabelFriendAdapter;
 import com.cao.commons.bean.chat.LabelBean;
 import com.cao.commons.bean.chat.UserBean;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -26,7 +26,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class LabelFriendsFragment extends BaseFragment {
+public class LabelFriendsFragment extends ChatBaseFragment {
 
     private LabelFriendAdapter mAdapter;
 
@@ -116,7 +116,7 @@ public class LabelFriendsFragment extends BaseFragment {
                 }
                 getAdapter().setNewData(list);
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
 }

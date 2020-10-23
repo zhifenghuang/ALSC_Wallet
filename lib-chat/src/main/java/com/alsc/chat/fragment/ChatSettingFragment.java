@@ -7,7 +7,7 @@ import com.alsc.chat.R;
 import com.cao.commons.db.DatabaseOperate;
 import com.cao.commons.manager.DataManager;
 
-public class ChatSettingFragment extends BaseFragment {
+public class ChatSettingFragment extends ChatBaseFragment {
 
     @Override
     protected int getLayoutId() {

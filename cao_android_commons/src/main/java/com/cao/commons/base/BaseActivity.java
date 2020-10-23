@@ -25,7 +25,7 @@ import com.cao.commons.retrofit.OkHttpClientManager;
 import com.cao.commons.retrofit.PoliceBaseUrl;
 import com.cao.commons.retrofit.RxManager;
 import com.cao.commons.widget.svprogresshud.SVProgressHUD;
-import com.gyf.barlibrary.ImmersionBar;
+import com.gyf.immersionbar.ImmersionBar;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;

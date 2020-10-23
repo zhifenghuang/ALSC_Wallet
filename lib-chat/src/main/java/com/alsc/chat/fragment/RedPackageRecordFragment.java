@@ -6,18 +6,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.adapter.RedPackageRecordAdapter;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.bean.chat.EnvelopeRecordBean;
 import com.cao.commons.manager.DataManager;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 import java.util.ArrayList;
 
-public class RedPackageRecordFragment extends BaseFragment {
+public class RedPackageRecordFragment extends ChatBaseFragment {
 
     private RedPackageRecordAdapter mAdapter;
 
@@ -102,7 +102,7 @@ public class RedPackageRecordFragment extends BaseFragment {
                 setText(R.id.tvTitle, mCurrentType == 1 ? R.string.chat_my_receive_red_package : R.string.chat_my_send_red_package);
                 getAdapter().setRedPackageData(bean, mCurrentType);
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
     public static class RedPackageRecordItem implements MultiItemEntity {

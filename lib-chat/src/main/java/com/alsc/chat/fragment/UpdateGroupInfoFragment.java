@@ -7,23 +7,21 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.cao.commons.bean.chat.GroupBean;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
 import com.cao.commons.bean.chat.MessageType;
 
 import org.greenrobot.eventbus.EventBus;
 
-public class UpdateGroupInfoFragment extends BaseFragment {
+public class UpdateGroupInfoFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
 
@@ -137,7 +135,7 @@ public class UpdateGroupInfoFragment extends BaseFragment {
                                 EventBus.getDefault().post(mGroup);
                                 goBack();
                             }
-                        }, getActivity(), (ChatBaseActivity) getActivity()));
+                        }, getActivity(), (BaseActivity) getActivity()));
             } else if (mUpdateGroupType == UPDATE_GROUP_NOTICE) {
                 ChatHttpMethods.getInstance().updateGroupNotice(String.valueOf(mGroup.getGroupId()), text,
                         new HttpObserver(new SubscriberOnNextListener<GroupBean>() {
@@ -151,7 +149,7 @@ public class UpdateGroupInfoFragment extends BaseFragment {
                                 EventBus.getDefault().post(mGroup);
                                 goBack();
                             }
-                        }, getActivity(), (ChatBaseActivity) getActivity()));
+                        }, getActivity(), (BaseActivity) getActivity()));
             } else if (mUpdateGroupType == UPDATE_IN_GROUP_NICK) {
                 ChatHttpMethods.getInstance().updateGroupMemo(String.valueOf(mGroup.getGroupId()), text, "",
                         new HttpObserver(new SubscriberOnNextListener() {
@@ -164,7 +162,7 @@ public class UpdateGroupInfoFragment extends BaseFragment {
                                 EventBus.getDefault().post(mGroup);
                                 goBack();
                             }
-                        }, getActivity(), (ChatBaseActivity) getActivity()));
+                        }, getActivity(), (BaseActivity) getActivity()));
             }
         } else if (id == R.id.ivAddMsgFilter) {
             String content = getTextById(R.id.etNotice).trim();
@@ -180,7 +178,7 @@ public class UpdateGroupInfoFragment extends BaseFragment {
                             }
                             setText(R.id.etNotice, "");
                         }
-                    }, getActivity(), (ChatBaseActivity) getActivity()));
+                    }, getActivity(), (BaseActivity) getActivity()));
         }
     }
 

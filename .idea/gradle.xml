@@ -15,12 +15,11 @@
             <option value="$PROJECT_DIR$/coldwallet" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/lib-chat" />
-            <option value="$PROJECT_DIR$/lib-coldWallet" />
             <option value="$PROJECT_DIR$/lib-filepick" />
-            <option value="$PROJECT_DIR$/lib-tool" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>

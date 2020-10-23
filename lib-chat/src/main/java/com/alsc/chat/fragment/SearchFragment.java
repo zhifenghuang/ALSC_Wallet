@@ -2,7 +2,6 @@ package com.alsc.chat.fragment;
 
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.Html;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -15,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.adapter.SearchChatRecordAdapter;
 import com.alsc.chat.adapter.SearchContactAdapter;
 import com.alsc.chat.utils.Utils;
@@ -26,8 +24,9 @@ import com.cao.commons.bean.chat.MessageType;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -35,7 +34,7 @@ import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.ArrayList;
 
-public class SearchFragment extends BaseFragment {
+public class SearchFragment extends ChatBaseFragment {
 
     public static final int SEARCH_LOCAL_FRIEND = 0;
     public static final int SEARCH_SERVER_FRIEND = 1;
@@ -201,7 +200,7 @@ public class SearchFragment extends BaseFragment {
                             bundle.putSerializable(Constants.BUNDLE_EXTRA, contactItem.getGroup());
                             gotoPager(GroupChatFragment.class, bundle);
                         }
-                        ((ChatBaseActivity) getActivity()).finishAllOtherActivity();
+                        ((BaseActivity) getActivity()).finishAllOtherActivity();
                     } else if (contactItem.getItemType() == ContactItem.VIEW_TYPE_2) {
                         Bundle bundle = new Bundle();
                         if (contactItem.getFriend() != null) {
@@ -239,7 +238,7 @@ public class SearchFragment extends BaseFragment {
                         bundle.putSerializable(Constants.BUNDLE_EXTRA_2, getAdapter2().getItem(position));
                         gotoPager(GroupChatFragment.class, bundle);
                     }
-                    ((ChatBaseActivity) getActivity()).finishAllOtherActivity();
+                    ((BaseActivity) getActivity()).finishAllOtherActivity();
                 }
             });
         }
@@ -310,6 +309,6 @@ public class SearchFragment extends BaseFragment {
                 }
                 gotoPager(isFriend ? UserInfoFragment.class : VerifyApplyFragment.class, bundle);
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 }

@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.dialog.InputPasswordDialog;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.EnvelopeBean;
 import com.cao.commons.bean.chat.GroupBean;
@@ -21,7 +21,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.HashMap;
 
-public class NewMemberRedPackageFragment extends BaseFragment {
+public class NewMemberRedPackageFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
 
@@ -153,6 +153,6 @@ public class NewMemberRedPackageFragment extends BaseFragment {
                         EventBus.getDefault().post(map);
                         goBack();
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
     }
 }

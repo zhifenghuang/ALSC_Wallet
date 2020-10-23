@@ -8,13 +8,13 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.dialog.InputPasswordDialog;
 import com.cao.commons.bean.chat.EnvelopeBean;
 import com.cao.commons.bean.chat.UserBean;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
 import com.google.gson.Gson;
 
@@ -22,7 +22,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.HashMap;
 
-public class SendRedPackageFragment extends BaseFragment {
+public class SendRedPackageFragment extends ChatBaseFragment {
 
 //    private int mType;  //1群普通红包群 2手气红包 3私人转转 4私人红包
 
@@ -141,7 +141,7 @@ public class SendRedPackageFragment extends BaseFragment {
                         EventBus.getDefault().post(map);
                         goBack();
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
     }
 
 }

@@ -30,7 +30,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TransferMsgFragment extends BaseFragment {
+public class TransferMsgFragment extends ChatBaseFragment {
 
     private FriendAdapter mAdapter;
 

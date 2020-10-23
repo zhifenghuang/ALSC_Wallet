@@ -11,11 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.adapter.GroupUserAdapter;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.manager.UPYFileUploadManger;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
@@ -32,7 +32,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.io.File;
 import java.util.ArrayList;
 
-public class GroupInfoFragment extends BaseFragment {
+public class GroupInfoFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
     private ArrayList<UserBean> mGroupUsers;
@@ -152,7 +152,7 @@ public class GroupInfoFragment extends BaseFragment {
                 public void onNext(Object o, String msg) {
 
                 }
-            }, getActivity(), (ChatBaseActivity) getActivity()));
+            }, getActivity(), (BaseActivity) getActivity()));
         }
     }
 
@@ -195,7 +195,7 @@ public class GroupInfoFragment extends BaseFragment {
                 if (viewId == R.id.btnTakePhoto) {
                     if (!Utils.isGrantPermission(getActivity(),
                             Manifest.permission.CAMERA)) {
-                        ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA);
+                        ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA);
                     } else {
                         Bundle bundle = new Bundle();
                         bundle.putSerializable(Constants.BUNDLE_EXTRA, CameraFragment.FOR_AVATAR);
@@ -204,7 +204,7 @@ public class GroupInfoFragment extends BaseFragment {
                 } else if (viewId == R.id.btnAlbum) {
                     if (!Utils.isGrantPermission(getActivity(),
                             Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                        ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                     } else {
                         Intent intent = new Intent(Intent.ACTION_PICK);
                         intent.setType("image/*");//相片类型
@@ -226,9 +226,9 @@ public class GroupInfoFragment extends BaseFragment {
                     String filePath;
                     int sdkVersion = Build.VERSION.SDK_INT;
                     if (sdkVersion >= 19) { // api >= 19
-                        filePath = ((ChatBaseActivity) getActivity()).getRealPathFromUriAboveApi19(data.getData());
+                        filePath = ((BaseActivity) getActivity()).getRealPathFromUriAboveApi19(data.getData());
                     } else { // api < 19
-                        filePath = ((ChatBaseActivity) getActivity()).getRealPathFromUriBelowAPI19(data.getData());
+                        filePath = ((BaseActivity) getActivity()).getRealPathFromUriBelowAPI19(data.getData());
                     }
                     onReceiveAvatarFile(new File(filePath));
                 } catch (Exception e) {

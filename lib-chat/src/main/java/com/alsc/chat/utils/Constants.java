@@ -13,14 +13,9 @@ public class Constants {
     public static final String BUNDLE_EXTRA_3 = "extra_3";
     public static final String BUNDLE_EXTRA_4 = "extra_4";
 
-
-//    public static final String DEBUG_BASE_URL = "http://www.alsc.space";
-//    public static final String DEBUG_CHAT_BASE_URL = "http://118.178.16.240";
-//    public static final String DEBUG_CHAT_SOCKET_URL = "ws://118.178.16.240:2348?token=%s&channel=im";
-
-    public static final String BASE_URL = SPConstants.DEBUG_MODE ? "https://youxiceshi.uwyoo.com" : "https://main3.uwyoo.com";//"http://main2.alsc1319.vip";
-    public static final String CHAT_BASE_URL = SPConstants.DEBUG_MODE ? "https://liaotianceshi.uwyoo.com" : "https://lt3.gogopipe.xyz";//"https://game.cmzzz.top";
-    public static final String CHAT_SOCKET_URL = SPConstants.DEBUG_MODE ? "ws://liaotianceshi.uwyoo.com:2348?token=%s&channel=im" : "ws://lt3.gogopipe.xyz:2348?token=%s&channel=im";//"ws://game.cmzzz.top:2348?token=%s&channel=im";
+    public static final String BASE_URL = SPConstants.DEBUG_MODE ? "https://youxiceshi.uwyoo.com" : "https://main3.uwyoo.com";
+    public static final String CHAT_BASE_URL = SPConstants.DEBUG_MODE ? "https://message.uwyoo.com" : "https://message.uwyoo.com";
+    public static final String CHAT_SOCKET_URL = SPConstants.DEBUG_MODE ? "ws://message.uwyoo.com:2348?token=%s&channel=im" : "ws://message.uwyoo.com:2348?token=%s&channel=im";
 
     public static final int PAGE_NUM = 30;
 

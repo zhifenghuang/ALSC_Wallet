@@ -3,15 +3,14 @@ package com.alsc.chat.fragment;
 import android.view.View;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
-import com.alsc.chat.manager.ConfigManager;
 import com.cao.commons.bean.chat.EnvelopeBean;
 import com.cao.commons.bean.chat.MessageBean;
 import com.cao.commons.bean.chat.MessageType;
 import com.cao.commons.bean.chat.UserBean;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.db.DatabaseOperate;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
@@ -24,7 +23,7 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TransferResultFragment extends BaseFragment {
+public class TransferResultFragment extends ChatBaseFragment {
 
     private EnvelopeBean mEnvelope;
     private UserBean mChatUser;
@@ -136,7 +135,7 @@ public class TransferResultFragment extends BaseFragment {
                     }
                     setViewGone(R.id.tvOk);
                 }
-            }, getActivity(), (ChatBaseActivity) getActivity()));
+            }, getActivity(), (BaseActivity) getActivity()));
         }
     }
 }

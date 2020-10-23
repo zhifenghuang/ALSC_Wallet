@@ -1,12 +1,11 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion rootProject.compileSdkVersion
+
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -34,13 +33,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation(name: 'AMap3DMap_7.2.1_AMapSearch_7.1.0_AMapLocation_4.8.0_20200115', ext: 'aar')
-//    api 'com.github.bumptech.glide:glide:4.10.0'
+    implementation(name: 'AMap', ext: 'aar')
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-4'
     api 'com.upyun:upyun-android-sdk:2.1.2'
-//    api 'org.greenrobot:eventbus:3.1.1'
     api 'org.java-websocket:Java-WebSocket:1.4.0'
-    api project(':lib-tool')
     api project(':lib-filepick')
     api project(':cao_android_commons')
+    api project(':common')
 }

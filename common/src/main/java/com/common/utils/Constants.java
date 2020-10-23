@@ -10,6 +10,8 @@ public class Constants {
     public static final String CURRENT_VERSION_NAME = "1.0.0";
     public static final int CURRENT_VERSION_CODE = 1;
 
+    public static final String FINISH_ACTIVITY = "finish_activity";
+
 
     public static final String BUNDLE_EXTRA = "extra";
     public static final String BUNDLE_EXTRA_2 = "extra_2";

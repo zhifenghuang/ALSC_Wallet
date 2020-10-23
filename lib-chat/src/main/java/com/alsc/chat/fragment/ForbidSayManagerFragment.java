@@ -4,17 +4,17 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.GroupBean;
 import com.cao.commons.bean.chat.UserBean;
 
 import java.util.ArrayList;
 
-public class ForbidSayManagerFragment extends BaseFragment {
+public class ForbidSayManagerFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
     private ArrayList<UserBean> mGroupUsers;
@@ -71,7 +71,7 @@ public class ForbidSayManagerFragment extends BaseFragment {
                 }
                 gotoPager(SelectFriendFragment.class, bundle);
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
 }

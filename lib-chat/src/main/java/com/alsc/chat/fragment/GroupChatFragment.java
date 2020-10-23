@@ -6,12 +6,13 @@ import android.view.View;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.adapter.GroupMessageAdapter;
 import com.alsc.chat.adapter.MessageAdapter;
 import com.alsc.chat.utils.Utils;
@@ -24,11 +25,8 @@ import com.cao.commons.bean.chat.MessageType;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
-import com.cao.commons.util.log.Log;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildLongClickListener;
 
@@ -328,7 +326,7 @@ public class GroupChatFragment extends ChatFragment {
                 ((GroupMessageAdapter) getAdapter()).setGroupUsers(list);
                 DataManager.getInstance().saveGroupUsers(mGroup.getGroupId(), list);
             }
-        }, getActivity(), false, (ChatBaseActivity) getActivity()));
+        }, getActivity(), false, (BaseActivity) getActivity()));
     }
 
     private void showForbidView() {
@@ -355,7 +353,7 @@ public class GroupChatFragment extends ChatFragment {
                 setText(R.id.tvLeft, mGroup.getName());
                 EventBus.getDefault().post(mGroup);
             }
-        }, getActivity(), false, (ChatBaseActivity) getActivity()));
+        }, getActivity(), false, (BaseActivity) getActivity()));
     }
 
     private void getFilterMsg() {
@@ -369,7 +367,7 @@ public class GroupChatFragment extends ChatFragment {
                         mFilterMsgs = list;
                         DataManager.getInstance().setGroupFilterMsg(mGroup.getGroupId(), list);
                     }
-                }, getActivity(), false, (ChatBaseActivity) getActivity()));
+                }, getActivity(), false, (BaseActivity) getActivity()));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

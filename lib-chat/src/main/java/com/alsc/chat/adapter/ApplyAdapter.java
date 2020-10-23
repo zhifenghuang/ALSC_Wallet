@@ -8,19 +8,19 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.cao.commons.bean.chat.MessageBean;
 import com.cao.commons.bean.chat.MessageType;
 import com.cao.commons.bean.chat.UserBean;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.cao.commons.db.DatabaseOperate;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.google.gson.Gson;
 import com.zhangke.websocket.WebSocketHandler;
 
@@ -90,7 +90,7 @@ public class ApplyAdapter extends BaseQuickAdapter<UserBean, BaseViewHolder> {
                         EventBus.getDefault().post(map);
                         notifyDataSetChanged();
                     }
-                }, mContext, (ChatBaseActivity) mContext));
+                }, mContext, (BaseActivity) mContext));
     }
 
 }

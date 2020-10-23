@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class ChooseFragment extends BaseFragment {
+public class ChooseFragment extends ChatBaseFragment {
 
     public static final int CHOOSE_GENDER = 0;
     public static final int CHOOSE_COUNTRY = 1;

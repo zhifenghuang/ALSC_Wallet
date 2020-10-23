@@ -12,9 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
-import com.cao.commons.bean.chat.FileBean;
-import com.cao.commons.bean.chat.MessageType;
+import com.common.activity.BaseActivity;
 import com.alsc.chat.hardwrare.CameraManager;
 import com.alsc.chat.hardwrare.SensorControler;
 import com.alsc.chat.record.OnCameraUseListener;
@@ -24,12 +22,10 @@ import com.alsc.chat.view.CameraGLSurfaceView;
 import com.alsc.chat.view.CircleButton;
 import com.alsc.chat.view.SquareCameraContainer;
 
-import org.greenrobot.eventbus.EventBus;
-
 import java.io.File;
 import java.util.HashMap;
 
-public class CameraFragment extends BaseFragment implements View.OnTouchListener {
+public class CameraFragment extends ChatBaseFragment implements View.OnTouchListener {
 
     public static final int FOR_CHAT_PHOTO = 0;
     public static final int FOR_CHAT_VIDEO = 1;
@@ -262,7 +258,7 @@ public class CameraFragment extends BaseFragment implements View.OnTouchListener
             if (!Utils.isGrantPermission(getActivity(), Manifest.permission.CAMERA)
                     || !Utils.isGrantPermission(getActivity(), Manifest.permission.RECORD_AUDIO)
                     || !Utils.isGrantPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA,
+                ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA,
                         Manifest.permission.RECORD_AUDIO,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 ((CircleButton) fv(R.id.btnTakePhotoOrRecord)).resetCircleButton();
@@ -271,7 +267,7 @@ public class CameraFragment extends BaseFragment implements View.OnTouchListener
         } else {
             if (!Utils.isGrantPermission(getActivity(), Manifest.permission.CAMERA)
                     || !Utils.isGrantPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA,
+                ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 ((CircleButton) fv(R.id.btnTakePhotoOrRecord)).resetCircleButton();
                 return false;

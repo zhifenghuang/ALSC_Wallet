@@ -8,7 +8,9 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.alsc.chat.manager.ChatManager;
 import com.cao.commons.base.PoliceApplication;
+import com.cao.commons.manager.ConfigManager;
 
 import java.util.List;
 
@@ -36,7 +38,7 @@ public class BaseApp extends PoliceApplication {
         List<ActivityManager.RunningAppProcessInfo> list = activityManager.getRunningAppProcesses();
         for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : list) {
             if (runningAppProcessInfo.pid == pid) {
-                if (runningAppProcessInfo.processName.equals("com.wallet:pushcore")) {
+                if (runningAppProcessInfo.processName.equals("com.jnsh.alsc:pushcore")) {
                     return;
                 }
                 ++count;
@@ -46,6 +48,10 @@ public class BaseApp extends PoliceApplication {
             return;
         }
         mInstance = this;
+
+
+        ConfigManager.getInstance().setContext(this);
+        ChatManager.getInstance().setContext(this);
 
         mActivityRecord = 0;
         registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
@@ -84,6 +90,10 @@ public class BaseApp extends PoliceApplication {
             }
         });
 
+    }
+
+    public void initWebSocket(String token) {
+        ChatManager.getInstance().initWebSocket(token);
     }
 
 }

@@ -13,13 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
 import com.alsc.chat.http.HttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.OnHttpErrorListener;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Utils;
 import com.cao.commons.manager.DataManager;
+import com.common.http.HttpObserver;
+import com.common.http.OnHttpErrorListener;
+import com.common.http.SubscriberOnNextListener;
 
 public class InputPasswordDialog extends Dialog implements View.OnClickListener {
     private Context mContext;
@@ -56,7 +56,7 @@ public class InputPasswordDialog extends Dialog implements View.OnClickListener 
 
         Window view = getWindow();
         WindowManager.LayoutParams lp = view.getAttributes();
-        lp.width = ((ChatBaseActivity) context).getDisplaymetrics().widthPixels - Utils.dip2px(context, 52); // 设置宽度充满屏幕
+        lp.width = ((BaseActivity) context).getDisplaymetrics().widthPixels - Utils.dip2px(context, 52); // 设置宽度充满屏幕
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         view.setGravity(Gravity.BOTTOM);
 

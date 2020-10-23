@@ -47,11 +47,24 @@ android {
     dataBinding {
         enabled = true
     }
+
+    repositories {
+        flatDir {
+            dirs 'libs', '../lib-chat/libs'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
     api project(':coldwallet')
     api project(':common')
+    api project(':lib-chat')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

@@ -1,6 +1,5 @@
 package com.cao.commons.manager;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
@@ -11,7 +10,6 @@ public class Preferences {
     private static final String TAG = "Preferences";
     private static Preferences mConfig = null;
     private SharedPreferences mSettings;
-    private Context mContext;
 
     public static Preferences getInstacne() {
         if (mConfig == null) {
@@ -24,16 +22,12 @@ public class Preferences {
         return mConfig;
     }
 
-    public void setContext(Context context) {
-        mContext = context;
-    }
-
     private Preferences() {
     }
 
     private SharedPreferences getSettings() {
         if (mSettings == null) {
-            mSettings = mContext.getSharedPreferences("Config", 0);
+            mSettings = ConfigManager.getInstance().getContext().getSharedPreferences("Config", 0);
         }
         return mSettings;
     }

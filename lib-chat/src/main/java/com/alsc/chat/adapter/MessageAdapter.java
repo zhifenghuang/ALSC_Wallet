@@ -1,7 +1,6 @@
 package com.alsc.chat.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -11,17 +10,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
 import com.alsc.chat.fragment.MyInfoFragment;
 import com.alsc.chat.utils.BitmapUtil;
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.cao.commons.bean.chat.BasicMessage;
@@ -829,7 +824,7 @@ public class MessageAdapter extends BaseQuickAdapter<BasicMessage, BaseViewHolde
             helper.getView(R.id.ivRight).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ((ChatBaseActivity) mContext).gotoPager(MyInfoFragment.class);
+                    ((BaseActivity) mContext).gotoPager(MyInfoFragment.class);
                 }
             });
         } else {
@@ -839,7 +834,7 @@ public class MessageAdapter extends BaseQuickAdapter<BasicMessage, BaseViewHolde
                 public void onClick(View v) {
                     Bundle bundle = new Bundle();
                     bundle.putSerializable(Constants.BUNDLE_EXTRA, mChatUser);
-                    ((ChatBaseActivity) mContext).gotoPager(UserInfoFragment.class, bundle);
+                    ((BaseActivity) mContext).gotoPager(UserInfoFragment.class, bundle);
                 }
             });
         }

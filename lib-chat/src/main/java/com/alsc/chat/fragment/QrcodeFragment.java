@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.bean.chat.GroupBean;
 import com.cao.commons.bean.chat.UserBean;
 import com.alsc.chat.utils.Constants;
@@ -15,7 +17,7 @@ import com.alsc.chat.utils.Utils;
 import com.cao.commons.manager.DataManager;
 import com.cao.commons.util.QRCodeUtil;
 
-public class QrcodeFragment extends BaseFragment {
+public class QrcodeFragment extends ChatBaseFragment {
 
     public static final int USER_QRCODE = 0;
     public static final int GROUP_QRCODE = 1;
@@ -80,7 +82,7 @@ public class QrcodeFragment extends BaseFragment {
                 return;
             }
             if (!Utils.isGrantPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 return;
             }
             Utils.saveJpegToAlbum(mQrBmp, getActivity());

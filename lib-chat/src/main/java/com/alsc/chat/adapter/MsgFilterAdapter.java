@@ -1,37 +1,22 @@
 package com.alsc.chat.adapter;
 
 import android.content.Context;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import androidx.core.content.ContextCompat;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
-import com.alsc.chat.manager.ConfigManager;
+import com.common.activity.BaseActivity;
 import com.alsc.chat.utils.Constants;
-import com.alsc.chat.utils.Utils;
 import com.cao.commons.bean.chat.FilterMsgBean;
 import com.cao.commons.bean.chat.GroupBean;
 import com.cao.commons.bean.chat.GroupMessageBean;
-import com.cao.commons.bean.chat.MessageBean;
-import com.cao.commons.bean.chat.MessageType;
-import com.cao.commons.bean.chat.UserBean;
-import com.cao.commons.db.DatabaseOperate;
 import com.cao.commons.manager.DataManager;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.zhangke.websocket.WebSocketHandler;
-
-import org.greenrobot.eventbus.EventBus;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MsgFilterAdapter extends BaseQuickAdapter<FilterMsgBean, BaseViewHolder> {
 
@@ -69,7 +54,7 @@ public class MsgFilterAdapter extends BaseQuickAdapter<FilterMsgBean, BaseViewHo
                         remove(position);
                         DataManager.getInstance().setGroupFilterMsg(mGroup.getGroupId(), getData());
                     }
-                }, mContext, (ChatBaseActivity) mContext));
+                }, mContext, (BaseActivity) mContext));
     }
 
 }

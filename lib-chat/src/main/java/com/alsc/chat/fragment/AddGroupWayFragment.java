@@ -4,21 +4,21 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.GroupBean;
 import com.cao.commons.bean.chat.GroupMessageBean;
 import com.cao.commons.manager.DataManager;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.zhangke.websocket.WebSocketHandler;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-public class AddGroupWayFragment extends BaseFragment {
+public class AddGroupWayFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
 
@@ -94,7 +94,7 @@ public class AddGroupWayFragment extends BaseFragment {
                         EventBus.getDefault().post(mGroup);
                         resetJoinTypeUI();
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
     }
 
     private void updateJoinStint(final int joinStint) {
@@ -110,7 +110,7 @@ public class AddGroupWayFragment extends BaseFragment {
                         EventBus.getDefault().post(mGroup);
                         resetJoinStintUI();
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
     }
 
     private void sendRefreshGroupSystemMsg() {

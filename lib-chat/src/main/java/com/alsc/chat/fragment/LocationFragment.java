@@ -55,7 +55,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class LocationFragment extends BaseFragment implements LocationSource, AMapLocationListener {
+public class LocationFragment extends ChatBaseFragment implements LocationSource, AMapLocationListener {
 
 
     private MapView mMapView;

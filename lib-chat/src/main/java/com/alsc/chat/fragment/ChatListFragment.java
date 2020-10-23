@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
 import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.adapter.ChatUserAdapter;
 import com.cao.commons.bean.chat.CaptureEvent;
 import com.cao.commons.bean.chat.ChatBean;
@@ -24,8 +27,6 @@ import com.cao.commons.bean.chat.MessageType;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
@@ -42,7 +43,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ChatListFragment extends BaseFragment {
+public class ChatListFragment extends ChatBaseFragment {
 
     private ArrayList<ChatBean> mChatList;
     private ChatUserAdapter mAdapter;
@@ -404,7 +405,7 @@ public class ChatListFragment extends BaseFragment {
                     gotoPager(GroupChatFragment.class, bundle);
                 }
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
     private void searchContact(String text) {
@@ -432,7 +433,7 @@ public class ChatListFragment extends BaseFragment {
                 }
                 gotoPager(isFriend ? UserInfoFragment.class : VerifyApplyFragment.class, bundle);
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
 
@@ -464,7 +465,7 @@ public class ChatListFragment extends BaseFragment {
                 } else if (viewId == R.id.tvScan) {
                     if (!Utils.isGrantPermission(getActivity(),
                             Manifest.permission.CAMERA)) {
-                        ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA);
+                        ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA);
                     } else {
                         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("alsc://capture"));
                         startActivity(intent);

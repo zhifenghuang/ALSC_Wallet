@@ -6,12 +6,12 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.alsc.chat.utils.Utils;
-import com.cao.commons.SPConstants;
 import com.cao.commons.bean.chat.UserBean;
-import com.alsc.chat.manager.ConfigManager;
+import com.alsc.chat.manager.ChatManager;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.NetUtil;
+import com.common.http.HttpObserver;
 import com.google.gson.GsonBuilder;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
@@ -51,7 +51,6 @@ public class ChatHttpMethods {
     private Retrofit mRetrofit;
     private static final int DEFAULT_TIMEOUT = 10;
     private static ChatHttpMethods INSTANCE;
-    private Context mContext;
     private String mToken;
 
     private ChatHttpMethods() {
@@ -93,8 +92,8 @@ public class ChatHttpMethods {
 
         builder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .addInterceptor(interceptor)
-                .addInterceptor(new AddCookiesInterceptor()) //这部分
-                .addInterceptor(new ReceivedCookiesInterceptor()) //这部分
+//                .addInterceptor(new AddCookiesInterceptor()) //这部分
+//                .addInterceptor(new ReceivedCookiesInterceptor()) //这部分
                 .addInterceptor(loggingInterceptor);
         mRetrofit = new Retrofit.Builder()
                 .client(builder.build())
@@ -106,44 +105,44 @@ public class ChatHttpMethods {
                 .build();
     }
 
-    class ReceivedCookiesInterceptor implements Interceptor {
-        @Override
-        public Response intercept(Chain chain) throws IOException {
-            Response originalResponse = chain.proceed(chain.request());
+//    class ReceivedCookiesInterceptor implements Interceptor {
+//        @Override
+//        public Response intercept(Chain chain) throws IOException {
+//            Response originalResponse = chain.proceed(chain.request());
+//
+//            if (!originalResponse.headers("Set-Cookie").isEmpty()) {
+//                HashSet<String> cookies = new HashSet<>();
+//
+//                for (String header : originalResponse.headers("Set-Cookie")) {
+//                    cookies.add(header);
+//                }
+//
+//                SharedPreferences.Editor config = mContext.getSharedPreferences("config", mContext.MODE_PRIVATE)
+//                        .edit();
+//                config.putStringSet("cookie", cookies);
+//                config.commit();
+//            }
+//
+//            return originalResponse;
+//        }
+//    }
 
-            if (!originalResponse.headers("Set-Cookie").isEmpty()) {
-                HashSet<String> cookies = new HashSet<>();
-
-                for (String header : originalResponse.headers("Set-Cookie")) {
-                    cookies.add(header);
-                }
-
-                SharedPreferences.Editor config = mContext.getSharedPreferences("config", mContext.MODE_PRIVATE)
-                        .edit();
-                config.putStringSet("cookie", cookies);
-                config.commit();
-            }
-
-            return originalResponse;
-        }
-    }
-
-    class AddCookiesInterceptor implements Interceptor {
-
-        @Override
-        public Response intercept(Chain chain) throws IOException {
-            Request.Builder builder = chain.request().newBuilder();
-            HashSet<String> preferences = (HashSet) mContext.getSharedPreferences("config",
-                    mContext.MODE_PRIVATE).getStringSet("cookie", null);
-            if (preferences != null) {
-                for (String cookie : preferences) {
-                    builder.addHeader("Cookie", cookie);
-                    Log.v("OkHttp", "Adding Header: " + cookie); // This is done so I know which headers are being added; this interceptor is used after the normal logging of OkHttp
-                }
-            }
-            return chain.proceed(builder.build());
-        }
-    }
+//    class AddCookiesInterceptor implements Interceptor {
+//
+//        @Override
+//        public Response intercept(Chain chain) throws IOException {
+//            Request.Builder builder = chain.request().newBuilder();
+//            HashSet<String> preferences = (HashSet) mContext.getSharedPreferences("config",
+//                    mContext.MODE_PRIVATE).getStringSet("cookie", null);
+//            if (preferences != null) {
+//                for (String cookie : preferences) {
+//                    builder.addHeader("Cookie", cookie);
+//                    Log.v("OkHttp", "Adding Header: " + cookie); // This is done so I know which headers are being added; this interceptor is used after the normal logging of OkHttp
+//                }
+//            }
+//            return chain.proceed(builder.build());
+//        }
+//    }
 
     public static ChatHttpMethods getInstance() {
         if (INSTANCE == null) {
@@ -158,10 +157,6 @@ public class ChatHttpMethods {
 
     public void setToken(String token) {
         mToken = token;
-    }
-
-    public void setContent(Context content) {
-        this.mContext = content;
     }
 
     private String getBaseUrl() {
@@ -920,7 +915,7 @@ public class ChatHttpMethods {
         o.retry(2, new Predicate<Throwable>() {
             @Override
             public boolean test(@NonNull Throwable throwable) throws Exception {
-                return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                return NetUtil.isConnected(ChatManager.getInstance().getContext()) &&
                         (throwable instanceof SocketTimeoutException ||
                                 throwable instanceof ConnectException ||
                                 throwable instanceof ConnectTimeoutException ||

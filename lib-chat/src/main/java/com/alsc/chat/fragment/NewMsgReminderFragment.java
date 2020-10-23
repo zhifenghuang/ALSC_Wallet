@@ -9,10 +9,7 @@ import com.alsc.chat.R;
 import com.cao.commons.bean.chat.ChatSettingBean;
 import com.cao.commons.manager.DataManager;
 
-import static android.app.Notification.EXTRA_CHANNEL_ID;
-import static android.provider.Settings.EXTRA_APP_PACKAGE;
-
-public class NewMsgReminderFragment extends BaseFragment {
+public class NewMsgReminderFragment extends ChatBaseFragment {
 
     private ChatSettingBean mChatSetting;
 

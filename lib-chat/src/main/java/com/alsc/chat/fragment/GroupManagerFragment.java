@@ -5,10 +5,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.bean.chat.GroupBean;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.GroupMessageBean;
@@ -25,7 +25,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class GroupManagerFragment extends BaseFragment {
+public class GroupManagerFragment extends ChatBaseFragment {
 
     private GroupBean mGroup;
     private ArrayList<UserBean> mGroupMembers;
@@ -115,7 +115,7 @@ public class GroupManagerFragment extends BaseFragment {
                             DatabaseOperate.getInstance().insert(groupMsg);
                             EventBus.getDefault().post(groupMsg);
                         }
-                    }, getActivity(), (ChatBaseActivity) getActivity()));
+                    }, getActivity(), (BaseActivity) getActivity()));
 
         } else if (id == R.id.tvForbidChatManager) {
             Bundle bundle = new Bundle();
@@ -138,7 +138,7 @@ public class GroupManagerFragment extends BaseFragment {
 
                             sendRefreshGroupSystemMsg();
                         }
-                    }, getActivity(), (ChatBaseActivity) getActivity()));
+                    }, getActivity(), (BaseActivity) getActivity()));
         } else if (id == R.id.llForbidSendUrl) {
             final int disableLink = mGroup.getDisableLink() == 1 ? 0 : 1;
             ChatHttpMethods.getInstance().disableLink(String.valueOf(mGroup.getGroupId()), String.valueOf(disableLink),
@@ -155,7 +155,7 @@ public class GroupManagerFragment extends BaseFragment {
 
                             sendRefreshGroupSystemMsg();
                         }
-                    }, getActivity(), (ChatBaseActivity) getActivity()));
+                    }, getActivity(), (BaseActivity) getActivity()));
         } else if (id == R.id.tvGroupGive) {
             Bundle bundle = new Bundle();
             bundle.putInt(Constants.BUNDLE_EXTRA, SelectFriendFragment.FROM_TRANSFER_GROUP);
@@ -203,7 +203,7 @@ public class GroupManagerFragment extends BaseFragment {
                                     EventBus.getDefault().post(map);
                                     goBack();
                                 }
-                            }, getActivity(), (ChatBaseActivity) getActivity()));
+                            }, getActivity(), (BaseActivity) getActivity()));
                 }
             }
         });

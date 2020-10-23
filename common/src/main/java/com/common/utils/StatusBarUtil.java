@@ -13,7 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.common.manager.SystemBarTintManager;
+import com.cao.commons.manager.SystemBarTintManager;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

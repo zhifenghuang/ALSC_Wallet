@@ -25,7 +25,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.adapter.MessageAdapter;
 import com.alsc.chat.http.OkHttpClientManager;
 import com.bumptech.glide.Glide;
@@ -41,8 +43,6 @@ import com.cao.commons.bean.chat.MessageType;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.manager.MediaplayerManager;
 import com.alsc.chat.manager.UPYFileUploadManger;
@@ -67,7 +67,7 @@ import com.zhangke.websocket.WebSocketHandler;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-import org.greenrobot.greendao.annotation.NotNull;
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -84,7 +84,7 @@ import okhttp3.Response;
 
 //https://blog.csdn.net/happy_love1990/article/details/78327161
 
-public class ChatFragment extends BaseFragment {
+public class ChatFragment extends ChatBaseFragment {
 
     private static final String TAG = "Chat";
 
@@ -311,7 +311,7 @@ public class ChatFragment extends BaseFragment {
     private void showRecordPopWindow() {
         if (!Utils.isGrantPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 || !Utils.isGrantPermission(getActivity(), Manifest.permission.RECORD_AUDIO)) {
-            ((ChatBaseActivity) getActivity()).requestPermission(0,
+            ((BaseActivity) getActivity()).requestPermission(0,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO);
             mStartVoiceTime = 0l;
             return;
@@ -596,7 +596,7 @@ public class ChatFragment extends BaseFragment {
                 view.findViewById(R.id.paddingView).setVisibility(msg.isMySendMsg(mMyInfo.getUserId()) ? View.VISIBLE : View.GONE);
                 View llRoot = view.findViewById(R.id.llRoot);
                 int heigth = Utils.dip2px(getActivity(), 237);
-                int screenHeight = ((ChatBaseActivity) getActivity()).getDisplaymetrics().heightPixels;
+                int screenHeight = ((BaseActivity) getActivity()).getDisplaymetrics().heightPixels;
                 int bottom = Utils.dip2px(getActivity(), 50);
                 LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) llRoot.getLayoutParams();
                 int[] location = new int[2];
@@ -625,7 +625,7 @@ public class ChatFragment extends BaseFragment {
                     setViewGone(R.id.ivRight);
                     setViewVisible(R.id.btnRight);
                 } else if (viewId == R.id.tvTranslate) {
-                    ((ChatBaseActivity) getActivity()).showLoading();
+                    ((BaseActivity) getActivity()).showLoading();
                     String to = "zh";
                     int language = DataManager.getInstance().getLanguage();
                     switch (language) {
@@ -648,7 +648,7 @@ public class ChatFragment extends BaseFragment {
                             getActivity().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    ((ChatBaseActivity) getActivity()).hideLoading();
+                                    ((BaseActivity) getActivity()).hideLoading();
                                 }
                             });
                         }
@@ -675,7 +675,7 @@ public class ChatFragment extends BaseFragment {
                             getActivity().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    ((ChatBaseActivity) getActivity()).hideLoading();
+                                    ((BaseActivity) getActivity()).hideLoading();
                                     if (TextUtils.isEmpty(msg.getTranslate())) {
                                         showToast(R.string.chat_translate_failed);
                                         return;
@@ -891,14 +891,14 @@ public class ChatFragment extends BaseFragment {
         } else if (id == R.id.llAlbum) {
             if (!Utils.isGrantPermission(getActivity(),
                     Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.WRITE_EXTERNAL_STORAGE);
             } else {
                 showSelectMediaDialog();
             }
         } else if (id == R.id.llCamera) {
             if (!Utils.isGrantPermission(getActivity(),
                     Manifest.permission.CAMERA)) {
-                ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA);
+                ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA);
             } else {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(Constants.BUNDLE_EXTRA, CameraFragment.FOR_CHAT_PHOTO);
@@ -907,7 +907,7 @@ public class ChatFragment extends BaseFragment {
         } else if (id == R.id.llVideo) {
             if (!Utils.isGrantPermission(getActivity(),
                     Manifest.permission.CAMERA)) {
-                ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA);
+                ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA);
             } else {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(Constants.BUNDLE_EXTRA, CameraFragment.FOR_CHAT_VIDEO);
@@ -916,7 +916,7 @@ public class ChatFragment extends BaseFragment {
         } else if (id == R.id.llLocation) {
             if (!Utils.isGrantPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
                     || !Utils.isGrantPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)) {
-                ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.ACCESS_FINE_LOCATION);
+                ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.ACCESS_FINE_LOCATION);
             } else {
                 gotoPager(LocationFragment.class, null);
             }
@@ -1209,9 +1209,9 @@ public class ChatFragment extends BaseFragment {
                     String filePath;
                     int sdkVersion = Build.VERSION.SDK_INT;
                     if (sdkVersion >= 19) { // api >= 19
-                        filePath = ((ChatBaseActivity) getActivity()).getRealPathFromUriAboveApi19(data.getData());
+                        filePath = ((BaseActivity) getActivity()).getRealPathFromUriAboveApi19(data.getData());
                     } else { // api < 19
-                        filePath = ((ChatBaseActivity) getActivity()).getRealPathFromUriBelowAPI19(data.getData());
+                        filePath = ((BaseActivity) getActivity()).getRealPathFromUriBelowAPI19(data.getData());
                     }
                     String newPath;
                     if (requestCode == ALBUM_PHOTO_REQUEST_CODE) {
@@ -1266,7 +1266,7 @@ public class ChatFragment extends BaseFragment {
                     return;
                 }
                 if (file.length() > FILE_MAX_SIZE) {
-                    ((ChatBaseActivity) getActivity()).showToast(R.string.chat_file_max_size);
+                    ((BaseActivity) getActivity()).showToast(R.string.chat_file_max_size);
                     return;
                 }
                 String newPath = Utils.getSaveFilePath(getActivity(), file.getName());
@@ -1363,7 +1363,7 @@ public class ChatFragment extends BaseFragment {
                     showRedPackage(msgBean, bean);
                 }
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
     private boolean isHadGetRedPackage(EnvelopeBean bean) {
@@ -1476,6 +1476,6 @@ public class ChatFragment extends BaseFragment {
                 bundle.putSerializable(Constants.BUNDLE_EXTRA, bean1);
                 gotoPager(RedPackageResultFragment.class, bundle);
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 }

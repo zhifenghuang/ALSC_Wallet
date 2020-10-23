@@ -1,26 +1,16 @@
 package com.alsc.chat.fragment;
 
 
-import android.text.InputFilter;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
-import com.alsc.chat.utils.Constants;
-import com.cao.commons.bean.chat.UserBean;
-import com.cao.commons.manager.DataManager;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 
-import org.greenrobot.eventbus.EventBus;
-
-import java.util.HashMap;
-
-public class LeaveMsgFragment extends BaseFragment {
+public class LeaveMsgFragment extends ChatBaseFragment {
 
 
     @Override
@@ -47,7 +37,7 @@ public class LeaveMsgFragment extends BaseFragment {
         if (id == R.id.tvSubmit) {
             String text = getTextById(R.id.etMsg);
             if (TextUtils.isEmpty(text)) {
-                ((ChatBaseActivity) getActivity()).showToastDialog(getString(R.string.chat_not_input_your_problem));
+                ((BaseActivity) getActivity()).showToastDialog(getString(R.string.chat_not_input_your_problem));
                 return;
             }
 
@@ -58,7 +48,7 @@ public class LeaveMsgFragment extends BaseFragment {
                         return;
                     }
                     setText(R.id.etMsg, "");
-                    ((ChatBaseActivity) getActivity()).showToastDialog(getString(R.string.chat_leave_msg_successful));
+                    ((BaseActivity) getActivity()).showToastDialog(getString(R.string.chat_leave_msg_successful));
                     getView().postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -66,7 +56,7 @@ public class LeaveMsgFragment extends BaseFragment {
                         }
                     },1100);
                 }
-            }, getActivity(), (ChatBaseActivity) getActivity()));
+            }, getActivity(), (BaseActivity) getActivity()));
         }
     }
 

@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.manager.MediaplayerManager;
 import com.cao.commons.bean.chat.FileBean;
 import com.cao.commons.bean.chat.MessageType;
@@ -16,6 +15,7 @@ import com.alsc.chat.utils.BitmapUtil;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
 import com.alsc.chat.view.ShowPicView;
+import com.common.activity.BaseActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -25,7 +25,7 @@ import java.util.HashMap;
 /**
  * Created by gigabud on 16-6-21.
  */
-public class MediaPreviewFragment extends BaseFragment {
+public class MediaPreviewFragment extends ChatBaseFragment {
 
     private Bitmap mBmp;
 
@@ -98,7 +98,7 @@ public class MediaPreviewFragment extends BaseFragment {
         } else if (id == R.id.tvOk) {
             if (mType == CameraFragment.FOR_CHAT_PHOTO)
                 if (!Utils.isGrantPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                    ((ChatBaseActivity) getActivity()).requestPermission(0,
+                    ((BaseActivity) getActivity()).requestPermission(0,
                             Manifest.permission.WRITE_EXTERNAL_STORAGE);
                     return;
                 }

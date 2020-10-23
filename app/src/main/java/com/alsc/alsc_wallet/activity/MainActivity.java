@@ -12,23 +12,25 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.alsc.alsc_wallet.R;
-import com.common.activity.BaseActivity;
+import com.alsc.chat.activity.ChatBaseActivity;
+import com.alsc.chat.fragment.ChatListFragment;
+import com.alsc.chat.fragment.FriendListFragment;
 import com.common.fragment.BaseFragment;
-import com.alsc.alsc_wallet.fragment.ChatMsgFragment;
 import com.alsc.alsc_wallet.fragment.ColdWalletFragment;
 import com.alsc.alsc_wallet.fragment.QuotationFragment;
-import com.alsc.alsc_wallet.fragment.MessageFragment;
-import com.alsc.alsc_wallet.fragment.TradeFragment;
+import com.alsc.alsc_wallet.fragment.NewsFragment;
 import com.alsc.alsc_wallet.fragment.OnlineWalletFragment;
 
 import java.util.ArrayList;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends ChatBaseActivity {
 
     private ArrayList<BaseFragment> mBaseFragment;
     private Fragment mCurrentFragment;
 
     private int mCurrentWalletType = 0;//0表示热钱包，1表示冷钱包
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,11 @@ public class MainActivity extends BaseActivity {
 
     private void initFragments() {
         mBaseFragment = new ArrayList<>();
-        mBaseFragment.add(new ChatMsgFragment());
-        mBaseFragment.add(new MessageFragment());
+        mChatListFragment = new ChatListFragment();
+        mBaseFragment.add(mChatListFragment);
+        mFriendListFragment = new FriendListFragment();
+        mBaseFragment.add(mFriendListFragment);
+        mBaseFragment.add(new NewsFragment());
         mBaseFragment.add(new QuotationFragment());
         mBaseFragment.add(new OnlineWalletFragment());
         mBaseFragment.add(new ColdWalletFragment());

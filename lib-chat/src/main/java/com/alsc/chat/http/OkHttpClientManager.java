@@ -2,7 +2,7 @@ package com.alsc.chat.http;
 
 import android.text.TextUtils;
 
-import com.alsc.chat.manager.ConfigManager;
+import com.alsc.chat.manager.ChatManager;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
 import com.cao.commons.util.log.Log;
@@ -142,7 +142,7 @@ public class OkHttpClientManager {
                 FileOutputStream out = null;
                 try {
                     is = response.body().byteStream();
-                    File tempFile = new File(Utils.getSaveFilePath(ConfigManager.getInstance().getContext(), file.getName() + ".download"));
+                    File tempFile = new File(Utils.getSaveFilePath(ChatManager.getInstance().getContext(), file.getName() + ".download"));
                     out = new FileOutputStream(tempFile);
                     byte[] buf = new byte[4096];
                     int len = 0;
@@ -219,7 +219,7 @@ public class OkHttpClientManager {
                         return;
                     }
                     is = body.byteStream();
-                    File tempFile = new File(Utils.getSaveFilePath(ConfigManager.getInstance().getContext(), file.getName() + ".download"));
+                    File tempFile = new File(Utils.getSaveFilePath(ChatManager.getInstance().getContext(), file.getName() + ".download"));
                     out = new FileOutputStream(tempFile);
                     byte[] buf = new byte[4096];
                     int len = 0;
@@ -263,7 +263,7 @@ public class OkHttpClientManager {
             return;
         }
         String url = mNeedDownLoadingUrl.remove(mNeedDownLoadingUrl.size() - 1);
-        final File path = new File(Utils.getSaveFilePath(ConfigManager.getInstance().getContext(), fileName));
+        final File path = new File(Utils.getSaveFilePath(ChatManager.getInstance().getContext(), fileName));
         if (!path.exists()) {
             downloadAsyn(url, path, null);
         }

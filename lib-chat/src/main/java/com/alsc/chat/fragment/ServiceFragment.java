@@ -3,20 +3,18 @@ package com.alsc.chat.fragment;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.adapter.MessageAdapter;
 import com.alsc.chat.adapter.ServiceMessageAdapter;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.OnHttpErrorListener;
-import com.alsc.chat.http.SubscriberOnNextListener;
-import com.alsc.chat.manager.ConfigManager;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.OnHttpErrorListener;
+import com.common.http.SubscriberOnNextListener;
+import com.alsc.chat.manager.ChatManager;
 import com.alsc.chat.utils.Constants;
 import com.cao.commons.bean.chat.BasicMessage;
 import com.cao.commons.bean.chat.MessageBean;
@@ -168,7 +166,7 @@ public class ServiceFragment extends ChatFragment {
                 getAdapter().clearMsg();
                 getAdapter().addData(bean);
             }
-        }, getActivity(), (ChatBaseActivity) getActivity()));
+        }, getActivity(), (BaseActivity) getActivity()));
     }
 
     protected BasicMessage getMsg() {
@@ -218,7 +216,7 @@ public class ServiceFragment extends ChatFragment {
             public void onServerError(int errorCode, String errorMsg) {
                 showToast(R.string.chat_no_service);
                 if (errorCode == 401) {
-                    ConfigManager.getInstance().showLoginOutDialog();
+                    ChatManager.getInstance().showLoginOutDialog();
                 }
             }
         }));

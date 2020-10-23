@@ -29,13 +29,14 @@ import com.common.R;
 import com.common.dialog.CommonProgressDialog;
 import com.common.dialog.MyDialogFragment;
 import com.common.fragment.BaseFragment;
+import com.common.http.OnHttpErrorListener;
 import com.common.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements OnHttpErrorListener {
 
     private DisplayMetrics mDisplaymetrics;
 
@@ -45,15 +46,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     private boolean mIsActivityFinish;
 
     private static final ArrayList<BaseActivity> mActivityList = new ArrayList<>();
-
-//    protected ArrayList<UserBean> mFriendList;
-//    protected ArrayList<GroupBean> mGroupList;
-//
-//    private boolean mIsGetFriend;
-//    private boolean mIsGetGroup;
-
-//    protected ChatListFragment mChatListFragment;
-//    protected FriendListFragment mFriendListFragment;
 
 
     @Override
@@ -121,8 +113,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermission(0,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_PHONE_STATE);
+                    Manifest.permission.READ_EXTERNAL_STORAGE);
         }
     }
 
@@ -271,18 +262,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         return null;
     }
 
-    public void onResume() {
-        super.onResume();
-//        if (mChatListFragment != null) {
-//            mFriendList = DataManager.getInstance().getFriends();
-//            mGroupList = DataManager.getInstance().getGroups();
-//            mChatListFragment.setData(mFriendList, mGroupList);
-//            if (mFriendListFragment != null) {
-//                mFriendListFragment.setData(mFriendList);
-//            }
-//        }
-    }
-
     public void onDestroy() {
         super.onDestroy();
         mActivityList.remove(this);
@@ -393,7 +372,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         goBack();
     }
 
-
     public void showToast(int textId) {
         Toast.makeText(this, getString(textId), Toast.LENGTH_LONG).show();
     }
@@ -415,4 +393,19 @@ public abstract class BaseActivity extends AppCompatActivity {
             mProgressDialog.dismiss();
         }
     }
+
+    @Override
+    public synchronized void onServerError(int errorCode, String errorMsg) {
+        if (errorCode == 401) {
+            //          ConfigManager.getInstance().showLoginOutDialog();
+            return;
+        }
+        errorCodeDo(errorCode, errorMsg);
+    }
+
+    @Override
+    public void onConnectError(Throwable e) {
+        showToast(R.string.wallet_net_work_error);
+    }
+
 }

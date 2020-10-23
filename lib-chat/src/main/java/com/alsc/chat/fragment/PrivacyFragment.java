@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.cao.commons.bean.chat.ChatSettingBean;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.manager.DataManager;
@@ -19,7 +19,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.HashMap;
 
-public class PrivacyFragment extends BaseFragment {
+public class PrivacyFragment extends ChatBaseFragment {
 
     private ChatSettingBean mChatSetting;
 
@@ -72,7 +72,7 @@ public class PrivacyFragment extends BaseFragment {
                                 R.drawable.icon_switch_off : R.drawable.icon_switch_on);
                     }
                 }
-            }, getActivity(), (ChatBaseActivity) getActivity()));
+            }, getActivity(), (BaseActivity) getActivity()));
         } else if (id == R.id.tvBlackList) {
             gotoPager(BlacklistFragment.class);
         }

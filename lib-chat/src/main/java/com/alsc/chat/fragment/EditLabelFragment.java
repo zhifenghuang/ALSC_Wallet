@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
+import com.common.http.HttpObserver;
+import com.common.http.SubscriberOnNextListener;
 import com.alsc.chat.adapter.LabelUserAdapter;
 import com.cao.commons.bean.chat.LabelBean;
 import com.cao.commons.bean.chat.UserBean;
 import com.alsc.chat.http.ChatHttpMethods;
-import com.alsc.chat.http.HttpObserver;
-import com.alsc.chat.http.SubscriberOnNextListener;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 
@@ -23,7 +23,7 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class EditLabelFragment extends BaseFragment {
+public class EditLabelFragment extends ChatBaseFragment {
 
     private int mOperatorLabelType;
 
@@ -116,7 +116,7 @@ public class EditLabelFragment extends BaseFragment {
                         EventBus.getDefault().post(map);
                         goBack();
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
             } else {
                 ChatHttpMethods.getInstance().createLabel(name, users, new HttpObserver(new SubscriberOnNextListener() {
                     @Override
@@ -126,7 +126,7 @@ public class EditLabelFragment extends BaseFragment {
                         EventBus.getDefault().post(map);
                         goBack();
                     }
-                }, getActivity(), (ChatBaseActivity) getActivity()));
+                }, getActivity(), (BaseActivity) getActivity()));
             }
         } else if (id == R.id.tvDeleteLabel) {
             ChatHttpMethods.getInstance().deleteLabel(mLabel.getTagId(), new HttpObserver(new SubscriberOnNextListener() {
@@ -137,7 +137,7 @@ public class EditLabelFragment extends BaseFragment {
                     EventBus.getDefault().post(map);
                     goBack();
                 }
-            }, getActivity(), (ChatBaseActivity) getActivity()));
+            }, getActivity(), (BaseActivity) getActivity()));
         }
     }
 }

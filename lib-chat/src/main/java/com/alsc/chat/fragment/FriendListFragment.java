@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class FriendListFragment extends BaseFragment {
+public class FriendListFragment extends ChatBaseFragment {
 
     private FriendAdapter mAdapter;
 

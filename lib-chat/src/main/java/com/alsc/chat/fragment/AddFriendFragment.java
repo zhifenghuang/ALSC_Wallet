@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.alsc.chat.R;
-import com.alsc.chat.activity.ChatBaseActivity;
+import com.common.activity.BaseActivity;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Constants;
 import com.alsc.chat.utils.Utils;
 
-public class AddFriendFragment extends BaseFragment {
+public class AddFriendFragment extends ChatBaseFragment {
 
 
     @Override
@@ -47,7 +47,7 @@ public class AddFriendFragment extends BaseFragment {
         } else if (id == R.id.llScan) {
             if (!Utils.isGrantPermission(getActivity(),
                     Manifest.permission.CAMERA)) {
-                ((ChatBaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA);
+                ((BaseActivity) getActivity()).requestPermission(0, Manifest.permission.CAMERA);
             } else {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("alsc://capture"));
                 startActivity(intent);

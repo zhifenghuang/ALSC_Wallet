@@ -9,7 +9,7 @@ import com.cao.commons.bean.chat.ChatSettingBean;
 import com.cao.commons.manager.DataManager;
 import com.alsc.chat.utils.Utils;
 
-public class NotInteruptModeFragment extends BaseFragment {
+public class NotInteruptModeFragment extends ChatBaseFragment {
 
     private ChatSettingBean mChatSetting;
 
