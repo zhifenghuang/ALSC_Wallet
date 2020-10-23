@@ -60,5 +60,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
-        android:src="@drawable/chat_dialog_close" />
+        android:src="@mipmap/icon_dialog_close" />
 </LinearLayout>

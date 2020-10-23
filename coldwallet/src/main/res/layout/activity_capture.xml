@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center" />
 
-    <com.jnsh.alsc.scanner.view.ViewfinderView
+    <com.wallet.widget.scanner.view.ViewfinderView
         android:id="@+id/capture_viewfinder_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

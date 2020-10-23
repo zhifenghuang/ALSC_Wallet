@@ -2,6 +2,324 @@
     <string name="app_name">ColdWallet</string>
     <string name="app_name_pinyin">ColdWallet</string>
 
+    <!--    错误提示-->
+    <string name="register_error_msg1">不能为空</string>
+    <string name="register_error_msg2">不一致</string>
+    <string name="register_error_msg3">用户名请输入6位以上包含数字字母</string>
+    <string name="register_error_msg4">手机号格式不正确</string>
+    <string name="register_error_msg5">登录密码请输入6位以上包含数字字母</string>
+    <string name="register_error_msg6">支付密码请输入6位以上包含数字字母</string>
+
+    <!--    home bar-->
+    <string name="home_bar_chat">聊天</string>
+    <string name="home_bar_friends">好友</string>
+    <string name="home_bar_find">发现</string>
+    <string name="home_bar_money">资产</string>
+    <string name="please_wait">敬请期待</string>
+
+    <!--    menu item-->
+    <string name="menu_item_chat">聊天设置</string>
+    <string name="menu_item_security">安全设置</string>
+    <string name="menu_item_language_switching">语言切换</string>
+    <string name="menu_item_about">关于ALSC</string>
+    <string name="menu_item_invite_friends">分享好友</string>
+    <string name="menu_item_system">系统公告</string>
+    <string name="menu_item_switching_accounts">切换账户</string>
+    <string name="property_drawer_qrcode_scanner">扫一扫</string>
+    <string name="addr_error_tips">地址填写不正确</string>
+    <!--    security item-->
+    <string name="security_change_login_password">修改登录密码</string>
+    <string name="security_change_pay_password">修改支付密码</string>
+    <string name="security_find_pay_password">找回支付密码</string>
+    <string name="security_google">谷歌验证</string>
+    <string name="security_phone">手机</string>
+    <string name="security_email">邮箱</string>
+    <string name="security_binded">已绑定</string>
+    <string name="security_no_bind">未绑定</string>
+    <string name="security_opened">已开启</string>
+    <string name="security_no_open">未开启</string>
+    <string name="security_input_old_password">请输入旧密码</string>
+    <string name="security_input_new_password">请输入新密码</string>
+    <string name="security_input_new_password_again">请再次输入新密码</string>
+    <string name="security_input_new_pay_password">请输入新支付密码</string>
+    <string name="security_input_new_pay_password_again">请确认新支付密码</string>
+    <string name="open_camera_light">扫描二维码需要打开相机和散光灯的权限</string>
+    <string name="too_an">环境过暗，请打开闪光灯</string>
+
+    <string name="security_pass_word_old">旧密码:</string>
+    <string name="security_pass_word_old_des">若包含字母，请注意区分大小写</string>
+    <string name="security_pass_word_new">新密码:</string>
+    <string name="security_pass_word_new_des">6-12位，至少含数字/字母2种组合</string>
+    <string name="security_pass_word_pay_new_des">请使用6-12位大小写字母+数字排列组合</string>
+    <string name="sc_dialog_title_email">若未收到验证码，请检查邮件垃圾箱</string>
+    <string name="sc_dialog_title_phone">若未收到验证码，请检查骚扰拦截短信</string>
+    <string name="sc_dialog_email">邮箱验证</string>
+    <string name="sc_dialog_phone">手机号验证</string>
+    <string name="sc_dialog_email_code_des">请输入邮箱验证码</string>
+    <string name="sc_dialog_phone_code_des">请输入手机验证码</string>
+    <string name="sc_get_code">获取验证码</string>
+    <string name="sc_get_code_retry">秒后获取</string>
+    <string name="sc_input_your_phone">请输入新的手机号</string>
+    <string name="sc_input_your_email">请输入新的邮箱</string>
+    <string name="sc_input_change">更换</string>
+
+    <string name="security_google_identity">绑定谷歌身份验证</string>
+    <string name="security_google_identity_title">请妥善备份密钥以防丢失</string>
+    <string name="security_google_identity_des">保存二维码到手机或复制密钥到剪贴板可能会有安全风险，请妥善保存</string>
+    <string name="security_google_code">谷歌验证码</string>
+    <string name="security_google_code_des">请输入谷歌验证码</string>
+
+    <string name="security_phone_binded_title">手机验证</string>
+    <string name="security_phone_bind">绑定手机</string>
+    <string name="security_phone_modify">更换手机号</string>
+    <string name="security_phone_des">输入手机号</string>
+    <string name="security_phone_code">短信验证码</string>
+    <string name="security_phone_code_des">若未收到短信，请检查骚扰拦截短信</string>
+    <string name="security_phone_error">未绑定手机，请选择其他验证</string>
+    <string name="security_email_error">未绑定邮箱，请选择其他验证</string>
+    <string name="security_success">修改成功</string>
+
+    <string name="security_email_bind">绑定邮箱</string>
+    <string name="security_email_modify">更换邮箱</string>
+    <string name="security_email_address">输入邮箱地址</string>
+    <string name="security_email_des">输入邮箱地址</string>
+    <string name="security_email_code">邮箱验证码</string>
+    <string name="security_email_code_des">输入邮箱验证码</string>
+
+    <string name="security_name_update">更改昵称</string>
+    <string name="security_name_update_hine">请输入名称</string>
+    <string name="security_name_update_des">好名字可以让您的朋友更容易记住你</string>
+
+
+    <!--    语言-->
+    <string name="language_chinese_simple">简体中文</string>
+    <string name="language_chinese_traditional">繁体中文</string>
+    <string name="language_english">English</string>
+    <string name="language_japan">日本语</string>
+    <string name="language_korean">한국어</string>
+
+    <!--    个人信息-->
+    <string name="user_info_setting">个人信息</string>
+    <string name="user_info_head_img">头像</string>
+    <string name="user_info_nick">昵称</string>
+    <string name="user_info_id">ID号</string>
+    <string name="user_info_sex">性别</string>
+    <string name="user_info_qrcode">二维码名片</string>
+    <string name="user_info_area">地区</string>
+
+    <!--    注册，地区-->
+    <string name="register_phone_area">请选择地区或国家</string>
+    <string name="register_phone_area_des">请选择正确的区号格式</string>
+    <string name="register_phone_area_search">搜索国家或地区</string>
+
+    <!--    系统通知-->
+    <string name="notice_no_msg">没有通知</string>
+    <string name="list_footer_no_data">没有更多了</string>
+    <string name="list_footer_loading">加载中</string>
+
+
+    <string name="btn_sure">确认</string>
+    <string name="btn_next">下一步</string>
+    <string name="btn_reset">重置密码</string>
+    <string name="btn_cancle">取消</string>
+    <string name="btn_send">发送</string>
+    <string name="btn_save">保存</string>
+    <string name="auto_scan">将条码放入框内，即可自动扫描</string>
+    <string name="scan_qrcode">识别图片中的码</string>
+
+
+    <!--    wallte type-->
+    <string name="wt_language">语言</string>
+    <string name="wt_make">创建钱包</string>
+    <string name="wt_type_make">创建钱包类型</string>
+    <string name="wt_type_change">去中心化的DAPP，冷热钱包自由切换</string>
+    <string name="wt_type_chain">多链钱包</string>
+    <string name="wt_type_online">在线钱包</string>
+    <string name="wt_type_chain_describe">构建各种公链价值流转通道，实现多种数字\n资产业务创新</string>
+    <string name="wt_type_online_describe">打造A13数字经济生态应用</string>
+    <string name="wt_type_next">下一步</string>
+    <string name="wt_type_has_alsc">已有在线钱包？</string>
+    <string name="wt_type_login">登录</string>
+    <string name="wt_btn_sure_add">确定添加</string>
+
+
+    <!--    wallte code-->
+    <string name="wc_code">创建多链钱包</string>
+    <string name="wc_code_important">密码用于保护私钥与交易授权,强度非常重要。</string>
+    <string name="wc_code_warn">非中心化系统的密码一旦丢失,则无法找回,请妥善保管!</string>
+    <string name="wc_code_account">账户备注</string>
+    <string name="wc_code_input_account">请输入账户名称</string>
+    <string name="wc_code_input_wallet">请输入钱包名称</string>
+    <string name="wc_code_wallet_pwd">钱包密码</string>
+    <string name="wc_code_input_wallet_pwd">请输入钱包密码</string>
+    <string name="wc_code_input_wallet_pwd_again">请再次输入钱包密码</string>
+    <string name="wc_code_pwd_pattern">钱包密码建议至少8-16位:大写字母、小写字母、数字3种组成</string>
+    <string name="create_wallet_name_repeat_tips">钱包名称重复</string>
+    <string name="create_wallet_name_input_tips">请输入钱包名称</string>
+    <string name="create_wallet_pwd_input_tips">密码不能为空</string>
+    <string name="create_wallet_pwd_confirm_input_tips">密码不一致，请重新输入</string>
+    <string name="deriving_wallet_tip">导出钱包中…</string>
+    <string name="loading_wallet_tip">导入钱包中…</string>
+    <string name="deleting_wallet_tip">删除钱包中…</string>
+    <string name="creating_wallet_tip">创建钱包中…</string>
+    <string name="saving_wallet_tip">保存钱包中…</string>
+    <string name="saving_wallet_failure">创建钱包失败</string>
+    <string name="verify_wallet_password_failure">验证密语失败，请重新输入</string>
+    <string name="saving_wallet_password_length">钱包密码至少8位</string>
+    <string name="permission_denied_forever_message">We need some of the permissions you rejected or the system failed to apply failed, please manually set to the page authorize, otherwise the function can\'t be used normally!</string>
+
+    <!--    wallet backup-->
+    <string name="wc_backup">备份</string>
+    <string name="wc_backup_single">密语用于恢复钱包，请抄写12个单词并妥善保管</string>
+    <string name="wc_backup_double">请勿截屏分享和储存，防止第三方恶意软件收集，造成资产损失</string>
+    <string name="wc_backup_good">erro about learn kitchen stadium vivtory\nglimpse fluid hope place spriit gauge</string>
+
+    <!--    wallet validate-->
+    <string name="wv_validate">验证</string>
+    <string name="wv_done">完成</string>
+    <string name="wv_reset">重新生成密语</string>
+    <string name="wv_validate_sure">按照顺序点击密语，以确认正确备份</string>
+    <string name="wv_tip">提示</string>
+    <string name="wv_content">是否已抄完</string>
+    <string name="wv_create_hot_wallet">还未创建在线钱包</string>
+    <string name="wv_create_cold_wallet">还未创建多链钱包</string>
+    <string name="wv_delete_cold_wallet">确定删除钱包吗</string>
+    <string name="wv_login_out">确定退出登录吗</string>
+    <string name="wv_auto_alsc">所有收益将自动按前1小时\n均价自动兑换成A13！</string>
+
+    <!--    wallet hot-->
+    <string name="wc_hote">创建在线钱包</string>
+    <string name="wc_hote_login">登录用户名</string>
+    <string name="wc_hote_login_hint">请输入登录用户名</string>
+    <string name="wc_hote_invate_code">输入邀请码</string>
+    <string name="wc_hote_invate_code_hint">请输入邀请码(必填)</string>
+    <string name="wc_hote_picture">输入图片验证码</string>
+    <string name="wc_hote_please_input_picture_answer">请输入以下验证码答案</string>
+    <string name="wc_hote_change">看不清,换一张</string>
+    <string name="verify_backup_failed">备份失败，请检查你的助记词</string>
+
+    <!--    wallet hot phone valite-->
+    <string name="wh_phone">手机验证</string>
+    <string name="wh_phone_area_default">中国</string>
+    <string name="wh_phone_area_code_default">+86</string>
+    <string name="wh_phone_change">使用邮箱号或者手机号验证,二选其一即可</string>
+    <string name="wh_phone_valite_hint">请输入你的手机</string>
+    <string name="wh_phone_valite_number">请使用6-12位字母+数字</string>
+    <string name="wh_phone_valite_letter_or_number">请使用6-12位字母或数字</string>
+    <string name="wh_phone_valite_number_zoom">请使用6-12位字母+数字排列组合</string>
+    <string name="wh_valite_number">输入验证码</string>
+    <string name="wh_valite_number_hint">请输入验证码</string>
+    <string name="wh_valite_number_get">获取验证码</string>
+    <string name="wh_valite_email">邮箱验证</string>
+    <string name="wh_email_valite_hint">请输入您的邮箱</string>
+    <string name="wh_phone_valite_hint1">请输入您的手机</string>
+    <string name="wh_phone_valite_number_hint">钱包密码建议至少8-16位：大写字母、小写字母、数字3种组成</string>
+
+    <!--    wallet hot Find password-->
+    <string name="wh_find_pwd_email">邮箱找回</string>
+    <string name="wh_find_pwd_phone">手机找回</string>
+
+    <!--    wallet hot set pwd-->
+    <string name="wh_set_pwd">设置密码</string>
+    <string name="wh_set_pwd_save">登录密码用于登录A13钱包,支付密码用于保障\n您A13钱包的资产安全,请妥善保障.</string>
+    <string name="wh_sp_login_pwd">登录密码</string>
+    <string name="wh_sp_login_pwd_hint">请输入你的登录密码</string>
+    <string name="wh_sp_login_pwd_sure">确认登录密码</string>
+    <string name="wh_sp_login_pwd_sure_hint">请再次确认</string>
+    <string name="wh_sp_pay_pwd">支付密码</string>
+    <string name="wh_sp_pay_pwd_hint">请输入你的支付密码</string>
+    <string name="wh_sp_pwd_pattern">请使用6-12位大小字母+数字排列组合</string>
+    <string name="wh_sp_pay_pwd_sure">确认支付密码</string>
+    <string name="wh_sp_pay_pwd_sure_hint">请再次输入</string>
+
+    <!--    wallet hot register success-->
+    <string name="wh_register">注册成功,开启手势密码</string>
+    <string name="wh_register_account">为保障您的账户安全</string>
+    <string name="wh_register_unlock">请设置手势密码用于解锁</string>
+    <string name="wh_register_no_set">暂不设置</string>
+    <string name="wh_register_set">立即设置</string>
+    <string name="wh_gesture_password">手势密码</string>
+    <string name="wh_set_gesture_password">设置手势密码</string>
+    <string name="wh_set_gesture_password_min">至少链接4个点,请重新绘制</string>
+    <string name="wh_set_gesture_password_again">请再次输入手势密码</string>
+    <string name="wh_set_gesture_password_success">已成功设置手势密码</string>
+    <string name="wh_set_gesture_password_error">两次密码输入不一致，请重新输入</string>
+    <string name="wh_input_gesture_password">请绘制您的手势密码</string>
+    <string name="wh_change_to_user_login">切换用户名登录</string>
+    <string name="wh_gesture_password_times">手势密码不正确,剩余尝试次数%d次</string>
+    <string name="wh_gesture_password_retry">请重置手势密码</string>
+
+    <!--    wallet hot login alsc-->
+    <string name="wh_login_alsc">登录A13</string>
+    <string name="wh_login">登录</string>
+    <string name="wh_alsc_describe">欢迎来到A13全球首创三维一体造富生态</string>
+    <string name="wh_login_user">登录账户</string>
+    <string name="wh_login_user_hint">请输入用户名/手机号/邮箱</string>
+    <string name="wh_login_user_hint_2">请输入用户名</string>
+    <string name="wh_login_pwd">密码</string>
+    <string name="wh_login_pwd_hint">请输入密码</string>
+    <string name="wh_login_pwd_forget">忘记密码</string>
+    <string name="wh_forgot_pwd_title">找回密码</string>
+    <string name="wh_forgot_pwd_title_des">为保障账户安全，您需要进行安全验证</string>
+    <string name="wh_forgot_pwd_methods">选择找回方式</string>
+    <string name="wh_forgot_pwd_methods_des">请输入邮箱或手机号码</string>
+    <string name="wh_reset_pwd_title">重新设置密码</string>
+    <string name="wh_reset_pwd_title_des">登录密码用于登录A13钱包</string>
+
+
+    <!--    导入钱包-->
+    <string name="wh_important_money">导入钱包</string>
+    <string name="wh_all_important_money">批量导入</string>
+    <string name="wh_single_important_money">单个导入</string>
+    <string name="wh_fill_in_word">请填写你的助记池</string>
+    <string name="wh_fill_splite">英文单词请按空格分隔单词</string>
+    <string name="wh_sure">确认</string>
+    <string name="wh_alsc">A13</string>
+    <string name="wh_btc">BTC</string>
+    <string name="wh_xrp">XRP</string>
+    <string name="wh_eos">EOS</string>
+    <string name="wh_ltc">LTC</string>
+
+    <!--    A13收款-->
+    <string name="wh_alsc_collect">A13收款</string>
+    <string name="wh_save_to_album">保存到相册</string>
+    <string name="wh_save_to_bz">注意: 该地址仅支持A13收款,请勿用与其他币种</string>
+    <string name="wh_key">1FKYFJDKLFJDKLFJD_FDJLFJDLFfGFJALKJFfF3</string>
+
+    <!--    A13转账-->
+    <string name="wh_alsc_transfer">A13转账</string>
+    <string name="wh_btc_transfer">BTC转账</string>
+    <string name="wh_btc_collect">BTC收款</string>
+    <string name="wh_alsc_transfer_menoy">转账金额</string>
+    <string name="wh_alsc_transfer_type">选择链类型</string>
+    <string name="wh_alsc_balance">A13余额</string>
+    <string name="wh_save_address">接收地址</string>
+    <string name="wh_input_alsc_address">输入A13地址</string>
+    <string name="wh_send_address">发送地址</string>
+    <string name="wh_miners_fee">矿工费</string>
+    <string name="wh_conversion_alsc">0.0000192 A13 ≈ ¥ 0.9708</string>
+    <string name="wh_conversion_cny">≈ 7.625 CNY</string>
+    <string name="wh_advice_conversion_alsc">建议0.0000192 A13 ≈ ¥ 0.9708</string>
+    <string name="wh_slow">慢</string>
+    <string name="wh_fast">快</string>
+    <string name="wh_ok">确定</string>
+    <string name="wh_make_sure">确认</string>
+
+    <!--    安全密码登录-->
+    <string name="wh_safe_login">安全密码登录</string>
+    <string name="wh_save">保存</string>
+    <string name="wh_pwd_correct">密码正确</string>
+    <string name="wh_input_safe">请输入安全密码</string>
+
+    <!--    帮助中心-->
+    <string name="wh_help">帮助中心</string>
+    <string name="wh_about_alsc">关于A13</string>
+    <string name="wh_alsc_process">A13充提币到FChina交易的图文操作流程</string>
+    <string name="wh_basic_tutorial">基础教程</string>
+    <string name="wh_trafer_collect">转账/收款</string>
+    <string name="wh_remember_key">助记词/私钥</string>
+    <string name="wh_alsc_action_process">A13操作流程</string>
+
     <!--    总资产-->
     <string name="total_asset">总资产</string>
     <string name="total_assets_add">添加钱包</string>
@@ -15,6 +333,320 @@
     <string name="total_assets_import_btc_address">导入的%s地址</string>
     <string name="total_assets_unimport_btc_address">暂未导入%s地址</string>
 
+    <!--    添加联系人-->
+    <string name="add_contacts">添加联系人</string>
+    <string name="add_contacts_name">姓名</string>
+    <string name="add_contacts_name_hint">请输入姓名</string>
+    <string name="save">保存</string>
+    <string name="add_contacts_somebody">联系人某某</string>
+    <string name="add_contacts_note">备注</string>
+    <string name="add_contacts_note_some">写一些备注写什么好</string>
+    <string name="add_contacts_alsc_address">A13地址</string>
+    <string name="add_contacts_edit">eadfdfdggffdfdfdfgdffd/aefdfdgh</string>
+    <string name="add_contacts_save_local">注:所有地址/账户存放本地,删除App前记得备份。</string>
+    <string name="name_not_null">姓名不能为空</string>
+    <string name="address_not_null">地址不能为空</string>
+    <string name="address_add_account">添加地址/账户</string>
+
+    <!--    类型详情-->
+    <string name="detail_type">类型</string>
+    <string name="detail_status">状态</string>
+    <string name="detail_time">时间</string>
+    <string name="detail_address">地址</string>
+    <string name="detail_txld">Txld</string>
+    <string name="detail_charge_money">充币</string>
+    <string name="detail_discharge_money">提币</string>
+    <string name="detail_charge_money_success">充币成功</string>
+    <string name="detail_at_time">21:50:08 2020/8/27</string>
+    <string name="detail_address_detail">eadfdfdggffdfdfdfgdffd</string>
+    <string name="detail_txld_detail">eadfdfdggffdfdfdfgdffd</string>
+    <string name="detail_bi">币种</string>
+
+    <string name="discover_hot">热门行情</string>
+    <string name="discover_hangq">行情</string>
+    <string name="discover_ad">资讯热点</string>
+    <string name="discover_information">资讯</string>
+    <string name="more">更多</string>
+
+    <string name="my_chat_setting">聊天设置</string>
+    <string name="my_system_ad">系统公告</string>
+    <string name="my_security_setting">安全设置</string>
+    <string name="my_language_change">语言切换</string>
+    <string name="my_change_account">切换账户</string>
+    <string name="my_user_center">客服中心</string>
+    <string name="my_about_alsc">关于A13</string>
+    <string name="my_about_us">关于我们</string>
+    <string name="my_login_out_account">退出账号</string>
+
+    <string name="my_trade_record">交易记录</string>
+    <string name="my_benefit">交易数额</string>
+    <string name="my_commission">矿工费</string>
+    <string name="my_receive_url">转账地址</string>
+    <string name="my_slsc_balance1">A13 余额：</string>
+    <string name="wh_code_send_address">输入发送地址</string>
+    <string name="my_account_number">到账数量</string>
+    <string name="my_commission_5">矿工费：</string>
+    <string name="my_high_commission_5">高频交易5%：</string>
+    <string name="my_alsc_to_dollor">0.01 A13 ≈ ￥ 55.78</string>
+    <string name="my_advice_10_sat">建议：10.00 sat/b</string>
+
+    <string name="my_version_code">版本号</string>
+    <string name="my_function_introduction">风险提示</string>
+    <string name="my_check_version">检查新版本</string>
+    <string name="my_alsc_copyright">A13 Wallet版权所有</string>
+    <string name="my_function_introduction1">功能介绍</string>
+
+    <string name="status_action">进行中</string>
+    <string name="status_fail">失败</string>
+    <string name="my_collect">收款</string>
+    <string name="my_transfer">转账</string>
+    <string name="my_balance">余额</string>
+    <string name="status_fail_money">退款</string>
+    <string name="status_cold0">等待确认</string>
+    <string name="status_cold1">确认中</string>
+    <string name="status_cold2">已完成</string>
+    <string name="status_cold3">交易失败</string>
+
+    <string name="status_transfer1">确认中</string>
+    <string name="status_transfer2">已完成</string>
+    <string name="status_transfer3">退款</string>
+    <string name="status_transfer4">收款成功</string>
+    <string name="status_transfer5">收款失败</string>
+    <string name="status_transfer6">转入成功</string>
+    <string name="status_transfer7">转入失败</string>
+    <string name="status_transfer8">进行中</string>
+
+    <string name="welcome_alsc_info">欢迎来到A13 全球首创三维一体造富生态</string>
+    <string name="choose_from_photo">从相册选取</string>
+    <string name="my_input">输入</string>
+    <string name="my_address">地址</string>
+    <string name="my_ad">公告</string>
+    <string name="my_ad_detail">公告详情</string>
+    <string name="click_and_look">点击查看</string>
+
+    <string name="st_global_prize_pool">星际奖池</string>
+    <string name="st_high_commission_alsc">高频交易（A13）</string>
+    <string name="st_contribution_value">贡献额（USDT）</string>
+    <string name="st_credit_amount">信誉值(USDT)</string>
+    <string name="st_contribution_value_1">贡献额(U)</string>
+    <string name="st_credit_amount_1">信誉值(U)</string>
+    <string name="st_shared_ore_pool">星系矿池（USDT）</string>
+    <string name="st_sharing_power">分享星系（USDT）</string>
+    <string name="st_super_node1">合伙人</string>
+    <string name="st_super_node">合伙人（A13）</string>
+    <string name="st_benefit_total">已收益总额（A13）</string>
+    <string name="st_invite_user1">发送邀请给好友</string>
+    <string name="st_invite_user2">成功注册后可参与贡献</string>
+    <string name="st_invite_user3">获得相应价值的U数量</string>
+    <string name="st_invite_url">邀请链接</string>
+    <string name="st_invite_code">邀请码</string>
+    <string name="st_share">分享星系</string>
+    <string name="st_convert">闪兑</string>
+    <string name="st_yesterday_24_price">昨日24小时均价：</string>
+    <string name="st_total_income">已收益总额(U)</string>
+    <string name="st_total_amount">已兑换总额(U)</string>
+    <string name="st_total_usdt">可兑换USDT：</string>
+    <string name="st_use">使用</string>
+    <string name="st_convert_into">兑换成</string>
+    <string name="st_bonus_pool_details">奖池明细</string>
+    <string name="st_total_return">返还总额(A13)</string>
+    <string name="st_total_bonus_of_bonus_pool">奖池分红总额(A13)</string>
+    <string name="st_historical_details">历史明细</string>
+    <string name="st_number">数量(A13)</string>
+    <string name="st_return_number">返还数量(A13)</string>
+    <string name="st_dividend_income">分红收益(U)</string>
+    <string name="st_total_income_part">收益总额(A13)</string>
+    <string name="st_new_performance">新增算力(U)</string>
+    <string name="st_node_profit">节点收益(U)</string>
+    <string name="st_bonus_point">分红点</string>
+    <string name="st_dividend_income_alsc">分红收益(A13)</string>
+    <string name="st_dividend_income_u">分红收益(U)</string>
+    <string name="st_frequency_record_details">共识记录明细</string>
+    <string name="st_quantity_of_withdrawals">收益数量(U)</string>
+    <string name="st_high_commission">共识交易(U)</string>
+    <string name="st_high_commission_1">共识交易</string>
+    <string name="st_credit_details">信誉明细</string>
+    <string name="st_total_accelerated">已加速总额(A13)</string>
+    <string name="st_contribution_key">贡献值(U)</string>
+    <string name="st_reputation_value">信誉值(U)</string>
+    <string name="st_speed_up">已加速(U)</string>
+    <string name="st_participation_and_contribution">参与贡献</string>
+    <string name="st_balance">余额(U)</string>
+    <string name="st_contribution">贡献额(U)</string>
+    <string name="st_input_alsc_number">请输入A13数量</string>
+    <string name="st_input_usdt_number">请输入USDT数量</string>
+    <string name="st_contribution_tips">备注:参与贡献U数量最低为100U,可多次参与,上不封顶</string>
+    <string name="st_contribution_details">自动兑换A13数量：%1$s A13\n实际兑换均价：%2$s\n实际参与贡献数量：%3$s U</string>
+    <string name="st_input">请输入</string>
+    <string name="st_pay_pwd">支付密码</string>
+    <string name="st_consensus_trading">共识交易(A13)</string>
+    <string name="st_consensus_record">共识记录</string>
+    <string name="st_total_consensus_transactions">共识交易总额(A13)</string>
+    <string name="st_total_accelerated_ore_pool">星系矿池加速总额(A13)</string>
+    <string name="st_pool">星系矿池(U)</string>
+    <string name="st_username">用户名</string>
+    <string name="st_id">ID号</string>
+    <string name="st_level">级别</string>
+    <string name="st_grade">业绩(U)</string>
+    <string name="st_current_price">实时价格</string>
+    <string name="st_asset_balance_value">实际总资产余额价值</string>
+    <string name="st_super_part_tips">注:参于A13合伙人计划，仅需10000USDT即可享受365天固定返还收益分红。</string>
+    <string name="st_income_record">收益记录明细</string>
+    <string name="st_income_time">收益时间</string>
+    <string name="st_income_from">收益来源</string>
+    <string name="st_income_number">收益数量</string>
+    <string name="st_exchange_records">兑换记录</string>
+    <string name="st_income_records">收益记录</string>
+    <string name="st_income_records_detail">兑换记录明细</string>
+    <string name="st_income_records_fast">闪兑</string>
+    <string name="st_income_records_time">兑换时间</string>
+    <string name="st_a">自动兑换(A)</string>
+    <string name="st_alsc">自动兑换(A13)</string>
+    <string name="st_balance_alsc">可用余额：%s A13</string>
+    <string name="st_balance_usdt">可用余额：%s USDT</string>
+    <string name="st_can_use_balance">可用余额</string>
+    <string name="st_balance_usdt_to_alsc">A13 1小时均价：1 USDT≈%s A13</string>
+    <!--    <string name="st_alsc">自动兑换(A13)</string>-->
+
+    <string name="st_income_records_type0">手续费分红</string>
+    <string name="st_income_records_type1">分享算力</string>
+    <string name="st_income_records_type2">贡献额</string>
+    <string name="st_income_records_type3">主节点</string>
+    <string name="st_income_records_type4">合伙人</string>
+    <string name="st_income_records_type5">星系矿池</string>
+    <string name="st_income_records_type6">USDT兑换A13</string>
+    <string name="st_income_records_type7">USDT兑换A13</string>
+    <string name="st_income_records_type8">培养奖</string>
+    <string name="st_income_records_type9">游戏收益</string>
+    <string name="st_income_records_type10">红包</string>
+    <string name="st_income_records_type11">社交收款</string>
+
+    <!--    用户等级0普通 1普节点 2初节点 3中节点 4高节点 5大节点 6主节点 7荣誉节点 8至尊节点-->
+    <string name="user_level0">普通</string>
+    <string name="user_level1">小节点</string>
+    <string name="user_level2">初节点</string>
+    <string name="user_level3">中节点</string>
+    <string name="user_level4">高节点</string>
+    <string name="user_level5">大节点</string>
+    <string name="user_level6">主节点</string>
+    <string name="user_level7">荣誉节点</string>
+    <string name="user_level8">至尊节点</string>
+
+    <string name="user_change_nickname">修改昵称</string>
+    <string name="user_copy_success">复制成功</string>
+    <string name="action_unopen">暂未开放</string>
+    <string name="alsc_min_transfer_money">A13转账金额不能少于110</string>
+    <string name="alsc_money_number">请输入正确的金额</string>
+    <string name="alsc_transfer_type1">黄金矿工</string>
+    <string name="alsc_transfer_type2">红包</string>
+    <string name="alsc_transfer_type3">社交转账</string>
+    <string name="alsc_transfer_type10">分享星系收益</string>
+    <string name="alsc_transfer_type11">涡轮脉冲收益</string>
+    <string name="alsc_transfer_type12">至尊节点分红</string>
+    <string name="alsc_transfer_type13">合伙人分红收益</string>
+    <string name="alsc_transfer_type14">星系矿池收益</string>
+    <string name="alsc_transfer_type15">星际奖池分红</string>
+    <string name="alsc_transfer_type16">共识收益</string>
+    <string name="alsc_transfer_type17">培养节点分红</string>
+    <string name="alsc_transfer_type18">合伙人每日收益</string>
+    <string name="alsc_transfer_type19">系统兑换</string>
+    <string name="alsc_transfer_type20">参于涡轮脉冲</string>
+    <string name="alsc_transfer_type21">推荐合伙人分红收益</string>
+    <string name="alsc_benefit">收益</string>
+    <string name="alsc_income">收入</string>
+    <string name="alsc_pay">支出</string>
+    <string name="alsc_service_charge">手续费</string>
+    <string name="alsc_transfer_success">正在转账中</string>
+    <string name="capture_success_result">解析成功，结果为：</string>
+    <string name="capture_error_result">解析图片失败</string>
+    <string name="capture_scan_doing">正在扫描...</string>
+    <string name="capture_scan_error">无法识别</string>
+    <string name="capture_choose_qcode_photo">选择二维码图片</string>
+    <string name="save_success">保存成功</string>
+    <string name="upload_success">上传成功</string>
+    <string name="contribute_min_money">贡献的数量最低为100U哦</string>
+    <string name="contribute_success">贡献成功</string>
+    <string name="input_message_retry_send">秒后重新发送</string>
+    <string name="input_your_email">请输入邮箱</string>
+    <string name="input_your_phone">请输入手机号</string>
+    <string name="exchange_alsc">兑换</string>
+    <string name="speed_up">加速</string>
+    <string name="speed_up_u">加速%sU</string>
+    <string name="return_a">返还%sA</string>
+    <string name="exchange_success">兑换成功</string>
+    <string name="transfer_all">全部转出</string>
+    <string name="hint_new_nickname">这是新昵称</string>
+    <string name="join_success_li">立即参与</string>
+    <string name="join_no">暂不开放</string>
+    <string name="sharing_together_details">星系矿池明细</string>
+    <string name="sharing_details">分享星系明细</string>
+    <string name="all_read">全标已读</string>
+    <string name="copy">复制</string>
+    <string name="alsc_information">A13资讯</string>
+    <string name="input_btc_address">输入BTC地址</string>
+    <string name="input_your_number">请输入数量</string>
+    <string name="input_your_pay_password">输入支付密码</string>
+    <string name="input_your_wallet_password">输入钱包密码</string>
+    <string name="input_login_password">登录密码</string>
+    <string name="input_your_login_password">输入登录密码</string>
+    <string name="input_your_wallet_password_again">再次输入钱包密码</string>
+    <string name="your_wallet_password_tips">密码提示信息(选填)</string>
+    <string name="input_your_wallet_password_tips">输入密码提示信息</string>
+    <string name="more_current_height">当前高度</string>
+    <string name="person">人</string>
+    <string name="money_s">价格$</string>
+    <string name="benefit_24h">24H涨跌幅</string>
+    <string name="Fchain_liang">FChain 量</string>
+
+    <string name="toast_get_current_price">正在获取实时价格中</string>
+    <string name="toast_join_success">参与成功</string>
+    <string name="toast_get_pic_capture">正在获取图形验证码中，请稍等</string>
+    <string name="toast_exchange_min_money">兑换不能小于0</string>
+    <string name="toast_get_user_info">正在获取用户信息</string>
+
+    <string name="discover_information_tab1">精选</string>
+    <string name="discover_information_tab2">市场</string>
+    <string name="discover_information_tab3">公告</string>
+    <string name="discover_information_tab4">推特</string>
+    <string name="discover_information_tab5">政策</string>
+    <string name="discover_information_tab6">资讯</string>
+
+    <string name="discover_quotation_tab1">涨幅榜</string>
+    <string name="discover_quotation_tab2">跌幅榜</string>
+    <string name="discover_quotation_tab3">成交额</string>
+    <string name="discover_quotation_tab4">换手率</string>
+    <string name="discover_quotation_tab5">换手率</string>
+
+    <string name="assets_list_tab1">全部</string>
+    <string name="assets_list_tab2">转账</string>
+    <string name="assets_list_tab3">收款</string>
+    <string name="assets_list_tab4">收益</string>
+
+    <string name="settle_pool_tab1">合伙人</string>
+    <string name="settle_pool_tab2">至尊节点</string>
+    <string name="settle_pool_tab3">培养节点</string>
+
+    <string name="c_address_title">地址簿</string>
+    <string name="c_add">添加</string>
+    <string name="c_add_first_person">添加您的第一个联系人</string>
+    <string name="c_wallet_manager">钱包管理</string>
+    <string name="c_wallet_manager_tips1">密码提示信息</string>
+    <string name="c_wallet_manager_tips2">导出备份助记词</string>
+    <string name="c_wallet_manager_tips3">导出 Keystore</string>
+    <string name="c_wallet_manager_tips4">导出私钥</string>
+    <string name="c_wallet_qcode_tips">注意：该地址仅支持%s收款，请勿用与其他币种</string>
+    <string name="c_create">创建</string>
+    <string name="c_import">导入</string>
+    <string name="c_create_wallet">创建%s钱包</string>
+    <string name="c_sure_create">确定创建</string>
+    <string name="c_backup_mnemonic">备份助记词</string>
+    <string name="c_backup_mnemonic_tips">请按顺序选择助记词，确保备份正确</string>
+    <string name="c_backup_mnemonic_remark1">1. 助记词由英文单词组成，请抄写并妥善保管一旦丢失则无法找回！</string>
+    <string name="c_backup_mnemonic_remark2">2. 获得助记词等于拥有钱包资产所有权。</string>
+    <string name="c_backup_mnemonic_remark3">3. 妥善保管助记词至隔离网络的安全地方。</string>
+    <string name="c_sure_backup">已确认备份</string>
+    <string name="c_confirm_mnemonic">确认助记词</string>
+    <string name="c_confirm_mnemonic_tips">请按顺序点击助记词，已确认您正确备份</string>
     <string name="c_expand">展开更多地址</string>
     <string name="c_collapse">收起</string>
     <string name="c_change_wallet_name">更换钱包名</string>
@@ -44,45 +676,38 @@
     <string name="c_isolation_title">什么是隔离见证</string>
     <string name="c_isolation_message">隔离见证有助于增大区块容量，避免造成交易可变性，同时让交易手续费降低。</string>
 
-    <string name="quit_app">再按一次退出程序</string>
-    <string name="add_contacts_note">备注</string>
-
-    <string name="capture_success_result">解析成功，结果为：</string>
-    <string name="capture_error_result">解析图片失败</string>
-    <string name="capture_scan_doing">正在扫描...</string>
-    <string name="capture_scan_error">无法识别</string>
-    <string name="capture_choose_qcode_photo">选择二维码图片</string>
-    <string name="property_drawer_qrcode_scanner">扫一扫</string>
-    <string name="permission_denied_forever_message">We need some of the permissions you rejected or the system failed to apply failed, please manually set to the page authorize, otherwise the function can\'t be used normally!</string>
-
-    <string name="address_not_null">地址不能为空</string>
-    <string name="address_add_account">添加地址/账户</string>
     <string name="address_name">请输入姓名</string>
     <string name="address_remark">请输入备注</string>
     <string name="address_account">请输入地址/账户</string>
     <string name="input_password_failure">密码输入不正确</string>
     <string name="input_receive_url_failure">接收地址不正确</string>
     <string name="alsc_transfer_failure">转账失败</string>
-    <string name="choose_wallet_type">选择钱包类型</string>
-    <string name="d_delete_wallet">确定删除钱包？</string>
-    <string name="d_delete">确定删除？</string>
 
-    <!--    用户等级0普通 1普节点 2初节点 3中节点 4高节点 5大节点 6主节点 7荣誉节点 8至尊节点-->
-    <string name="user_level0">普通</string>
-    <string name="user_level1">小节点</string>
-    <string name="user_level2">初节点</string>
-    <string name="user_level3">中节点</string>
-    <string name="user_level4">高节点</string>
-    <string name="user_level5">大节点</string>
-    <string name="user_level6">主节点</string>
-    <string name="user_level7">荣誉节点</string>
-    <string name="user_level8">至尊节点</string>
+    <string name="export_keystore_tab1">Keystore</string>
+    <string name="export_keystore_tab2">二维码</string>
+
+    <string name="export_keystore_message">获取Keystore和密码等于拥有钱包资产所有权</string>
+    <string name="export_private_message">获取私钥等于拥有钱包资产所有权</string>
+    <string name="export_save_offline">离线保存</string>
+    <string name="export_save_offline_message">切勿保存至邮箱、记事本、网盘、聊天工具等，非常危险</string>
+    <string name="export_save_offline_remain">切勿使用网络传输</string>
+    <string name="export_save_offline_remain_message">请勿通过网络工具传输，一旦被黑客获取将造成不可挽回的资产损失。建议离线设备通过二维码方式传输。</string>
+    <string name="export_save_password">密码管理工具保存</string>
+    <string name="export_save_password_advice">建议使用密码管理工具管理</string>
+    <string name="export_copy_keystore">复制 Keystore</string>
+    <string name="export_copy_private">复制 Private Key</string>
+
+    <string name="export_code_scan">仅供直接扫描</string>
+    <string name="export_code_scan_message">二维码禁止保存、截图、以及拍照。仅供用户在安全环境下直接扫描来方便的导入钱包。</string>
+    <string name="export_code_safe">在安全环境下使用</string>
+    <string name="export_code_safe_message">请在确保四周无人及无摄像头的情况下使用。二维码一旦被他人获取将造成不可挽回的资产损失</string>
 
     <string name="add_address_btc">添加BTC地址</string>
     <string name="add_address_eth">添加ETH地址</string>
     <string name="add_address_omni">添加USDT-OMNI</string>
     <string name="add_address_erc">添加USDT-ERC20</string>
     <string name="add_address_alsc">添加A13地址</string>
+    <string name="choose_wallet_type">选择钱包类型</string>
     <string name="message_center">消息中心</string>
     <string name="balance_insufficient">余额不足</string>
     <string name="http_service_error">接口请求失败</string>
@@ -99,124 +724,159 @@
     <string name="i_know">我知道了</string>
     <string name="s_fen">份</string>
     <string name="c_trade_record_detail">交易记录详情</string>
-    <string name="alsc_service_charge">手续费</string>
-    <string name="alsc_transfer_success">正在转账中</string>
-    <string name="my_transfer">转账</string>
-    <string name="my_balance">余额</string>
-    <string name="my_input">输入</string>
-    <string name="my_address">地址</string>
+
+    <string name="wt_btn_sure_add_cold">已有多链钱包？</string>
+    <string name="wt_cold_wallet_restore">恢复</string>
+    <string name="wt_wallet_restore">恢复钱包</string>
+    <string name="r_wallet_restore_tips">你将会拥有多链钱包，构建各种公链价值流转通道...</string>
+    <string name="d_delete_wallet">确定删除钱包？</string>
+    <string name="InformationDetails">资讯详情</string>
+    <string name="dialog_input_your_pay_password">提示请输入支付密码！</string>
+    <string name="dialog_input_your_password">提示请输入密码！</string>
+    <string name="message_detail">消息详情</string>
+    <string name="error_code_length">助记词长度不正确</string>
+    <string name="input_transfer_money">请输入转账金额</string>
+    <string name="input_transfer_receive_url">请输入接收地址</string>
+    <string name="new_version_tip">有新版本，是否立即更新?</string>
+    <string name="new_version_url_empty">地址不能为空</string>
+    <string name="new_version_url">已经是最新版本</string>
+    <string name="lock_money">已冻结：%sA13</string>
+    <string name="lock_money_usdt">已冻结：%sUSDT</string>
+    <string name="quit_app">再按一次退出程序</string>
+    <string name="login_data">正在获取数据中</string>
 
     <string name="input_error">输入错误</string>
     <string name="input_transfer_number">请输入转账数量</string>
     <string name="input_receive_url">请输入接收地址</string>
-    <string name="input_transfer_money">请输入转账金额</string>
-    <string name="input_transfer_receive_url">请输入接收地址</string>
     <string name="computing_power">涡轮算力</string>
     <string name="input_12_mnemonic_code">请输入12位助记词</string>
     <string name="freezing_records">冻结记录</string>
     <string name="freezing">冻结</string>
-    <string name="user_copy_success">复制成功</string>
 
-    <string name="assets_list_tab1">全部</string>
-    <string name="assets_list_tab2">转账</string>
-    <string name="assets_list_tab3">收款</string>
-    <string name="assets_list_tab4">收益</string>
 
-    <string name="dialog_input_your_pay_password">提示请输入支付密码！</string>
-    <string name="dialog_input_your_password">提示请输入密码！</string>
+    <string name="my_function_introduction_des">
+        关于私钥、助记词，钱包说明\n比特币的所有权是通过数字密钥、比特币地址和数字签名来确立的。数字密钥实际上并不是存储在网络中，而是由用户生成并存储在一个文件或者一个简单的数据库中，称为钱包。存储在用户钱包中的数字密钥完全独立于比特币协议，可由用户的钱包软件生成并管理，而无需区块链或者网络连接。密钥实现了比特币的许多有趣特性，包括去中心化的信任和机制、所有权认证和基于密码学的安全模型。
+每笔币种交易都需要一个有效的签名才能被存储在区块链。只有有效的数字密钥才能产生有效的数字签名，因此拥有了比特币的密钥副本就相当于拥有了该账户比特币的控制权。一个比特币钱包中包含一系列的密钥对，每个密钥对包含一个私钥和一个公钥。公钥就像银行的账号。而私钥就像控制账户的PIN码或支票的签名。比特币的用户很少会直接看到数字密钥。一般情况下，他们被存储在钱包文件内，由比特币钱包软件进行管理。
+什么是私钥?\n
+私钥是一个数字，通常是随机选出的。一个比特币地址中的所有资金的控制取决于相应私钥的所有权和控制权。在比特币交易中，私钥用于生成支付比特币所必需的签名以证明资金的所有权。私钥必须始终保持机密，因为一旦泄露给第三方，相当于该私钥保护之下的比特币也拱手相让了。私钥还必须进行备份，以防意外丢失，因为私钥一旦丢失就难以复原，其所保护的比特币也将永远消失。
 
-    <string name="status_action">进行中</string>
-    <string name="status_fail">失败</string>
-    <string name="my_collect">收款</string>
-    <string name="status_fail_money">退款</string>
-    <string name="status_cold0">等待确认</string>
-    <string name="status_cold1">确认中</string>
-    <string name="status_cold2">已完成</string>
-    <string name="status_cold3">交易失败</string>
-    <string name="detail_charge_money">充币</string>
-    <string name="detail_discharge_money">提币</string>
-    <string name="detail_charge_money_success">充币成功</string>
-    <string name="c_wallet_qcode_tips">注意：该地址仅支持%s收款，请勿用与其他币种</string>
+\n\n什么是钱包?
+\n钱包是私钥的容器，通常通过有序文件或者简单的数据库实现。比特币钱包只包含私钥而不是比特币。每一个用户有一个包含多个私钥的钱包。钱包中包含成对的私钥和公钥。用户用这些私钥来签名交易，从而证明他们拥有交易的输出（也就是其中的比特币）。比特币是以交易输出的形式来存储在区块链中。
+\n什么是助记词？
+\n助记词是明文私钥的另一种表现形式，最早是由 BIP39 提案提出，其目的是为了帮助用户记忆复杂的私钥。助记词一般由12个单词构成，这些单词都取自一个固定词库，其生成顺序也是按照一定算法而来，所以用户没必要担心随便输入 12 个单词就会生成一个地址。任何人得到了你的助记词，可以不费吹灰之力的夺走你的资产。
+\n备份助记词之后，注意事项: 
+\n1.尽可能采用物理介质备份，例如用笔抄在纸上等，尽可能不要采用截屏或者拍照之后放在联网的设备里，以防被黑客窃取；
+\n2.多次验证备份的助记词是否正确，一旦抄错一两个单词，那么将对后续找回正确的助记词带来巨大的困难；
+\n3.将备份后的助记词妥善保管，做好防盗防丢措施。
+\n4.(助记词等同于私钥）。因为这会直接导致资产损失，无法追回"
+    </string>
 
-    <!--    wallet validate-->
-    <string name="wv_validate">验证</string>
-    <string name="wv_done">完成</string>
-    <string name="wv_reset">重新生成密语</string>
-    <string name="wv_validate_sure">按照顺序点击密语，以确认正确备份</string>
-    <string name="wv_tip">提示</string>
-    <string name="wv_content">是否已抄完</string>
-    <string name="wv_create_hot_wallet">还未创建在线钱包</string>
-    <string name="wv_create_cold_wallet">还未创建多链钱包</string>
-    <string name="wv_delete_cold_wallet">确定删除钱包吗</string>
-    <string name="wv_login_out">确定退出登录吗</string>
-    <string name="wv_auto_alsc">所有收益将自动按前1小时\n均价自动兑换成A13！</string>
-    <string name="wh_ok">确定</string>
-    <string name="wh_make_sure">确认</string>
-    <string name="new_version_url_empty">地址不能为空</string>
-    <string name="c_create_wallet">创建%s钱包</string>
+    <string name="input_message_resend">重新发送</string>
 
-    <string name="export_keystore_tab1">Keystore</string>
-    <string name="export_keystore_tab2">二维码</string>
-    <!--    wallte code-->
-    <string name="wc_code">创建多链钱包</string>
-    <string name="wc_code_important">密码用于保护私钥与交易授权,强度非常重要。</string>
-    <string name="wc_code_warn">非中心化系统的密码一旦丢失,则无法找回,请妥善保管!</string>
-    <string name="wc_code_account">账户备注</string>
-    <string name="wc_code_input_account">请输入账户名称</string>
-    <string name="wc_code_input_wallet">请输入钱包名称</string>
-    <string name="wc_code_wallet_pwd">钱包密码</string>
-    <string name="wc_code_input_wallet_pwd">请输入钱包密码</string>
-    <string name="wc_code_input_wallet_pwd_again">请再次输入钱包密码</string>
-    <string name="wc_code_pwd_pattern">钱包密码建议至少8-16位:大写字母、小写字母、数字3种组成</string>
-    <string name="create_wallet_name_repeat_tips">钱包名称重复</string>
-    <string name="create_wallet_name_input_tips">请输入钱包名称</string>
-    <string name="create_wallet_pwd_input_tips">密码不能为空</string>
-    <string name="create_wallet_pwd_confirm_input_tips">密码不一致，请重新输入</string>
-    <string name="saving_wallet_password_length">钱包密码至少8位</string>
-    <string name="saving_wallet_tip">保存钱包中…</string>
-    <string name="saving_wallet_failure">创建钱包失败</string>
 
-    <string name="wt_language">语言</string>
-    <string name="wt_make">创建钱包</string>
-    <string name="wt_type_make">创建钱包类型</string>
-    <string name="wt_type_change">去中心化的DAPP，冷热钱包自由切换</string>
-    <string name="wt_type_chain">多链钱包</string>
-    <string name="wt_type_online">在线钱包</string>
-    <string name="wt_type_chain_describe">构建各种公链价值流转通道，实现多种数字\n资产业务创新</string>
-    <string name="wt_type_online_describe">打造A13数字经济生态应用</string>
-    <string name="wt_type_next">下一步</string>
-    <string name="wt_type_has_alsc">已有在线钱包？</string>
-    <string name="wt_type_login">登录</string>
-    <string name="wt_btn_sure_add">确定添加</string>
-    <string name="wt_btn_sure_add_cold">已有多链钱包？</string>
-    <string name="wt_cold_wallet_restore">恢复</string>
+    <string name="register_success_please_login">注册成功请重新登录</string>
+    <string name="wh_set_gesture_password_success_please_login">已成功设置手势密码，请重新登录</string>
+    <string name="notice_cold_title">注意！注意！注意！</string>
+    <string name="notice_cold_content">卸载A13 Wallet前请确保已保存私钥、助记词、KeyStore。否则将无法恢复您的多链钱包的数字资产！！！</string>
 
-    <string name="verify_wallet_password_failure">验证密语失败，请重新输入</string>
-    <string name="error_code_length">助记词长度不正确</string>
+    <string name="invite_star">邀请星系</string>
+    <string name="share_two_win">共享创双赢</string>
+    <string name="save_pic_to_album">保存海报到相册</string>
+
+    <string name="find_new_version">发现新版本</string>
+    <string name="updating">版本更新中，请稍等...</string>
+    <string name="update_now">立即更新</string>
+    <string name="download_failed">下载失败，请稍后重试</string>
+    <string name="re_download">重新下载</string>
+
+    <string name="can_use_commission">可用共识交易余额:</string>
+    <string name="can_use_wallet_coin">可用在线钱包余额:</string>
+    <string name="can_use_commission_alsc">共识A13</string>
+    <string name="can_use_wallet_coin_alsc">钱包A13(暂未开放)</string>
+    <string name="v_coin">Vcoin</string>
+    <string name="please_input_id_address">请输入ID地址</string>
+    <string name="look_detail">查看明细</string>
+    <string name="transfer_right_now">立即转出</string>
+
+    <string name="exchange_xxx_id">交易所ID：%1$s</string>
+    <string name="add">添加</string>
+    <string name="commission_exchange_address_book">共识交易地址簿</string>
+    <string name="add_your_first_exchange_id">添加您的第一个共识交易所ID</string>
+    <string name="exchange_xxx_name">名称：%1$s交易所</string>
+    <string name="add_commission_exchange_id">添加共识交易所ID</string>
+    <string name="exchange_name">交易所名称</string>
+    <string name="please_choose_exchange_name">请选择相应的交易所名称</string>
+    <string name="exchange_id">交易所ID</string>
+    <string name="please_input_exchange_id">请输入相应的交易所用户ID</string>
+    <string name="sure_add">确定添加</string>
+    <string name="high_commission_tip">注：请务必仔细核对共识交易所相应的用户名ID，单笔交易手续费10A13</string>
+    <string name="add_success">添加成功</string>
+    <string name="name_xxx">名称：%1$s</string>
+    <string name="trade_success">交易成功</string>
+    <string name="are_you_sure_delete_address">确定删除该共识交易地址？</string>
+
+    <string name="commission_transfer_out_record">共识转出记录</string>
+    <string name="transfer_out_num">转出数量(A13)</string>
+    <string name="game_open_time">开放时间待官方通知</string>
+
+    <string name="st_credit_details_2">涡轮脉冲明细</string>
+    <string name="st_contribution_value_2">投资额(U)</string>
+    <string name="st_type_xxx">类型：%1$s</string>
+    <string name="st_benfit_num">收益数量</string>
+    <string name="st_time_xxx">时间：%1$s</string>
+    <string name="st_speed_up_2">已加速</string>
+    <string name="st_detail">详情</string>
+    <string name="st_up_close">收起</string>
+    <string name="st_type_choose">类型筛选</string>
+    <string name="st_type_all">全部</string>
 
     <string name="alsc_transfer_type11_1">涡轮脉冲收益</string>
     <string name="alsc_transfer_type12_1">至尊节点分红</string>
     <string name="alsc_transfer_type13_1">合伙人分红点收益</string>
     <string name="alsc_transfer_type17_1">培养节点分红</string>
-    <string name="alsc_transfer_type1">黄金矿工</string>
-    <string name="alsc_transfer_type2">红包</string>
-    <string name="alsc_transfer_type3">社交转账</string>
-    <string name="alsc_transfer_type10">分享星系收益</string>
-    <string name="alsc_transfer_type11">涡轮脉冲收益</string>
-    <string name="alsc_transfer_type12">至尊节点分红</string>
-    <string name="alsc_transfer_type13">合伙人分红收益</string>
-    <string name="alsc_transfer_type14">星系矿池收益</string>
-    <string name="alsc_transfer_type15">星际奖池分红</string>
-    <string name="alsc_transfer_type16">共识收益</string>
-    <string name="alsc_transfer_type17">培养节点分红</string>
-    <string name="alsc_transfer_type18">合伙人每日收益</string>
-    <string name="alsc_transfer_type19">系统兑换</string>
-    <string name="alsc_transfer_type20">参于涡轮脉冲</string>
-    <string name="alsc_transfer_type21">推荐合伙人分红收益</string>
 
-    <string name="export_keystore_message">获取Keystore和密码等于拥有钱包资产所有权</string>
-    <string name="export_private_message">获取私钥等于拥有钱包资产所有权</string>
-    <string name="export_copy_private">复制 Private Key</string>
-    <string name="save_success">保存成功</string>
-    <string name="btn_sure">确认</string>
+    <string name="st_auto_exchange">自动兑换</string>
+    <string name="st_auto_exchange_tip">按前1小时均价自动兑换</string>
+    <string name="st_rest_income">收益余额</string>
+    <string name="st_caculate_value">算力值</string>
+
+
+    <!-- 资料库 -->
+    <string name="file_download">资料库下载</string>
+    <string name="search_file_name">搜索资料名称</string>
+    <string name="alsc_dark_website">A13暗网</string>
+    <string name="alsc_white_book">A13白皮书</string>
+    <string name="alsc_green_book">A Wallet绿皮书</string>
+    <string name="alsc_wallet_green_book">A13 Wallet绿皮书</string>
+    <string name="business_school_column">商学院专栏</string>
+    <string name="look_more">查看更多</string>
+    <string name="watch">观看</string>
+    <string name="free">免费</string>
+    <string name="file_download_title_1">A13宣传视频</string>
+    <string name="video_file">视频资料</string>
+    <string name="alsc_file_bookshelf">A13资料书架</string>
+    <string name="posters">宣传海报</string>
+    <string name="xxx_watch_num">%1$s次 观看</string>
+    <string name="xxx_read_num">%1$s次 阅读</string>
+    <string name="read_now">立即阅读</string>
+    <string name="download_the_book">下载此书</string>
+    <string name="file_bookshelf">资料书架</string>
+    <string name="file_search">搜索</string>
+    <string name="pic_text_detail">图文详情</string>
+    <string name="video_detail">视频详情</string>
+    <string name="watch_video">观看视频</string>
+    <string name="no_search_xxx_content">抱歉没有找到\"%1$s\"相关内容</string>
+
+    <string name="alsc_transfer_type4">空投</string>
+    <string name="d_delete">确定删除？</string>
+    <string name="one_key_commission">一键共识</string>
+    <string name="one_key_commission_content">您可以一键将信誉值转入到共识余额！</string>
+    <string name="one_key_commission_success">一键共识交易成功！</string>
+    <string name="activity_title_1">注册即送空投10000USDT</string>
+    <string name="activity_content_1">推荐好友参于〔涡轮脉冲〕，即可享受好友每次投资的贡献额数量以5%的比例释放该空投。</string>
+    <string name="activity_title_2">活动时间</string>
+    <string name="activity_content_2">此活动长期有效，具体截止时间以官方相应说明为准！</string>
+
+    <string name="usdt_join">USDT参与</string>
+    <string name="a13_join">A13参与</string>
 </resources>

@@ -2,10 +2,8 @@ package com.wallet.retrofit;
 
 import android.content.Context;
 
-import com.alsc.chat.manager.ConfigManager;
-import com.alsc.chat.utils.NetUtil;
-import com.alsc.chat.utils.Utils;
 import com.cao.commons.SPConstants;
+import com.cao.commons.base.PoliceApplication;
 import com.cao.commons.bean.AbNormalBean;
 import com.cao.commons.bean.BaseListBean;
 import com.cao.commons.bean.BaseResultBean;
@@ -41,6 +39,8 @@ import com.cao.commons.bean.user.TransferListDetailBean;
 import com.cao.commons.bean.user.WallerInfoBean;
 import com.cao.commons.manager.DataManager;
 import com.cao.commons.retrofit.RxSchedulers;
+import com.common.utils.NetUtil;
+import com.common.utils.Utils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -560,7 +560,7 @@ public class HttpInterface {
                 .retry(3, new Predicate<Throwable>() {
                     @Override
                     public boolean test(@NonNull Throwable throwable) throws Exception {
-                        return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                        return NetUtil.isConnected(PoliceApplication.getInstance()) &&
                                 (throwable instanceof IOException ||
                                         throwable instanceof TimeoutException);
                     }
@@ -657,7 +657,7 @@ public class HttpInterface {
                 .retry(3, new Predicate<Throwable>() {
                     @Override
                     public boolean test(@NonNull Throwable throwable) throws Exception {
-                        return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                        return NetUtil.isConnected(PoliceApplication.getInstance()) &&
                                 (throwable instanceof IOException ||
                                         throwable instanceof TimeoutException);
                     }
@@ -687,7 +687,7 @@ public class HttpInterface {
                 .retry(3, new Predicate<Throwable>() {
                     @Override
                     public boolean test(@NonNull Throwable throwable) throws Exception {
-                        return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                        return NetUtil.isConnected(PoliceApplication.getInstance()) &&
                                 (throwable instanceof IOException ||
                                         throwable instanceof TimeoutException);
                     }
@@ -760,7 +760,7 @@ public class HttpInterface {
                 .retry(3, new Predicate<Throwable>() {
                     @Override
                     public boolean test(@NonNull Throwable throwable) throws Exception {
-                        return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                        return NetUtil.isConnected(PoliceApplication.getInstance()) &&
                                 (throwable instanceof IOException ||
                                         throwable instanceof TimeoutException);
                     }
@@ -790,7 +790,7 @@ public class HttpInterface {
                 .retry(3, new Predicate<Throwable>() {
                     @Override
                     public boolean test(@NonNull Throwable throwable) throws Exception {
-                        return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                        return NetUtil.isConnected(PoliceApplication.getInstance()) &&
                                 (throwable instanceof IOException ||
                                         throwable instanceof TimeoutException);
                     }
@@ -844,7 +844,7 @@ public class HttpInterface {
                 .retry(3, new Predicate<Throwable>() {
                     @Override
                     public boolean test(@NonNull Throwable throwable) throws Exception {
-                        return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                        return NetUtil.isConnected(PoliceApplication.getInstance()) &&
                                 (throwable instanceof IOException ||
                                         throwable instanceof TimeoutException);
                     }
@@ -874,7 +874,7 @@ public class HttpInterface {
                 .retry(3, new Predicate<Throwable>() {
                     @Override
                     public boolean test(@NonNull Throwable throwable) throws Exception {
-                        return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                        return NetUtil.isConnected(PoliceApplication.getInstance()) &&
                                 (throwable instanceof IOException ||
                                         throwable instanceof TimeoutException);
                     }
@@ -904,7 +904,7 @@ public class HttpInterface {
                 .retry(3, new Predicate<Throwable>() {
                     @Override
                     public boolean test(@NonNull Throwable throwable) throws Exception {
-                        return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                        return NetUtil.isConnected(PoliceApplication.getInstance()) &&
                                 (throwable instanceof IOException ||
                                         throwable instanceof TimeoutException);
                     }
@@ -1042,7 +1042,7 @@ public class HttpInterface {
                 .retry(3, new Predicate<Throwable>() {
                     @Override
                     public boolean test(@NonNull Throwable throwable) throws Exception {
-                        return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                        return NetUtil.isConnected(PoliceApplication.getInstance()) &&
                                 (throwable instanceof IOException ||
                                         throwable instanceof TimeoutException);
                     }
@@ -1072,7 +1072,7 @@ public class HttpInterface {
                 .retry(3, new Predicate<Throwable>() {
                     @Override
                     public boolean test(@NonNull Throwable throwable) throws Exception {
-                        return NetUtil.isConnected(ConfigManager.getInstance().getContext()) &&
+                        return NetUtil.isConnected(PoliceApplication.getInstance()) &&
                                 (throwable instanceof IOException ||
                                         throwable instanceof TimeoutException);
                     }

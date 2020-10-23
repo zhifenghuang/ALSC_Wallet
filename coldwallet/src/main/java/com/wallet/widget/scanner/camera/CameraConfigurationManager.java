@@ -26,7 +26,8 @@ import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 
-import com.jnsh.alsc.scanner.config.Config;
+
+import com.wallet.widget.scanner.config.Config;
 
 import java.util.ArrayList;
 import java.util.Collection;
