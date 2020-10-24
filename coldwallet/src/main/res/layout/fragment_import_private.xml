@@ -46,7 +46,7 @@
                     android:padding="13dp"
                     android:text=""
                     android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_color_small"
+                    android:textColorHint="@color/text_color_small1"
                     android:textSize="12dp" />
 
                 <LinearLayout
@@ -65,20 +65,16 @@
                         android:gravity="center_vertical"
                         android:onClick="@{clickListener}">
 
-                        <View
-                            android:layout_width="5dp"
-                            android:layout_height="15dp"
-                            android:background="@color/blue" />
+
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="9dp"
                             android:drawableRight="@mipmap/icon_attention_toast"
                             android:drawablePadding="4dp"
                             android:text="@string/c_wallet_address_path"
                             android:textColor="@color/text_color"
-                            android:textSize="@dimen/text_size_12" />
+                            android:textSize="15dp" />
 
 
                     </LinearLayout>
@@ -101,7 +97,7 @@
                                 android:id="@+id/iv_item1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@mipmap/icon_single_normal" />
+                                android:src="@mipmap/icon_wallet_check" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -109,7 +105,7 @@
                                 android:layout_marginLeft="9dp"
                                 android:text="@string/c_wallet_private_isolation"
                                 android:textColor="@color/text_color"
-                                android:textSize="12dp" />
+                                android:textSize="13dp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -124,7 +120,8 @@
                                 android:id="@+id/iv_item2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@mipmap/icon_single_selected" />
+                                android:visibility="invisible"
+                                android:src="@mipmap/icon_wallet_check" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -132,7 +129,7 @@
                                 android:layout_marginLeft="9dp"
                                 android:text="@string/c_wallet_private_normal"
                                 android:textColor="@color/text_color"
-                                android:textSize="12dp" />
+                                android:textSize="13dp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -145,18 +142,13 @@
                     android:layout_marginRight="20dp"
                     android:gravity="center_vertical">
 
-                    <View
-                        android:layout_width="5dp"
-                        android:layout_height="15dp"
-                        android:background="@color/blue" />
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="9dp"
+                        android:layout_height="wrap_content"
                         android:text="@string/c_wallet_name"
                         android:textColor="@color/text_color"
-                        android:textSize="@dimen/text_size_12" />
+                        android:textSize="15dp" />
 
 
                 </LinearLayout>
@@ -164,44 +156,34 @@
                 <EditText
                     android:id="@+id/et_wallet_name"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:background="@null"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/corner_white_5"
                     android:singleLine="true"
                     android:hint="@string/security_name_update_hine"
-                    android:paddingLeft="14dp"
-                    android:textColorHint="@color/text_color_small"
+                    android:paddingLeft="7dp"
+                    android:textColorHint="@color/text_color_small1"
                     android:textColor="@color/text_color"
                     android:textSize="12dp" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/color_929497" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="13dp"
+                    android:layout_marginTop="30dp"
                     android:layout_marginRight="20dp"
                     android:gravity="center_vertical">
 
-                    <View
-                        android:layout_width="5dp"
-                        android:layout_height="15dp"
-                        android:background="@color/blue" />
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="9dp"
-                        android:text="@string/wh_set_pwd"
+                        android:layout_height="wrap_content"
+                        android:text="@string/c_cold_import_keystore_input1"
                         android:textColor="@color/text_color"
-                        android:textSize="@dimen/text_size_12" />
+                        android:textSize="15dp" />
 
 
                 </LinearLayout>
@@ -209,71 +191,92 @@
                 <EditText
                     android:id="@+id/et_password"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:background="@null"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/corner_white_5"
                     android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:maxLength="12"
                     android:inputType="textPassword"
                     android:singleLine="true"
                     android:hint="@string/c_wallet_password_hint"
                     android:paddingLeft="14dp"
-                    android:textColorHint="@color/text_color_small"
+                    android:textColorHint="@color/text_color_small1"
                     android:textColor="@color/text_color"
                     android:textSize="12dp" />
 
-                <View
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/color_929497" />
+                    android:gravity="center_vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/wc_code_input_wallet_pwd1"
+                        android:textColor="@color/text_color"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/et_password_retry"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:background="@null"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/corner_white_5"
                     android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:maxLength="12"
                     android:inputType="textPassword"
                     android:hint="@string/c_wallet_password_retry_hint"
                     android:paddingLeft="14dp"
                     android:singleLine="true"
-                    android:textColorHint="@color/text_color_small"
+                    android:textColorHint="@color/text_color_small1"
                     android:textColor="@color/text_color"
                     android:textSize="12dp" />
 
-                <View
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="30dp"
                     android:layout_marginRight="20dp"
-                    android:background="@color/color_929497" />
+                    android:gravity="center_vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/c_wallet_password_tips_hint"
+                        android:textColor="@color/text_color"
+                        android:textSize="15dp" />
+
+
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/et_remark"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:background="@null"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/corner_white_5"
                     android:hint="@string/c_wallet_password_tips_hint"
                     android:paddingLeft="14dp"
                     android:singleLine="true"
-                    android:textColorHint="@color/text_color_small"
+                    android:textColorHint="@color/text_color_small1"
                     android:textColor="@color/text_color"
                     android:textSize="12dp" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/color_929497" />
 
 
                 <Button
@@ -282,7 +285,8 @@
                     android:layout_marginTop="28dp"
                     android:layout_marginBottom="40dp"
                     android:onClick="@{clickListener}"
-                    android:text="@string/c_cold_import_begin" />
+                    android:background="@drawable/corner_b2b2b2_13"
+                    android:text="@string/c_import" />
             </LinearLayout>
         </ScrollView>
 

@@ -86,9 +86,9 @@ public class ImportMnemonicFragment extends BaseFragment implements View.OnClick
             if (!TextUtils.isEmpty(binding.etContent.getText().toString().trim()) &&
                     !TextUtils.isEmpty(binding.etContent.getText().toString().trim()) &&
                     !TextUtils.isEmpty(binding.etWalletName.getText().toString().trim())) {
-                binding.btnNext.setBackgroundResource(R.drawable.corner_blue_25);
+                binding.btnNext.setBackgroundResource(R.drawable.corner_07bb99_13);
             } else {
-                binding.btnNext.setBackgroundResource(R.drawable.corner_blue50_25);
+                binding.btnNext.setBackgroundResource(R.drawable.corner_b2b2b2_13);
             }
         }
     };
@@ -105,13 +105,13 @@ public class ImportMnemonicFragment extends BaseFragment implements View.OnClick
             showDialog();
         } else if (id == R.id.ll_address1) {
             mPathType = 0;
-            binding.ivItem1.setImageResource(R.mipmap.icon_single_selected);
-            binding.ivItem2.setImageResource(R.mipmap.icon_single_normal);
+            binding.ivItem1.setVisibility(View.VISIBLE);
+            binding.ivItem2.setVisibility(View.INVISIBLE);
         } else if (id == R.id.ll_address2) {
             mPathType = 1;
-            binding.ivItem1.setImageResource(R.mipmap.icon_single_normal);
-            binding.ivItem2.setImageResource(R.mipmap.icon_single_selected);
-        } else if (id == R.id.tv_path_choose) {
+            binding.ivItem1.setVisibility(View.INVISIBLE);
+            binding.ivItem2.setVisibility(View.VISIBLE);
+        } else if (id == R.id.tv_path) {
             showPathDialog();
         } else if (id == R.id.btn_next) {
             next();

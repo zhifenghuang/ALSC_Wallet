@@ -28,7 +28,7 @@ public class WalletAddDialog extends Dialog implements View.OnClickListener {
 
         Window view = getWindow();
         WindowManager.LayoutParams lp = view.getAttributes();
-        lp.width = DensityUtil.getScreenWidth() - DensityUtil.dip2px(26 * 2); // 设置宽度充满屏幕
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT; // 设置宽度充满屏幕
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         view.setGravity(Gravity.BOTTOM);
         view.setWindowAnimations(R.style.dialog_slide_up_down); //设置窗口弹出动画

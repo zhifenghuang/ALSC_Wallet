@@ -39,6 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:text="@string/wh_important_money"
+                android:textStyle="bold"
                 android:textColor="@color/text_color"
                 android:textSize="18dp" />
         </FrameLayout>
@@ -50,11 +52,11 @@
             android:layout_height="50dp"
             app:tabGravity="fill"
             app:tabIndicatorHeight="2dp"
-            app:tabIndicatorColor="@color/color_1f8dfc"
+            app:tabIndicatorColor="@color/tab_select_color"
             app:tabMode="fixed"
-            app:tabSelectedTextColor="@color/color_1f8dfc"
+            app:tabSelectedTextColor="@color/tab_select_color"
             app:tabTextAppearance="@style/tabLayout_text_15"
-            app:tabTextColor="@color/color_1d_26_37"/>
+            app:tabTextColor="@color/tab_unselect_color"/>
 
         <View
             android:layout_width="match_parent"

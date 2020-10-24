@@ -66,9 +66,9 @@ public class ImportKeystoreFragment extends BaseFragment implements View.OnClick
         public void afterTextChanged(Editable s) {
             if (!TextUtils.isEmpty(binding.etContent.getText().toString().trim()) &&
                     !TextUtils.isEmpty(binding.etContent.getText().toString().trim())) {
-                binding.btnNext.setBackgroundResource(R.drawable.corner_blue_25);
+                binding.btnNext.setBackgroundResource(R.drawable.corner_07bb99_13);
             } else {
-                binding.btnNext.setBackgroundResource(R.drawable.corner_blue50_25);
+                binding.btnNext.setBackgroundResource(R.drawable.corner_b2b2b2_13);
             }
         }
     };

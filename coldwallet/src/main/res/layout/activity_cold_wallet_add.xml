@@ -40,7 +40,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/total_assets_add"
-                android:textColor="@color/text_color"
+                android:textColor="@color/color_222222"
+                android:textStyle="bold"
                 android:textSize="18dp" />
 
 

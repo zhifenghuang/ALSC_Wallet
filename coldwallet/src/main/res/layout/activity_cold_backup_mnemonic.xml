@@ -40,7 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="@color/text_color"
+                android:textColor="@color/color_222222"
+                android:textStyle="bold"
                 android:textSize="18dp"
                 android:text="@string/c_backup_mnemonic" />
 
@@ -84,7 +85,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="25dp"
-                android:textColor="@color/color_929497"
+                android:textColor="@color/text_color_small1"
                 android:textSize="12dp"
                 />
 
@@ -95,7 +96,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/color_929497"
+                android:textColor="@color/text_color_small1"
                 android:textSize="12dp"
                 />
             <TextView
@@ -105,7 +106,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/color_929497"
+                android:textColor="@color/text_color_small1"
                 android:textSize="12dp"
                 />
 

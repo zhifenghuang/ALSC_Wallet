@@ -41,11 +41,11 @@ public class ColdConfirmMnemonicAdapter extends RecyclerArrayAdapter<String> {
             super.setData(data);
             Integer integer = getAdapterPosition();
             if (selectList.contains(integer)) {
-                tv_name.setTextColor(mContext.getResources().getColor(R.color.color_1d2637_50));
-                tv_name.setBackgroundResource(R.drawable.corner_hollow_807c8798_4);
+                tv_name.setTextColor(mContext.getResources().getColor(R.color.text_color));
+                tv_name.setBackgroundResource(R.drawable.corner_hollow_b2b2b2_4);
             } else {
-                tv_name.setTextColor(mContext.getResources().getColor(R.color.color_1d_26_37));
-                tv_name.setBackgroundResource(R.drawable.corner_hollow_7c8798_4);
+                tv_name.setTextColor(mContext.getResources().getColor(R.color.text_color_small1));
+                tv_name.setBackgroundResource(R.drawable.corner_hollow_b2b2b2_4);
             }
             tv_name.setText("" + data);
         }

@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/corner_white_5"
+        android:background="@drawable/corner_whitet_8"
         android:orientation="vertical">
 
         <TextView
@@ -16,7 +16,7 @@
             android:gravity="center"
             android:layout_height="45dp"
             android:text="@string/c_wallet_password_1"
-            android:textColor="#ff1f8dfc"
+            android:textColor="#07BB99"
             android:textSize="15dp"
             />
 
@@ -32,7 +32,7 @@
             android:gravity="center"
             android:layout_height="45dp"
             android:text="@string/c_wallet_password_2"
-            android:textColor="#ff1f8dfc"
+            android:textColor="#07BB99"
             android:textSize="15dp"
             />
 
@@ -47,22 +47,27 @@
             android:gravity="center"
             android:layout_height="45dp"
             android:text="@string/c_wallet_password_3"
-            android:textColor="#ff1f8dfc"
+            android:textColor="#07BB99"
             android:textSize="15dp"
             />
 
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/color_f8f8f8"/>
+
     <TextView
         android:id="@+id/tv_cancel"
         android:layout_width="match_parent"
         android:gravity="center"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/corner_white_5"
+        android:background="@color/white"
         android:text="@string/btn_cancle"
         android:textColor="@color/text_color"
-        android:textSize="15dp"
+        android:textSize="18dp"
         />
 
 </LinearLayout>
