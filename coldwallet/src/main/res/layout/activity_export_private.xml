@@ -41,6 +41,7 @@
                 android:layout_gravity="center"
                 android:text="@string/c_wallet_manager_tips4"
                 android:textColor="@color/text_color"
+                android:textStyle="bold"
                 android:textSize="18dp" />
 
 
@@ -52,14 +53,14 @@
             android:layout_marginTop="6dp"
             android:layout_height="45dp"
             app:tabIndicatorHeight="2dp"
-            app:tabIndicatorColor="@color/color_1f8dfc"
+            app:tabIndicatorColor="@color/tab_select_color"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             app:tabGravity="fill"
             app:tabMode="fixed"
-            app:tabSelectedTextColor="@color/text_color"
+            app:tabSelectedTextColor="@color/tab_select_color"
             app:tabTextAppearance="@style/tabLayout_text_15"
-            app:tabTextColor="@color/text_color_small"/>
+            app:tabTextColor="@color/tab_unselect_color"/>
 
         <View
             android:layout_width="match_parent"

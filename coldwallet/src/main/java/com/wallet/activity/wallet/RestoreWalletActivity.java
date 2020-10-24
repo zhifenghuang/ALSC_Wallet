@@ -81,7 +81,7 @@ public class RestoreWalletActivity extends BaseActivity implements View.OnClickL
                 if (TextUtils.isEmpty(s)) {
                     binding.tvSend.setBackgroundResource(R.drawable.corner_d9d1d3_13);
                 } else {
-                    binding.tvSend.setBackgroundResource(R.drawable.corner_208cf7_13);
+                    binding.tvSend.setBackgroundResource(R.drawable.corner_07bb99_4);
                 }
             }
         });
@@ -109,9 +109,9 @@ public class RestoreWalletActivity extends BaseActivity implements View.OnClickL
             if (!TextUtils.isEmpty(binding.etWalletName.getText()) &&
                     !TextUtils.isEmpty(binding.etPassword.getText())&&
                     !TextUtils.isEmpty(binding.etPasswordRetry.getText())) {
-                binding.btnNext.setBackgroundResource(R.drawable.corner_blue_25);
+                binding.btnNext.setBackgroundResource(R.drawable.corner_07bb99_13);
             } else {
-                binding.btnNext.setBackgroundResource(R.drawable.corner_blue50_25);
+                binding.btnNext.setBackgroundResource(R.drawable.corner_b2b2b2_13);
             }
         }
     };

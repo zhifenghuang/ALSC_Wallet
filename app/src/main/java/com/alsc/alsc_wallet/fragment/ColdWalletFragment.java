@@ -1,5 +1,6 @@
 package com.alsc.alsc_wallet.fragment;
 
+import android.text.TextUtils;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -10,10 +11,13 @@ import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.activity.MainActivity;
 import com.alsc.alsc_wallet.adapter.ColdWalletAdapter;
 import com.alsc.alsc_wallet.adapter.ImportWalletAddressAdapter;
+import com.cao.commons.bean.chat.UserBean;
+import com.cao.commons.manager.DataManager;
 import com.common.fragment.BaseFragment;
 import com.common.bean.CoinSymbolBean;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.wallet.activity.wallet.RestoreWalletActivity;
 
 public class ColdWalletFragment extends BaseFragment {
 
@@ -28,7 +32,7 @@ public class ColdWalletFragment extends BaseFragment {
 
     @Override
     protected void onViewCreated(View view) {
-        setViewsOnClickListener(R.id.tvOnlineWallet,R.id.tvColdWallet);
+        setViewsOnClickListener(R.id.tvOnlineWallet, R.id.tvColdWallet, R.id.tvRestore, R.id.tvCreate);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -50,6 +54,15 @@ public class ColdWalletFragment extends BaseFragment {
         recyclerView.setAdapter(getAdapter1());
         getAdapter1().addData("");
         getAdapter1().addData("");
+
+        UserBean userBean = DataManager.getInstance().getUser();
+        if (userBean!=null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
+            setViewGone(R.id.llUnLogin);
+            setViewVisible(R.id.llLogined);
+        } else {
+            setViewVisible(R.id.llUnLogin);
+            setViewGone(R.id.llLogined);
+        }
     }
 
     @Override
@@ -64,8 +77,14 @@ public class ColdWalletFragment extends BaseFragment {
             case R.id.tvOnlineWallet:
                 ((MainActivity) getActivity()).setWalletType(0);
                 break;
-                case R.id.tvColdWallet:
+            case R.id.tvColdWallet:
                 ((MainActivity) getActivity()).setWalletType(0);
+                break;
+            case R.id.tvRestore:
+                gotoPager(RestoreWalletActivity.class);
+                break;
+            case R.id.tvCreate:
+
                 break;
         }
     }

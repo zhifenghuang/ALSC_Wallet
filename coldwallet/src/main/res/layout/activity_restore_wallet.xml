@@ -39,8 +39,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:textStyle="bold"
                 android:text="@string/wt_wallet_restore"
-                android:textColor="@color/color_1d_26_37"
+                android:textColor="@color/color_222222"
                 android:textSize="18dp" />
 
         </FrameLayout>
@@ -67,7 +68,7 @@
                         android:layout_marginTop="25dp"
                         android:layout_marginRight="25dp"
                         android:text="@string/r_wallet_restore_tips"
-                        android:textColor="@color/color_1d_26_37"
+                        android:textColor="@color/text_color"
                         android:textSize="12dp" />
 
                     <FrameLayout
@@ -95,7 +96,7 @@
                             android:onClick="@{clickListener}"
                             android:padding="13dp"
                             android:text=""
-                            android:textColor="@color/color_1d_26_37"
+                            android:textColor="@color/text_color_small1"
                             android:textColorHint="@color/color_929497"
                             android:textSize="12dp" />
                     </FrameLayout>
@@ -111,15 +112,15 @@
                         <View
                             android:layout_width="5dp"
                             android:layout_height="15dp"
+                            android:visibility="gone"
                             android:background="@color/blue" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="9dp"
                             android:text="@string/c_wallet_name"
-                            android:textColor="@color/color_1d_26_37"
-                            android:textSize="@dimen/text_size_12" />
+                            android:textColor="@color/text_color"
+                            android:textSize="15dp" />
 
 
                     </LinearLayout>
@@ -133,13 +134,13 @@
                         android:layout_marginRight="20dp"
                         android:background="@drawable/corner_white_5"
                         android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                        android:gravity="center"
-                        android:hint="@string/c_wallet_name"
+                        android:hint="@string/c_wallet_name1"
                         android:maxLength="12"
-                        android:paddingLeft="15dp"
+                        android:paddingLeft="7dp"
                         android:singleLine="true"
                         android:text=""
-                        android:textColor="@color/color_1a2135"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color_small1"
                         android:textSize="12dp" />
 
 
@@ -154,15 +155,15 @@
                         <View
                             android:layout_width="5dp"
                             android:layout_height="15dp"
+                            android:visibility="gone"
                             android:background="@color/blue" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="9dp"
-                            android:text="@string/c_cold_import_keystore_input"
-                            android:textColor="@color/color_1d_26_37"
-                            android:textSize="@dimen/text_size_12" />
+                            android:text="@string/c_cold_import_keystore_input1"
+                            android:textColor="@color/text_color"
+                            android:textSize="15dp" />
 
 
                     </LinearLayout>
@@ -176,14 +177,14 @@
                         android:layout_marginRight="20dp"
                         android:background="@drawable/corner_white_5"
                         android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                        android:gravity="center"
-                        android:hint="@string/c_cold_import_keystore_input"
+                        android:hint="@string/c_wallet_password_hint"
                         android:inputType="textPassword"
                         android:maxLength="12"
-                        android:paddingLeft="15dp"
+                        android:paddingLeft="7dp"
                         android:singleLine="true"
                         android:text=""
-                        android:textColor="@color/color_1a2135"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color_small1"
                         android:textSize="12dp" />
 
 
@@ -198,15 +199,15 @@
                         <View
                             android:layout_width="5dp"
                             android:layout_height="15dp"
+                            android:visibility="gone"
                             android:background="@color/blue" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="9dp"
-                            android:text="@string/wc_code_input_wallet_pwd_again"
-                            android:textColor="@color/color_1d_26_37"
-                            android:textSize="@dimen/text_size_12" />
+                            android:layout_height="wrap_content"
+                            android:text="@string/wc_code_input_wallet_pwd1"
+                            android:textColor="@color/text_color"
+                            android:textSize="15dp" />
 
 
                     </LinearLayout>
@@ -220,14 +221,14 @@
                         android:layout_marginRight="20dp"
                         android:background="@drawable/corner_white_5"
                         android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                        android:gravity="center"
                         android:hint="@string/wc_code_input_wallet_pwd_again"
                         android:inputType="textPassword"
                         android:maxLength="12"
-                        android:paddingLeft="15dp"
+                        android:paddingLeft="7dp"
                         android:singleLine="true"
                         android:text=""
-                        android:textColor="@color/color_1a2135"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color_small1"
                         android:textSize="12dp" />
 
                     <LinearLayout
@@ -241,15 +242,15 @@
                         <View
                             android:layout_width="5dp"
                             android:layout_height="15dp"
+                            android:visibility="gone"
                             android:background="@color/blue" />
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="9dp"
+                            android:layout_height="wrap_content"
                             android:text="@string/your_wallet_password_tips"
-                            android:textColor="@color/color_1d_26_37"
-                            android:textSize="@dimen/text_size_12" />
+                            android:textColor="@color/text_color"
+                            android:textSize="15dp" />
 
 
                     </LinearLayout>
@@ -262,11 +263,11 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
                         android:background="@drawable/corner_white_5"
-                        android:gravity="center"
                         android:hint="@string/input_your_wallet_password_tips"
-                        android:paddingLeft="15dp"
+                        android:paddingLeft="7dp"
                         android:singleLine="true"
-                        android:textColor="@color/color_1a2135"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color_small1"
                         android:textSize="12dp" />
 
                     <Button
@@ -274,7 +275,7 @@
                         style="@style/WalletColdBtn2Style"
                         android:layout_marginTop="28dp"
                         android:layout_marginBottom="40dp"
-                        android:background="@drawable/corner_blue50_25"
+                        android:background="@drawable/corner_07bb99_4"
                         android:onClick="@{clickListener}"
                         android:text="@string/wt_wallet_restore" />
                 </LinearLayout>
@@ -294,7 +295,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="57.5dp"
                     android:layout_gravity="bottom"
-                    android:background="@color/main_bg"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:orientation="horizontal">
 
@@ -303,7 +304,7 @@
                         android:layout_height="35dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
-                        android:background="@drawable/corner_white_18">
+                        android:background="@drawable/corner_f8f8f8_18">
 
                         <EditText
                             android:id="@+id/et_content"
@@ -314,14 +315,15 @@
                             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:paddingLeft="20dp"
                             android:singleLine="true"
-                            android:textColor="@color/color_1d_26_37"
+                            android:textColor="@color/text_color"
                             android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/tv_send"
                             android:layout_width="50dp"
                             android:layout_height="25dp"
-                            android:background="@drawable/corner_blue50_13"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/corner_b2b2b2_13"
                             android:gravity="center"
                             android:onClick="@{clickListener}"
                             android:text="@string/c_add"

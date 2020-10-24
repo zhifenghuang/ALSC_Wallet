@@ -6,7 +6,7 @@
 
 
     <color name="color_theme_bg">#e7eaf1</color>
-    <color name="color_theme_cold">#f2f2f4</color>
+    <color name="color_theme_cold">#f8f8f8</color>
     <color name="transparent">#00000000</color>
     <color name="blue">#1F8BF9</color>
     <color name="blue50">#601F8BF9</color>
@@ -52,8 +52,8 @@
     <color name="main_color_tone_else">#feab07</color>
     <color name="button_color">#2f406b</color>
     <color name="button_color_else">#feab07</color>
-    <color name="text_color">#2f406b</color>
-    <color name="text_color_small">#798aa6</color>
+    <color name="text_color">#000000</color>
+    <color name="text_color_small">#000000</color>
     <color name="line_color">#ccc7cacf</color>
     <color name="chat_line_color">#7B8397</color>
     <color name="chat_text_color">#2F3F6B</color>
@@ -61,4 +61,8 @@
     <color name="main_bg_else50">#80ffffff</color>
     <color name="text_color_cold_small">#2a2f4e</color>
     <color name="text_color_small50">#80798aa6</color>
+
+    <color name="tab_select_color">#07BB99</color>
+    <color name="tab_unselect_color">#000000</color>
+    <color name="text_color_small1">#b2b2b2</color>
 </resources>

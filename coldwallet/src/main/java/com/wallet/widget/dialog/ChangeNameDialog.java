@@ -27,7 +27,7 @@ public class ChangeNameDialog extends Dialog {
         mContext = context;
         Window view = getWindow();
         WindowManager.LayoutParams lp = view.getAttributes();
-        lp.width = DensityUtil.getScreenWidth() - DensityUtil.dip2px(30); // 设置宽度充满屏幕
+        lp.width =  DensityUtil.dip2px(260); // 设置宽度充满屏幕
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         view.setGravity(Gravity.CENTER);
 

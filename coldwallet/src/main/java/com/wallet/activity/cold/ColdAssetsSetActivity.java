@@ -109,10 +109,10 @@ public class ColdAssetsSetActivity extends BaseActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        int id = v.getId();//            case R.id.ll_name:
-//                showNameDialog();
-//                break;
-        if (id == R.id.tv_information) {
+        int id = v.getId();
+        if (id == R.id.ll_name) {
+            showNameDialog();
+        } else  if (id == R.id.tv_information) {
             ColdPasswordInformationActivity.startActivity(mContext, mWalletDataBean.getInformation());
         } else if (id == R.id.tv_export) {
             currentExport = 0;

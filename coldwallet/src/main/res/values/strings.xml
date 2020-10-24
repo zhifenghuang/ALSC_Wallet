@@ -152,7 +152,8 @@
     <string name="wc_code_input_wallet">请输入钱包名称</string>
     <string name="wc_code_wallet_pwd">钱包密码</string>
     <string name="wc_code_input_wallet_pwd">请输入钱包密码</string>
-    <string name="wc_code_input_wallet_pwd_again">请再次输入钱包密码</string>
+    <string name="wc_code_input_wallet_pwd1">确认新密码</string>
+    <string name="wc_code_input_wallet_pwd_again">请确认新密码</string>
     <string name="wc_code_pwd_pattern">钱包密码建议至少8-16位:大写字母、小写字母、数字3种组成</string>
     <string name="create_wallet_name_repeat_tips">钱包名称重复</string>
     <string name="create_wallet_name_input_tips">请输入钱包名称</string>
@@ -337,6 +338,7 @@
     <string name="add_contacts">添加联系人</string>
     <string name="add_contacts_name">姓名</string>
     <string name="add_contacts_name_hint">请输入姓名</string>
+    <string name="add_contacts_name_hint1">名称或描述</string>
     <string name="save">保存</string>
     <string name="add_contacts_somebody">联系人某某</string>
     <string name="add_contacts_note">备注</string>
@@ -628,7 +630,7 @@
 
     <string name="c_address_title">地址簿</string>
     <string name="c_add">添加</string>
-    <string name="c_add_first_person">添加您的第一个联系人</string>
+    <string name="c_add_first_person">暂无地址薄联系人好友</string>
     <string name="c_wallet_manager">钱包管理</string>
     <string name="c_wallet_manager_tips1">密码提示信息</string>
     <string name="c_wallet_manager_tips2">导出备份助记词</string>
@@ -657,11 +659,13 @@
     <string name="c_cold_import_keystore_tips">复制粘贴以太坊官方钱包Keystore 文件内容至输入框</string>
     <string name="c_cold_import_keystore_content">Keystore 文件内容</string>
     <string name="c_cold_import_keystore_input">请输入钱包密码</string>
+    <string name="c_cold_import_keystore_input1">输入新密码</string>
     <string name="c_cold_import_begin">开始导入</string>
     <string name="c_cold_import_mne_tips">使用助记词导入的同时可以修改钱包密码</string>
     <string name="c_cold_import_mne_hint">输入助记词单词，并使用空格分开</string>
     <string name="c_mne_choose_path">选择路径</string>
     <string name="c_wallet_name">钱包名称</string>
+    <string name="c_wallet_name1">请输入钱包名称</string>
     <string name="c_wallet_password_hint">不少于八位字符，建议混合大小写字母、数字、符号</string>
     <string name="c_wallet_password_retry_hint">重复输入密码</string>
     <string name="c_wallet_password_tips_hint">密码提示信息（可选）</string>
@@ -694,8 +698,8 @@
     <string name="export_save_offline_remain_message">请勿通过网络工具传输，一旦被黑客获取将造成不可挽回的资产损失。建议离线设备通过二维码方式传输。</string>
     <string name="export_save_password">密码管理工具保存</string>
     <string name="export_save_password_advice">建议使用密码管理工具管理</string>
-    <string name="export_copy_keystore">复制 Keystore</string>
-    <string name="export_copy_private">复制 Private Key</string>
+    <string name="export_copy_keystore">拷贝Keystore</string>
+    <string name="export_copy_private">拷贝 Private Key</string>
 
     <string name="export_code_scan">仅供直接扫描</string>
     <string name="export_code_scan_message">二维码禁止保存、截图、以及拍照。仅供用户在安全环境下直接扫描来方便的导入钱包。</string>
@@ -879,4 +883,7 @@
 
     <string name="usdt_join">USDT参与</string>
     <string name="a13_join">A13参与</string>
+    <string name="welcome_cold_wallet">欢迎使用多链钱包</string>
+    <string name="only_cold_wallet">不仅仅只是多链钱包</string>
+    <string name="input_address_hint">请输入有效的地址</string>
 </resources>

@@ -14,8 +14,8 @@
         tools:text="divide"
         android:minHeight="27dp"
         android:gravity="center"
-        android:background="@drawable/corner_hollow_7c8798_4"
-        android:textColor="@color/color_1d_26_37"
+        android:background="@drawable/corner_hollow_b2b2b2_4"
+        android:textColor="@color/text_color"
         android:textSize="15dp"
         />
 

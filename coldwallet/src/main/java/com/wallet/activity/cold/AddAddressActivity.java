@@ -3,7 +3,9 @@ package com.wallet.activity.cold;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 
 import androidx.databinding.DataBindingUtil;
@@ -51,7 +53,30 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
         binding.setClickListener(this);
         EventBus.getDefault().register(this);
         mAddressBean = new ColdAddressBean();
+        binding.etUserAccount.addTextChangedListener(textWatcher);
+        binding.etUserName.addTextChangedListener(textWatcher);
     }
+
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            if (!TextUtils.isEmpty(binding.etUserAccount.getText()) && !TextUtils.isEmpty(binding.etUserName.getText())) {
+                binding.btnNext.setBackgroundResource(R.drawable.corner_07bb99_4);
+            } else {
+                binding.btnNext.setBackgroundResource(R.drawable.corner_d2d2d2_4);
+            }
+        }
+    };
 
     @Override
     public void onClick(View v) {
@@ -60,16 +85,8 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
             jumpScan();
         } else if (id == R.id.btn_next) {
             next();
-        } else if (id == R.id.ll_title) {
-            if (binding.llAddress.getVisibility() == View.VISIBLE) {
-                binding.llAddress.setVisibility(View.GONE);
-                binding.ivScan.setVisibility(View.GONE);
-                binding.tvChangeTitle.setText(getString(R.string.address_add_account));
-                binding.ivChange.setImageResource(R.mipmap.icon_address_add);
-                mSymbol = "";
-            } else {
-                showDialog();
-            }
+        } else if (id == R.id.tv_change_title) {
+            showDialog();
         } else if (id == R.id.fl_back) {
             finish();
         }
@@ -77,16 +94,12 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
 
     private void next() {
         String name = binding.etUserName.getText().toString().trim();
-        String remark = binding.etUserRemark.getText().toString().trim();
         String account = binding.etUserAccount.getText().toString().trim();
         if (TextUtils.isEmpty(name)) {
             ToastUtil.toast(getString(R.string.address_name));
             return;
         }
-        if (TextUtils.isEmpty(remark)) {
-            ToastUtil.toast(getString(R.string.address_remark));
-            return;
-        }
+
         if (TextUtils.isEmpty(account)) {
             ToastUtil.toast(getString(R.string.address_account));
             return;
@@ -97,7 +110,7 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
         }
         mAddressBean.setLoginAccount(DataManager.getInstance().getUser().getAccount());
         mAddressBean.setName(name);
-        mAddressBean.setRemarks(remark);
+        mAddressBean.setRemarks("");
         mAddressBean.setPath(account);
         mAddressBean.setWalletType(mSymbol);
         mAddressBean.setCreateTime(System.currentTimeMillis());
@@ -115,9 +128,7 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
             public void onClick(String content) {
                 mSymbol = content;
                 binding.tvChangeTitle.setText(content);
-                binding.llAddress.setVisibility(View.VISIBLE);
-                binding.ivScan.setVisibility(View.VISIBLE);
-                binding.ivChange.setImageResource(R.mipmap.icon_address_subtract);
+                binding.ivImage.setImageResource(Utils.getImageResource3(mSymbol));
             }
         });
     }

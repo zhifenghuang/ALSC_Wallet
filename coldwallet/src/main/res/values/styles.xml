@@ -62,7 +62,7 @@
         <item name="android:padding">6dp</item>
     </style>
     <style name="WalletColdBtn2Style">
-        <item name="android:background">@drawable/corner_blue_25</item>
+        <item name="android:background">@drawable/corner_07bb99_4</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_marginLeft">20dp</item>
