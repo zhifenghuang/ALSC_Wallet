@@ -1,5 +1,6 @@
 package com.alsc.alsc_wallet.fragment;
 
+import android.text.TextUtils;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.activity.MainActivity;
 import com.alsc.alsc_wallet.adapter.HotWalletAdapter;
 import com.cao.commons.bean.AssetsBean;
+import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.manager.DataManager;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
@@ -66,8 +68,15 @@ public class OnlineWalletFragment extends BaseFragment {
                 gotoPager(WalletDetailFragment.class);
                 break;
             case R.id.tvColdWallet:
-              //  ((MainActivity) getActivity()).setWalletType(1);
-                MainColdActivity.startActivity(getActivity());
+                ((MainActivity) getActivity()).setWalletType(1);
+//                UserBean userBean = DataManager.getInstance().getUser();
+//                if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
+//
+//
+//                    //   MainColdActivity.startActivity(getActivity());
+//                }else {
+//
+//                }
                 break;
         }
     }
