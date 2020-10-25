@@ -2,5 +2,4 @@
 <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/recyclerView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/color_f7_f7_f7" />
+    android:layout_height="match_parent" />

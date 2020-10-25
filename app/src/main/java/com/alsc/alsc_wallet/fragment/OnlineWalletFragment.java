@@ -2,12 +2,17 @@ package com.alsc.alsc_wallet.fragment;
 
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.activity.MainActivity;
 import com.alsc.alsc_wallet.adapter.HotWalletAdapter;
+import com.cao.commons.bean.AssetsBean;
+import com.cao.commons.manager.DataManager;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.common.activity.BaseActivity;
 import com.common.bean.CoinSymbolBean;
 import com.alsc.alsc_wallet.fragment.online.WalletDetailFragment;
@@ -22,6 +27,9 @@ public class OnlineWalletFragment extends BaseFragment {
 
     private HotWalletAdapter mAdapter;
 
+    private AssetsBean mAssetBean;
+    private AssetsBean.ItemBean mSelectItem;
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_hot_wallet;
@@ -30,21 +38,18 @@ public class OnlineWalletFragment extends BaseFragment {
     @Override
     protected void onViewCreated(View view) {
         setViewsOnClickListener(R.id.rl, R.id.tvColdWallet);
-
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         getAdapter().onAttachedToRecyclerView(recyclerView);
         recyclerView.setAdapter(getAdapter());
-        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_eth, "ETH", "1FyMFyFyFy......h4FyAVz"));
-        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_usdt_2, "USDT", "1FyMFyFyFy......h4FyAVz"));
-        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_eos, "EOS", "1FyMFyFyFy......h4FyAVz"));
-        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_ltc, "LTC", "1FyMFyFyFy......h4FyAVz"));
-        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_dash, "DASH", "1FyMFyFyFy......h4FyAVz"));
-        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_zec, "ZEC", "1FyMFyFyFy......h4FyAVz"));
-
-        getAssets();
+        mAssetBean = DataManager.getInstance().getMyAssets();
+        if (mAssetBean == null) {
+            ((MainActivity) getActivity()).getMyAssets();
+        } else {
+            resetView();
+        }
     }
 
     @Override
@@ -68,23 +73,55 @@ public class OnlineWalletFragment extends BaseFragment {
     private HotWalletAdapter getAdapter() {
         if (mAdapter == null) {
             mAdapter = new HotWalletAdapter(getActivity());
+            mAdapter.setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
+                    mSelectItem = mAdapter.getItem(position);
+                    resetSelectView();
+                }
+            });
         }
         return mAdapter;
+    }
+
+    public void setAssetBean(AssetsBean bean) {
+        mAssetBean = bean;
+        if (getView() == null) {
+            return;
+        }
+        resetView();
+    }
+
+    private void resetView() {
+        setText(R.id.tvTotal, mAssetBean.getTotal());
+        getAdapter().setNewInstance(mAssetBean.getList());
+        if (mAssetBean.getList() == null && mAssetBean.getList().isEmpty()) {
+            return;
+        }
+        mSelectItem = mAssetBean.getList().get(0);
+        resetSelectView();
+    }
+
+    private void resetSelectView() {
+        setText(R.id.tvCoinName, mSelectItem.getName());
+        setText(R.id.tvCoinFullName, mSelectItem.getAllname());
+        setText(R.id.tvValue, mSelectItem.getTotal());
+        setText(R.id.tvTotalCoin, "≈ $" + mSelectItem.getTousdt());
+        setText(R.id.tvAddress, mSelectItem.getAddress_wallet());
+        String name = mSelectItem.getName().toLowerCase();
+        if (name.contains("-")) {
+            name = name.split("-")[0];
+        }
+        try {
+            int drawableId = getResources().getIdentifier("wallet_" + name, "drawable", getActivity().getPackageName());
+            setImage(R.id.ivCoinIcon, drawableId);
+        } catch (Exception e) {
+
+        }
     }
 
     @Override
     public boolean isNeedSetTopStyle() {
         return false;
-    }
-
-    private void getAssets() {
-        HttpMethods.getInstance().assets(new HttpObserver(new SubscriberOnNextListener<HashMap<String, String>>() {
-            @Override
-            public void onNext(HashMap<String, String> map, String msg) {
-                if (getActivity() == null || getView() == null) {
-                    return;
-                }
-            }
-        }, getActivity(), (BaseActivity) getActivity()));
     }
 }

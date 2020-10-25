@@ -38,7 +38,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/wallet_btc_icon_1" />
+                android:src="@drawable/wallet_btc" />
 
             <TextView
                 android:id="@+id/tvName"

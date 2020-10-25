@@ -27,6 +27,7 @@ public class FriendListFragment extends ChatBaseFragment {
     private FriendAdapter mAdapter;
 
     private ArrayList<UserBean> mFriendList;
+    private boolean mIsHadNewVerify;
 
     @Override
     protected int getLayoutId() {

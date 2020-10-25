@@ -2,6 +2,8 @@ package com.cao.commons.manager;
 
 import android.text.TextUtils;
 
+import com.cao.commons.bean.ArticleBean;
+import com.cao.commons.bean.AssetsBean;
 import com.cao.commons.bean.chat.ChatSettingBean;
 import com.cao.commons.bean.chat.ChatSubBean;
 import com.cao.commons.bean.chat.FilterMsgBean;
@@ -60,8 +62,6 @@ public class DataManager {
     }
 
 
-
-
     public Object getObjectByKey(String key, Type tClass) {
         String str = Preferences.getInstacne().getValues(key, "");
         if (TextUtils.isEmpty(str)) {
@@ -77,16 +77,6 @@ public class DataManager {
     public void saveUser(UserBean userBean) {
         mMyInfo = userBean;
         Preferences.getInstacne().setValues("user", getGson().toJson(userBean));
-    }
-
-    public UserBean getOriginalUser() {
-        String str = Preferences.getInstacne().getValues("user", "");
-        if (TextUtils.isEmpty(str)) {
-            mMyInfo = null;
-            return null;
-        }
-        mMyInfo = getGson().fromJson(str, UserBean.class);
-        return mMyInfo;
     }
 
     public UserBean getUser() {
@@ -283,6 +273,31 @@ public class DataManager {
 
     public boolean getColdEye() {
         return Preferences.getInstacne().getValues("coldEyeOpen", true);
+    }
+
+    public void saveMyAssets(AssetsBean bean) {
+        Preferences.getInstacne().setValues("assets", bean == null ? "" : getGson().toJson(bean));
+    }
+
+    public AssetsBean getMyAssets() {
+        String str = Preferences.getInstacne().getValues("assets", "");
+        if (TextUtils.isEmpty(str)) {
+            return null;
+        }
+        return getGson().fromJson(str, AssetsBean.class);
+    }
+
+    public void saveArticles(ArrayList<ArticleBean> list) {
+        Preferences.getInstacne().setValues("articles", list == null ? "" : getGson().toJson(list));
+    }
+
+    public ArrayList<ArticleBean> getArticles() {
+        String str = Preferences.getInstacne().getValues("articles", "");
+        if (TextUtils.isEmpty(str)) {
+            return new ArrayList<>();
+        }
+        return getGson().fromJson(str, new TypeToken<ArrayList<ArticleBean>>() {
+        }.getType());
     }
 
     public void loginOut() {

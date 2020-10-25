@@ -12,7 +12,7 @@
         android:background="@color/color_07_bb_99"
         android:orientation="vertical">
 
-        <include layout="@layout/layout_top_bar3" />
+        <include layout="@layout/app_layout_top_bar3" />
 
     </LinearLayout>
 

@@ -5,6 +5,7 @@ import android.content.Context;
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.fragment.chat.ContactFragment;
 import com.alsc.alsc_wallet.fragment.message.ArticleDetailFragment;
+import com.cao.commons.bean.chat.UserBean;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 public class ContactAdapter extends BaseMultiItemQuickAdapter<ContactFragment.ContactItem, BaseViewHolder> {
 
     private Context mContext;
+    private boolean mIsHadNewVerify;
 
     public ContactAdapter(Context context) {
         super(new ArrayList<>());
@@ -23,18 +25,28 @@ public class ContactAdapter extends BaseMultiItemQuickAdapter<ContactFragment.Co
         mContext = context;
     }
 
+    public void setNew(boolean isHadNewVerify) {
+        mIsHadNewVerify = isHadNewVerify;
+        notifyDataSetChanged();
+    }
+
     @Override
     protected void convert(@NotNull BaseViewHolder helper, ContactFragment.ContactItem item) {
         switch (helper.getItemViewType()) {
             case 0:
                 helper.setImageResource(R.id.iv, item.iconResId)
                         .setText(R.id.tv, item.name)
+                        .setVisible(R.id.ivNew, false)
                         .setGone(R.id.line, helper.getAdapterPosition() == 3);
+                if (helper.getAdapterPosition() == 0 && mIsHadNewVerify) {
+                    helper.setVisible(R.id.ivNew, true);
+                }
                 break;
             case 1:
                 int pos = helper.getAdapterPosition();
-                char c = item.name.charAt(0);
-                if (pos == 0) {
+                UserBean friend = item.getFriend();
+                char c = friend.getPinyinName().charAt(0);
+                if (pos == 4) {
                     helper.setText(R.id.tvLetter, String.valueOf(c))
                             .setGone(R.id.tvLetter, false);
                 } else {
@@ -42,7 +54,7 @@ public class ContactAdapter extends BaseMultiItemQuickAdapter<ContactFragment.Co
                     helper.setText(R.id.tvLetter, String.valueOf(c))
                             .setGone(R.id.tvLetter, prevC == c);
                 }
-                helper.setText(R.id.tvName, item.name);
+                helper.setText(R.id.tvName, friend.getNickName());
                 break;
         }
     }

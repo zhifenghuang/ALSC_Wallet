@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/rl1"
@@ -29,115 +30,14 @@
             android:textStyle="bold" />
 
 
-        <ImageView
-            android:id="@+id/ivSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="37dp"
-            android:paddingRight="25dp"
-            android:visibility="gone"
-            android:src="@drawable/wallet_search_white" />
     </RelativeLayout>
 
-
-  <!--  <LinearLayout
-        android:id="@+id/rl2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_below="@id/rl1"
-        android:background="@color/color_ff_ff_ff"
-        android:orientation="horizontal"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="5.5dp">
-
-        <LinearLayout
-            android:id="@+id/llHotMsg"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:paddingLeft="10.5dp"
-                android:paddingRight="10.5dp"
-                android:text="@string/wallet_hot_msg"
-                android:textColor="@color/color_07_bb_99"
-                android:textSize="18dp" />
-
-            <View
-                android:layout_width="35dp"
-                android:layout_height="2dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/color_07_bb_99" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llFastMsg"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="8dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:paddingLeft="10.5dp"
-                android:paddingRight="10.5dp"
-                android:text="@string/wallet_fast_msg"
-                android:textColor="@color/color_00_00_00"
-                android:textSize="15dp" />
-
-            <View
-                android:layout_width="35dp"
-                android:layout_height="2dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/color_07_bb_99"
-                android:visibility="invisible" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llQuanMsg"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="8dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:paddingLeft="10.5dp"
-                android:paddingRight="10.5dp"
-                android:text="@string/wallet_quan"
-                android:textColor="@color/color_00_00_00"
-                android:textSize="15dp" />
-
-            <View
-                android:layout_width="35dp"
-                android:layout_height="2dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@color/color_07_bb_99"
-                android:visibility="invisible" />
-
-        </LinearLayout>
-
-    </LinearLayout>-->
-
-    <FrameLayout
-        android:id="@+id/fl"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/rl1" />
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
 
 
-</RelativeLayout>
+</LinearLayout>

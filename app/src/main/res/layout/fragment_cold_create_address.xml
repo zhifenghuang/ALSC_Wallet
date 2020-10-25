@@ -5,7 +5,7 @@
     android:background="@color/color_f8_f8_f8"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_top_bar" />
+    <include layout="@layout/app_layout_top_bar" />
 
     <View
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
             android:id="@+id/ivCoinIcon"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/wallet_btc_icon_0" />
+            android:src="@drawable/wallet_btc" />
     </LinearLayout>
 
     <LinearLayout

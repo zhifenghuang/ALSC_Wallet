@@ -35,6 +35,11 @@ import java.util.List;
  */
 public abstract class ChatBaseFragment extends BaseFragment implements View.OnClickListener {
 
+    @Override
+    public boolean isNeedSetTopStyle() {
+        return false;
+    }
+
     protected void showPayInGroupDialog(final GroupBean group, final UserBean inviteUser) {
         final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.layout_two_btn_dialog);
         dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {

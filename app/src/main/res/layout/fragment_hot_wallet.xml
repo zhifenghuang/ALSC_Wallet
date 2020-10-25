@@ -63,11 +63,12 @@
             android:textSize="12dp" />
 
         <ImageView
+            android:id="@+id/ivEye"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/wallet_eye_open"
-            android:layout_marginLeft="8dp" />
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/wallet_eye_open" />
 
     </LinearLayout>
 
@@ -81,10 +82,10 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tvTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="6,297,502.12"
             android:textColor="@color/color_ff_ff_ff"
             android:textSize="36dp"
             android:textStyle="bold" />
@@ -118,8 +119,7 @@
             android:id="@+id/ivCoinIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/wallet_btc_icon_1" />
+            android:layout_gravity="center_vertical" />
 
 
         <TextView
@@ -128,19 +128,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@id/ivCoinIcon"
-            android:text="BTC"
             android:textColor="@color/color_01_01_01"
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/tvBitCoin"
+            android:id="@+id/tvCoinFullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvCoinName"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@id/ivCoinIcon"
             android:paddingTop="3dp"
-            android:text="@string/wallet_bitcoin"
             android:textColor="@color/color_66_66_66"
             android:textSize="12dp" />
 
@@ -149,18 +147,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="12.2982"
             android:textColor="@color/color_00_00_00"
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/tvTotal"
+            android:id="@+id/tvTotalCoin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvValue"
             android:layout_alignParentRight="true"
             android:paddingTop="3dp"
-            android:text="≈ $ 184,470325"
             android:textColor="@color/color_66_66_66"
             android:textSize="12dp" />
 
@@ -205,7 +201,6 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:paddingRight="18dp"
-                android:text="1FyMtih4h4AVzAVz...1FyMti.h4AVz1F"
                 android:textColor="@color/color_b2_b2_b2"
                 android:textSize="12dp" />
 

@@ -1,6 +1,5 @@
 package com.alsc.alsc_wallet.fragment;
 
-import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
 
@@ -9,7 +8,6 @@ import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.activity.MainActivity;
 import com.alsc.chat.http.ChatHttpMethods;
 import com.cao.commons.bean.chat.UserBean;
-import com.cao.commons.db.DatabaseOperate;
 import com.cao.commons.manager.DataManager;
 import com.common.activity.BaseActivity;
 import com.common.bean.LoginBean;
@@ -24,8 +22,6 @@ import com.common.utils.MD5Utils;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-
-import java.util.HashMap;
 
 public class LoginFragment extends BaseFragment {
 

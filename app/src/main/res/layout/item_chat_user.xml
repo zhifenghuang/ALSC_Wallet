@@ -11,8 +11,16 @@
         android:id="@+id/ivAvatar"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_centerVertical="true"
-        android:src="@mipmap/ic_launcher_round" />
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/ivNotInteruptDot"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_alignTop="@id/ivAvatar"
+        android:layout_alignRight="@id/ivAvatar"
+        android:src="@drawable/bg_chat_unread_msg"
+        android:visibility="gone" />
 
 
     <TextView
@@ -31,37 +39,61 @@
         android:textSize="8dp"
         android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/ivNotInterupt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="25dp"
+        android:src="@drawable/icon_not_interupt"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/tvUnReadMsgNum"
+        android:layout_toRightOf="@id/ivAvatar"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="10dp"
+        android:singleLine="true"
+        android:textColor="@color/color_00_00_00"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_below="@id/tvName"
         android:layout_toLeftOf="@id/tvUnReadMsgNum"
         android:layout_toRightOf="@id/ivAvatar"
-        android:orientation="vertical"
-        android:paddingLeft="18dp"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
         android:paddingRight="10dp">
 
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:text="晚风"
-            android:textColor="@color/color_00_00_00"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/ivResend"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/chat_msg_failed" />
 
         <TextView
-            android:id="@+id/tvContent"
+            android:id="@+id/tvMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:singleLine="true"
-            android:text="下午3:40 - 明天老地方见，钱包带好！"
             android:textColor="@color/color_65_65_65"
             android:textSize="12dp" />
 
     </LinearLayout>
+
 
 
     <View

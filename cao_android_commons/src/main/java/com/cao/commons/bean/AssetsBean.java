@@ -1,4 +1,4 @@
-package com.common.bean;
+package com.cao.commons.bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -28,25 +28,9 @@ public class AssetsBean implements Serializable {
         private int id;
         private String name;
         private String tousdt;
-        private String amount;
-        private String fullName;
-        private String address;
-
-        public String getAddress() {
-            return address;
-        }
-
-        public void setAddress(String address) {
-            this.address = address;
-        }
-
-        public String getFullName() {
-            return fullName;
-        }
-
-        public void setFullName(String fullName) {
-            this.fullName = fullName;
-        }
+        private String total;
+        private String allname;
+        private String address_wallet;
 
         public int getId() {
             return id;
@@ -72,12 +56,28 @@ public class AssetsBean implements Serializable {
             this.tousdt = tousdt;
         }
 
-        public String getAmount() {
-            return amount;
+        public String getTotal() {
+            return total;
         }
 
-        public void setAmount(String amount) {
-            this.amount = amount;
+        public void setTotal(String total) {
+            this.total = total;
+        }
+
+        public String getAllname() {
+            return allname;
+        }
+
+        public void setAllname(String allname) {
+            this.allname = allname;
+        }
+
+        public String getAddress_wallet() {
+            return address_wallet;
+        }
+
+        public void setAddress_wallet(String address_wallet) {
+            this.address_wallet = address_wallet;
         }
     }
 

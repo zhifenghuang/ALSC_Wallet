@@ -1,7 +1,12 @@
 package com.common.http;
 
+import com.cao.commons.bean.BaseListBean;
 import com.cao.commons.bean.chat.BasicResponse;
+import com.cao.commons.bean.ArticleBean;
+import com.cao.commons.bean.AssetsBean;
 import com.common.bean.LoginBean;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import io.reactivex.Observable;
@@ -60,7 +65,7 @@ public interface HttpService {
      */
     @FormUrlEncoded
     @POST("api/v1/assets/index")
-    Observable<BasicResponse<HashMap<String, String>>> assets(@Field("token") String token);
+    Observable<BasicResponse<AssetsBean>> assets(@Field("token") String token);
 
     /**
      * 转账记录
@@ -106,9 +111,9 @@ public interface HttpService {
      */
     @FormUrlEncoded
     @POST("api/v1/news/article")
-    Observable<BasicResponse<HashMap<String, String>>> newsArticle(@Field("token") String token,
-                                                                   @Field("type") int type,
-                                                                   @Field("page_index") int page_index,
-                                                                   @Field("page_size") int page_size);
+    Observable<BasicResponse<BaseListBean<ArrayList<ArticleBean>>>> newsArticle(@Field("token") String token,
+                                                                                @Field("type") int type,
+                                                                                @Field("page_index") int page_index,
+                                                                                @Field("page_size") int page_size);
 
 }

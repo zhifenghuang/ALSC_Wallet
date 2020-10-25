@@ -1,5 +1,7 @@
 package com.alsc.alsc_wallet.activity;
 
+import android.app.NotificationManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +14,31 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.alsc.alsc_wallet.R;
+import com.alsc.alsc_wallet.fragment.ChatMsgFragment;
 import com.alsc.chat.activity.ChatBaseActivity;
-import com.alsc.chat.fragment.ChatListFragment;
-import com.alsc.chat.fragment.FriendListFragment;
+import com.alsc.chat.http.ChatHttpMethods;
+import com.alsc.chat.manager.ChatManager;
+import com.alsc.chat.utils.Constants;
+import com.cao.commons.bean.chat.GroupBean;
+import com.cao.commons.bean.chat.UserBean;
+import com.cao.commons.db.DatabaseOperate;
+import com.cao.commons.manager.DataManager;
+import com.cao.commons.bean.AssetsBean;
 import com.common.fragment.BaseFragment;
 import com.alsc.alsc_wallet.fragment.ColdWalletFragment;
 import com.alsc.alsc_wallet.fragment.QuotationFragment;
 import com.alsc.alsc_wallet.fragment.NewsFragment;
 import com.alsc.alsc_wallet.fragment.OnlineWalletFragment;
+import com.common.http.HttpMethods;
+import com.common.http.HttpObserver;
+import com.common.http.OnHttpErrorListener;
+import com.common.http.SubscriberOnNextListener;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends ChatBaseActivity {
 
@@ -30,6 +47,12 @@ public class MainActivity extends ChatBaseActivity {
 
     private int mCurrentWalletType = 0;//0表示热钱包，1表示冷钱包
 
+    private boolean mIsGetFriend;
+    private boolean mIsGetGroup;
+    private ArrayList<UserBean> mFriendList;
+    private ArrayList<GroupBean> mGroupList;
+
+    private ChatMsgFragment mChatMsgFragment;
 
 
     @Override
@@ -42,10 +65,8 @@ public class MainActivity extends ChatBaseActivity {
 
     private void initFragments() {
         mBaseFragment = new ArrayList<>();
-        mChatListFragment = new ChatListFragment();
-        mBaseFragment.add(mChatListFragment);
-        mFriendListFragment = new FriendListFragment();
-        mBaseFragment.add(mFriendListFragment);
+        mChatMsgFragment = new ChatMsgFragment();
+        mBaseFragment.add(mChatMsgFragment);
         mBaseFragment.add(new NewsFragment());
         mBaseFragment.add(new QuotationFragment());
         mBaseFragment.add(new OnlineWalletFragment());
@@ -119,6 +140,19 @@ public class MainActivity extends ChatBaseActivity {
         return id;
     }
 
+    public void onResume() {
+        super.onResume();
+        getMyAssets();
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
+
+        if (mChatMsgFragment != null) {
+            mFriendList = DataManager.getInstance().getFriends();
+            mGroupList = DataManager.getInstance().getGroups();
+            mChatMsgFragment.setData(mFriendList, mGroupList);
+        }
+    }
+
     /**
      * @param to 马上要切换到的Fragment，一会要显示
      */
@@ -138,5 +172,90 @@ public class MainActivity extends ChatBaseActivity {
             }
         }
         mCurrentFragment = to;
+    }
+
+
+    public void getFriendFromServer() {
+        if (mIsGetFriend) {
+            return;
+        }
+        UserBean userBean = DataManager.getInstance().getUser();
+        if (userBean == null) {
+            return;
+        }
+        mIsGetFriend = true;
+        ChatHttpMethods.getInstance().getFriends(new HttpObserver(new SubscriberOnNextListener<ArrayList<UserBean>>() {
+            @Override
+            public void onNext(ArrayList<UserBean> list, String msg) {
+                DataManager.getInstance().saveFriends(list);
+                mFriendList = list;
+                if (mChatMsgFragment != null) {
+                    mChatMsgFragment.setData(mFriendList, mGroupList);
+                }
+                mIsGetFriend = false;
+            }
+        }, this, false, new OnHttpErrorListener() {
+            @Override
+            public void onConnectError(Throwable e) {
+                mIsGetFriend = false;
+            }
+
+            @Override
+            public void onServerError(int errorCode, String errorMsg) {
+                mIsGetFriend = false;
+                if (errorCode == 401) {
+                    ChatManager.getInstance().showLoginOutDialog();
+                }
+            }
+        }));
+    }
+
+    public void getGroupFromServer() {
+        if (mIsGetGroup) {
+            return;
+        }
+        UserBean userBean = DataManager.getInstance().getUser();
+        if (userBean == null) {
+            return;
+        }
+        mIsGetGroup = true;
+        ChatHttpMethods.getInstance().getGroups(1, Integer.MAX_VALUE - 1,
+                new HttpObserver(new SubscriberOnNextListener<ArrayList<GroupBean>>() {
+                    @Override
+                    public void onNext(ArrayList<GroupBean> list, String msg) {
+                        DataManager.getInstance().saveGroups(list);
+                        mGroupList = list;
+                        if (mChatMsgFragment != null) {
+                            mChatMsgFragment.setData(mFriendList, mGroupList);
+                        }
+                        mIsGetGroup = false;
+                    }
+                }, this, false, new OnHttpErrorListener() {
+                    @Override
+                    public void onConnectError(Throwable e) {
+                        mIsGetGroup = false;
+                    }
+
+                    @Override
+                    public void onServerError(int errorCode, String errorMsg) {
+                        mIsGetGroup = false;
+                        if (errorCode == 401) {
+                            ChatManager.getInstance().showLoginOutDialog();
+                        }
+                    }
+                }));
+    }
+
+    public void getMyAssets() {
+        HttpMethods.getInstance().assets(new HttpObserver(new SubscriberOnNextListener<AssetsBean>() {
+            @Override
+            public void onNext(AssetsBean bean, String msg) {
+                if (bean == null) {
+                    return;
+                }
+                DataManager.getInstance().saveMyAssets(bean);
+                ((OnlineWalletFragment) mBaseFragment.get(3)).setAssetBean(bean);
+            }
+        }, this, false, this));
     }
 }

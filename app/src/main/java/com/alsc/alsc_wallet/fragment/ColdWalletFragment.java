@@ -40,7 +40,7 @@ public class ColdWalletFragment extends BaseFragment {
         getAdapter().onAttachedToRecyclerView(recyclerView);
         recyclerView.setAdapter(getAdapter());
         getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_eth, "ETH", "1FyMFyFyFy......h4FyAVz"));
-        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_usdt_2, "USDT", "1FyMFyFyFy......h4FyAVz"));
+        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_usdt, "USDT", "1FyMFyFyFy......h4FyAVz"));
         getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_eos, "EOS", "1FyMFyFyFy......h4FyAVz"));
         getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_ltc, "LTC", "1FyMFyFyFy......h4FyAVz"));
         getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_dash, "DASH", "1FyMFyFyFy......h4FyAVz"));
@@ -78,7 +78,7 @@ public class ColdWalletFragment extends BaseFragment {
                 ((MainActivity) getActivity()).setWalletType(0);
                 break;
             case R.id.tvColdWallet:
-                ((MainActivity) getActivity()).setWalletType(0);
+                ((MainActivity) getActivity()).setWalletType(1);
                 break;
             case R.id.tvRestore:
                 gotoPager(RestoreWalletActivity.class);

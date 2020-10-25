@@ -32,7 +32,6 @@ public class ApplyListFragment extends ChatBaseFragment {
     protected void onViewCreated(View view) {
         setTopStatusBarStyle(view);
         setText(R.id.tvTitle, R.string.chat_new_friend);
-   //     setText(R.id.btnRight, R.string.chat_add_friend);
         setViewVisible(R.id.tvLeft);
         setText(R.id.tvLeft, R.string.chat_add_friend);
         setViewsOnClickListener(R.id.tvLeft);

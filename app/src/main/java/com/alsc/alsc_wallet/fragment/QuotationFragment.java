@@ -2,21 +2,19 @@ package com.alsc.alsc_wallet.fragment;
 
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.adapter.HangQingAdapter;
-import com.alsc.alsc_wallet.adapter.SelectHorTypeAdapter;
+import com.cao.commons.bean.chat.UserBean;
+import com.cao.commons.manager.DataManager;
 import com.common.bean.CoinHangQingBean;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.common.fragment.BaseFragment;
+import com.common.utils.Utils;
 
 public class QuotationFragment extends BaseFragment {
 
- //   private SelectHorTypeAdapter mHorAdapter;
     private HangQingAdapter mHangQingAdapter;
 
     @Override
@@ -26,16 +24,6 @@ public class QuotationFragment extends BaseFragment {
 
     @Override
     protected void onViewCreated(View view) {
-//        RecyclerView recyclerView = view.findViewById(R.id.horRecyclerView);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-//        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        getHorAdapter().onAttachedToRecyclerView(recyclerView);
-//        recyclerView.setAdapter(getHorAdapter());
-//        for (int i = 0; i < 6; ++i) {
-//            getHorAdapter().addData(getString(getResources().getIdentifier("wallet_hq_type_" + i, "string", getActivity().getPackageName())));
-//        }
-
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -43,7 +31,7 @@ public class QuotationFragment extends BaseFragment {
         getHangQingAdapter().onAttachedToRecyclerView(recyclerView);
         recyclerView.setAdapter(getHangQingAdapter());
         getHangQingAdapter().addData(new CoinHangQingBean(
-                R.drawable.wallet_btc_icon_1, "BTC", "1.23万亿", "67903.61", "$9585.59", "+6.19%"));
+                R.drawable.wallet_btc, "BTC", "1.23万亿", "67903.61", "$9585.59", "+6.19%"));
         getHangQingAdapter().addData(new CoinHangQingBean(
                 R.drawable.wallet_eth, "ETH", "1860.35亿", "1699.15", "$239.89", "+7.36%"));
         getHangQingAdapter().addData(new CoinHangQingBean(
@@ -56,19 +44,6 @@ public class QuotationFragment extends BaseFragment {
                 R.drawable.wallet_zec, "ZEC", "60.87亿", "18.0678", "$2.8763", "-5.37%"));
     }
 
-//    private SelectHorTypeAdapter getHorAdapter() {
-//        if (mHorAdapter == null) {
-//            mHorAdapter = new SelectHorTypeAdapter(getActivity());
-//            mHorAdapter.setOnItemClickListener(new OnItemClickListener() {
-//                @Override
-//                public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
-//                    mHorAdapter.setSelectIndex(position);
-//                }
-//            });
-//        }
-//        return mHorAdapter;
-//    }
-
     private HangQingAdapter getHangQingAdapter() {
         if (mHangQingAdapter == null) {
             mHangQingAdapter = new HangQingAdapter(getActivity());
@@ -78,7 +53,8 @@ public class QuotationFragment extends BaseFragment {
 
     @Override
     public void updateUIText() {
-
+        UserBean myInfo = DataManager.getInstance().getUser();
+        Utils.displayAvatar(getActivity(), R.drawable.chat_default_group_avatar, myInfo.getAvatarUrl(), fv(R.id.ivMyAvatar));
     }
 
     @Override

@@ -17,15 +17,15 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ChatUserAdapter extends BaseQuickAdapter<ChatBean, BaseViewHolder> {
+public class OldChatUserAdapter extends BaseQuickAdapter<ChatBean, BaseViewHolder> {
 
     private Context mContext;
 
     private UserBean mMyInfo;
 
 
-    public ChatUserAdapter(Context context, UserBean myInfo) {
-        super(R.layout.item_chat_user);
+    public OldChatUserAdapter(Context context, UserBean myInfo) {
+        super(R.layout.item_old_chat_user);
         mContext = context;
         mMyInfo = myInfo;
     }

@@ -31,6 +31,7 @@ import com.common.dialog.MyDialogFragment;
 import com.common.fragment.BaseFragment;
 import com.common.http.OnHttpErrorListener;
 import com.common.utils.Utils;
+import com.gyf.immersionbar.ImmersionBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +52,9 @@ public abstract class BaseActivity extends AppCompatActivity implements OnHttpEr
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImmersionBar.with(this)
+                .statusBarDarkFont(true) //状态栏字体是深色，不写默认为亮色
+                .init();
         mActivityList.add(this);
         mIsActivityFinish = false;
     }

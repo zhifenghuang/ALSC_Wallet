@@ -1,15 +1,24 @@
-package com.common.bean;
+package com.cao.commons.bean;
 
 import java.io.Serializable;
 
 public class ArticleBean implements Serializable {
 
     private long aid;
-    private String add_time;
+    private String create_time;
     private String synopsis;
     private String synopsis_en;
     private String title;
     private String title_en;
+    private String thumb;
+
+    public String getThumb() {
+        return thumb;
+    }
+
+    public void setThumb(String thumb) {
+        this.thumb = thumb;
+    }
 
     public long getAid() {
         return aid;
@@ -19,12 +28,12 @@ public class ArticleBean implements Serializable {
         this.aid = aid;
     }
 
-    public String getAdd_time() {
-        return add_time;
+    public String getCreate_time() {
+        return create_time;
     }
 
-    public void setAdd_time(String add_time) {
-        this.add_time = add_time;
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
     }
 
     public String getSynopsis() {

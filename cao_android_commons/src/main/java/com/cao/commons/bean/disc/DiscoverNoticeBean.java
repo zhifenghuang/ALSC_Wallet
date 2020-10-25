@@ -15,6 +15,7 @@ public class DiscoverNoticeBean {
 
     private String aid;
     private String add_time;
+    private String create_time;
     private String synopsis;
     private String synopsis_en;
     private String is_top;
@@ -22,6 +23,14 @@ public class DiscoverNoticeBean {
     private String title_en;
     private int read;
     private String thumb;
+
+    public String getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
+    }
 
     public String getThumb() {
         return thumb;

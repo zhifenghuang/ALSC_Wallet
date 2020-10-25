@@ -2,27 +2,28 @@ package com.alsc.alsc_wallet.fragment;
 
 import android.view.View;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
-import com.alsc.alsc_wallet.activity.MainActivity;
-import com.alsc.alsc_wallet.fragment.message.FollowedFragment;
-import com.alsc.alsc_wallet.fragment.message.HotArticleFragment;
-import com.alsc.alsc_wallet.fragment.message.UserInfoFragment;
+import com.alsc.alsc_wallet.adapter.ArticleAdapter;
+import com.alsc.chat.fragment.UserInfoFragment;
+import com.cao.commons.bean.BaseListBean;
+import com.cao.commons.bean.chat.UserBean;
+import com.cao.commons.manager.DataManager;
 import com.common.activity.BaseActivity;
+import com.cao.commons.bean.ArticleBean;
 import com.common.fragment.BaseFragment;
 import com.common.http.HttpMethods;
 import com.common.http.HttpObserver;
 import com.common.http.SubscriberOnNextListener;
+import com.common.utils.Utils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class NewsFragment extends BaseFragment {
 
-    private ArrayList<BaseFragment> mBaseFragment;
-    private Fragment mCurrentFragment;
+    private ArticleAdapter mAdapter;
 
     @Override
     protected int getLayoutId() {
@@ -31,22 +32,33 @@ public class NewsFragment extends BaseFragment {
 
     @Override
     protected void onViewCreated(View view) {
-        setViewsOnClickListener(R.id.ivMyAvatar, R.id.ivSearch);
-        initFragments();
-        switchFragment(mBaseFragment.get(0));
-
-        getNewsArticle();
+        setViewsOnClickListener(R.id.ivMyAvatar);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        getAdapter().onAttachedToRecyclerView(recyclerView);
+        recyclerView.setAdapter(getAdapter());
+        getAdapter().setNewInstance(DataManager.getInstance().getArticles());
     }
 
-    private void initFragments() {
-        mBaseFragment = new ArrayList<>();
-        mBaseFragment.add(new HotArticleFragment());
+    private ArticleAdapter getAdapter() {
+        if (mAdapter == null) {
+            mAdapter = new ArticleAdapter(getActivity());
+        }
+        return mAdapter;
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        getNewsArticle();
     }
 
     @Override
     public void updateUIText() {
-
+        UserBean myInfo = DataManager.getInstance().getUser();
+        Utils.displayAvatar(getActivity(), R.drawable.chat_default_group_avatar, myInfo.getAvatarUrl(), fv(R.id.ivMyAvatar));
     }
 
     @Override
@@ -56,31 +68,7 @@ public class NewsFragment extends BaseFragment {
             case R.id.ivMyAvatar:
                 gotoPager(UserInfoFragment.class);
                 break;
-            case R.id.ivSearch:
-                gotoPager(FollowedFragment.class);
-                break;
         }
-    }
-
-    /**
-     * @param to 马上要切换到的Fragment，一会要显示
-     */
-    private void switchFragment(Fragment to) {
-        if (mCurrentFragment != to) {
-            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-            if (!to.isAdded()) {
-                if (mCurrentFragment != null) {
-                    ft.hide(mCurrentFragment);
-                }
-                ft.add(R.id.fl, to, to.toString()).commit();
-            } else {
-                if (mCurrentFragment != null) {
-                    ft.hide(mCurrentFragment);
-                }
-                ft.show(to).commit();
-            }
-        }
-        mCurrentFragment = to;
     }
 
     @Override
@@ -89,13 +77,15 @@ public class NewsFragment extends BaseFragment {
     }
 
     private void getNewsArticle() {
-        HttpMethods.getInstance().getNewsArticle(2, 1, 20, new HttpObserver(new SubscriberOnNextListener<HashMap<String, String>>() {
+        HttpMethods.getInstance().getNewsArticle(2, 1, 20, new HttpObserver(new SubscriberOnNextListener<BaseListBean<ArrayList<ArticleBean>>>() {
             @Override
-            public void onNext(HashMap<String, String> map, String msg) {
-                if (getActivity() == null || getView() == null) {
+            public void onNext(BaseListBean<ArrayList<ArticleBean>> bean, String msg) {
+                if (getActivity() == null || getView() == null || bean.getList() == null) {
                     return;
                 }
+                DataManager.getInstance().saveArticles(bean.getList());
+                getAdapter().setNewInstance(bean.getList());
             }
-        }, getActivity(), (BaseActivity) getActivity()));
+        }, getActivity(), false, (BaseActivity) getActivity()));
     }
 }
