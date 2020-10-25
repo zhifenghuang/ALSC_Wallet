@@ -75,6 +75,8 @@ public class ChatUserAdapter extends BaseQuickAdapter<ChatBean, BaseViewHolder> 
         } else {
             helper.setGone(R.id.ivResend, chatBean.lastMsg.getSendStatus() >= 0);
         }
+
+        helper.setGone(R.id.line, helper.getAdapterPosition() == getItemCount() - 1);
     }
 
     public void resortList() {

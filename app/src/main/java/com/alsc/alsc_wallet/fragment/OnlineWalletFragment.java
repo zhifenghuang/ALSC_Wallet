@@ -20,6 +20,7 @@ import com.common.fragment.BaseFragment;
 import com.common.http.HttpMethods;
 import com.common.http.HttpObserver;
 import com.common.http.SubscriberOnNextListener;
+import com.wallet.activity.MainColdActivity;
 
 import java.util.HashMap;
 
@@ -65,7 +66,8 @@ public class OnlineWalletFragment extends BaseFragment {
                 gotoPager(WalletDetailFragment.class);
                 break;
             case R.id.tvColdWallet:
-                ((MainActivity) getActivity()).setWalletType(1);
+              //  ((MainActivity) getActivity()).setWalletType(1);
+                MainColdActivity.startActivity(getActivity());
                 break;
         }
     }

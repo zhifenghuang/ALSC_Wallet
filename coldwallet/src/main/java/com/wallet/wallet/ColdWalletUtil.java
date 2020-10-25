@@ -164,7 +164,7 @@ public final class ColdWalletUtil {
                 : LegacyAddress.fromKey(MainNetParams.get(), ecKey).toBase58()
                 , WalletType.USDT_OMNI));
         jnWallets.add(new JnWallet(walletName, privateKeyEth, publicKeyEth, credentials.getAddress(), keystore, WalletType.USDT_ERC20));
-        jnWallets.add(new JnWallet(walletName, privateKeyEth, publicKeyEth, credentials.getAddress(), keystore, WalletType.A13));
+ //       jnWallets.add(new JnWallet(walletName, privateKeyEth, publicKeyEth, credentials.getAddress(), keystore, WalletType.A13));
 
         return new ColdWallet(mnemonicCode, jnWallets);
     }

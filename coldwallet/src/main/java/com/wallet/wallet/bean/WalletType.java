@@ -24,11 +24,11 @@ public enum WalletType  implements Serializable {
     /**
      * USDT-ERC20
      */
-    USDT_ERC20("USDT-ERC20"),
-    /**
-     * A13
-     */
-    A13("A13");
+    USDT_ERC20("USDT-ERC20");
+//    /**
+//     * A13
+//     */
+//    A13("A13");
 
     private String type;
 

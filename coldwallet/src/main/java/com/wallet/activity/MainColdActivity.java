@@ -28,6 +28,7 @@ import com.cao.commons.bean.cold.ColdHqBean;
 import com.cao.commons.bean.cold.WalletDataBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.cao.commons.manager.DataManager;
+import com.cao.commons.util.log.Log;
 import com.cold.wallet.R;
 import com.cold.wallet.databinding.ActivityMainColdBinding;
 import com.google.gson.Gson;
@@ -62,7 +63,7 @@ public class MainColdActivity extends BaseActivity implements View.OnClickListen
     private ActivityMainColdBinding binding;
     private MainColdAdapter mAdapter;
     //BTC ETH USDT omni USDT etc A13
-    private String[] walletNames = new String[]{"BTC", "ETH", "USDT-OMNI", "USDT-ERC20", "A13"};
+    private String[] walletNames = new String[]{"BTC", "ETH", "USDT-OMNI", "USDT-ERC20"};//, "A13"};
     private String currentWallet = "BTC";
     private ColdWallet mColdWallet;
     private boolean isEyeOpen = true;
@@ -287,7 +288,6 @@ public class MainColdActivity extends BaseActivity implements View.OnClickListen
                     binding.tvWalletHaveEqual.setText("");
                 }
             }
-
             ArrayList<WalletDataBean> beans = Utils.getAllWalletInfos(currentWallet);
             mAdapter.clearAll();
             if (beans.size() == 0) {
@@ -300,7 +300,6 @@ public class MainColdActivity extends BaseActivity implements View.OnClickListen
                     mAdapter.refreshData(currentWallet, beans);
                 }
             }
-
             int index = 0;
             for (int i = 0; i < walletNames.length; i++) {
                 if (currentWallet.equals(walletNames[i])) {
@@ -403,24 +402,26 @@ public class MainColdActivity extends BaseActivity implements View.OnClickListen
 
     private void getColdHq() {
 //        String[] strings = new String[]{"BTC", "ETH", "USDT", "A13"};
-        ColdInterface.getColdHq(mContext, Tag, new HttpInfoRequest<ColdHqBean>() {
-            @Override
-            public void onSuccess(ColdHqBean model) {
-                if (model != null) {
-                    PoliceApplication.setColdHqBean(model);
-                    handler.sendEmptyMessageDelayed(3, 60 * 1000);
-                    if (!handler.hasMessages(2) && isFirst) {
-                        isFirst = false;
-                        handler.sendEmptyMessage(2);
-                    }
-                }
-            }
-
-            @Override
-            public void onError(int eCode) {
-
-            }
-        });
+//        ColdInterface.getColdHq(mContext, Tag, new HttpInfoRequest<ColdHqBean>() {
+//            @Override
+//            public void onSuccess(ColdHqBean model) {
+//                if (model != null) {
+//                    PoliceApplication.setColdHqBean(model);
+//                    handler.sendEmptyMessageDelayed(3, 60 * 1000);
+//                    if (!handler.hasMessages(2) && isFirst) {
+//                        isFirst = false;
+//                        handler.sendEmptyMessage(2);
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onError(int eCode) {
+//
+//            }
+//        });
+        isFirst = false;
+        handler.sendEmptyMessage(2);
     }
 
 

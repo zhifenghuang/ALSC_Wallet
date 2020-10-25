@@ -4,6 +4,7 @@ package com.wallet.wallet.btc;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.cao.commons.util.log.Log;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.wallet.wallet.bean.BtcFee;
@@ -64,11 +65,11 @@ public class BtcColdWallet {
 //    btc	47.90.40.219	a1234567	a1234567	8332
 //    omni	47.52.132.55	a1234567	a1234567	8332
     private static final String PROTOCOL = "http";
-    private static final String BTC_HOST = "47.90.40.219";
-    private static final String OMNI_HOST = "47.52.132.55";
+    private static final String BTC_HOST = "8.210.26.192";
+    private static final String OMNI_HOST = "47.242.137.48";
     private static final String PORT = "8332";
-    private static final String USER = "a1234567";
-    private static final String PASSWORD = "a1234567";
+    private static final String USER = "LuoGoToWord";
+    private static final String PASSWORD = "2019GoodByGeyu";
 
 
     /**
@@ -346,6 +347,7 @@ public class BtcColdWallet {
         object.put("coinAddress", address);
         object.put("coinName", "BTC");
         String httpGet = HttpUtil.getInstance().post("http://47.52.237.110/v1/getUtxo", object.toJSONString());
+        Log.e("aaaaaaaa", "httpGet: " + httpGet);
         if (Objects.equals("No free outputs to spend", httpGet)) {
             return utxos;
         }

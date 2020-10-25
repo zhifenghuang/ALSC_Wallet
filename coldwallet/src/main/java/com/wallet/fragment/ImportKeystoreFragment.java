@@ -103,9 +103,11 @@ public class ImportKeystoreFragment extends BaseFragment implements View.OnClick
                         JnWallet coldWallet = null;
                         if ("ETH".equals(mSymbol)) {
                             coldWallet = ColdWalletUtil.getEthColdWallet().importKeystore("ETH", pass, content, WalletType.ETH);
-                        } else if ("A13".equals(mSymbol)) {
-                            coldWallet = ColdWalletUtil.getEthColdWallet().importKeystore("A13", pass, content, WalletType.A13);
-                        } else if ("USDT-ERC20".equals(mSymbol)) {
+                        }
+//                        else if ("A13".equals(mSymbol)) {
+//                            coldWallet = ColdWalletUtil.getEthColdWallet().importKeystore("A13", pass, content, WalletType.A13);
+//                        }
+                        else if ("USDT-ERC20".equals(mSymbol)) {
                             coldWallet = ColdWalletUtil.getEthColdWallet().importKeystore("ERC20", pass, content, WalletType.USDT_ERC20);
                         }
                         if (coldWallet != null) {

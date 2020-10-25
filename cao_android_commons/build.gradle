@@ -75,6 +75,9 @@ dependencies {
     api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
     api 'com.squareup.okhttp3:logging-interceptor:4.2.2'
     api 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    api 'com.squareup.okhttp3:okhttp:4.2.2'
+    api 'com.squareup.okio:okio:2.2.2'
+
 
     /** rxbinding      */
     api 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
@@ -86,28 +89,11 @@ dependencies {
     api 'com.jaeger.statusbarutil:library:1.4.0'
     api 'com.zhy:percent-support-extends:1.1.1'
 
-    /**选择图片*/
-//    api 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
-
     /**权限*/
     api 'com.yanzhenjie:permission:2.0.0-rc5'
 
-    /**线型图*/
-//    api 'com.github.PhilJay:MPAndroidChart:v3.0.2'
-
-    /**查看大图  https://github.com/SherlockGougou/BigImageViewPager*/
     api 'com.github.SherlockGougou:BigImageViewPager:v4_2.1.4'
 
-    /**录制视频  https://github.com/CJT2325/CameraView/tree/master/app/src/main/res/layout*/
-//    api 'cjt.library.wheel:camera:1.1.9'
-
-    /**视频播放*/
-//    api 'cn.jzvd:jiaozivideoplayer:6.4.1'
-
-    /**视频缓存*/
-//    api 'com.danikula:videocache:2.7.0'
-
-    /**侧滑返回  https://github.com/yuanhoujun/Snake*/
     api 'com.youngfeng.android:snake:0.3.2'
 
     /**tab布局*/
@@ -120,8 +106,5 @@ dependencies {
 
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
     api 'com.github.promeg:tinypinyin:2.0.3'
-
-    api 'com.squareup.okhttp3:okhttp:4.8.0'
-    api 'com.squareup.okio:okio:2.7.0'
     api 'com.blankj:utilcodex:1.26.0'
 }

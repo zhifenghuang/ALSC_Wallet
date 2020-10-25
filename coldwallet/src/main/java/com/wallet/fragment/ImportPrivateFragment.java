@@ -155,9 +155,10 @@ public class ImportPrivateFragment extends BaseFragment implements View.OnClickL
                         coldWallet = ColdWalletUtil.getEthColdWallet().importPrivateKey(name, pass, content, WalletType.ETH);
                     } else if ("USDT-ERC20".equals(mSymbol)) {
                         coldWallet = ColdWalletUtil.getEthColdWallet().importPrivateKey(name, pass, content, WalletType.USDT_ERC20);
-                    } else if ("A13".equals(mSymbol)) {
-                        coldWallet = ColdWalletUtil.getEthColdWallet().importPrivateKey(name, pass, content, WalletType.A13);
                     }
+//                    else if ("A13".equals(mSymbol)) {
+//                        coldWallet = ColdWalletUtil.getEthColdWallet().importPrivateKey(name, pass, content, WalletType.A13);
+//                    }
                     if (coldWallet != null) {
                         WalletDataBean bean, bean1, bean2 = null;
                         if ("ETH".equals(mSymbol) || "A13".equals(mSymbol) || "USDT-ERC20".equals(mSymbol)) {

@@ -86,9 +86,10 @@ public class ColdWalletCreateActivity extends BaseActivity implements View.OnCli
                 coldWallet = ColdWalletUtil.getEthColdWallet().createWallet(name, pass, WalletType.ETH);
             } else if ("USDT-ERC20".equals(mSymbol)) {
                 coldWallet = ColdWalletUtil.getEthColdWallet().createWallet(name, pass, WalletType.USDT_ERC20);
-            } else if ("A13".equals(mSymbol)) {
-                coldWallet = ColdWalletUtil.getEthColdWallet().createWallet(name, pass, WalletType.A13);
             }
+//            else if ("A13".equals(mSymbol)) {
+//                coldWallet = ColdWalletUtil.getEthColdWallet().createWallet(name, pass, WalletType.A13);
+//            }
             ColdBackupMnemonicActivity.startActivity(mContext, mSymbol, coldWallet, pass, remark);
         } catch (Exception e) {
             e.printStackTrace();

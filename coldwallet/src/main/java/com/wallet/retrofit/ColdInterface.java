@@ -402,9 +402,10 @@ public class ColdInterface {
             return "USDT";
         } else if (WalletType.USDT_ERC20 == mSymbol) {
             return "ETHUSDT";
-        } else if (WalletType.A13 == mSymbol) {
-            return "A13";
         }
+//        else if (WalletType.A13 == mSymbol) {
+//            return "A13";
+//        }
         return "BTC";
     }
 

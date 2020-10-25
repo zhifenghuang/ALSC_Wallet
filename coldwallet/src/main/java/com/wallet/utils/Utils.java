@@ -18,6 +18,7 @@ import com.cao.commons.bean.cold.WalletDataBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.cao.commons.manager.DataManager;
 import com.cao.commons.util.Network;
+import com.cao.commons.util.log.Log;
 import com.google.gson.Gson;
 import com.cold.wallet.R;
 import com.wallet.wallet.ColdWalletUtil;
@@ -155,11 +156,13 @@ public class Utils {
     }
 
     private static BigDecimal getMoneyDecimal(WalletType mSymbol, String address) throws Exception {
-        if (WalletType.A13 == mSymbol) {
-            BigDecimal value = getTokenBalanceFromServer("A13", address);
-            return value == null ? ColdWalletUtil.getEthColdWallet().getTokenBalance(address, ContractType.A13.getUrl()) : value;
-        } else if (WalletType.ETH == mSymbol) {
+//        if (WalletType.A13 == mSymbol) {
+//            BigDecimal value = getTokenBalanceFromServer("A13", address);
+//            return value == null ? ColdWalletUtil.getEthColdWallet().getTokenBalance(address, ContractType.A13.getUrl()) : value;
+//        } else
+        if (WalletType.ETH == mSymbol) {
             BigDecimal value = getTokenBalanceFromServer("ETH", address);
+            Log.e("aaaaaaaaa", "value: " + value);
             return value == null ? ColdWalletUtil.getEthColdWallet().getBalance(address) : value;
         } else if (WalletType.BTC == mSymbol) {
             List<UTXO> list = ColdWalletUtil.getBtcColdWallet().getUnspentTransactionOutput1(address);
@@ -184,7 +187,9 @@ public class Utils {
             HashMap<String, String> map = new HashMap<>();
             map.put("type", type);
             map.put("address", address);
-            String response = HttpUtil.getInstance().post("http://47.89.12.88:8008/getTokenBlence", map);
+            Log.e("aaaaaaaa", type + ": " + address);
+            String response = HttpUtil.getInstance().post("http://47.242.161.117:8080/getTokenBlence", map);
+            Log.e("aaaaaaaa", "response: " + response);
             JSONObject object = new JSONObject(response);
             if (object.optString("rspCode").equals("success")) {
                 return new BigDecimal(object.optDouble("data"));
@@ -357,9 +362,10 @@ public class Utils {
             return WalletType.USDT_OMNI;
         } else if ("USDT-ERC20".equals(mSymbol)) {
             return WalletType.USDT_ERC20;
-        } else if ("A13".equals(mSymbol)) {
-            return WalletType.A13;
         }
+//        else if ("A13".equals(mSymbol)) {
+//            return WalletType.A13;
+//        }
         return WalletType.BTC;
     }
 
@@ -370,9 +376,10 @@ public class Utils {
             return "USDT-OMNI";
         } else if (WalletType.USDT_ERC20 == mSymbol) {
             return "USDT-ERC20";
-        } else if (WalletType.A13 == mSymbol) {
-            return "A13";
         }
+//        else if (WalletType.A13 == mSymbol) {
+//            return "A13";
+//        }
         return "BTC";
     }
 

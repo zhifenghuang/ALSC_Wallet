@@ -175,9 +175,10 @@ public class ImportMnemonicFragment extends BaseFragment implements View.OnClick
                         coldWallet = ColdWalletUtil.getEthColdWallet().importMnemonic(name, mnemonicCode, pass, WalletType.ETH);
                     } else if ("USDT-ERC20".equals(mSymbol)) {
                         coldWallet = ColdWalletUtil.getEthColdWallet().importMnemonic(name, mnemonicCode, pass, WalletType.USDT_ERC20);
-                    } else if ("A13".equals(mSymbol)) {
-                        coldWallet = ColdWalletUtil.getEthColdWallet().importMnemonic(name, mnemonicCode, pass, WalletType.A13);
                     }
+//                    else if ("A13".equals(mSymbol)) {
+//                        coldWallet = ColdWalletUtil.getEthColdWallet().importMnemonic(name, mnemonicCode, pass, WalletType.A13);
+//                    }
                     if (coldWallet != null) {
                         WalletDataBean bean, bean1, bean2 = null;
                         if ("ETH".equals(mSymbol) || "A13".equals(mSymbol) || "USDT-ERC20".equals(mSymbol)) {

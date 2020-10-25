@@ -10,7 +10,7 @@ public final class Constant {
     /**
      * ETH节点服务器
      */
-    public static String ETH_RPC_URL = "http://45.77.40.23:7654/";
+    public static String ETH_RPC_URL = "http://47.242.161.117:7654/";
     /**
      * USDT-ERC20 合约地址
      */

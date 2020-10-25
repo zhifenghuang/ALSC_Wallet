@@ -17,6 +17,7 @@ import com.common.fragment.BaseFragment;
 import com.common.bean.CoinSymbolBean;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.wallet.activity.MainColdActivity;
 import com.wallet.activity.wallet.RestoreWalletActivity;
 
 public class ColdWalletFragment extends BaseFragment {
@@ -56,10 +57,10 @@ public class ColdWalletFragment extends BaseFragment {
         getAdapter1().addData("");
 
         UserBean userBean = DataManager.getInstance().getUser();
-        if (userBean!=null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
-            setViewGone(R.id.llUnLogin);
-            setViewVisible(R.id.llLogined);
-        } else {
+            if (userBean!=null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
+                setViewGone(R.id.llUnLogin);
+                setViewVisible(R.id.llLogined);
+            } else {
             setViewVisible(R.id.llUnLogin);
             setViewGone(R.id.llLogined);
         }
