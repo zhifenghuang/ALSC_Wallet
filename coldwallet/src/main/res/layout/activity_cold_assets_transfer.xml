@@ -44,22 +44,7 @@
                 android:textSize="18dp"
                 tools:text="A13转账" />
 
-            <FrameLayout
-                android:id="@+id/fl_scan"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="right|center_vertical"
-                android:onClick="@{clickListener}"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp">
 
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerInside"
-                    android:src="@mipmap/icon_scan_black" />
-            </FrameLayout>
 
         </FrameLayout>
 
@@ -73,48 +58,112 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:gravity="center_vertical">
+                android:layout_marginRight="20dp">
 
-                <View
-                    android:layout_width="5dp"
-                    android:layout_height="15dp"
-                    android:background="@color/blue" />
 
                 <TextView
                     android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:layout_weight="1"
+                    android:text="@string/wh_save_address"
+                    android:textColor="@color/text_color"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:id="@+id/iv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="34dp"
+                    android:onClick="@{clickListener}"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp"
+                    android:src="@mipmap/icon_user_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/corner_white_5">
+
+                <EditText
+                    android:id="@+id/et_receive_url"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:background="@drawable/corner_white_5"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:hint="@string/input_btc_address1"
+                    android:paddingLeft="7dp"
+                    android:singleLine="true"
+                    android:textColor="@color/text_color"
+                    android:textColorHint="@color/text_color_small1"
+                    android:textSize="12dp" />
+
+                <FrameLayout
+                    android:id="@+id/fl_scan"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="9dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:onClick="@{clickListener}"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/icon_qrcode_grey" />
+                </FrameLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="28dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/wh_alsc_transfer_menoy"
-                    android:textColor="@color/color_1d_26_37"
-                    android:textSize="@dimen/text_size_12" />
+                    android:textColor="@color/text_color"
+                    android:textSize="15dp"  />
 
                 <TextView
                     android:id="@+id/tv_title_alsc1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/my_slsc_balance1"
-                    android:textColor="@color/text_color_small"
-                    android:textSize="11dp" />
+                    android:textColor="@color/color_666666"
+                    android:textSize="12dp" />
 
                 <TextView
                     android:id="@+id/tv_money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.00"
-                    android:textColor="@color/color_1d_26_37"
-                    android:textSize="11dp" />
+                    android:textColor="@color/color_666666"
+                    android:textSize="12dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="36dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:background="@drawable/bg_white_radius"
+                android:background="@drawable/corner_white_5"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -125,82 +174,32 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:singleLine="true"
                     android:inputType="numberDecimal"
                     android:paddingLeft="15dp"
+                    android:singleLine="true"
                     android:textColor="@color/color_1a2135"
                     android:textSize="12dp"
-                    tools:text="100" />
-
-            </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-
+                    android:hint="@string/input_money_002"/>
 
                 <TextView
                     android:id="@+id/tv_all_money"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/corner_a0acc0_4"
                     android:onClick="@{clickListener}"
-                    android:padding="10dp"
-                    android:text="@string/transfer_all"
-                    android:textColor="@color/button_color"
+                    android:text="@string/assets_list_tab1"
+                    android:gravity="center"
+                    android:textColor="@color/white"
                     android:textSize="11dp" />
-            </RelativeLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="20dp"
-                android:gravity="center_vertical">
-
-                <View
-                    android:layout_width="5dp"
-                    android:layout_height="15dp"
-                    android:background="@color/blue" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="9dp"
-                    android:layout_weight="1"
-                    android:text="@string/wh_save_address"
-                    android:textColor="@color/color_1d_26_37"
-                    android:textSize="@dimen/text_size_12" />
-
-                <ImageView
-                    android:id="@+id/iv_address"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="@{clickListener}"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="5dp"
-                    android:src="@mipmap/icon_user_black" />
-
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/et_receive_url"
-                style="@style/AssetCodeEditStyle"
-                android:layout_marginTop="10dp"
-                android:hint="@string/input_btc_address"
-                android:singleLine="true"
-                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:textColor="@color/color_1a2135"
-                android:textColorHint="@color/text_color_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="18dp"
+                android:visibility="gone"
                 android:layout_marginRight="20dp"
                 android:gravity="center_vertical">
 
@@ -223,19 +222,20 @@
                 android:id="@+id/tv_send_url"
                 style="@style/AssetCodeEditStyle"
                 android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 android:gravity="center_vertical"
                 android:hint="@string/wh_code_send_address"
-                android:textColor="@color/color_1a2135"
                 android:singleLine="true"
-                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:textColor="@color/color_1a2135"
                 android:textColorHint="@color/text_color_small" />
 
             <LinearLayout
                 android:id="@+id/ll_item1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -324,31 +324,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="48dp"
                     android:layout_marginRight="20dp"
                     android:gravity="center_vertical">
 
-                    <View
-                        android:layout_width="5dp"
-                        android:layout_height="15dp"
-                        android:background="@color/blue" />
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="9dp"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/wh_miners_fee"
-                        android:textColor="@color/color_1d_26_37"
-                        android:textSize="@dimen/text_size_12" />
+                        android:textColor="@color/text_color"
+                        android:textSize="15dp" />
 
                     <TextView
                         android:id="@+id/tv_convert"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="@string/my_alsc_to_dollor"
-                        android:textColor="@color/color_1d_26_37"
-                        android:textSize="11dp" />
+                        android:textColor="@color/text_color_small1"
+                        android:textSize="11dp"
+                        tools:text="@string/my_alsc_to_dollor" />
 
                 </LinearLayout>
 
@@ -369,9 +364,9 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginRight="20dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
@@ -379,7 +374,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/wh_slow"
-                        android:textColor="@color/color_929497"
+                        android:textColor="@color/color_b2_b2_b2"
                         android:textSize="11dp" />
 
                     <TextView
@@ -387,20 +382,18 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:text="@string/wh_fast"
-                        android:textColor="@color/color_929497"
+                        android:textColor="@color/color_b2_b2_b2"
                         android:textSize="11dp" />
                 </RelativeLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
                     android:text="@string/my_advice_10_sat"
                     android:textColor="@color/color_929497"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="right"
-                    android:textSize="12dp"
-                    />
+                    android:textSize="12dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -414,6 +407,7 @@
                     style="@style/WalletColdBtn2Style"
                     android:layout_marginBottom="40dp"
                     android:onClick="@{clickListener}"
+                    android:background="@drawable/corner_a0acc0_4"
                     android:text="@string/wh_ok" />
 
             </LinearLayout>

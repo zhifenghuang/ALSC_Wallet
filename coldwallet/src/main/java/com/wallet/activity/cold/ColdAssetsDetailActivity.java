@@ -47,12 +47,19 @@ public class ColdAssetsDetailActivity extends BaseActivity implements View.OnCli
             @Override
             public void onSuccess(TransferListDetailBean model) {
                 if (model != null) {
+                    String umc = "";
+                    if ("ETH".equals(model.getSymbol()) || "ETHUSDT".equals(model.getSymbol()) || "alsc".equals(model.getSymbol())) {
+                        umc = "ether";
+                    } else {
+                        umc = "btc";
+                    }
+
                     if (model.getType() == 1) {//类型1转账  2充值
                         binding.tvType.setText(getString(R.string.detail_discharge_money));
-                        binding.tvMoney.setText("-" + model.getAmount());
+                        binding.tvMoney.setText("-" + model.getAmount() + umc.toUpperCase());
                     } else {
                         binding.tvType.setText(getString(R.string.detail_charge_money));
-                        binding.tvMoney.setText("+" + model.getAmount());
+                        binding.tvMoney.setText("+" + model.getAmount() + umc.toUpperCase());
                     }
                     if (model.getStatus() == 0) {//状态 0 等待确认 1确认中  2已完成  5交易失败
                         binding.tvStatus.setText(getString(R.string.status_cold0));
@@ -66,12 +73,7 @@ public class ColdAssetsDetailActivity extends BaseActivity implements View.OnCli
                         binding.tvStatus.setText("");
                     }
                     binding.tvTime.setText("" + model.getAdd_time());
-                    String umc = "";
-                    if ("ETH".equals(model.getSymbol()) || "ETHUSDT".equals(model.getSymbol()) || "alsc".equals(model.getSymbol())) {
-                        umc = "ether";
-                    } else {
-                        umc = "btc";
-                    }
+
                     binding.tvFee.setText("" + model.getFee() + " " + umc);
                     binding.tvTxid.setText("" + model.getTxid());
                     binding.tvReceive.setText("" + model.getTo());

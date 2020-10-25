@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
@@ -13,8 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_theme_cold"
-        android:orientation="vertical"
         android:fitsSystemWindows="true"
+        android:orientation="vertical"
         tools:context=".activity.my.AssetsDetailActivity">
 
 
@@ -25,8 +26,8 @@
             <FrameLayout
                 android:id="@+id/fl_back"
                 android:layout_width="@dimen/space_size_50"
-                android:onClick="@{clickListener}"
-                android:layout_height="@dimen/space_size_50">
+                android:layout_height="@dimen/space_size_50"
+                android:onClick="@{clickListener}">
 
                 <ImageView
                     android:layout_width="9dp"
@@ -41,58 +42,46 @@
                 android:id="@+id/tv_toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/c_trade_record_detail"
                 android:layout_gravity="center"
+                android:text="@string/record"
                 android:textColor="@color/text_color"
-                android:textSize="18dp"
-                />
+                android:textSize="18dp" />
         </FrameLayout>
 
-
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/my_benefit"
-            android:layout_marginTop="50dp"
-            android:textColor="@color/color_7c_84_98"
-            android:layout_gravity="center"
-            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/tv_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="+13547.24"
-            android:layout_marginTop="12dp"
-            android:layout_gravity="center"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="38dp"
             android:textColor="@color/blue"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            tools:text="+13547.24" />
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="60dp"
-            android:layout_height="45dp">
+            android:layout_height="45dp"
+            android:layout_marginTop="50dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/detail_type"
-                android:layout_marginLeft="15dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="@color/color_7c_84_98"
-                android:textSize="12dp" />
+                android:layout_marginLeft="21dp"
+                android:text="@string/detail_type"
+                android:textColor="@color/text_color"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tv_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                tools:text="游戏"
                 android:layout_gravity="right|center_vertical"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
+                android:layout_marginRight="21dp"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                tools:text="游戏" />
         </FrameLayout>
 
         <View
@@ -110,21 +99,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/detail_status"
-                android:layout_marginLeft="15dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="@color/color_7c_84_98"
-                android:textSize="12dp" />
+                android:layout_marginLeft="21dp"
+                android:text="@string/detail_status"
+                android:textColor="@color/text_color"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tv_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                tools:text="游戏"
                 android:layout_gravity="right|center_vertical"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
+                android:layout_marginRight="21dp"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                tools:text="游戏" />
         </FrameLayout>
 
         <View
@@ -141,21 +130,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/detail_time"
-                android:layout_marginLeft="15dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="@color/color_7c_84_98"
-                android:textSize="12dp" />
+                android:layout_marginLeft="21dp"
+                android:text="@string/detail_time"
+                android:textColor="@color/text_color"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                tools:text="游戏"
                 android:layout_gravity="right|center_vertical"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
+                android:layout_marginRight="21dp"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                tools:text="游戏" />
         </FrameLayout>
 
         <View
@@ -174,21 +163,21 @@
                 android:id="@+id/tv_title_fee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/my_commission"
-                android:layout_marginLeft="15dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="@color/color_7c_84_98"
-                android:textSize="12dp" />
+                android:layout_marginLeft="21dp"
+                android:text="@string/my_commission"
+                android:textColor="@color/text_color"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tv_fee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                tools:text="游戏"
                 android:layout_gravity="right|center_vertical"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
+                android:layout_marginRight="21dp"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                tools:text="游戏" />
         </FrameLayout>
 
         <View
@@ -201,29 +190,29 @@
         <FrameLayout
             android:id="@+id/fl_receive"
             android:layout_width="match_parent"
-            android:onClick="@{clickListener}"
-            android:layout_height="45dp">
+            android:layout_height="45dp"
+            android:onClick="@{clickListener}">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/my_receive_url"
-                android:layout_marginLeft="15dp"
                 android:layout_gravity="center_vertical"
-                android:textColor="@color/color_7c_84_98"
-                android:textSize="12dp" />
+                android:layout_marginLeft="21dp"
+                android:text="@string/my_receive_url"
+                android:textColor="@color/text_color"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tv_receive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                tools:text="游戏"
                 android:layout_gravity="right|center_vertical"
-                android:maxWidth="@dimen/dimen_160"
-                android:textColor="@color/black"
+                android:layout_marginRight="21dp"
                 android:gravity="right"
-                android:textSize="12dp" />
+                android:maxWidth="@dimen/dimen_160"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                tools:text="游戏" />
         </FrameLayout>
 
         <View
@@ -236,30 +225,30 @@
         <FrameLayout
             android:id="@+id/rl_hash"
             android:layout_width="match_parent"
-            android:onClick="@{clickListener}"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:onClick="@{clickListener}">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Txld"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="21dp"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/color_7c_84_98"
-                android:textSize="12dp" />
+                android:text="Txld"
+                android:textColor="@color/text_color"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/tv_txid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="21dp"
                 android:gravity="right"
                 android:maxWidth="@dimen/dimen_160"
-                tools:text="游戏"
-                android:layout_gravity="right"
-                android:textColor="@color/black"
-                android:textSize="12dp" />
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                tools:text="游戏" />
         </FrameLayout>
 
 
