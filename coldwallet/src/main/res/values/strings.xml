@@ -390,7 +390,7 @@
     <string name="my_commission_5">矿工费：</string>
     <string name="my_high_commission_5">高频交易5%：</string>
     <string name="my_alsc_to_dollor">0.01 A13 ≈ ￥ 55.78</string>
-    <string name="my_advice_10_sat">建议：10.00 sat/b</string>
+    <string name="my_advice_10_sat">建议：0.00017298 BTC≈￥11.6024</string>
 
     <string name="my_version_code">版本号</string>
     <string name="my_function_introduction">风险提示</string>
@@ -586,6 +586,7 @@
     <string name="copy">复制</string>
     <string name="alsc_information">A13资讯</string>
     <string name="input_btc_address">输入BTC地址</string>
+    <string name="input_btc_address1">请填写接收地址</string>
     <string name="input_your_number">请输入数量</string>
     <string name="input_your_pay_password">输入支付密码</string>
     <string name="input_your_wallet_password">输入钱包密码</string>
@@ -886,4 +887,6 @@
     <string name="welcome_cold_wallet">欢迎使用多链钱包</string>
     <string name="only_cold_wallet">不仅仅只是多链钱包</string>
     <string name="input_address_hint">请输入有效的地址</string>
+    <string name="record">记录</string>
+    <string name="input_money_002">输入金额≥0.0002</string>
 </resources>

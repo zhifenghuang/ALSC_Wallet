@@ -2,9 +2,11 @@ package com.wallet.activity.cold;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
@@ -16,6 +18,8 @@ import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.bean.cold.WalletDataBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.cold.wallet.databinding.ActivityColdAssetsListBinding;
+import com.common.dialog.MyDialogFragment;
+import com.common.utils.QRCodeUtil;
 import com.google.gson.Gson;
 import com.cold.wallet.R;
 import com.gyf.immersionbar.ImmersionBar;
@@ -144,7 +148,7 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
                 ColdAssetsTransferActivity.startActivity(mContext, mWalletDataBean);
             }
         } else if (id == R.id.fl_qcode) {
-            ColdAssetsQCodeActivity.startActivity(mContext, mSymbol, mAddress);
+            showDialog(mAddress);
         } else if (id == R.id.fl_set) {
             if (mJnWallet != null) {
                 ColdAssetsSetActivity.startActivity(mContext, mSymbol, mJnWallet);
@@ -254,5 +258,39 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
             return POSITION_NONE;   // 返回发生改变，让系统重新加载
             // 系统默认返回的是     POSITION_UNCHANGED，未改变
         }
+    }
+
+    private Bitmap mQrBmp;
+    private void showDialog(String mAddress){
+        final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.dialog_my_qrcode);
+        dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
+            @Override
+            public void initView(View view) {
+                dialogFragment.setDialogViewsOnClickListener(view, R.id.tvCopy);
+                if (mQrBmp != null) {
+                    mQrBmp.recycle();
+                }
+                mQrBmp = QRCodeUtil.createQRImage(mContext, mAddress, null);
+                ((ImageView) view.findViewById(R.id.ivQrCode)).setImageBitmap(mQrBmp);
+            }
+
+            @Override
+            public void onViewClick(int viewId) {
+                if (viewId == R.id.tvCopy) {
+                    Utils.copyData(mContext, mAddress);
+                    ToastUtil.toast(getString(R.string.user_copy_success));
+                }
+            }
+        });
+        dialogFragment.show(((com.common.activity.BaseActivity) mContext).getSupportFragmentManager(), "MyDialogFragment");
+        dialogFragment.setOnDismiss(new MyDialogFragment.IDismissListener() {
+            @Override
+            public void onDismiss() {
+                if (mQrBmp != null) {
+                    mQrBmp.recycle();
+                }
+                mQrBmp = null;
+            }
+        });
     }
 }
