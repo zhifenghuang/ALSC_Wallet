@@ -19,6 +19,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.cao.commons.base.PoliceApplication;
 import com.cao.commons.bean.cold.ColdHqBean;
 import com.cao.commons.bean.cold.WalletDataBean;
 import com.cold.wallet.R;
@@ -106,6 +107,9 @@ public class  MainColdAdapter extends RecyclerView.Adapter {
 //                    if (entity.getWalletType().trim().equals("USDT-OMNI")) {
 //                        return;
 //                    }
+                    if (PoliceApplication.getColdHqBean()==null){
+                        return;
+                    }
                     ColdAssetsListActivity.startActivity(mContext, entity);
                 }
             });
