@@ -39,7 +39,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:scaleType="fitXY"
-                        android:src="@mipmap/icon_cold_top_bg"/>
+                        android:src="@mipmap/icon_cold_top_bg1"/>
 
 
 
@@ -260,7 +260,7 @@
                                 android:layout_width="14dp"
                                 android:layout_height="14dp"
                                 android:layout_gravity="center"
-                                android:src="@mipmap/icon_set_black" />
+                                android:src="@mipmap/icon_set_white" />
                         </FrameLayout>
                     </RelativeLayout>
 
