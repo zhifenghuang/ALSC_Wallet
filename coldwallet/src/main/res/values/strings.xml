@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">ColdWallet</string>
     <string name="app_name_pinyin">ColdWallet</string>
 
     <!--    错误提示-->

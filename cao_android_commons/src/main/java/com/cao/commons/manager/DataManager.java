@@ -349,4 +349,17 @@ public class DataManager {
     public static void setFirstStartApp() {
         Preferences.getInstacne().setValues("isFirstStartApp", false);
     }
+
+    public void saveColdUser(UserBean userBean) {
+        Preferences.getInstacne().setValues("ColdUser", getGson().toJson(userBean));
+    }
+
+    public UserBean getColdUser() {
+        String str = Preferences.getInstacne().getValues("ColdUser", "");
+        if (TextUtils.isEmpty(str)) {
+            return null;
+        }
+        UserBean bean = getGson().fromJson(str, UserBean.class);
+        return bean;
+    }
 }

@@ -145,6 +145,12 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         }
     }
 
+    protected void setViewEnable(int id,boolean b) {
+        View view = getView().findViewById(id);
+        if (view != null)
+            view.setEnabled(b);
+    }
+
     protected void setEditTextMaxLength(int etId, int maxLength) {
         ((EditText) getView().findViewById(etId)).setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
     }

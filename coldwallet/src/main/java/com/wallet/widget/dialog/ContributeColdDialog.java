@@ -75,7 +75,7 @@ public class ContributeColdDialog extends Dialog implements View.OnClickListener
         if (!TextUtils.isEmpty(mPassword)) {
             truePass = mPassword;
         } else {
-            UserBean userBean = DataManager.getInstance().getUser();
+            UserBean userBean = DataManager.getInstance().getColdUser();
             truePass = userBean.getPassword();
         }
 

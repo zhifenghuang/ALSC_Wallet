@@ -108,7 +108,7 @@ public class AddAddressActivity extends BaseActivity implements View.OnClickList
             ToastUtil.toast(getString(R.string.choose_wallet_type));
             return;
         }
-        mAddressBean.setLoginAccount(DataManager.getInstance().getUser().getAccount());
+        mAddressBean.setLoginAccount(DataManager.getInstance().getColdUser().getAccount());
         mAddressBean.setName(name);
         mAddressBean.setRemarks("");
         mAddressBean.setPath(account);

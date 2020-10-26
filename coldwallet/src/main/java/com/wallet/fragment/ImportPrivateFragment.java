@@ -163,16 +163,16 @@ public class ImportPrivateFragment extends BaseFragment implements View.OnClickL
                         WalletDataBean bean, bean1, bean2 = null;
                         if ("ETH".equals(mSymbol) || "A13".equals(mSymbol) || "USDT-ERC20".equals(mSymbol)) {
                             bean = new WalletDataBean(coldWallet.getName(), mPathType, Utils.getMnemonicCode(coldWallet.getMnemonicCode()), coldWallet.getPrivateKey(), coldWallet.getPublicKey(), coldWallet.getAddress(),
-                                    pass, "ETH", remark, DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                                    pass, "ETH", remark, DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                             bean1 = new WalletDataBean(coldWallet.getName(), mPathType, Utils.getMnemonicCode(coldWallet.getMnemonicCode()), coldWallet.getPrivateKey(), coldWallet.getPublicKey(), coldWallet.getAddress(),
-                                    pass, "A13", remark, DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                                    pass, "A13", remark, DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                             bean2 = new WalletDataBean(coldWallet.getName(), mPathType, Utils.getMnemonicCode(coldWallet.getMnemonicCode()), coldWallet.getPrivateKey(), coldWallet.getPublicKey(), coldWallet.getAddress(),
-                                    pass,  "USDT-ERC20", remark, DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                                    pass,  "USDT-ERC20", remark, DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                         } else {
                             bean = new WalletDataBean(coldWallet.getName(), mPathType, Utils.getMnemonicCode(coldWallet.getMnemonicCode()), coldWallet.getPrivateKey(), coldWallet.getPublicKey(), coldWallet.getAddress(),
-                                    pass, "BTC", remark, DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                                    pass, "BTC", remark, DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                             bean1 = new WalletDataBean(coldWallet.getName(), mPathType, Utils.getMnemonicCode(coldWallet.getMnemonicCode()), coldWallet.getPrivateKey(), coldWallet.getPublicKey(), coldWallet.getAddress(),
-                                    pass, "USDT-OMNI", remark, DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                                    pass, "USDT-OMNI", remark, DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                         }
 
                         if (!bean.getAddress().equals(Utils.getAddress(mSymbol)) && DatabaseOperate.getInstance().insertWalletInfo(bean)) {

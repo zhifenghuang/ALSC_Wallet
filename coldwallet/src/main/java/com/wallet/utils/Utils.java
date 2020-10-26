@@ -98,7 +98,7 @@ public class Utils {
 //                if (hpBean != null) 2{
 //                    BigDecimal total = new BigDecimal("0");
 //
-//                    String walletContentMD = DataManager.getInstance().getUser().getWalletContentMD();
+//                    String walletContentMD = DataManager.getInstance().getColdUser().getWalletContentMD();
 //                    Gson mGson = new Gson();
 //                    ColdWallet mColdWallet = mGson.fromJson(walletContentMD, ColdWallet.class);
 //                    for (JnWallet entity : mColdWallet.getJnWallets()) {
@@ -331,15 +331,12 @@ public class Utils {
     }
 
     public static String getAddress(String mSymbol) {
-        ArrayList<UserBean> list = DatabaseOperate.getInstance().getColdUserInfos();
-        if (list != null && list.size() > 0) {
-            UserBean userBean = list.get(list.size() - 1);
-            Gson mGson = new Gson();
-            ColdWallet mColdWallet = mGson.fromJson(userBean.getWalletContentMD(), ColdWallet.class);
-            for (JnWallet wallet : mColdWallet.getJnWallets()) {
-                if (wallet.getWalletType() == getWalletType(mSymbol)) {
-                    return wallet.getAddress();
-                }
+        UserBean userBean = DataManager.getInstance().getColdUser();
+        Gson mGson = new Gson();
+        ColdWallet mColdWallet = mGson.fromJson(userBean.getWalletContentMD(), ColdWallet.class);
+        for (JnWallet wallet : mColdWallet.getJnWallets()) {
+            if (wallet.getWalletType() == getWalletType(mSymbol)) {
+                return wallet.getAddress();
             }
         }
         return "";
@@ -430,7 +427,7 @@ public class Utils {
                                 TradeInfoBean infoBean = DatabaseOperate.getInstance().getTradeInfo(ethDealDetails.getHash());
                                 if (infoBean == null) {
                                     infoBean = new TradeInfoBean();
-                                    infoBean.setLoginAccount(DataManager.getInstance().getUser().getAccount());
+                                    infoBean.setLoginAccount(DataManager.getInstance().getColdUser().getAccount());
                                     infoBean.setCreateTime(System.currentTimeMillis());
                                     infoBean.setHash(ethDealDetails.getHash());
                                 }
@@ -501,7 +498,7 @@ public class Utils {
                 boolean netAvailable = Network.isConnected(PoliceApplication.getInstance());
                 if (netAvailable) {
                     try {
-                        UserBean userBean = DataManager.getInstance().getUser();
+                        UserBean userBean = DataManager.getInstance().getColdUser();
                         String walletContentMD = userBean.getWalletContentMD();
                         Gson mGson = new Gson();
                         ColdWallet mColdWallet = mGson.fromJson(walletContentMD, ColdWallet.class);
@@ -557,7 +554,7 @@ public class Utils {
 
     public static String getTotalMoney() {
         String money = "0.00";
-        UserBean userBean = DataManager.getInstance().getUser();
+        UserBean userBean = DataManager.getInstance().getColdUser();
         String walletContentMD = userBean.getWalletContentMD();
         if (TextUtils.isEmpty(walletContentMD)) {
             return money;

@@ -63,166 +63,17 @@
             android:textSize="14dp" />
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/llLogined"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_below="@id/ll1"
-        android:visibility="gone"
         android:layout_marginTop="27dp"
+        android:visibility="gone"
         android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@id/ll2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="@string/wallet_total_zichan"
-                android:textColor="@color/color_ff_ff_ff"
-                android:textSize="12dp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="8dp"
-                android:src="@drawable/wallet_eye_open" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/ll3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="6,297,502.12"
-                android:textColor="@color/color_ff_ff_ff"
-                android:textSize="36dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:paddingTop="25dp"
-                android:text="$"
-                android:textColor="@color/color_ff_ff_ff"
-                android:textSize="12dp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="18dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:id="@+id/rl"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:background="@drawable/shape_ffffff_4"
-                    android:paddingLeft="23dp"
-                    android:paddingTop="18dp"
-                    android:paddingRight="19dp">
-
-                    <ImageView
-                        android:id="@+id/ivCoinIcon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:src="@drawable/wallet_btc" />
+        android:layout_height="match_parent">
 
 
-                    <TextView
-                        android:id="@+id/tvCoinName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_toRightOf="@id/ivCoinIcon"
-                        android:text="BTC"
-                        android:textColor="@color/color_01_01_01"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/tvFullName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/tvCoinName"
-                        android:layout_marginLeft="15dp"
-                        android:layout_toRightOf="@id/ivCoinIcon"
-                        android:paddingTop="3dp"
-                        android:text="@string/wallet_bitcoin"
-                        android:textColor="@color/color_66_66_66"
-                        android:textSize="12dp" />
-
-                    <TextView
-                        android:id="@+id/tvValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:paddingRight="4dp"
-                        android:text="12.2982"
-                        android:textColor="@color/color_00_00_00"
-                        android:textSize="15dp" />
-
-                    <TextView
-                        android:id="@+id/tvTotal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/tvValue"
-                        android:layout_alignParentRight="true"
-                        android:paddingTop="3dp"
-                        android:paddingRight="4dp"
-                        android:text="≈ $ 184,470325"
-                        android:textColor="@color/color_66_66_66"
-                        android:textSize="12dp" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/tvFullName"
-                        android:overScrollMode="never"
-                        android:layout_marginTop="16dp"
-                        android:paddingLeft="4dp" />
-
-
-                </RelativeLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:overScrollMode="never"
-                    android:background="@color/color_f8_f8_f8"
-                    android:paddingTop="10dp"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp" />
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
-
-    </LinearLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/llUnLogin"
@@ -320,7 +171,7 @@
                 />
 
             <EditText
-                android:id="@+id/etPasswordAgain"
+                android:id="@+id/etPasswordRetry"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="至少8-16位：大写字母、小写字母、数字3种组成"

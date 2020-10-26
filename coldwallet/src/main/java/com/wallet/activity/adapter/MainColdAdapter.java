@@ -38,7 +38,7 @@ public class  MainColdAdapter extends RecyclerView.Adapter {
     private Context mContext;
     private List<WalletDataBean> datas;
     private List<WalletDataBean> allDatas;
-    private boolean isExpand;
+    private boolean isExpand = true;
     private String mSymbol;
     private ColdHqBean mColdHqBean;
     private boolean isEyeOpen = true;
@@ -189,7 +189,7 @@ public class  MainColdAdapter extends RecyclerView.Adapter {
         this.datas.clear();
         this.allDatas.clear();
         this.mSymbol = symbol;
-        isExpand = false;
+//        isExpand = false;
         notifyDataSetChanged();
         MainColdAdapter.this.allDatas = list;
         if (isExpand) {

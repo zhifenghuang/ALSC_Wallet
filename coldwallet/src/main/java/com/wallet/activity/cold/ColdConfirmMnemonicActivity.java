@@ -177,20 +177,20 @@ public class ColdConfirmMnemonicActivity extends BaseActivity implements View.On
                 WalletDataBean bean, bean1, bean2 = null;
                 if ("ETH".equals(mSymbol) || "A13".equals(mSymbol) || "USDT-ERC20".equals(mSymbol)) {
                     bean = new WalletDataBean(mColdWallet.getName(), Utils.getMnemonicCode(mColdWallet.getMnemonicCode()), mColdWallet.getPrivateKey(), mColdWallet.getPublicKey(), mColdWallet.getAddress(),
-                            String.valueOf(mColdWallet.getKeystore()), mPass, "ETH", DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                            String.valueOf(mColdWallet.getKeystore()), mPass, "ETH", DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                     bean.setInformation(mRemark);
                     bean1 = new WalletDataBean(mColdWallet.getName(), Utils.getMnemonicCode(mColdWallet.getMnemonicCode()), mColdWallet.getPrivateKey(), mColdWallet.getPublicKey(), mColdWallet.getAddress(),
-                            String.valueOf(mColdWallet.getKeystore()), mPass, "A13", DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                            String.valueOf(mColdWallet.getKeystore()), mPass, "A13", DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                     bean1.setInformation(mRemark);
                     bean2 = new WalletDataBean(mColdWallet.getName(), Utils.getMnemonicCode(mColdWallet.getMnemonicCode()), mColdWallet.getPrivateKey(), mColdWallet.getPublicKey(), mColdWallet.getAddress(),
-                            String.valueOf(mColdWallet.getKeystore()), mPass, "USDT-ERC20", DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                            String.valueOf(mColdWallet.getKeystore()), mPass, "USDT-ERC20", DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                     bean2.setInformation(mRemark);
                 } else {
                     bean = new WalletDataBean(mColdWallet.getName(), Utils.getMnemonicCode(mColdWallet.getMnemonicCode()), mColdWallet.getPrivateKey(), mColdWallet.getPublicKey(), mColdWallet.getAddress(),
-                            String.valueOf(mColdWallet.getKeystore()), mPass, "BTC", DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                            String.valueOf(mColdWallet.getKeystore()), mPass, "BTC", DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                     bean.setInformation(mRemark);
                     bean1 = new WalletDataBean(mColdWallet.getName(), Utils.getMnemonicCode(mColdWallet.getMnemonicCode()), mColdWallet.getPrivateKey(), mColdWallet.getPublicKey(), mColdWallet.getAddress(),
-                            String.valueOf(mColdWallet.getKeystore()), mPass, "USDT-OMNI", DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                            String.valueOf(mColdWallet.getKeystore()), mPass, "USDT-OMNI", DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                     bean1.setInformation(mRemark);
                 }
 

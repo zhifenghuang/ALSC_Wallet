@@ -171,7 +171,7 @@ public class ColdAssetsSetActivity extends BaseActivity implements View.OnClickL
                     return;
                 }
                 if (mJnWallet!=null){
-                    UserBean userBean = DataManager.getInstance().getUser();
+                    UserBean userBean = DataManager.getInstance().getColdUser();
                     String walletContentMD = userBean.getWalletContentMD();
                     Gson mGson = new Gson();
                     ColdWallet  mColdWallet = mGson.fromJson(walletContentMD, ColdWallet.class);

@@ -355,9 +355,10 @@ public class DatabaseOperate extends DBOperate {
     }
 
     public ArrayList<WalletDataBean> getWalletInfos() {
+        UserBean bean = DataManager.getInstance().getColdUser();
         ArrayList<WalletDataBean> list = null;
         if (DataManager.getInstance().getUser() != null) {
-            String sql = String.format("select * from wallet where loginAccount='%s'", DataManager.getInstance().getUser().getAccount());
+            String sql = String.format("select * from wallet where loginAccount='%s'", bean.getAccount());
             list = mDBManager.getList(sql, WalletDataBean.class);
         }
         if (list == null) {
@@ -388,8 +389,9 @@ public class DatabaseOperate extends DBOperate {
      */
     public ArrayList<WalletDataBean> getWalletInfos(String walletType) {
         ArrayList<WalletDataBean> list = null;
+        UserBean bean = DataManager.getInstance().getColdUser();
         if (DataManager.getInstance().getUser() != null) {
-            String sql = String.format("select * from wallet where walletType='%s' and loginAccount='%s'", walletType, DataManager.getInstance().getUser().getAccount());
+            String sql = String.format("select * from wallet where walletType='%s' and loginAccount='%s'", walletType, bean.getAccount());
             list = mDBManager.getList(sql, WalletDataBean.class);
         }
         if (list == null) {
@@ -423,13 +425,14 @@ public class DatabaseOperate extends DBOperate {
      * @return
      */
     public ArrayList<ColdAddressBean> getAddressInfos(String walletType) {
+        UserBean bean = DataManager.getInstance().getColdUser();
         ArrayList<ColdAddressBean> list = null;
         if (DataManager.getInstance().getUser() != null) {
             String sql;
             if (TextUtils.isEmpty(walletType)) {
-                sql = String.format("select * from address where  loginAccount='%s'", DataManager.getInstance().getUser().getAccount());
+                sql = String.format("select * from address where  loginAccount='%s'", bean.getAccount());
             } else {
-                sql = String.format("select * from address where  loginAccount='%s' and walletType = '%s'", DataManager.getInstance().getUser().getAccount(), walletType);
+                sql = String.format("select * from address where  loginAccount='%s' and walletType = '%s'", bean.getAccount(), walletType);
             }
             list = mDBManager.getList(sql, ColdAddressBean.class);
         }
@@ -461,7 +464,8 @@ public class DatabaseOperate extends DBOperate {
      * @return
      */
     public ArrayList<TradeInfoBean> getAllTradeInfo() {
-        String sql = String.format("select * from trade where loginAccount='%s' ", DataManager.getInstance().getUser().getAccount());
+        UserBean bean = DataManager.getInstance().getColdUser();
+        String sql = String.format("select * from trade where loginAccount='%s' ", bean.getAccount());
         ArrayList<TradeInfoBean> list = mDBManager.getList(sql, TradeInfoBean.class);
         if (list == null) {
             list = new ArrayList<>();

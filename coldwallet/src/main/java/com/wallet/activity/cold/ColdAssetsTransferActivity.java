@@ -143,7 +143,7 @@ public class ColdAssetsTransferActivity extends BaseActivity implements View.OnC
             mSymbol = mWalletDataBean.getWalletType();
             publicKey = mWalletDataBean.getPublicKey();
         } else {
-            String walletContentMD = DataManager.getInstance().getUser().getWalletContentMD();
+            String walletContentMD = DataManager.getInstance().getColdUser().getWalletContentMD();
             Gson mGson = new Gson();
             ColdWallet mColdWallet = mGson.fromJson(walletContentMD, ColdWallet.class);
             mJnWallet = Utils.getWallet(mColdWallet, mSymbol);
@@ -236,11 +236,7 @@ public class ColdAssetsTransferActivity extends BaseActivity implements View.OnC
     @SuppressLint("HandlerLeak")
     private void initMoney() {
         if (mJnWallet != null) {
-            ArrayList<UserBean> list = DatabaseOperate.getInstance().getColdUserInfos();
-            if (list == null || list.size() == 0) {
-                return;
-            }
-            UserBean userBean = list.get(list.size() - 1);
+            UserBean userBean = DataManager.getInstance().getColdUser();
             Gson mGson = new Gson();
             ColdWallet coldWallet = mGson.fromJson(userBean.getWalletContentMD(), ColdWallet.class);
             JnWallet jnWallet = Utils.getWallet(coldWallet, mSymbol);
@@ -506,7 +502,7 @@ public class ColdAssetsTransferActivity extends BaseActivity implements View.OnC
                                 TradeInfoBean infoBean = new TradeInfoBean();
                                 infoBean.setWalletType(mSymbol);
                                 infoBean.setSendType(1);
-                                infoBean.setLoginAccount(DataManager.getInstance().getUser().getAccount());
+                                infoBean.setLoginAccount(DataManager.getInstance().getColdUser().getAccount());
                                 infoBean.setCreateTime(System.currentTimeMillis());
                                 infoBean.setHash(txhash.getTxhash());
                                 infoBean.setFromAddress(fromAddress);
@@ -543,7 +539,7 @@ public class ColdAssetsTransferActivity extends BaseActivity implements View.OnC
                                 TradeInfoBean infoBean = new TradeInfoBean();
                                 infoBean.setWalletType(mSymbol);
                                 infoBean.setSendType(1);
-                                infoBean.setLoginAccount(DataManager.getInstance().getUser().getAccount());
+                                infoBean.setLoginAccount(DataManager.getInstance().getColdUser().getAccount());
                                 infoBean.setCreateTime(System.currentTimeMillis());
                                 infoBean.setHash(txhash.getTxHash());
                                 infoBean.setFromAddress(fromAddress);
@@ -581,7 +577,7 @@ public class ColdAssetsTransferActivity extends BaseActivity implements View.OnC
                                 TradeInfoBean infoBean = new TradeInfoBean();
                                 infoBean.setWalletType(mSymbol);
                                 infoBean.setSendType(1);
-                                infoBean.setLoginAccount(DataManager.getInstance().getUser().getAccount());
+                                infoBean.setLoginAccount(DataManager.getInstance().getColdUser().getAccount());
                                 infoBean.setCreateTime(System.currentTimeMillis());
                                 infoBean.setHash(txhash.getTxHash());
                                 infoBean.setFromAddress(fromAddress);

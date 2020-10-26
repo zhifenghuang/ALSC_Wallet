@@ -32,7 +32,7 @@
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/text_color"
                 android:textSize="13dp"
                 android:text="JHSIOJIHJSDI...H" />
 
@@ -40,8 +40,8 @@
                 android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_color_small"
-                android:textSize="11dp"
+                android:textColor="@color/text_color_small1"
+                android:textSize="10dp"
                 tools:text="2019-10-05 01:21" />
         </LinearLayout>
 

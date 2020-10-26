@@ -112,11 +112,11 @@ public class ImportKeystoreFragment extends BaseFragment implements View.OnClick
                         }
                         if (coldWallet != null) {
                             WalletDataBean bean = new WalletDataBean("ETH", Utils.getMnemonicCode(coldWallet.getMnemonicCode()), coldWallet.getPrivateKey(), coldWallet.getPublicKey(), coldWallet.getAddress(),
-                                    String.valueOf(coldWallet.getKeystore()), pass, "ETH", DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                                    String.valueOf(coldWallet.getKeystore()), pass, "ETH", DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                             WalletDataBean bean1 = new WalletDataBean("A13", Utils.getMnemonicCode(coldWallet.getMnemonicCode()), coldWallet.getPrivateKey(), coldWallet.getPublicKey(), coldWallet.getAddress(),
-                                    String.valueOf(coldWallet.getKeystore()), pass, "A13", DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                                    String.valueOf(coldWallet.getKeystore()), pass, "A13", DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                             WalletDataBean bean2 = new WalletDataBean("USDT-ERC20", Utils.getMnemonicCode(coldWallet.getMnemonicCode()), coldWallet.getPrivateKey(), coldWallet.getPublicKey(), coldWallet.getAddress(),
-                                    String.valueOf(coldWallet.getKeystore()), pass, "USDT-ERC20", DataManager.getInstance().getUser().getAccount(), System.currentTimeMillis());
+                                    String.valueOf(coldWallet.getKeystore()), pass, "USDT-ERC20", DataManager.getInstance().getColdUser().getAccount(), System.currentTimeMillis());
                             if (!bean.getAddress().equals(Utils.getAddress(mSymbol)) && DatabaseOperate.getInstance().insertWalletInfo(bean)) {
                                 DatabaseOperate.getInstance().insertWalletInfo(bean1);
                                 DatabaseOperate.getInstance().insertWalletInfo(bean2);
