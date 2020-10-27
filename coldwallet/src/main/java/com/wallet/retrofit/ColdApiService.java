@@ -33,7 +33,7 @@ public interface ColdApiService {
     /*
     冷钱包实时价格接口
      */
-    @GET("api/cold/get_huilv2")
+    @GET("api/cold/get_huilv")
     Observable<ApiModel<ColdHqBean>> getColdHq();
 
 

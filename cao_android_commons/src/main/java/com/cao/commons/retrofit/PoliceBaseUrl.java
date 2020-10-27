@@ -19,7 +19,7 @@ public class PoliceBaseUrl {
     /**
      * 外网测试
      */
-    public static final String V1_TEXT_COLD = "http://cold1.cmzzz.top/";
+    public static final String V1_TEXT_COLD = "http://cool.uwyoo.com/";
     /**
      * 外网测试
      */

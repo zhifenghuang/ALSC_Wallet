@@ -401,27 +401,25 @@ public class MainColdActivity extends BaseActivity implements View.OnClickListen
 
 
     private void getColdHq() {
-//        String[] strings = new String[]{"BTC", "ETH", "USDT", "A13"};
-//        ColdInterface.getColdHq(mContext, Tag, new HttpInfoRequest<ColdHqBean>() {
-//            @Override
-//            public void onSuccess(ColdHqBean model) {
-//                if (model != null) {
-//                    PoliceApplication.setColdHqBean(model);
-//                    handler.sendEmptyMessageDelayed(3, 60 * 1000);
-//                    if (!handler.hasMessages(2) && isFirst) {
-//                        isFirst = false;
-//                        handler.sendEmptyMessage(2);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onError(int eCode) {
-//
-//            }
-//        });
-        isFirst = false;
-        handler.sendEmptyMessage(2);
+        String[] strings = new String[]{"BTC", "ETH", "USDT", "A13"};
+        ColdInterface.getColdHq(mContext, Tag, new HttpInfoRequest<ColdHqBean>() {
+            @Override
+            public void onSuccess(ColdHqBean model) {
+                if (model != null) {
+                    PoliceApplication.setColdHqBean(model);
+                    handler.sendEmptyMessageDelayed(3, 60 * 1000);
+                    if (!handler.hasMessages(2) && isFirst) {
+                        isFirst = false;
+                        handler.sendEmptyMessage(2);
+                    }
+                }
+            }
+
+            @Override
+            public void onError(int eCode) {
+
+            }
+        });
     }
 
 

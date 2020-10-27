@@ -15,16 +15,9 @@ import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.manager.DataManager;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
-import com.common.activity.BaseActivity;
-import com.common.bean.CoinSymbolBean;
 import com.alsc.alsc_wallet.fragment.online.WalletDetailFragment;
 import com.common.fragment.BaseFragment;
-import com.common.http.HttpMethods;
-import com.common.http.HttpObserver;
-import com.common.http.SubscriberOnNextListener;
 import com.wallet.activity.MainColdActivity;
-
-import java.util.HashMap;
 
 public class OnlineWalletFragment extends BaseFragment {
 
@@ -68,15 +61,13 @@ public class OnlineWalletFragment extends BaseFragment {
                 gotoPager(WalletDetailFragment.class);
                 break;
             case R.id.tvColdWallet:
-                ((MainActivity) getActivity()).setWalletType(1);
-//                UserBean userBean = DataManager.getInstance().getUser();
-//                if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
-//
-//
-//                    //   MainColdActivity.startActivity(getActivity());
-//                }else {
-//
-//                }
+//                ((MainActivity) getActivity()).setWalletType(1);
+                UserBean userBean = DataManager.getInstance().getUser();
+                if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
+                    MainColdActivity.startActivity(getActivity());
+                } else {
+
+                }
                 break;
         }
     }
