@@ -19,8 +19,10 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.cao.commons.base.BaseFragment;
+import com.cao.commons.base.PoliceApplication;
 import com.cao.commons.bean.ChangeLanguageEvent;
 import com.cao.commons.bean.chat.UserBean;
+import com.cao.commons.bean.cold.ColdHqBean;
 import com.cao.commons.bean.cold.WalletDataBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.cao.commons.manager.DataManager;
@@ -36,6 +38,8 @@ import com.wallet.activity.cold.ColdWalletAddActivity;
 import com.wallet.event.ChangeWalletNameEvent;
 import com.wallet.event.WalletAddEvent;
 import com.wallet.event.WalletAllEvent;
+import com.wallet.retrofit.ColdInterface;
+import com.wallet.retrofit.HttpInfoRequest;
 import com.wallet.utils.Utils;
 import com.wallet.wallet.bean.ColdWallet;
 import com.wallet.wallet.bean.JnWallet;
@@ -345,25 +349,25 @@ public class MainColdFragment extends BaseFragment implements View.OnClickListen
 
 
     private void getColdHq() {
-//        String[] strings = new String[]{"BTC", "ETH", "USDT", "A13"};
-//        ColdInterface.getColdHq(mContext, Tag, new HttpInfoRequest<ColdHqBean>() {
-//            @Override
-//            public void onSuccess(ColdHqBean model) {
-//                if (model != null) {
-//                    PoliceApplication.setColdHqBean(model);
-//                    handler.sendEmptyMessageDelayed(3, 60 * 1000);
-//                    if (!handler.hasMessages(2) && isFirst) {
-//                        isFirst = false;
-//                        handler.sendEmptyMessage(2);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onError(int eCode) {
-//
-//            }
-//        });
+        String[] strings = new String[]{"BTC", "ETH", "USDT", "A13"};
+        ColdInterface.getColdHq(mContext, Tag, new HttpInfoRequest<ColdHqBean>() {
+            @Override
+            public void onSuccess(ColdHqBean model) {
+                if (model != null) {
+                    PoliceApplication.setColdHqBean(model);
+                    handler.sendEmptyMessageDelayed(3, 60 * 1000);
+                    if (!handler.hasMessages(2) && isFirst) {
+                        isFirst = false;
+                        handler.sendEmptyMessage(2);
+                    }
+                }
+            }
+
+            @Override
+            public void onError(int eCode) {
+
+            }
+        });
         isFirst = false;
         handler.sendEmptyMessage(2);
     }
