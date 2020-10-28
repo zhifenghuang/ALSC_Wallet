@@ -344,9 +344,9 @@ public class BtcColdWallet {
     public List<UTXO> getUnspentTransactionOutput1(String address) throws Exception {
         List<UTXO> utxos = Lists.newArrayList();
         JSONObject object = new JSONObject();
-        object.put("coinAddress", address);
-        object.put("coinName", "BTC");
-        String httpGet = HttpUtil.getInstance().post("http://47.52.237.110/v1/getUtxo", object.toJSONString());
+//        object.put("coinAddress", address);
+//        object.put("coinName", "BTC");
+        String httpGet = HttpUtil.getInstance().post("https://blockchain.info/unspent?active=" + address, object.toJSONString());
         Log.e("aaaaaaaa", "httpGet: " + httpGet);
         if (Objects.equals("No free outputs to spend", httpGet)) {
             return utxos;
