@@ -15,6 +15,7 @@ import com.alsc.alsc_wallet.adapter.ImportWalletAddressAdapter;
 import com.alsc.chat.activity.ChatBaseActivity;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.manager.DataManager;
+import com.common.activity.BaseActivity;
 import com.common.fragment.BaseFragment;
 import com.common.bean.CoinSymbolBean;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -71,13 +72,12 @@ public class ColdWalletFragment extends BaseFragment {
         if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
             setViewGone(R.id.llUnLogin);
             setViewVisible(R.id.llLogined);
+            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+            ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
         } else {
             setViewVisible(R.id.llUnLogin);
             setViewGone(R.id.llLogined);
         }
-
-        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-        ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
     }
 
     @Override
@@ -132,7 +132,7 @@ public class ColdWalletFragment extends BaseFragment {
         }
 
         setViewEnable(R.id.tvCreate, false);
-        ((ChatBaseActivity) getActivity()).showLoading();
+        ((BaseActivity) getActivity()).showLoading();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -154,6 +154,8 @@ public class ColdWalletFragment extends BaseFragment {
                         public void run() {
                             setViewGone(R.id.llUnLogin);
                             setViewVisible(R.id.llLogined);
+                            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+                            ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
                         }
                     });
                 } catch (Exception e) {
@@ -169,7 +171,7 @@ public class ColdWalletFragment extends BaseFragment {
                         @Override
                         public void run() {
                             setViewEnable(R.id.tvCreate, true);
-                            ((ChatBaseActivity) getActivity()).hideLoading();
+                            ((BaseActivity) getActivity()).hideLoading();
                         }
                     });
                 }
