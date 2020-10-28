@@ -275,7 +275,12 @@ public class EthColdWallet {
         Transaction transaction = Transaction.createEthCallTransaction(fromAddress, contractAddress, data);
         EthCall ethCall = web3j.ethCall(transaction, DefaultBlockParameterName.LATEST).send();
         List<Type> results = FunctionReturnDecoder.decode(ethCall.getValue(), function.getOutputParameters());
-        BigInteger balanceValue = (BigInteger) results.get(0).getValue();
+        BigInteger balanceValue;
+        if (results!=null && results.size()>0) {
+            balanceValue = (BigInteger) results.get(0).getValue();
+        } else {
+            balanceValue = BigInteger.valueOf(0);
+        }
         //根据合约地址查询代币精度
         int tokenDecimals = getTokenDecimals(contractAddress, fromAddress);
         //得到余额
@@ -706,14 +711,17 @@ public class EthColdWallet {
         Transaction transaction = Transaction.createEthCallTransaction(fromAddress, contractAddress, data);
         EthCall ethCall = web3j.ethCall(transaction, DefaultBlockParameterName.LATEST).sendAsync().get();
         List<Type> results = FunctionReturnDecoder.decode(ethCall.getValue(), function.getOutputParameters());
-        decimal = Integer.parseInt(results.get(0).getValue().toString());
+        if (results!=null && results.size()>0) {
+            decimal = Integer.parseInt(results.get(0).getValue().toString());
+        } else {
+            decimal = 0;
+        }
         return decimal;
     }
 
     /**
      * 获取精度的方法
      *
-     * @param decimals     精度
      * @param tokenBalance 余额
      * @return WEI(" wei ", 0),
      * KWEI("kwei", 3),
