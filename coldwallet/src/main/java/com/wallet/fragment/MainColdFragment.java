@@ -43,6 +43,7 @@ import com.wallet.retrofit.HttpInfoRequest;
 import com.wallet.utils.Utils;
 import com.wallet.wallet.bean.ColdWallet;
 import com.wallet.wallet.bean.JnWallet;
+import com.youth.banner.util.LogUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -344,6 +345,7 @@ public class MainColdFragment extends BaseFragment implements View.OnClickListen
             binding.tvMoney.setText(Utils.getTotalMoney());
         } catch (Exception e) {
             e.printStackTrace();
+            LogUtils.e(e.getMessage());
         }
     }
 

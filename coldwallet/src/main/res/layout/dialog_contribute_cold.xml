@@ -78,7 +78,7 @@
             android:maxLength="12"
             android:singleLine="true"
             android:textColor="@color/text_color"
-            android:textColorHint="@color/color_666666"
+            android:textColorHint="@color/text_color_small1"
             android:textSize="15dp" />
     </LinearLayout>
 
@@ -92,6 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
+        android:background="@color/white"
         android:gravity="center"
         android:text="@string/wh_ok"
         android:textColor="@color/text_color"

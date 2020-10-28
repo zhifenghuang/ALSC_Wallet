@@ -29,6 +29,7 @@ import com.wallet.wallet.bean.JnWallet;
 import com.wallet.wallet.bean.WalletType;
 import com.wallet.wallet.eth.EthColdWallet;
 import com.wallet.wallet.util.HttpUtil;
+import com.youth.banner.util.LogUtils;
 
 import org.bitcoinj.core.UTXO;
 import org.json.JSONObject;
@@ -519,9 +520,8 @@ public class Utils {
                         }
                         String walletContent = mGson.toJson(mColdWallet);
                         userBean.setWalletContentMD(walletContent);
-                        if (Network.isConnected(PoliceApplication.getInstance())) {
-                            DatabaseOperate.getInstance().insertOrUpdate(userBean);
-                        }
+
+                        DataManager.getInstance().saveColdUser(userBean);
 
                         ArrayList<WalletDataBean> list = DatabaseOperate.getInstance().getWalletInfos();
                         for (WalletDataBean bean : list) {
@@ -544,6 +544,7 @@ public class Utils {
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
+                        LogUtils.e(e.getMessage());
                     }
                 }
 

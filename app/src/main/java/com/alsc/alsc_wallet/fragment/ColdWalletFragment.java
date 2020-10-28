@@ -21,6 +21,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.google.gson.Gson;
 import com.wallet.activity.MainColdActivity;
+import com.wallet.activity.cold.AddressActivity;
 import com.wallet.activity.cold.ColdWalletAddActivity;
 import com.wallet.activity.wallet.ColdWalletBackupActivity;
 import com.wallet.activity.wallet.RestoreWalletActivity;
@@ -43,7 +44,7 @@ public class ColdWalletFragment extends BaseFragment {
 
     @Override
     protected void onViewCreated(View view) {
-        setViewsOnClickListener(R.id.tvOnlineWallet, R.id.tvColdWallet, R.id.tvRestore, R.id.tvCreate, R.id.ivAddAddress);
+        setViewsOnClickListener(R.id.tvOnlineWallet, R.id.tvColdWallet, R.id.tvRestore, R.id.tvCreate, R.id.ivAddAddress, R.id.ivAddress);
 //        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
 //        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
 //        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -88,6 +89,9 @@ public class ColdWalletFragment extends BaseFragment {
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
+            case R.id.ivAddress:
+                gotoPager(AddressActivity.class);
+                break;
             case R.id.ivAddAddress:
                 gotoPager(ColdWalletAddActivity.class);
                 break;

@@ -346,14 +346,15 @@ public class BtcColdWallet {
         JSONObject object = new JSONObject();
 //        object.put("coinAddress", address);
 //        object.put("coinName", "BTC");
-        String httpGet = HttpUtil.getInstance().post("https://blockchain.info/unspent?active=" + address, object.toJSONString());
+        //TODO 临时固定的
+        address = "39dk7jM6HzQ8aYr8CwC4XSTNke8kXDJaQY";
+        String httpGet = HttpUtil.getInstance().get("https://blockchain.info/unspent?active=" + address);
         Log.e("aaaaaaaa", "httpGet: " + httpGet);
         if (Objects.equals("No free outputs to spend", httpGet)) {
             return utxos;
         }
         JSONObject jsonObject = JSON.parseObject(httpGet);
-        JSONObject result = jsonObject.getJSONObject("result");
-        JSONArray unspentOutputs = result.getJSONArray("utxo");
+        JSONArray unspentOutputs = jsonObject.getJSONArray("unspent_outputs");
         if (unspentOutputs == null) {
             return utxos;
         }

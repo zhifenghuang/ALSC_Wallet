@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -27,11 +28,11 @@ import com.cao.commons.util.log.Log;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.cold.wallet.R;
 import com.cold.wallet.databinding.ActivityColdAssetsListBinding;
 import com.common.dialog.MyDialogFragment;
 import com.common.utils.QRCodeUtil;
 import com.google.gson.Gson;
-import com.cold.wallet.R;
 import com.gyf.immersionbar.ImmersionBar;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.wallet.activity.adapter.ColdAssetsDetailAdapter;
@@ -105,7 +106,7 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
 
 
         binding.toolbar.setContentInsetsAbsolute(0, 0);
-        binding.tvTitle.setText(mSymbol.toUpperCase()+"钱包");
+        binding.tvTitle.setText(mSymbol.toUpperCase() + "钱包");
         if (!TextUtils.isEmpty(Utils.getTitleSum(mSymbol))) {
             binding.tvTitleSummary.setText(Utils.getTitleSum(mSymbol));
         } else {
@@ -131,7 +132,7 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
     }
 
     private void getData(int pages) {
-        ColdInterface.getTradeList(mAddress, 10, pages,mSymbol,adapter.getType(), mContext, Tag, new HttpInfoRequest<List<TransferListBean>>() {
+        ColdInterface.getTradeList(mAddress, 10, pages, mSymbol, adapter.getType(), mContext, Tag, new HttpInfoRequest<List<TransferListBean>>() {
             @Override
             public void onSuccess(List<TransferListBean> model) {
                 if (pages == 1) {
@@ -168,7 +169,7 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
         }
     }
 
-    private void initListener(){
+    private void initListener() {
         adapter.setMore(R.layout.view_more, new RecyclerArrayAdapter.OnMoreListener() {
             @Override
             public void onMoreShow() {
@@ -218,7 +219,7 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
                 ColdAssetsTransferActivity.startActivity(mContext, mWalletDataBean);
             }
         } else if (id == R.id.fl_qcode) {
-            showDialog(mAddress);
+            showDialog(mAddress, mSymbol + "收款地址");
         } else if (id == R.id.fl_set) {
             if (mJnWallet != null) {
                 ColdAssetsSetActivity.startActivity(mContext, mSymbol, mJnWallet);
@@ -230,7 +231,7 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
             ToastUtil.toast(getString(R.string.user_copy_success));
         } else if (id == R.id.fl_back) {
             finish();
-        }else if (id == R.id.llFilter) {
+        } else if (id == R.id.llFilter) {
             showFilterDialog();
         }
     }
@@ -269,7 +270,7 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
 
     private ColdWalletDetailAdapter getAdapter() {
         if (mAdapter == null) {
-            mAdapter = new ColdWalletDetailAdapter(mContext,mAddress);
+            mAdapter = new ColdWalletDetailAdapter(mContext, mAddress);
             mAdapter.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
@@ -330,7 +331,8 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
     }
 
     private Bitmap mQrBmp;
-    private void showDialog(String mAddress){
+
+    private void showDialog(String mAddress, String name) {
         final MyDialogFragment dialogFragment = new MyDialogFragment(R.layout.dialog_my_qrcode);
         dialogFragment.setOnMyDialogListener(new MyDialogFragment.OnMyDialogListener() {
             @Override
@@ -341,6 +343,8 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
                 }
                 mQrBmp = QRCodeUtil.createQRImage(mContext, mAddress, null);
                 ((ImageView) view.findViewById(R.id.ivQrCode)).setImageBitmap(mQrBmp);
+                ((TextView) view.findViewById(R.id.tvName)).setText(name);
+
             }
 
             @Override
@@ -382,10 +386,13 @@ public class ColdAssetsListActivity extends BaseActivity implements View.OnClick
             public void onViewClick(int viewId) {
                 if (viewId == R.id.tvAll) {
                     adapter.setType(0);
+                    binding.tvFilter.setText("全部");
                 } else if (viewId == R.id.tvTransferIn) {
                     adapter.setType(2);
+                    binding.tvFilter.setText("转入");
                 } else if (viewId == R.id.tvTransferOut) {
                     adapter.setType(1);
+                    binding.tvFilter.setText("转出");
                 }
                 page = 1;
                 getData(page);
