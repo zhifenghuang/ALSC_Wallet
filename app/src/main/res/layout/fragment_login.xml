@@ -55,7 +55,7 @@
         android:layout_marginRight="30dp"
         android:background="@null"
         android:gravity="center_vertical"
-        android:hint="@string/app_please_input_account"
+        android:hint="@string/app_please_input_phone_or_email"
         android:inputType="textEmailAddress"
         android:singleLine="true"
         android:textColor="@color/color_00_00_00"

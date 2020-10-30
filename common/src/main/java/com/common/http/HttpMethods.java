@@ -89,9 +89,9 @@ public class HttpMethods {
         toSubscribe(observable, observer);
     }
 
-    public void login(String name, String password, String code, HttpObserver observer) {
+    public void login(String ticket, HttpObserver observer) {
         HttpService httpService = mRetrofit.create(HttpService.class);
-        Observable observable = httpService.login(name, password, code);
+        Observable observable = httpService.login(ticket);
         toSubscribe(observable, observer);
     }
 

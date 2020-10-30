@@ -54,9 +54,7 @@ public interface HttpService {
      */
     @FormUrlEncoded
     @POST("api/v1/login")
-    Observable<BasicResponse<LoginBean>> login(@Field("name") String name,
-                                               @Field("password") String password,
-                                               @Field("code") String code);
+    Observable<BasicResponse<LoginBean>> login(@Field("token") String ticket);
 
     /**
      * 资产

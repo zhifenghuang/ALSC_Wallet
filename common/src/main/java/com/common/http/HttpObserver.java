@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.cao.commons.bean.chat.BasicResponse;
 import com.common.activity.BaseActivity;
+import com.common.bean.ThirdPartyResponse;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -80,7 +81,7 @@ public class HttpObserver implements Observer, ProgressCancelListener {
      */
     @Override
     public void onError(Throwable e) {
-        Log.i(TAG, "e: "+e.toString());
+        Log.i(TAG, "e: " + e.toString());
         try {
             dismissProgressDialog();
             if (mErrorListener != null) {
@@ -106,15 +107,27 @@ public class HttpObserver implements Observer, ProgressCancelListener {
     @Override
     public void onNext(Object responseObj) {
         if (responseObj != null) {
-            BasicResponse basicResponse = (BasicResponse) responseObj;
-            if (basicResponse.isSuccess()) {
-                if (mSubscriberOnNextListener != null) {
-                    mSubscriberOnNextListener.onNext(basicResponse.getData() == null ? basicResponse.getResult()
-                            : basicResponse.getData(), basicResponse.getMsg());
+            if (responseObj instanceof BasicResponse) {
+                BasicResponse basicResponse = (BasicResponse) responseObj;
+                if (basicResponse.isSuccess()) {
+                    if (mSubscriberOnNextListener != null) {
+                        mSubscriberOnNextListener.onNext(basicResponse.getData() == null ? basicResponse.getResult()
+                                : basicResponse.getData(), basicResponse.getMsg());
+                    }
+                } else {
+                    //处理errorCode
+                    onServerError(basicResponse.getCode(), basicResponse.getMsg());
                 }
-            } else {
-                //处理errorCode
-                onServerError(basicResponse.getCode(), basicResponse.getMsg());
+            } else if (responseObj instanceof ThirdPartyResponse) {
+                ThirdPartyResponse basicResponse = (ThirdPartyResponse) responseObj;
+                if (basicResponse.isSuccess()) {
+                    if (mSubscriberOnNextListener != null) {
+                        mSubscriberOnNextListener.onNext(basicResponse.getData(), basicResponse.getErrmsg());
+                    }
+                } else {
+                    //处理errorCode
+                    onServerError(basicResponse.getResult(), basicResponse.getErrmsg());
+                }
             }
         }
     }

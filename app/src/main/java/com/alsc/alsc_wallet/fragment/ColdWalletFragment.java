@@ -46,27 +46,6 @@ public class ColdWalletFragment extends BaseFragment {
     @Override
     protected void onViewCreated(View view) {
         setViewsOnClickListener(R.id.tvOnlineWallet, R.id.tvColdWallet, R.id.tvRestore, R.id.tvCreate, R.id.ivAddAddress, R.id.ivAddress);
-//        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-//        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        getAdapter().onAttachedToRecyclerView(recyclerView);
-//        recyclerView.setAdapter(getAdapter());
-//        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_eth, "ETH", "1FyMFyFyFy......h4FyAVz"));
-//        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_usdt, "USDT", "1FyMFyFyFy......h4FyAVz"));
-//        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_eos, "EOS", "1FyMFyFyFy......h4FyAVz"));
-//        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_ltc, "LTC", "1FyMFyFyFy......h4FyAVz"));
-//        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_dash, "DASH", "1FyMFyFyFy......h4FyAVz"));
-//        getAdapter().addData(new CoinSymbolBean(R.drawable.wallet_zec, "ZEC", "1FyMFyFyFy......h4FyAVz"));
-//
-//        recyclerView = view.findViewById(R.id.recyclerView1);
-//        linearLayoutManager = new LinearLayoutManager(getActivity());
-//        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        getAdapter1().onAttachedToRecyclerView(recyclerView);
-//        recyclerView.setAdapter(getAdapter1());
-//        getAdapter1().addData("");
-//        getAdapter1().addData("");
 
         UserBean userBean = DataManager.getInstance().getColdUser();
         if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {

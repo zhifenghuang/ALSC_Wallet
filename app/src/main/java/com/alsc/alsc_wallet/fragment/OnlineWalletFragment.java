@@ -62,12 +62,12 @@ public class OnlineWalletFragment extends BaseFragment {
                 break;
             case R.id.tvColdWallet:
 //                ((MainActivity) getActivity()).setWalletType(1);
-                UserBean userBean = DataManager.getInstance().getUser();
-                if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
-                    MainColdActivity.startActivity(getActivity());
-                } else {
-
-                }
+//                UserBean userBean = DataManager.getInstance().getUser();
+//                if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
+//                    MainColdActivity.startActivity(getActivity());
+//                } else {
+                ((MainActivity) getActivity()).setWalletType(1);
+                //               }
                 break;
         }
     }

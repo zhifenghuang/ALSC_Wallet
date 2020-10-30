@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Wallet4.0</string>
+    <string name="app_name">矿机</string>
 
     <!-- LoginFragment -->
     <string name="app_login">登录</string>
@@ -7,7 +7,7 @@
     <string name="app_mobile">手机号</string>
     <string name="app_email">邮箱</string>
     <string name="app_account">账号</string>
-    <string name="app_please_input_account">请输入账号</string>
+    <string name="app_please_input_phone_or_email">请输入邮箱或者手机号</string>
     <string name="app_please_input_mobile">请输入手机号</string>
     <string name="app_please_input_pic_ver_code">请输入图片验证码</string>
     <string name="app_password">密码</string>
@@ -38,6 +38,7 @@
     <string name="app_please_input_first_name">请输入姓</string>
     <string name="app_second_name">名</string>
     <string name="app_please_input_second_name">请输入名</string>
+    <string name="app_register_success">注册成功</string>
 
     <!-- ForgetPasswordFragment -->
     <string name="app_get_ver_code">获取验证码</string>
