@@ -54,6 +54,7 @@ public class ColdWalletFragment extends BaseFragment {
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
             ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
         } else {
+            setViewGone(R.id.ivAddress,R.id.ivAddAddress);
             setViewVisible(R.id.llUnLogin);
             setViewGone(R.id.llLogined);
         }
@@ -132,7 +133,7 @@ public class ColdWalletFragment extends BaseFragment {
                         @Override
                         public void run() {
                             setViewGone(R.id.llUnLogin);
-                            setViewVisible(R.id.llLogined);
+                            setViewVisible(R.id.llLogined,R.id.ivAddress,R.id.ivAddAddress);
                             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
                             ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
                         }
