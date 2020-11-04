@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="42dp"
-        android:src="@drawable/wallet_address_list" />
+        android:src="@drawable/wallet_address_list"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/ivAddAddress"
@@ -26,7 +27,8 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="42dp"
         android:layout_marginRight="32dp"
-        android:src="@drawable/wallet_add_address" />
+        android:src="@drawable/wallet_add_address"
+        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/ll1"
@@ -66,11 +68,11 @@
     <FrameLayout
         android:id="@+id/llLogined"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/ll1"
-        android:layout_marginTop="27dp"
-        android:visibility="gone"
         android:layout_centerHorizontal="true"
-        android:layout_height="match_parent">
+        android:layout_marginTop="27dp"
+        android:visibility="gone">
 
 
     </FrameLayout>
@@ -78,9 +80,9 @@
     <LinearLayout
         android:id="@+id/llUnLogin"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/ll1"
         android:layout_marginTop="30dp"
-        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
@@ -89,29 +91,27 @@
             android:layout_marginLeft="36dp"
             android:text="@string/welcome_cold_wallet"
             android:textColor="@color/white"
-            android:textSize="22sp"
-            />
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/only_cold_wallet"
             android:layout_marginLeft="36dp"
             android:layout_marginTop="12dp"
+            android:text="@string/only_cold_wallet"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            />
+            android:textSize="12sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="12dp"
             android:background="@drawable/shape_ffffff_4"
+            android:orientation="vertical"
             android:paddingLeft="23dp"
             android:paddingTop="25dp"
-            android:orientation="vertical"
             android:paddingRight="19dp">
 
 
@@ -120,118 +120,109 @@
                 android:layout_height="wrap_content"
                 android:text="账户名称"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:hint="请填写账户名称"
                 android:layout_marginTop="12dp"
-                android:textColor="@color/black"
+                android:background="@drawable/corner_white_5"
+                android:hint="请填写账户名称"
                 android:paddingLeft="7dp"
                 android:paddingRight="7dp"
-                android:background="@drawable/corner_white_5"
+                android:textColor="@color/black"
                 android:textColorHint="@color/color_b2_b2_b2"
-                android:textSize="13sp"
-                />
+                android:textSize="13sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="输入钱包密码"
                 android:layout_marginTop="25dp"
+                android:text="输入钱包密码"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:hint="至少8-16位：大写字母、小写字母、数字3种组成"
                 android:layout_marginTop="12dp"
-                android:textColor="@color/black"
+                android:background="@drawable/corner_white_5"
+                android:hint="至少8-16位：大写字母、小写字母、数字3种组成"
+                android:inputType="textPassword"
                 android:paddingLeft="7dp"
                 android:paddingRight="7dp"
-                android:background="@drawable/corner_white_5"
+                android:textColor="@color/black"
                 android:textColorHint="@color/color_b2_b2_b2"
-                android:inputType="textPassword"
-                android:textSize="13sp"
-                />
+                android:textSize="13sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="确认钱包密码"
                 android:layout_marginTop="25dp"
+                android:text="确认钱包密码"
                 android:textColor="@color/black"
-                android:textSize="15sp"
-                />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/etPasswordRetry"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:hint="至少8-16位：大写字母、小写字母、数字3种组成"
                 android:layout_marginTop="12dp"
-                android:textColor="@color/black"
-                android:paddingLeft="7dp"
-                android:inputType="textPassword"
                 android:layout_marginBottom="30dp"
-                android:paddingRight="7dp"
                 android:background="@drawable/corner_white_5"
+                android:hint="至少8-16位：大写字母、小写字母、数字3种组成"
+                android:inputType="textPassword"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:textColor="@color/black"
                 android:textColorHint="@color/color_b2_b2_b2"
-                android:textSize="13sp"
-                />
+                android:textSize="13sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="bottom">
 
             <TextView
                 android:id="@+id/tvRestore"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/corner_hollow_a0acc0l_5"
                 android:gravity="center"
                 android:text="恢复"
                 android:textColor="@color/color_a0_ac_c0"
-                android:background="@drawable/corner_hollow_a0acc0l_5"
-                android:textSize="16sp"
-                />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tvCreate"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="40dp"
                 android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/corner_a0acc0r_5"
                 android:gravity="center"
                 android:text="创建"
                 android:textColor="@color/white"
-                android:background="@drawable/corner_a0acc0r_5"
-                android:textSize="16sp"
-                />
+                android:textSize="16sp" />
 
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp"
             android:text="已有多链钱包，可通过助记词恢复"
             android:textColor="@color/color_a0_ac_c0"
-            android:layout_marginLeft="43dp"
-            android:textSize="8sp"
-            />
+            android:textSize="8sp" />
     </LinearLayout>
 
 

@@ -152,17 +152,17 @@ public class CodeWalletTypeActivity extends BaseActivity implements View.OnClick
 
     private void resetLanguage() {
         int language = DataManager.getInstance().getLanguage();
-        if (language == 0) {
-            binding.tvLanguage.setText(getString(R.string.chat_language_0));
-        } else if (language == 1) {
-            binding.tvLanguage.setText(getString(R.string.chat_language_2));
-        } else if (language == 2) {
-            binding.tvLanguage.setText(getString(R.string.chat_language_3));
-        } else if (language == 3) {
-            binding.tvLanguage.setText(getString(R.string.chat_language_4));
-        } else {
-            binding.tvLanguage.setText(getString(R.string.chat_language_5));
-        }
+//        if (language == 0) {
+//            binding.tvLanguage.setText(getString(R.string.chat_language_0));
+//        } else if (language == 1) {
+//            binding.tvLanguage.setText(getString(R.string.chat_language_2));
+//        } else if (language == 2) {
+//            binding.tvLanguage.setText(getString(R.string.chat_language_3));
+//        } else if (language == 3) {
+//            binding.tvLanguage.setText(getString(R.string.chat_language_4));
+//        } else {
+//            binding.tvLanguage.setText(getString(R.string.chat_language_5));
+//        }
         binding.tvWalletType.setText(getString(R.string.wt_type_make));
         binding.tvWalletDes.setText(getString(R.string.wt_type_change));
         binding.tv1.setText(getString(R.string.wt_type_chain));

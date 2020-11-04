@@ -273,6 +273,7 @@ public class MainColdActivity extends BaseActivity implements View.OnClickListen
             JnWallet jnWallet = Utils.getWallet(coldWallet, currentWallet);
             if (jnWallet != null) {
                 binding.tvWalletHaveAddress.setText("" + jnWallet.getAddress());
+                Log.e("aaaaaaaaa", jnWallet.getAddress() + ", " + jnWallet.getWalletType());
                 if (!TextUtils.isEmpty(jnWallet.getMoney())) {
                     binding.tvWalletHaveMoney.setText("" + jnWallet.getMoney());
                     binding.ivHaveLoading1.clearAnimation();

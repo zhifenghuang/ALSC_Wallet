@@ -61,6 +61,14 @@ public class DataManager {
         Preferences.getInstacne().setValues("token", token == null ? "" : token);
     }
 
+    public String getTicket() {
+        return Preferences.getInstacne().getValues("ticket", "");
+    }
+
+    public void saveTicket(String ticket) {
+        Preferences.getInstacne().setValues("ticket", ticket == null ? "" : ticket);
+    }
+
 
     public Object getObjectByKey(String key, Type tClass) {
         String str = Preferences.getInstacne().getValues(key, "");

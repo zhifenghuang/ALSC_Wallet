@@ -15,6 +15,7 @@ import com.cao.commons.base.BaseActivity;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.db.DatabaseOperate;
 import com.cao.commons.manager.DataManager;
+import com.cao.commons.util.log.Log;
 import com.google.gson.Gson;
 import com.cold.wallet.R;
 import com.wallet.activity.MainColdActivity;
@@ -49,18 +50,18 @@ public class RestoreWalletActivity extends BaseActivity implements View.OnClickL
         binding.recyclerView.setLayoutManager(new GridLayoutManager(mContext, 3));
         binding.recyclerView.setAdapter(confirmAdapter);
 
-//        confirmAdapter.add("trim");
-//        confirmAdapter.add("elevator");
-//        confirmAdapter.add("illegal");
-//        confirmAdapter.add("tube");
-//        confirmAdapter.add("hammer");
-//        confirmAdapter.add("globe");
-//        confirmAdapter.add("siege");
-//        confirmAdapter.add("small");
-//        confirmAdapter.add("infant");
-//        confirmAdapter.add("orphan");
-//        confirmAdapter.add("anxiety");
-//        confirmAdapter.add("primary");
+        confirmAdapter.add("trim");
+        confirmAdapter.add("elevator");
+        confirmAdapter.add("illegal");
+        confirmAdapter.add("tube");
+        confirmAdapter.add("hammer");
+        confirmAdapter.add("globe");
+        confirmAdapter.add("siege");
+        confirmAdapter.add("small");
+        confirmAdapter.add("infant");
+        confirmAdapter.add("orphan");
+        confirmAdapter.add("anxiety");
+        confirmAdapter.add("primary");
         initListener();
     }
 
@@ -198,6 +199,8 @@ public class RestoreWalletActivity extends BaseActivity implements View.OnClickL
                     DataManager.getInstance().saveColdUser(userBean);
                     DatabaseOperate.getInstance().insertOrUpdate(userBean);
                     ColdInterface.requestColdCreates(ColdInterface.getRequstWallet(wallet));
+
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

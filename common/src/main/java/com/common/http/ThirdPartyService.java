@@ -55,4 +55,15 @@ public interface ThirdPartyService {
                                                            @Query("random") String random,
                                                            @Body HashMap<String, Object> map);
 
+    /**
+     * 获取登录验证码
+     *
+     * @return
+     */
+    @POST("v1/eapi/user/bindwallet")
+    Observable<ThirdPartyResponse<Object>> bindWallet(@Query("partid") String partid,
+                                                           @Query("appid") String appid,
+                                                           @Query("random") String random,
+                                                           @Body HashMap<String, Object> map);
+
 }

@@ -1,8 +1,10 @@
 package com.common.http;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.cao.commons.manager.ConfigManager;
+import com.cao.commons.manager.DataManager;
 import com.common.utils.Constants;
 import com.common.utils.NetUtil;
 import com.google.gson.GsonBuilder;
@@ -10,6 +12,7 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import org.apache.http.conn.ConnectTimeoutException;
 
+import java.io.IOException;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.util.HashMap;
@@ -29,7 +32,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -78,8 +84,29 @@ public class ThirdPartyHttpMethods {
                     //     }
                 }
             });
+
+            Interceptor interceptor = new Interceptor() {
+                @Override
+                public Response intercept(Chain chain) throws IOException {
+                    Request request;
+                    String ticket = DataManager.getInstance().getTicket();
+                    if (!TextUtils.isEmpty(ticket)) {
+                        request = chain.request()
+                                .newBuilder()
+                                .addHeader("Authorization", "Bearer [" + ticket + "]")
+                                .build();
+                    } else {
+                        request = chain.request()
+                                .newBuilder()
+                                .build();
+                    }
+                    return chain.proceed(request);
+                }
+            };
+
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             builder.connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                    .addInterceptor(interceptor)
                     .addInterceptor(loggingInterceptor);
             if (isNeedSSL) {
                 final TrustManager[] trustAllCerts = new TrustManager[]{
@@ -165,6 +192,17 @@ public class ThirdPartyHttpMethods {
             randomStr += (1 + random.nextInt(9));
         }
         Observable observable = httpService.getLoginVerCode(Constants.THIRD_PARTY_ID, Constants.THIRD_PARTY_APPID, randomStr, map);
+        toSubscribe(observable, observer);
+    }
+
+    public void bindWallet(HashMap<String, Object> map, HttpObserver observer) {
+        ThirdPartyService httpService = mRetrofit2.create(ThirdPartyService.class);
+        Random random = new Random();
+        String randomStr = "";
+        for (int i = 0; i < 4; ++i) {
+            randomStr += (1 + random.nextInt(9));
+        }
+        Observable observable = httpService.bindWallet(Constants.THIRD_PARTY_ID, Constants.THIRD_PARTY_APPID, randomStr, map);
         toSubscribe(observable, observer);
     }
 

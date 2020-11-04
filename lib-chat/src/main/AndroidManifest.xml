@@ -45,20 +45,6 @@
     <application>
 
 
-        <activity android:name=".activity.EmptyActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="empty"
-                    android:scheme="alsc" />
-            </intent-filter>
-        </activity>
-
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="f0a8710eabed67d4a3ea1a3a2512c844" />
