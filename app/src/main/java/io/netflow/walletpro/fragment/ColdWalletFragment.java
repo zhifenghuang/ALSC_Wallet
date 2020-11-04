@@ -5,6 +5,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentTransaction;
+
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.manager.DataManager;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -37,6 +38,8 @@ public class ColdWalletFragment extends BaseFragment {
 
     private ImportWalletAddressAdapter mAdapter1;
 
+    private MainColdFragment mFragment;
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_cold_wallet;
@@ -54,8 +57,11 @@ public class ColdWalletFragment extends BaseFragment {
         if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
             setViewGone(R.id.llUnLogin);
             setViewVisible(R.id.llLogined);
-            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-            ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
+            if (mFragment == null) {
+                mFragment = MainColdFragment.newInstance();
+                FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+                ft.add(R.id.llLogined, mFragment, "MainColdFragment").commit();
+            }
         } else {
             setViewGone(R.id.ivAddress, R.id.ivAddAddress);
             setViewVisible(R.id.llUnLogin);
@@ -137,8 +143,11 @@ public class ColdWalletFragment extends BaseFragment {
                         public void run() {
                             setViewGone(R.id.llUnLogin);
                             setViewVisible(R.id.llLogined, R.id.ivAddress, R.id.ivAddAddress);
-                            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-                            ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
+                            if (mFragment == null) {
+                                mFragment = MainColdFragment.newInstance();
+                                FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+                                ft.add(R.id.llLogined, mFragment, "MainColdFragment").commit();
+                            }
                         }
                     });
                 } catch (Exception e) {
@@ -204,8 +213,11 @@ public class ColdWalletFragment extends BaseFragment {
         if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
             setViewGone(R.id.llUnLogin);
             setViewVisible(R.id.llLogined);
-            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-            ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
+            if (mFragment == null) {
+                mFragment = MainColdFragment.newInstance();
+                FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+                ft.add(R.id.llLogined, mFragment, "MainColdFragment").commitAllowingStateLoss();
+            }
         } else {
             setViewGone(R.id.ivAddress, R.id.ivAddAddress);
             setViewVisible(R.id.llUnLogin);
