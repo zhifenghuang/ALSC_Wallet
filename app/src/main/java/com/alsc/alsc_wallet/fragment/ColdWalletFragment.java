@@ -5,32 +5,31 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.alsc.alsc_wallet.R;
 import com.alsc.alsc_wallet.activity.MainActivity;
 import com.alsc.alsc_wallet.adapter.ColdWalletAdapter;
 import com.alsc.alsc_wallet.adapter.ImportWalletAddressAdapter;
-import com.alsc.chat.activity.ChatBaseActivity;
 import com.cao.commons.bean.chat.UserBean;
 import com.cao.commons.manager.DataManager;
-import com.common.activity.BaseActivity;
-import com.common.fragment.BaseFragment;
-import com.common.bean.CoinSymbolBean;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
+import com.common.activity.BaseActivity;
+import com.common.fragment.BaseFragment;
 import com.google.gson.Gson;
-import com.wallet.activity.MainColdActivity;
 import com.wallet.activity.cold.AddressActivity;
 import com.wallet.activity.cold.ColdWalletAddActivity;
-import com.wallet.activity.wallet.ColdWalletBackupActivity;
 import com.wallet.activity.wallet.RestoreWalletActivity;
+import com.wallet.event.LoginEvent;
 import com.wallet.fragment.MainColdFragment;
 import com.wallet.retrofit.ColdInterface;
 import com.wallet.utils.ToastUtil;
 import com.wallet.wallet.ColdWalletUtil;
 import com.wallet.wallet.bean.ColdWallet;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class ColdWalletFragment extends BaseFragment {
 
@@ -47,6 +46,10 @@ public class ColdWalletFragment extends BaseFragment {
     protected void onViewCreated(View view) {
         setViewsOnClickListener(R.id.tvOnlineWallet, R.id.tvColdWallet, R.id.tvRestore, R.id.tvCreate, R.id.ivAddAddress, R.id.ivAddress);
 
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
+
         UserBean userBean = DataManager.getInstance().getColdUser();
         if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
             setViewGone(R.id.llUnLogin);
@@ -54,7 +57,7 @@ public class ColdWalletFragment extends BaseFragment {
             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
             ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
         } else {
-            setViewGone(R.id.ivAddress,R.id.ivAddAddress);
+            setViewGone(R.id.ivAddress, R.id.ivAddAddress);
             setViewVisible(R.id.llUnLogin);
             setViewGone(R.id.llLogined);
         }
@@ -133,7 +136,7 @@ public class ColdWalletFragment extends BaseFragment {
                         @Override
                         public void run() {
                             setViewGone(R.id.llUnLogin);
-                            setViewVisible(R.id.llLogined,R.id.ivAddress,R.id.ivAddAddress);
+                            setViewVisible(R.id.llLogined, R.id.ivAddress, R.id.ivAddAddress);
                             FragmentTransaction ft = getChildFragmentManager().beginTransaction();
                             ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
                         }
@@ -194,4 +197,26 @@ public class ColdWalletFragment extends BaseFragment {
         }
         return mGson;
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(LoginEvent event) {
+        UserBean userBean = DataManager.getInstance().getColdUser();
+        if (userBean != null && !TextUtils.isEmpty(userBean.getWalletContentMD())) {
+            setViewGone(R.id.llUnLogin);
+            setViewVisible(R.id.llLogined);
+            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+            ft.add(R.id.llLogined, MainColdFragment.newInstance(), "MainColdFragment").commit();
+        } else {
+            setViewGone(R.id.ivAddress, R.id.ivAddAddress);
+            setViewVisible(R.id.llUnLogin);
+            setViewGone(R.id.llLogined);
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
 }

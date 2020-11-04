@@ -195,14 +195,13 @@ public class RestoreWalletActivity extends BaseActivity implements View.OnClickL
                     String walletContent = getGson().toJson(wallet);
                     userBean.setWalletContentMD(walletContent);
                     userBean.setCreateTime(System.currentTimeMillis());
-                    DataManager.getInstance().saveUser(userBean);
+                    DataManager.getInstance().saveColdUser(userBean);
                     DatabaseOperate.getInstance().insertOrUpdate(userBean);
                     ColdInterface.requestColdCreates(ColdInterface.getRequstWallet(wallet));
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             dismissDialog();
-                            MainColdActivity.startActivity(mContext);
                             EventBus.getDefault().post(new LoginEvent());
                             finish();
                         }
